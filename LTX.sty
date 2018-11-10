@@ -1,0 +1,228 @@
+% There is nothing to edit here !!!
+%   Report bugs to p.naval@ieee.org
+% ------------------------------------------------------------------------
+% File: ltx.sty
+%       ==========
+%
+% ************************************************************************
+% NOTE: TeX commands are case sensitive. You have to use uppercase
+% \Input to take advantage of this package
+%
+% This file should be placed in a directory where your LaTeX is
+% looking for inputs.
+%
+% If you are writing a book with LaTeX simply
+% include this file and use \include{mychapter} command...
+% This way all the necessary specials for DVI Search and
+% Inverse Search are inserted in your DVI File.
+%
+% * NOTE: Some TeX implementations add the file type to the "\jobname".
+% In that case the definition of the "\MainFile" should be modified to:
+%
+%     \def\MainFile{\jobname} instead of \def\MainFile{\jobname.tex}.
+%
+%
+% Your LaTeX thesis document may look something like this:
+%
+%\documentclass[12pt]{report}
+%\usepackage[centertags]{amstex}
+%\usepackage{thesis,newlfont,amsthm}
+%\usepackage[active]{LTX}
+%%No src specials are written when loading the package by
+%%\usepackage[inactive]{srcltx}
+%
+% .... Preamble ....
+%
+%\begin{document}
+%
+% .... Title, Author etc. ....
+%
+%\forgeterr{?0000} % Do not process any Errors (Overful/Underful Boxes)
+%\beforepreface
+%\forgeterr{?1111} % Process All Types of Errors from here on
+%\include{ABS}
+%\include{ACK}
+%\afterpreface
+%\include{chapter0}
+%\include{chapter1}
+%\include{chapter2}
+%\include{chapter3}
+%\bibliographystyle{amsplain}
+%\bibliography{xbib}
+%\end{document}
+%
+% To remove SRC Specials from the dvi file compile the source
+% after inserting \SRCOKfalse immediately after
+% the \usepackage{srcltx} directive...
+%
+% This package supports nested \Input commands...
+% File extension should be specified in \Input!
+% ------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LTX}[1998/03/09 v0.1 forward/backward DVI searching]
+\newif\ifSRCOK \SRCOKtrue
+\DeclareOption{active}{\SRCOKtrue}
+\DeclareOption{inactive}{\SRCOKfalse}
+\ExecuteOptions{active}
+\ProcessOptions
+% ------------------------------------------------------------------------
+\newcount\PAGETOP
+\newcount\LASTLINE
+\global\PAGETOP=1
+\global\LASTLINE=-1
+\gdef\MainFile{\jobname.tex}% ".tex" needed for MiKTeX
+\gdef\CurrentInput{\MainFile}
+\newcount\INPSP
+\global\INPSP=0
+\def\EJECT{\SRC\eject}
+\def\forgeterr#1{\typeout{:#1}} %  LOG MODE and INPUT
+% ------------------------------------------------------------------------
+%If your filenames start with numeric characters and you are using YAP
+%use the alternative definition marked as Yap Only and remove DVIWIN
+%and YAP. DVIWIN does not allow spaces after the line number and there
+%is no way out if your file is for example "13_text.tex"...
+\def\SRC{\ifSRCOK%
+  \ifnum\inputlineno>\LASTLINE%
+    \ifnum\LASTLINE<0%
+      \global\PAGETOP=\inputlineno%
+    \fi%
+    \global\LASTLINE=\inputlineno%
+    \ifnum\INPSP=0%
+      \ifnum\inputlineno>\PAGETOP%
+%        \immediate\typeout{src:\the\inputlineno\CurrentInput}%debugging
+        \special{src:\the\inputlineno\CurrentInput}% DVIWIN and YAP
+%        \special{src:\the\inputlineno\space\CurrentInput}% YAP Only
+      \fi%
+    \else%
+%      \immediate\typeout{src:\the\inputlineno\CurrentInput}%debugging
+      \special{src:\the\inputlineno\CurrentInput}% DVIWIN and YAP
+%      \special{src:\the\inputlineno\space\CurrentInput}% Yap Only
+    \fi%
+  \fi%
+\fi}
+% ------------------------------------------------------------------------
+\def\PUSH#1{%
+%\immediate\typeout{PUSH:\CurrentInput}%debugging
+\SRC%
+\ifnum\INPSP=0 \global\let\INPSTACKA=\CurrentInput \else%
+\ifnum\INPSP=1 \global\let\INPSTACKB=\CurrentInput \else%
+\ifnum\INPSP=2 \global\let\INPSTACKC=\CurrentInput \else%
+\ifnum\INPSP=3 \global\let\INPSTACKD=\CurrentInput \else%
+\ifnum\INPSP=4 \global\let\INPSTACKE=\CurrentInput \else%
+\ifnum\INPSP=5 \global\let\INPSTACKF=\CurrentInput \else%
+               \global\let\INPSTACKX=\CurrentInput \fi\fi\fi\fi\fi\fi%
+\gdef\CurrentInput{#1}%
+\forgeterr{<+ \CurrentInput}%
+%\immediate\typeout{PUSHED:\CurrentInput}%debugging
+\global\LASTLINE=0%
+\ifSRCOK\special{src:1\CurrentInput}\fi%
+\global\advance\INPSP by 1}
+%
+\def\POP{%
+%\immediate\typeout{POP:\CurrentInput}%debugging
+\ifnum\INPSP>0 \global\advance\INPSP by -1  \fi%
+\ifnum\INPSP=0 \global\let\CurrentInput=\INPSTACKA \else%
+\ifnum\INPSP=1 \global\let\CurrentInput=\INPSTACKB \else%
+\ifnum\INPSP=2 \global\let\CurrentInput=\INPSTACKC \else%
+\ifnum\INPSP=3 \global\let\CurrentInput=\INPSTACKD \else%
+\ifnum\INPSP=4 \global\let\CurrentInput=\INPSTACKE \else%
+\ifnum\INPSP=5 \global\let\CurrentInput=\INPSTACKF \else%
+               \global\let\CurrentInput=\INPSTACKX \fi\fi\fi\fi\fi\fi%
+\forgeterr{<-}%
+\global\LASTLINE=\inputlineno%
+\global\advance\LASTLINE by -1%
+%\immediate\typeout{POPPED:\CurrentInput}%debugging
+\SRC}
+% ------------------------------------------------------------------------
+% Dummy Input: can be used as \INPUT{<file>.bbl} to collect \bibitems
+\def\INPUT#1{\relax}
+% ------------------------------------------------------------------------
+% Redefine the original \include command
+\let\OldINCLUDE=\include
+\def\include#1{%Always ".tex" file type
+\EJECT%
+\PUSH{#1.tex}%
+\OldINCLUDE{#1}%
+\POP}
+% ------------------------------------------------------------------------
+\def\Input#1{%Specify File Extension!
+\PUSH{#1}%
+\input #1%
+\POP}
+% ------------------------------------------------------------------------
+\def\@SRC{\ifnum\lastpenalty=0\ifdim\lastskip=0.0pt\SRC\fi\fi}
+% ? Remove some of the following lines if you experience any troubles
+%
+\everymath={\SRC} %Should be OK
+%
+% Displayed Math: \everydisplay does not work with certain environments
+\let\zz@lsbrace=\[
+\def\[{\zz@lsbrace\SRC}
+\let\zz@rsbrace=\]
+\def\]{\SRC\zz@rsbrace}
+%
+% Possibly problematic definitions: Remove them if there are problems
+\let\z@indent=\indent
+\def\indent{\SRC\z@indent}
+\let\z@noindent=\noindent
+\def\noindent{\SRC\z@noindent}
+\let\z@leavevmode=\leavevmode
+\def\leavevmode{\SRC\z@leavevmode}
+%
+% Possibly problematic definitions: Remove them if there are problems
+\let\z@bsphack=\@bsphack
+\def\@bsphack{\@SRC\z@bsphack}
+\let\z@esphack=\@esphack
+\def\@esphack{\@SRC\z@esphack}
+\let\z@Esphack=\@Esphack
+\def\@Esphack{\@SRC\z@Esphack}
+\let\z@xaddvskip=\@xaddvskip
+\def\@xaddvskip{\@SRC\z@xaddvskip}
+%
+% Possibly problematic definitions: Remove them if there are problems
+\let\z@par=\@par
+\def\@par{\@SRC\z@par}
+\let\z@setpar=\@setpar
+\def\@setpar{\@SRC\z@setpar}
+\let\z@restorepar=\@restorepar
+\def\@restorepar{\@SRC\z@restorepar}
+\let\z@doendpe=\@doendpe
+\def\@doendpe{\@SRC\z@doendpe}
+\let\z@endparenv=\@endparenv
+\def\@endparenv{\@SRC\z@endparenv}
+%
+% Possibly problematic definitions: Remove them if there are problems
+\let\z@list=\list
+\def\list{\@SRC\z@list}
+\let\z@trivlist=\trivlist
+\def\trivlist{\@SRC\z@trivlist}
+\let\z@item=\item
+\def\item{\@SRC\z@item}
+%
+% Labels: Insert SRC specials when \ref or \cite is encountered...
+\let\z@cite=\cite
+\def\cite{\SRC\z@cite}
+\let\z@ref=\ref
+\def\ref{\SRC\z@ref}
+%
+% Skip Commands are defined to restore \everypar:
+\def\relaxskip{\ifSRCOK\SRC\everypar={\SRC}\fi\relax\SRC}
+\let\zzz@smallskip=\smallskip
+\def\smallskip{\ifSRCOK\SRC\everypar={\SRC}\fi\zzz@smallskip\SRC}
+\let\zzz@medskip=\medskip
+\def\medskip{\ifSRCOK\SRC\everypar={\SRC}\fi\zzz@medskip\SRC}
+\let\zzz@bigskip=\bigskip
+\def\bigskip{\ifSRCOK\SRC\everypar={\SRC}\fi\zzz@bigskip\SRC}
+\let\zzz@goodbreak=\goodbreak
+\def\goodbreak{\ifSRCOK\SRC\everypar={\SRC}\fi\zzz@goodbreak\SRC}
+%
+% Sectioning Commands are defined to restore \everypar (tricky):
+\let\zzz@document=\document
+\def\document{\zzz@document\everypar={\SRC}}
+%
+%
+\let\zzz@chapter=\chapter
+\def\chapter{\everypar=\expandafter{\the\everypar\SRC\everypar{\SRC}}\zzz@chapter}
+\let\zzz@bibliography=\bibliography
+\def\bibliography#1{\PUSH{\jobname.bbl}\zzz@bibliography{#1}\POP}
+% ------------------------------------------------------------------------

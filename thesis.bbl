@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{rastervsvector}
+Raster vs vector.
+\newblock
+  \url{https://vector-conversions.com/vectorizing/raster_vs_vector.html}, n.d.
+
+\bibitem{rastervsvectorgraphics}
+Raster vs. vector graphics: What's the difference?
+\newblock
+  \url{https://pixellogo.com/blogs/pixellogo-blog/raster-vs-vector-graphics},
+  n.d.
+
+\bibitem{barendrecht2018locally}
+P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
+\newblock Locally refinable gradient meshes supporting branching and sharp
+  colour transitions.
+\newblock {\em The Visual Computer}, pages 949--960, 2018.
+
+\bibitem{hoshyari2018perceptiondriven}
+S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
+  I.~Shen.
+\newblock Perception-driven semi-structured boundary vectorization.
+\newblock {\em ACM Transactions on Graphics}, 37(4):1--14, 2018.
+
+\bibitem{matheson2018smoothing}
+R.~Matheson and MIT~News Office.
+\newblock Smoothing out sketches rough edges.
+\newblock
+  \url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911},
+  September 11, 2018.
+
+\end{thebibliography}

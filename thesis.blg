@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: acknowl.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: chapter1_intro.aux
+A level-1 auxiliary file: chapter2_rrl.aux
+A level-1 auxiliary file: chapter3_sotp.aux
+A level-1 auxiliary file: chapter4_obj.aux
+A level-1 auxiliary file: chapter5_methods.aux
+A level-1 auxiliary file: chapter6_sim.exp.aux
+A level-1 auxiliary file: chapter7_rd.aux
+A level-1 auxiliary file: chapter8_sum.con.aux
+A level-1 auxiliary file: appendix.aux
+The style file: plain.bst
+Database file #1: biblio.bib
+Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
+--line 1 of file biblio.bib
+Warning--entry type for "rastervsvector" isn't style-file defined
+--line 26 of file biblio.bib
+Warning--entry type for "matheson2018smoothing" isn't style-file defined
+--line 32 of file biblio.bib
+Warning--I didn't find a database entry for "Vapnik"
+Warning--to sort, need author or key in rastervsvectorgraphics
+Warning--to sort, need author or key in rastervsvector
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            533 strings with 5013 characters,
+and the built_in function-call counts, 1537 in all, are:
+= -- 148
+> -- 76
+< -- 1
++ -- 31
+- -- 26
+* -- 100
+:= -- 241
+add.period$ -- 13
+call.type$ -- 5
+change.case$ -- 28
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 52
+empty$ -- 125
+format.name$ -- 26
+if$ -- 330
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 2
+newline$ -- 26
+num.names$ -- 6
+pop$ -- 40
+preamble$ -- 1
+purify$ -- 23
+quote$ -- 0
+skip$ -- 48
+stack$ -- 0
+substring$ -- 73
+swap$ -- 14
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 2
+while$ -- 11
+width$ -- 6
+write$ -- 50
+(There were 6 warnings)

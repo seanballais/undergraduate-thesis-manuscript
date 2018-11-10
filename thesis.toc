@@ -1,0 +1,17 @@
+\contentsline {chapter}{Acknowledgements}{iii}
+\contentsline {chapter}{Abstract}{iv}
+\contentsline {chapter}{Table of Contents}{v}
+\contentsline {chapter}{List of Tables}{vi}
+\contentsline {chapter}{List of Figures}{vii}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Review of Related Literature}{4}
+\contentsline {section}{\numberline {2.1}Background Information (optional)}{4}
+\contentsline {section}{\numberline {2.2}Review of the State of the Art}{4}
+\contentsline {chapter}{\numberline {3}Research Question or Problem Statement}{6}
+\contentsline {chapter}{\numberline {4}Objectives}{8}
+\contentsline {chapter}{\numberline {5}Describing How You Solved the Problem or Answered the Question}{9}
+\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{10}
+\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{11}
+\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{12}
+\contentsline {chapter}{\numberline {A}What should be in the Appendix}{13}
+\contentsline {chapter}{Bibliography}{14}

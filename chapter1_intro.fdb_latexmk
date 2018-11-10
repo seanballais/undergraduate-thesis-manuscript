@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1540532902 "chapter1_intro.tex" "chapter1_intro.pdf" "chapter1_intro" 1540532902
+  "/etc/texmf/web2c/texmf.cnf" 1537691018 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1539873777 718488 24a261f73b26a126adecdfac64f3dc8d ""
+  "chapter1_intro.aux" 1527092244 994 0da57f85d5f7317706e325b81d620ea2 ""
+  "chapter1_intro.tex" 1540532897 498 365a3d2d97dc42fde89dc46e54686453 ""
+  (generated)
+  "chapter1_intro.log"
+  "chapter1_intro.pdf"

@@ -1,0 +1,99 @@
+-----------------------------------------------------------------------------
+                           Why use Latex ?
+-----------------------------------------------------------------------------
+ * most other wordprocessors are pretty lousy at printing formulas
+ * most of the available technical articles are written using Latex
+ * many books are written in Latex
+ * Latex allows you to print typeset-quality material
+ * using Latex is part of your training as researchers
+ * it will take a long time before Latex becomes obsolete
+-------------------------------------------------------------------------------------
+I know nothing about Latex and I have to prepare my final report/thesis today. Help !
+-------------------------------------------------------------------------------------
+
+Don't despair.  Here's how to write that report/thesis.
+
+Read the following instructions carefully:
+
+1. Download updcsthesis.tgz to a UNIX/Linux machine.
+
+2. Unzip and untar the example file using the command
+
+	gunzip -c updcsthesis.tgz | tar xvf -
+
+   A directory named updcsthesis will be created containing
+   the source files
+
+3. Change the directory name to your group's login name.  For example, if
+   your login name is "juan", change the directory name using the command
+
+	mv updcsthesis juan
+
+4. Hop into the directory.  It contains two subdirectories named figure
+   and source.  All your figures should be saved in the figures subdirectory.
+   Figures should be in postscript format for Latex to process them without 
+   problems.
+
+   Many softwares such as Matlab are capable of saving figures, graphs,
+   diagrams, etc. in Postscript format.  The Unix tool xfig is a popular
+   tool for drawing diagrams.   
+
+5. Hop into the source subdirectory. You should see several template files
+   there.  The files you should be editing are
+
+	thesis.tex
+	abstract.tex
+	acknowl.tex
+	biblio.tex
+	chapter1.tex
+	chapter2.tex
+	chapter3.tex
+             ...
+	chaptern.tex
+        appendix.tex
+
+6. As they are, these files contain some sample text and figure formatting
+   instructions.  Try them out by typing
+
+	make biblio
+
+7. To view your document just type the following
+
+	xdvi thesis.dvi &
+
+8. Change the contents of the files with your own text.  Don't forget to
+   edit the biblio.bib.  Type
+
+	make biblio
+	make thesis
+
+   Once you are done with everything, type
+
+	make postscript
+	make pdf
+
+   A file called thesis.ps aand thesis.pdf will be created.  View these files 
+   with your favorite postscipt and pdf viewers.
+
+9. Rename thesis.ps and thesis.pdf to <login-name>.ps and <login-name>.pdf.
+   Print your thesis using ghostview.
+
+   Type 
+
+	make clean
+
+  to clean up your directory.  Type the following afterwards
+
+        cd ..
+	tar cvf <login-name>.tar <login-name>
+	gzip <login-name>.tar
+	mv <login-name>.tar.gz <login-name>.tgz
+
+10. Submit to your adviser the file <login-name>.tgz.
+    Include the file <login-name>.tgz in the recordable CD that you
+    should submit with your soft copies.
+
+
+Pros Naval
+Feb. 29, 2000
+PS: If you have problems, send me email (p.naval@ieee.org) and I will try to answer you :)

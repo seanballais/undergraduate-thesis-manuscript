@@ -1,0 +1,31 @@
+%  There is nothing to change in this file !
+%    For bugs, report to p.naval@ieee.org
+%
+
+\newlength{\tclineskip}
+\setlength{\tclineskip}{\baselineskip}
+\def\@addcontentsline#1#2#3{\if@filesw \begingroup
+\let\label\@gobble \let\index\@gobble \let\glossary\@gobble
+\def\protect##1{\string\string\string##1\string\space
+   \space}\@temptokena{\thepage}%
+\edef\@tempa{\immediate\write \@auxout{\string\@writefile{#1}{\protect
+     \contentsline{#2}{#3}{\the\@temptokena}}}}\@tempa
+   \if@nobreak \ifvmode\nobreak\fi\fi\endgroup\fi}
+\def\tableofcontents{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+ \fi\chapter*{Table of Contents\@mkboth{CONTENTS}{CONTENTS}}
+  \newcounter{ztocpageA}
+  \newcounter{ztocpageB}
+  \setcounter{ztocpageA}{\c@page}
+  \newlength{\@defbaselineskip}
+  \setlength{\@defbaselineskip}{\baselineskip}
+  \setlength{\baselineskip}{\tclineskip}
+  \@starttoc{toc}
+  \setlength{\baselineskip}{\@defbaselineskip}
+  \if@restonecol\twocolumn\fi
+  \setcounter{ztocpageB}{\c@page}
+  \setcounter{ztocpageA}{\c@page}
+  \setcounter{page}{\c@ztocpageA}
+  \addcontentsline{toc}{chapter}{Table of Contents}
+  \relax\setcounter{page}{\c@ztocpageB}\relax}
+
+

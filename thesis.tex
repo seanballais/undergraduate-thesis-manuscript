@@ -1,0 +1,171 @@
+% ------------------------------------------------------------------------
+% MS Thesis of Juan de la Cruz
+% Date Defended: May 31, 2000
+% ------------------------------------------------------------------------
+\documentclass[letterpaper,12pt]{report}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{epsfig}
+\usepackage{UPCSTHESIS} %This loads the UP Computer Science Thesis Package
+\usepackage{UPCSINC1}
+\usepackage[active]{LTX}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+
+\usepackage{fancyhdr}
+
+\fancyhf{} % clear all header and footer fields
+\fancyhead[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Redefining plain style which is automatically applied to chapters (including Bibliography)
+
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\pagestyle{fancy} 
+
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leo}
+
+
+\hfuzz2pt
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}%
+                           {2.0 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+% MATH -------------------------------------------------------------------
+\newcommand{\A}{{\cal A}}
+\newcommand{\h}{{\cal H}}
+\newcommand{\s}{{\cal S}}
+\newcommand{\W}{{\cal W}}
+\newcommand{\BH}{\mathbf B(\cal H)}
+\newcommand{\KH}{\cal  K(\cal H)}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
+\newcommand{\Field}{\mathbb F}
+\newcommand{\RPlus}{[0,\infty)}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\essnorm}[1]{\norm{#1}_{\text{\rm\normalshape ess}}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\seq}[1]{\left<#1\right>}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\RE}{\operatorname{Re}}
+\newcommand{\IM}{\operatorname{Im}}
+\newcommand{\Poly}{{\cal{P}}(E)}
+\newcommand{\EssD}{{\cal{D}}}
+% THEOREMS ---------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\setlength{\tclineskip}{1.05\baselineskip}
+
+\begin{document}
+
+%\nobib  			%toggles bibliography control
+%\draft				%toggles draft printing
+%\nofront			%toggles nofront printing
+
+\permissionfalse
+
+%\nolistoftables	%toggles table control
+%\nolistoffigures	toggles figures
+
+% ------------------------------------------------------------------------
+
+\title{[WORKING TITLE] Improved Perception-Driven Semi-Structured Image Vectorization via a Machine-Learning-Based Approach}
+
+\bs
+\author{Sean Francis N. Ballais}
+\degreeinitial{BS CS}
+\major{Computer Science}
+\adviser{Prof. Victor M. Romero II}
+\dean{Dr. Virgildo Sabalo}
+\submityear{Month Year}
+\studentid{2015-04562}
+
+% ------------------------------------------------------------------------
+{
+%\WinEdt{?0000} % Don't bother with over/under-full boxes
+%\beforepreface
+%\WinEdt{?1111} % Process All Errors from Here on
+\forgeterr{?0000} % Don't bother with over/under-full boxes
+\beforepreface
+\forgeterr{?1111} % Process All Errors from Here on
+}
+
+{
+\typeout{Acknowledgements}
+\include{acknowl}
+}
+% ------------------------------------------------------------------------
+{
+\typeout{Abstract}
+\include{abstract}
+}
+\tableofcontentspage
+% ------------------------------------------------------------------------
+%\setcounter{page}{1}
+%\tableofcontents
+% ------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+\afterpreface
+\def\baselinestretch{1}
+\setlinespacing{1.66}
+% ------------------------------------------------------------------------
+{
+%\typeout{Introduction}
+%\include{introd}
+}
+% ------------------------------------------------------------------------
+\setlinespacing{1.66}
+% ------------------------------------------------------------------------
+
+\include{chapter1_intro}
+\include{chapter2_rrl}
+\include{chapter3_sotp}
+\include{chapter4_obj}
+\include{chapter5_methods}
+\include{chapter6_sim.exp}
+\include{chapter7_rd}
+\include{chapter8_sum.con}
+\include{appendix}
+
+% ------------------------------------------------------------------------
+\INPUT{biblio.bib} 
+\setlinespacing{1.44}
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}
+% ------------------------------------------------------------------------
