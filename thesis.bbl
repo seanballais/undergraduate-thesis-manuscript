@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{gimpinterpolationmethods}
+6.22. scale image.
+
+\bibitem{photoshopinterpolationmethods}
+Photoshop image size and resolution.
 
 \bibitem{rastervsvector}
 Raster vs vector.
@@ -17,11 +23,26 @@ P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
   colour transitions.
 \newblock {\em The Visual Computer}, pages 949--960, 2018.
 
+\bibitem{resizingimages}
+Computerphile.
+\newblock Resizing images, 2016.
+
 \bibitem{hoshyari2018perceptiondriven}
 S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
   I.~Shen.
 \newblock Perception-driven semi-structured boundary vectorization.
 \newblock {\em ACM Transactions on Graphics}, 37(4):1--14, 2018.
+
+\bibitem{depixelizingpixelart}
+J.~Kopf and D.~Lischinski.
+\newblock Depixelizing pixel art.
+\newblock {\em ACM Transactions on Graphics (Proceedings of SIGGRAPH 2011)},
+  30(4):99, 2011.
+
+\bibitem{interpolationtechniquessurvey}
+P.~Parsania and P.~Virparia.
+\newblock {\em International Journal of Innovative Research in Computer and
+  Communication Engineering}, (12):7409.
 
 \bibitem{optimizedgradientmeshes}
 J.~Sun, L.~Liang, F.~Wen, and H.~Shum.
