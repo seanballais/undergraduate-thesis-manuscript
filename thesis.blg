@@ -18,66 +18,83 @@ Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
 --line 2 of file biblio.bib
 Warning--entry type for "rastervsvector" isn't style-file defined
 --line 8 of file biblio.bib
-"{" immediately follows a field part---line 92 of file biblio.bib
- :   url = \url
- :             {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
+I was expecting a `,' or a `}'---line 25 of file biblio.bib
+ :  
+ :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 99 of file biblio.bib
+"{" immediately follows a field part---line 118 of file biblio.bib
+ :   howpublished = \url
+ :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 125 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 112 of file biblio.bib
- :   pages = 99
- :             :1 -- 99:8
+Warning--string name "nov." is undefined
+--line 186 of file biblio.bib
+I was expecting a `,' or a `}'---line 221 of file biblio.bib
+ :   month = "
+ :            November",
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Vapnik"
+Repeated entry---line 242 of file biblio.bib
+ : @inproceedings{sisrbenchmark
+ :                             ,
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in rastervsvector
 Warning--to sort, need author or key in rastervsvectorgraphics
 Warning--to sort, need author or key in photoshopinterpolationmethods
 Warning--to sort, need author or key in gimpinterpolationmethods
+Warning--to sort, need author or key in titanxppage
+Warning--to sort, need author or key in inkscapepotrace
+Warning--empty year in somexperimentsvectorization
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
 Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
-You've used 12 entries,
+Warning--empty booktitle in progressivesisr
+Warning--empty booktitle in sisrbenchmark
+Warning--empty title in effectiveclipartimagevectorization
+Warning--empty year in effectiveclipartimagevectorization
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            562 strings with 5777 characters,
-and the built_in function-call counts, 3255 in all, are:
-= -- 302
-> -- 146
-< -- 1
-+ -- 60
-- -- 48
-* -- 212
-:= -- 512
-add.period$ -- 28
-call.type$ -- 12
-change.case$ -- 59
+            624 strings with 8140 characters,
+and the built_in function-call counts, 7430 in all, are:
+= -- 701
+> -- 379
+< -- 2
++ -- 155
+- -- 128
+* -- 502
+:= -- 1206
+add.period$ -- 68
+call.type$ -- 25
+change.case$ -- 137
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 119
-empty$ -- 291
-format.name$ -- 48
-if$ -- 693
+cite$ -- 40
+duplicate$ -- 254
+empty$ -- 604
+format.name$ -- 128
+if$ -- 1553
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 6
-newline$ -- 55
-num.names$ -- 16
-pop$ -- 90
+int.to.str$ -- 25
+missing$ -- 15
+newline$ -- 120
+num.names$ -- 38
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 48
+purify$ -- 114
 quote$ -- 0
-skip$ -- 100
+skip$ -- 203
 stack$ -- 0
-substring$ -- 151
-swap$ -- 21
-text.length$ -- 1
+substring$ -- 361
+swap$ -- 43
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 8
-while$ -- 25
-width$ -- 14
-write$ -- 108
-(There were 3 error messages)
+type$ -- 100
+warning$ -- 15
+while$ -- 55
+width$ -- 27
+write$ -- 239
+(There were 5 error messages)

@@ -1,35 +1,57 @@
 \chapter{Review of Related Literature} \label{sec:back}
+Image vectorization has been a long and well-researched field. One of the earliest works on the field dates back to 1982 with the paper by Jimenez, J. and Navalon, J. Their works have been focused on vectorizing digital images from natural scenes \cite{somexperimentsvectorization}. The techniques they have used, such as contour following, have been adapted in later works. Later works have made significant progress over their work and made use of hardware advancements such as GPU utilization for computational tasks.
 
+The primary goal of vectorization is to support multiple resolutions without any loss in the original data. Vectorization is suitable for the task. However, various methods have been proposed that do not involve vectorization. In this chapter, we will explore the previous works done for vectorization and making images support larger resolutions.
 
+\section{Image Upscaling} \label{sec:image-upscaling}
+Raster images are the common format used in representing images. Therefore, these types of images tend to be scaled to different resolutions. The process of scaling these types of images to higher resolutions is called \textit{image upscaling} \cite{hoshyari2018perceptiondriven}, and is the most common forms of having raster images support larger resolutions. Naively scaling images would result in images with empty pixels between the shifted pixels, producing a mostly empty image. Thus, the empty pixels are coloured based on their position from, and colour and intensity values of their neighbouring pixels. This process is called \textit{interpolation} \cite{resizingimages}. Traditional interpolation algorithms can be classified into two types: Non-adaptive techniques, and adaptive techniques. Each of these types have their own method of resizing images and would produce different results, which may fit in with different objectives of different users \cite{interpolationtechniquessurvey}. Most recent works uses artificial intelligence to construct a scaled image with as little image quality loss as possible. These works uses neural networks, specifically convolutional and adversarial neural networks, to produce photorealistic upscaled versions of images with little to no distinguishable loss of image quality \cite{aigigapixelstory}\cite{progressivesisr}\cite{sisrgan}.
 
-
-\section{Background Information (optional)}
-
-A brief section giving background information may be necessary, especially
-if your work spans two or more traditional fields. That means that your
-readers may not have any experience with some of the material needed to
-follow your thesis, so you need to give it to them. A different title than
-that given above is usually better; e.g., ``A Brief Review of Frammis
-Algebra" \cite{Vapnik}.
-
-\section{Review of the State of the Art} \label{sec:StateoftheArt}
-
-Here you review the state of the art relevant to your thesis. Again, a
-different title is probably appropriate; e.g., ``State of the Art in Zylon
-Algorithms." The idea is to present (critical analysis comes a little bit
-later) the major ideas in the state of the art right up to, but \textbf{not
-including}, your own personal brilliant ideas.
-
-You organize this section by idea, and not by author or by publication.
-For example if there have been three important main approaches to Zylon
-Algorithms to date, you might organize subsections around these three
-approaches, if necessary:
+\subsection{Non-Adaptive Techniques}
+Non-adaptive interpolation techniques only scale images horizontally, vertically, or both, by a certain scaling factor, the amount in which the image will be scaled to. They do not assume anything about the underlying image data, except that it is band-limited \cite{depixelizingpixelart}. This makes them computationally cheap \cite{interpolationtechniquessurvey}, but also suffer from artifacts such as sharp edge blurring and ringing artifacts \cite{depixelizingpixelart}. Nevertheless, these non-adaptive image interpolation techniques have been widely used in the industry and is standard across different raster image editing programs, such as Adobe Photoshop and GIMP \cite{photoshopinterpolationmethods}\cite{gimpinterpolationmethods}. The common non-adaptive interpolation techniques used are:
 
 \begin{itemize}
-\item Iterative Approximation of Zylons
-\item Statistical Weighting of Zylons
-\item Graph-Theoretic Approaches to Zylon Manipulation
+	\item Nearest Neighbour
+	\item (Bi)linear Interpolation
+	\item (Bi)cubic Interpolation
 \end{itemize}
 
+\subsubsection{Nearest Neighbour}
+Nearest Neighbour is the simplest interpolation method to understand. At the high-level, nearest neighbour simply enlarges the size of each individual pixel by a certain factor.
+
+At the lowest level, though this \textbf{may} differ implementation-wise, the algorithm will refer back to the original unscaled version to obtain the appropriate colours for each empty pixels in between the shifted pixels in the scaled image. Each empty pixel in the scaled version will map itself to a corresponding pixel in the original image. This is done by obtaining the square coordinates of the empty pixel and dividing the coordinates by the scaling factor. Note that the coordinate system in images starts its origin from the top left, instead of the bottom left. We may acquire a decimal as a result of dividing the coordinates, of which we will floor the values. The resulting coordinates can be mapped to a pixel in the original image. We will then use the mapped pixel's colour as the colour of the empty pixel we are calculating the colour for. The interpolated pixels can be seen as a set $I$, as quantified by the equation below.
+
+$$ I = \{i | i = C((\lfloor\frac{e_{x}}{s}\rfloor, \lfloor\frac{e_{y}}{s}\rfloor))\}, s > 1, e \in E\ $$
+
+$s$ is the scaling factor, $C$ is the function that gets the colour of a pixel based on its coordinate, and $E$ is the set of empty pixels that are in between the shifted pixels when naively upscaled. The resulting image will look blocky since the pixels are just enlarged. However, this will be ideal for pixel art \cite{resizingimages}.
+
+\subsubsection{(Bi)linear and (Bi)cubic interpolation}\label{sec:bilinear-bicubic-interpolation}
+Both of (bi)linear and (bi)cubic interpolations schemes are fairly similar to one another. The colours between the empty pixels between them are based on the values of the colours of the shifted pixels.
+
+Each empty pixel acquire most of their colour from the nearest shifted pixel and least from the farthest shifted pixel.
+
+% Explain later
+
+\subsection{Adaptive Techniques}
+% Explain later
+
+\subsection{Super Resolution Methods}
+Super resolution methods is the process of generating high-resolution images from low-resolution image input. This allows 
+% Explain later 
+
+\section{Vectorization of Images}
+Various methods have been proposed throughout the years in the pursuit of supporting larger resolution without any reduction in image quality through vectorization. Typically, vectorization methods target specific inputs, such as natural images or artist drawn images, as certain methods are unsuitable for different inputs. Hoshyari, S., et. al. states that vectorizations targeted at natural images frequently produce inconsistent results when applied to artist-drawn imagery such as logos, and simple graphic illustrations \cite{hoshyari2018perceptiondriven}. No matter what the methods used are, they produce vector graphics that will vary in quality, photorealism, and artistic look (view \cite{hierarchicaldiffusioncurves}, \cite{barendrecht2018locally}, and \cite{anovelmethodforvectorization} for a comparison of the results of various vectorization methods).
+
+Despite vector graphics providing a compact and alternative form of representing \cite{realtimevectorizationgpu}, it is important to remember that due to the inherent characteristics of vector primitives where certain fine details of raster images cannot be accurately represented in vectorized form, vector images will only be giving approximations of the details of images \cite{optimizedgradientmeshes}. Nevertheless, finding the perfect balance for image level of detail and image vectorization is an endeavour that is left as an exercise for users \cite{anovelmethodforvectorization}.
+
+Image vectorization can be dated as far back as the early 1990s, though experiments have started since 1982 at the earliest \cite{somexperimentsvectorization}. Commercial packages, both proprietary and open source, have image vectorization tools whose quality vary. The packages include Adobe Illustrator (Live Trace), Corel CorelDRAW (PowerTRACE), and Inkscape (based on Potrace \cite{inkscapepotrace}) \cite{hoshyari2018perceptiondriven}. Their wide adoption, though impressive, do not always immediately translate to quality vectorizations. The current available methods still have their own shortfalls and are still in active development. As a result, manual vectorization are still being performed in many industries that heavily require vectorizations \cite{vectorizationoflinedrawingspolyvector}.
+
+\subsection{Natural Images Vectorization}
+Many raster images widely used today are photographs. They contain fine details and lush colour depth that are prominent in the real world. These photographs are also called natural images in digital image processing. Increasing their resolutions would entail using image upscaling techniques (see \ref{sec:image-upscaling}), especially the standard classical approaches. This would give the chance of producing low quality images \cite{depixelizingpixelart} when super resolution methods are not utilized. Vectorization of these natural images are then an alternative to producing high quality higher resolution images.
+
+Vectorization methods targeted at natural images consist the large body of work that deals with automatic natural imagery vectorization. The core method of these algorithms involves the reliance on edge detection and/or region segmentations to cluster large quantities of pixels together into larger regions \cite{depixelizingpixelart}. These regions are then filled with either a solid color \cite{anovelmethodforvectorization}, or gradients via gradient meshes \cite{optimizedgradientmeshes}\cite{barendrecht2018locally} or diffusion curves\cite{hierarchicaldiffusioncurves}.
 
 
+
+% Talk about gradient meshes and diffusion curves.
+
+\subsection{Vectorization of Semi-Structured Images and Pixel Art}

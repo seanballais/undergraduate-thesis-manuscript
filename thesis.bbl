@@ -2,9 +2,20 @@
 
 \bibitem{gimpinterpolationmethods}
 6.22. scale image.
+\newblock \url{https://docs.gimp.org/en/gimp-image-scale.html}.
 
 \bibitem{photoshopinterpolationmethods}
 Photoshop image size and resolution.
+\newblock
+  \url{https://helpx.adobe.com/photoshop/using/image-size-resolution.html{\\#}resampling}.
+
+\bibitem{inkscapepotrace}
+Potrace - inkscape wiki.
+\newblock \url{http://wiki.inkscape.org/wiki/index.php/Potrace}.
+
+\bibitem{titanxppage}
+Titan xp graphics card with pascal architecture | nvidia geforce.
+\newblock \url{https://www.nvidia.com/en-us/titan/titan-xp/}.
 
 \bibitem{rastervsvector}
 Raster vs vector.
@@ -23,9 +34,27 @@ P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
   colour transitions.
 \newblock {\em The Visual Computer}, pages 949--960, 2018.
 
+\bibitem{vectorizationoflinedrawingspolyvector}
+M.~Bessmeltsev and J.~Solomon.
+\newblock Vectorization of line drawings via polyvector fields.
+\newblock {\em CoRR}, abs/1801.01922, 2018.
+
+\bibitem{anovelmethodforvectorization}
+T.~Birdal and E.~Bala.
+\newblock A novel method for vectorization.
+\newblock {\em CoRR}, abs/1403.0728, 2014.
+
 \bibitem{resizingimages}
 Computerphile.
-\newblock Resizing images, 2016.
+\newblock Resizing images.
+\newblock \url{https://www.youtube.com/watch?v=AqscP7rc8{\\_}M}, 2016.
+
+\bibitem{useofcnnimageclassification}
+Juan~Carlos Gonzales.
+\newblock Use of convolutional neural networks for image classification.
+\newblock
+  \url{https://www.apsl.net/blog/2017/11/20/use-convolutional-neural-network-image-classification/},
+  2017.
 
 \bibitem{hoshyari2018perceptiondriven}
 S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
@@ -33,16 +62,35 @@ S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
 \newblock Perception-driven semi-structured boundary vectorization.
 \newblock {\em ACM Transactions on Graphics}, 37(4):1--14, 2018.
 
+\bibitem{somexperimentsvectorization}
+J.~Jimenez and J.~Navalon.
+\newblock Some experiments in image vectorization.
+\newblock {\em IBM Journal of Research \& Development, volume = 26 no = 6 month
+  =}.
+
 \bibitem{depixelizingpixelart}
 J.~Kopf and D.~Lischinski.
 \newblock Depixelizing pixel art.
 \newblock {\em ACM Transactions on Graphics (Proceedings of SIGGRAPH 2011)},
-  30(4):99, 2011.
+  30(4):99:1 -- 99:8, 2011.
+
+\bibitem{sisrgan}
+C.~Ledig, L.~Theis, F.~Huszar, J.~Caballero, A.~Aitken, A.~Tejani, J.~Totz,
+  Z.~Wang, and W.~Shi.
+\newblock Photo-realistic single image super-resolution using a generative
+  adversarial network.
+\newblock {\em CoRR}, abs/1609.04802, 2016.
 
 \bibitem{interpolationtechniquessurvey}
 P.~Parsania and P.~Virparia.
 \newblock {\em International Journal of Innovative Research in Computer and
   Communication Engineering}, (12):7409.
+
+\bibitem{simplifyingsketchesviacnn}
+E.~Simo-Serra, S.~Iizuka, K.~Sasaki, and H.~Ishikawa.
+\newblock Learning to simplify: Fully convolutional networks for rough sketch
+  cleanup.
+\newblock {\em ACM Trans. Graph.}, 35(4):121:1--121:11, July 2016.
 
 \bibitem{optimizedgradientmeshes}
 J.~Sun, L.~Liang, F.~Wen, and H.~Shum.
@@ -54,11 +102,37 @@ Techquickie.
 \newblock How do vector graphics work?
 \newblock \url{https://www.youtube.com/watch?v=W2xknX3k6FY}, 2016.
 
+\bibitem{progressivesisr}
+Y.~Wang, F.~Perazzi, B.~McWilliams, A.~Sorkine-Hornung, O.~Sorkine-Hornung, and
+  C.~Schroers.
+\newblock A fully progressive approach to single-image super-resolution.
+\newblock June 2018.
+
+\bibitem{hierarchicaldiffusioncurves}
+G.~Xie, X.~Sun, X.~Tong, and D.~Nowrouzezahrai.
+\newblock Hierarchical diffusion curves for accurate automatic image
+  vectorization.
+\newblock {\em ACM Trans. Graph.}, 33(6):230:1--230:11, 2014.
+
 \bibitem{realtimevectorizationgpu}
 X.~Xiong, J.~Feng, and B.~Zhou.
 \newblock Real-time image vectorization on gpu.
 \newblock {\em Proceedings of the 11th Joint Conference on Computer Vision,
   Imaging and Computer Graphics Theory and Applications (VISIGRAPP 2016)},
   1:143--150, 2016.
+
+\bibitem{aigigapixelstory}
+A.~Yang.
+\newblock A.i. gigapixel – an inside story – topaz labs.
+\newblock \url{https://topazlabs.com/a-i-gigapixel-story/}, 2018.
+
+\bibitem{sisrbenchmark}
+C.~Yang, C.~Ma, and M.~Yang.
+\newblock Single-image super-resolution: A benchmark.
+\newblock pages 372--386. Springer International Publishing, 2014.
+
+\bibitem{effectiveclipartimagevectorization}
+M.~Yang, H.~Chao, C.~Zhang, J.~Guo, L.~Yuan, and J.~Sun.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphic}.
 
 \end{thebibliography}
