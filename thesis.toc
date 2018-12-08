@@ -15,12 +15,12 @@
 \contentsline {subsection}{Super Resolution Methods}{12}
 \contentsline {section}{\numberline {2.2}Vectorization of Images}{12}
 \contentsline {subsection}{Natural Images Vectorization}{13}
-\contentsline {subsection}{Vectorization of Semi-Structured Images and Pixel Art}{14}
-\contentsline {chapter}{\numberline {3}Research Question or Problem Statement}{15}
-\contentsline {chapter}{\numberline {4}Objectives}{17}
-\contentsline {chapter}{\numberline {5}Describing How You Solved the Problem or Answered the Question}{18}
-\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{19}
-\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{20}
-\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{21}
-\contentsline {chapter}{\numberline {A}What should be in the Appendix}{22}
-\contentsline {chapter}{Bibliography}{23}
+\contentsline {subsection}{Vectorization of Semi-Structured Images and Artworks}{14}
+\contentsline {chapter}{\numberline {3}Research Question or Problem Statement}{17}
+\contentsline {chapter}{\numberline {4}Objectives}{19}
+\contentsline {chapter}{\numberline {5}Describing How You Solved the Problem or Answered the Question}{20}
+\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{21}
+\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{22}
+\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{23}
+\contentsline {chapter}{\numberline {A}What should be in the Appendix}{24}
+\contentsline {chapter}{Bibliography}{25}
