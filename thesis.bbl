@@ -28,6 +28,11 @@ Raster vs. vector graphics: What's the difference?
   \url{https://pixellogo.com/blogs/pixellogo-blog/raster-vs-vector-graphics},
   n.d.
 
+\bibitem{sketchingclothoidsplines}
+Ilya Baran, Jaakko Lehtinen, and Jovan Popovic.
+\newblock Sketching clothoid splines using shortest paths.
+\newblock {\em Comput. Graph. Forum}, 29:655--664, 2010.
+
 \bibitem{barendrecht2018locally}
 P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
 \newblock Locally refinable gradient meshes supporting branching and sharp

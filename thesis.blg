@@ -59,45 +59,45 @@ Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 25 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            626 strings with 8221 characters,
-and the built_in function-call counts, 7436 in all, are:
-= -- 704
-> -- 379
+            633 strings with 8373 characters,
+and the built_in function-call counts, 7785 in all, are:
+= -- 738
+> -- 397
 < -- 2
-+ -- 155
-- -- 128
-* -- 499
-:= -- 1209
-add.period$ -- 69
-call.type$ -- 25
-change.case$ -- 138
++ -- 162
+- -- 134
+* -- 526
+:= -- 1269
+add.period$ -- 72
+call.type$ -- 26
+change.case$ -- 144
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 254
-empty$ -- 604
-format.name$ -- 128
-if$ -- 1556
+cite$ -- 39
+duplicate$ -- 265
+empty$ -- 630
+format.name$ -- 134
+if$ -- 1628
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 15
-newline$ -- 121
-num.names$ -- 38
-pop$ -- 186
+int.to.str$ -- 26
+missing$ -- 16
+newline$ -- 126
+num.names$ -- 40
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 119
 quote$ -- 0
-skip$ -- 205
+skip$ -- 212
 stack$ -- 0
-substring$ -- 361
-swap$ -- 43
+substring$ -- 387
+swap$ -- 44
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 104
 warning$ -- 13
-while$ -- 55
-width$ -- 27
-write$ -- 242
+while$ -- 58
+width$ -- 28
+write$ -- 253
 (There were 6 error messages)
