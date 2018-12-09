@@ -133,6 +133,9 @@ C.~Yang, C.~Ma, and M.~Yang.
 
 \bibitem{effectiveclipartimagevectorization}
 M.~Yang, H.~Chao, C.~Zhang, J.~Guo, L.~Yuan, and J.~Sun.
-\newblock {\em IEEE Transactions on Visualization and Computer Graphic}.
+\newblock Effective clipart image vectorization through direct optimization of
+  bezigons.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphic}, Feb.
+  2016.
 
 \end{thebibliography}

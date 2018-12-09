@@ -31,6 +31,11 @@ I was expecting a `,' or a `}'---line 125 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 164 of file biblio.bib
+ :   
+ :   volume = 22,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
 --line 186 of file biblio.bib
 I was expecting a `,' or a `}'---line 221 of file biblio.bib
@@ -54,38 +59,36 @@ Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-Warning--empty title in effectiveclipartimagevectorization
-Warning--empty year in effectiveclipartimagevectorization
 You've used 25 entries,
             2118 wiz_defined-function locations,
-            624 strings with 8140 characters,
-and the built_in function-call counts, 7430 in all, are:
-= -- 701
+            626 strings with 8221 characters,
+and the built_in function-call counts, 7436 in all, are:
+= -- 704
 > -- 379
 < -- 2
 + -- 155
 - -- 128
-* -- 502
-:= -- 1206
-add.period$ -- 68
+* -- 499
+:= -- 1209
+add.period$ -- 69
 call.type$ -- 25
-change.case$ -- 137
+change.case$ -- 138
 chr.to.int$ -- 0
-cite$ -- 40
+cite$ -- 38
 duplicate$ -- 254
 empty$ -- 604
 format.name$ -- 128
-if$ -- 1553
+if$ -- 1556
 int.to.chr$ -- 0
 int.to.str$ -- 25
 missing$ -- 15
-newline$ -- 120
+newline$ -- 121
 num.names$ -- 38
-pop$ -- 190
+pop$ -- 186
 preamble$ -- 1
 purify$ -- 114
 quote$ -- 0
-skip$ -- 203
+skip$ -- 205
 stack$ -- 0
 substring$ -- 361
 swap$ -- 43
@@ -93,8 +96,8 @@ text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 100
-warning$ -- 15
+warning$ -- 13
 while$ -- 55
 width$ -- 27
-write$ -- 239
-(There were 5 error messages)
+write$ -- 242
+(There were 6 error messages)
