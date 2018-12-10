@@ -23,26 +23,26 @@ I was expecting a `,' or a `}'---line 25 of file biblio.bib
  :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 118 of file biblio.bib
+"{" immediately follows a field part---line 125 of file biblio.bib
  :   howpublished = \url
  :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 125 of file biblio.bib
+I was expecting a `,' or a `}'---line 132 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 164 of file biblio.bib
+I was expecting a `,' or a `}'---line 171 of file biblio.bib
  :   
  :   volume = 22,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
---line 186 of file biblio.bib
-I was expecting a `,' or a `}'---line 221 of file biblio.bib
+--line 193 of file biblio.bib
+I was expecting a `,' or a `}'---line 228 of file biblio.bib
  :   month = "
  :            November",
 I'm skipping whatever remains of this entry
-Repeated entry---line 242 of file biblio.bib
+Repeated entry---line 249 of file biblio.bib
  : @inproceedings{sisrbenchmark
  :                             ,
 I'm skipping whatever remains of this entry
@@ -52,6 +52,7 @@ Warning--to sort, need author or key in photoshopinterpolationmethods
 Warning--to sort, need author or key in gimpinterpolationmethods
 Warning--to sort, need author or key in titanxppage
 Warning--to sort, need author or key in inkscapepotrace
+Warning--to sort, need author or key in gpuacceleratedcomputing
 Warning--empty year in somexperimentsvectorization
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
@@ -59,45 +60,45 @@ Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 26 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            633 strings with 8373 characters,
-and the built_in function-call counts, 7785 in all, are:
-= -- 738
-> -- 397
+            643 strings with 8708 characters,
+and the built_in function-call counts, 8279 in all, are:
+= -- 788
+> -- 411
 < -- 2
-+ -- 162
-- -- 134
-* -- 526
-:= -- 1269
-add.period$ -- 72
-call.type$ -- 26
-change.case$ -- 144
++ -- 168
+- -- 138
+* -- 559
+:= -- 1341
+add.period$ -- 77
+call.type$ -- 28
+change.case$ -- 152
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 265
-empty$ -- 630
-format.name$ -- 134
-if$ -- 1628
+cite$ -- 42
+duplicate$ -- 283
+empty$ -- 680
+format.name$ -- 138
+if$ -- 1736
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 16
-newline$ -- 126
-num.names$ -- 40
-pop$ -- 190
+int.to.str$ -- 28
+missing$ -- 17
+newline$ -- 135
+num.names$ -- 42
+pop$ -- 201
 preamble$ -- 1
-purify$ -- 119
+purify$ -- 125
 quote$ -- 0
-skip$ -- 212
+skip$ -- 228
 stack$ -- 0
-substring$ -- 387
-swap$ -- 44
+substring$ -- 422
+swap$ -- 46
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
-warning$ -- 13
-while$ -- 58
-width$ -- 28
-write$ -- 253
+type$ -- 112
+warning$ -- 14
+while$ -- 62
+width$ -- 30
+write$ -- 271
 (There were 6 error messages)

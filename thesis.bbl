@@ -17,6 +17,11 @@ Potrace - inkscape wiki.
 Titan xp graphics card with pascal architecture | nvidia geforce.
 \newblock \url{https://www.nvidia.com/en-us/titan/titan-xp/}.
 
+\bibitem{gpuacceleratedcomputing}
+What is gpu-accelerated computing? - definition from techopedia.
+\newblock
+  \url{https://www.techopedia.com/definition/32876/gpu-accelerated-computing}.
+
 \bibitem{rastervsvector}
 Raster vs vector.
 \newblock
@@ -53,6 +58,12 @@ T.~Birdal and E.~Bala.
 Computerphile.
 \newblock Resizing images.
 \newblock \url{https://www.youtube.com/watch?v=AqscP7rc8{\\_}M}, 2016.
+
+\bibitem{efficientgraphbasedimagesegmentation}
+P.~Felzenszwalb and Daniel~P. Huttenlocher.
+\newblock Efficient graph-based image segmentation.
+\newblock {\em International Journal of Computer Vision}, 59(2):167--181,
+  September 2004.
 
 \bibitem{useofcnnimageclassification}
 Juan~Carlos Gonzales.
