@@ -1,7 +1,9 @@
-\chapter{Describing How You Solved the Problem or Answered the Question}
+\chapter{Proposed Methodology}
 
-This part of the thesis is much more free-form. It may have one or several
-sections and subsections. But it all has only one purpose: to convince the
-examiners that you answered the question or solved the problem that you
-set for yourself in Chapter~\ref{sec:ResearchQ}. So show what you did that is relevant to answering the question or solving the problem: if there were blind alleys and dead ends, do not include these, unless specifically relevant to the
-demonstration that you answered the thesis question.
+The proposed methodology will be based on the frameworks proposed by Hoshyari, S., et. al., and Yang, M., et. al. Additionally, human perception will also be taken account. Thus, the Gestalt psychology principles of accuracy, simplicity, continuity, and closure, as taken from Hoshyari, S., et. al., will be taken into account as well.
+
+The input image will first be segmented into separate regions. At this point, the appropriate segmentation algorithm will be determined through experimentation. Notably, the separation of the regions will open up the possibility of using parallelism to speed up the execution of the algorithm.
+
+Once segmentation has been complete, each region will be applied corner detection. Corner detection will be performed using neural networks via supervised learning. The training data set will consist of anti-aliased input since the vectorization target will be anti-aliased input. A pre-vectorization of the curves, by connecting straight Bezier curves will connect the detected corners to one another.
+
+The final step will involve the optimization of the initial vectorization done during the pre-vectorization. The optimization framework will be based on the work by Yang, M.. The framework will be modified to include additional priors and weights To take into account Gestalt psychology.

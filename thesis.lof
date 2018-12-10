@@ -3,6 +3,8 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Different interpolation algorithms will produce different results. As seen in the image, the quality will also differ, from an image looking blocky to an image looking blurry. Cat meme image obtained from \url {https://www.hercampus.com/school/uwindsor/school-thoughts-told-grumpy-cat-memes}.}}{3}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Zooming in closely at the same image, but one being in raster format (top right) and the other in vector (though hand-drawn; bottom left), quickly reveals the quality differences of both image formats. Raster images will show you individual pixels when close enough, but vectors will remain smooth.}}{6}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces This a result of an raster image scaled to super resolution using A.I. Gigapixel. The left image is the original raster image. The top right is the normally scaled output. The bottom right is the output produced by A.I. Gigapixel. Image obtained from \url {https://topazlabs.com/ai-gigapixel/}.}}{13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The left side shows a result of using gradient meshes when vectorizing natural image. The right side uses diffusion curves (and fewer curves) to vectorize an image.}}{16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

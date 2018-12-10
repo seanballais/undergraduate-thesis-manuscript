@@ -13,14 +13,14 @@
 \contentsline {subsubsection}{(Bi)linear and (Bi)cubic interpolation}{12}
 \contentsline {subsection}{Adaptive Techniques}{12}
 \contentsline {subsection}{Super Resolution Methods}{13}
-\contentsline {section}{\numberline {2.2}Vectorization of Images}{13}
+\contentsline {section}{\numberline {2.2}Vectorization of Images}{14}
 \contentsline {subsection}{Natural Images Vectorization}{15}
-\contentsline {subsection}{Vectorization of Semi-Structured Images and Artworks}{18}
-\contentsline {chapter}{\numberline {3}Research Question or Problem Statement}{26}
-\contentsline {chapter}{\numberline {4}Objectives}{28}
-\contentsline {chapter}{\numberline {5}Describing How You Solved the Problem or Answered the Question}{29}
-\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{30}
-\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{31}
-\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{32}
-\contentsline {chapter}{\numberline {A}What should be in the Appendix}{33}
-\contentsline {chapter}{Bibliography}{34}
+\contentsline {subsection}{Vectorization of Semi-Structured Images and Artworks}{19}
+\contentsline {chapter}{\numberline {3}Statement of the Problem}{27}
+\contentsline {chapter}{\numberline {4}Objectives}{29}
+\contentsline {chapter}{\numberline {5}Proposed Methodology}{30}
+\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{32}
+\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{33}
+\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{34}
+\contentsline {chapter}{\numberline {A}What should be in the Appendix}{35}
+\contentsline {chapter}{Bibliography}{36}

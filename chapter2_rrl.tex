@@ -37,6 +37,13 @@ Image upsampling can also be performed with adaptive techniques. Adaptive techni
 \subsection{Super Resolution Methods}
 Super resolution methods are processes of generating high-resolution images from low-resolution image input. Each method has different assumptions of the raster input and evaluation criteria. There are super resolution methods that target specific classes of input such as faces, scenes, and graphics artworks. Others are targeted towards generic input, in which the priors are based on image primitives such as edges and segments \cite{sisrbenchmark}.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/chap02-rrl/aigigapixel-result.jpg}
+	\caption{This a result of an raster image scaled to super resolution using A.I. Gigapixel. The left image is the original raster image. The top right is the normally scaled output. The bottom right is the output produced by A.I. Gigapixel. Image obtained from \protect\url{https://topazlabs.com/ai-gigapixel/}.}
+	\label{fig:aigigapixel-result}
+\end{figure}
+
 Recent approaches to super resolution involves the use of artificial intelligence. One such approach is a commercial desktop application called A.I. Gigapixel by Topaz Labs. Images can be scaled by the A.I. Gigapixel with great accuracy. It uses neural networks and the computational power of the GPU to produce super-resolution results. It can also run on a laptop. However, it takes 20 minutes to run on a laptop, and a few minutes on a high-end GPU \cite{aigigapixelstory}. Another approach based on artificial intelligence and neural networks has also been proposed by Wang, Y., Perazzi, F., and McWilliams, B. In their work, they use a progressive approach to scale images to super resolution with the use of generative adversarial networks.
 
 \section{Vectorization of Images}
@@ -52,6 +59,13 @@ Image vectorization can be dated as far back as the early 1990s, though experime
 Many raster images widely used today are photographs. They contain fine details and lush colour depth that are prominent in the real world. These photographs are also called natural images in digital image processing. Increasing their resolutions would entail using image upscaling techniques (see \ref{sec:image-upscaling}), especially the standard classical approaches. This would give the chance of producing low quality images \cite{depixelizingpixelart} when super resolution methods are not utilized. Vectorization of these natural images are then an alternative to producing high quality higher resolution images.
 
 Vectorization methods targeted at natural images consist the large body of work that deals with automatic vectorization. The core method of these algorithms involves the reliance on edge detection and/or region segmentations to cluster large quantities of pixels together into larger regions \cite{depixelizingpixelart}. These regions are then filled with either a solid color \cite{anovelmethodforvectorization}, or gradients via gradient meshes \cite{optimizedgradientmeshes}\cite{barendrecht2018locally} or diffusion curves\cite{hierarchicaldiffusioncurves}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{images/chap02-rrl/diffusion-curves.png}
+	\caption{The left side shows a result of using gradient meshes when vectorizing natural image. The right side uses diffusion curves (and fewer curves) to vectorize an image.}
+	\label{fig:diffusion-curves}
+\end{figure}
 
 One relatively recent work for vectorizing natural images uses hierarchical diffusion curves. This work was proposed by Xie, G., Sun, X., Tong, X., and Nowrouzezahrai, D.. Diffusion curves are defined using "curve primitives with colors set on both sides of it". In simplified wording, a diffusion curve is a curve with colours diffusing away perpendicularly to the curve. Their work revolves around tracing the curves in a raster image in such a way that produces an accurate final vector output. The traced curves are only sparse. They are not restricted to natural images only as their method can be used in cartoon images as well. Their results are comparable to that of those that use gradient meshes. Observably, the results are impressive and matches the raster input. Their work, from their experiments, can take from a few seconds to 11 minutes, at the most. Note that they experimented on a PC with an 3.5 GHz Intel Core i7-3770K and an Nvidia Quadro 6000.
 

@@ -1,29 +1,6 @@
-\chapter{Research Question or Problem Statement} 
+\chapter{Statement of the Problem} 
 \label{sec:ResearchQ}
 
-Engineering theses tend to refer to a ``problem" to be solved where other
-disciplines talk in terms of a ``question" to be answered. In either case,
-this section has three main parts:
+There have been numerous works that tackles image vectorization for various inputs. Most of these works have been targeted at natural imagery where many utilize image segmentation. These works do not necessarily be appropriate for semi-structured imagery. As such, many works have also sprung up to tackle these types of images. However, many of the works such as those by Hoshyari, S., et. al \cite{hoshyari2018perceptiondriven}, and Kopf, J., and Lischinski, D. \cite{depixelizingpixelart}, only handle clean, quantized non-anti-aliased images. As such, there has been no work that has been targeted at dealing with anti-aliased semi-structured input with speeds nearing those tested by Hoshyari, S., et. al.. Applying the proposed method by Hoshyari, S., et. al., as the authors have stated, have an impact on the resulting vectorization. Additionally, their work becomes computationally expensive on larger inputs. The work by Xie, G., Sun, X., Tong, X., and Nowrouzezahrai, D., may be applied to semi-structured images \cite{hierarchicaldiffusioncurves}. However, their method is computationally expensive and, as extrapolated from their experimental setup, require expensive hardware (the Nvidia Quadro 6000 was the most expensive of the components in their setup).
 
-\label{sec:Steps}
-\begin{enumerate}
-\item a concise statement of the question that your thesis tackles
-\item justification, by direct reference to Chapter~\ref{sec:intro}, that your question is previously unanswered
-\item discussion of why it is worthwhile to answer this question.
-\end{enumerate}
-
-Item 2 above is where you analyze the information which you presented in
-Chapter~\ref{sec:ResearchQ}. For example, maybe your problem is to ``develop a Zylon algorithm capable of handling very large scale problems in reasonable
-time" (you would further describe what you mean by ``large scale" and
-``reasonable time" in the problem statement). Now in your analysis of the
-state of the art you would show how each class of current approaches fails
-(i.e. can handle only small problems, or takes too much time). In the last
-part of this section you would explain why having a large-scale fast Zylon
-algorithm is useful; e.g., by describing applications where it can be
-used.
-
-Since this is one of the sections that the readers are definitely looking
-for, highlight it by using the word ``problem" or ``question" in the title:
-e.g. ``Research Question" or ``Problem Statement", or maybe something more
-specific such as ``The Large-Scale Zylon Algorithm Problem."
-
+There are numerous raster semi-structured images that are anti-aliased, especially those that have a larger resolution. These images are used in posters, logos, and graphic designs. Vectorization of those images will improve their quality and allow them to support higher resolutions without any degradation of the quality.
