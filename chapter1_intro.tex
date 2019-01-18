@@ -43,4 +43,73 @@ Natural images are not the only raster images that are being vectorized. Images 
 
 An alternative method we can perform for image vectorization is to use machine learning via convolutional neural networks, a type of neural network that is well suited for image classification for their ability to learn various image features \cite{useofcnnimageclassification}, to create vectorizations of semi-structured images by having the computer learn to produce Bezier curves of image region boundaries that align well with the expected vectorization. This is the method that this paper is proposing. A similar work, in that convolutional neural networks were for vectorization, to this is that of the paper of Simo-Serra, E., Iizuka, S., Sasaki, K., and Ishikawa, H. where they convert and simplify paper-and-pencil sketch drawings to vectorized images \cite{simplifyingsketchesviacnn}.
 
-% Note: Maybe add here why raster images are simple in the context of image processing once we learn more about image processing.
+\section{B-Splines}
+Many image vectorization techniques, such as those of Hoshyari, S., et. al., and Yang, M., et. al., involves the use of fitting curves to pixels that form a border for a region in an image. The geometric primitive used in such approaches is the b\'ezier curve \cite{hoshyari2018perceptiondriven}\cite{effectiveclipartimagevectorization}\cite{depixelizingpixelart}. A collection of b\'ezier curves, called a b-spline, is also used for image vectorization. B-Spline is short for \textit{basis spline}. B-splines allow for curves with higher complexity, such as those with curves resembling squiggly lines.
+
+A $k$-degree B-spline curve is defined to be
+
+$$ C(u) = \sum_{j = 0}^{n}c_{j}N^{k}_{j}(u) $$
+
+where $c_{j}$ are the control points, $u$ is the non-decreasing knot vector $u = (u_{0}, \ldots, u_{n})$ with $u_{0}$ and $u_{n}$ having a multiplicity of $k + 1$, and a B-spline functions $N^{k}_{j}(u)$. The B-spline functions are referred to as the basis functions, from which the name of b-splines was obtained from. The basis functions are defined using the Cox-de Boor recursion formula \cite{bsplines} which is defined to be:
+
+$$ N^{k}_{j} = \begin{cases} 1&\text{, if } u_{j} \le u \le u_{j + 1} \\ 0&\text{otherwise} \end{cases} $$
+
+$$ N^{k}_{j} = \frac{u - u_{j}}{u_{j + k}}N^{k}_{j - 1}(u) + \frac{u_{j + k + 1} - u}{u_{j + k + 1} - u_{j + 1}}N^{k - 1}_{j + 1}(u) $$
+
+Knots in B-splines determine the basis functions, which affects the shape of the B-spline curve \cite{bsplines}. The number of knots in $u$, disregarding the multiplicity of $u_{0}$ and $u_{n}$, is defined to be
+
+$$ \lvert u \rvert = k + n + 1 $$
+
+\subsection{B-Spline Approximation}
+
+Suppose that we are given a point sequence $p = (p_{0}, \ldots, p_{m})$ with each point being $p_{i} = (x_{i}, y_{i})$. According to the work by Laube, P., et. al. \cite{deeplearningparametrization}, we can compute the control points $c_{j}$ of the B-spline curve $C$ that will approximate $p_{i}$ by using the least square problem defined as
+
+$$ \sum_{i = 0}^{m}\lvert p_{i} - C(t_{i}) \rvert^{2} \rightarrow \text{min} $$
+
+with precomputed parameters $t_{i}, i = 0, \ldots, m$ combined in the parameter vector vector $t = (t_{0}, \ldots, t_{m})$ and end points $C(t_{0}) = c_{0} = p_{0}$ and $C(t_{m}) = c_{n} = p_{m}$. This will give us a normal equation
+
+\begin{equation}
+(N^{\textit{T}}N)c = q \label{eq:cpointsequation}
+\end{equation}
+
+where N is an $(m - 1) \times (n - 1)$ matrix
+
+$$ N = 
+\begin{pmatrix}
+ N^{k}_{1}(t_{1})     & \ldots & N^{k}_{n - 1}(t_{1}) \\
+ \vdots               & \ddots & \vdots \\
+ N^{k}_{1}(t_{m - 1}) & \ldots & N^{k}_{n - 1}(t_{m - 1})
+\end{pmatrix}
+$$
+
+and c and q are vectors defined to be
+
+$$ c =
+\begin{pmatrix}
+ c_{1}  \\
+ \vdots \\
+ c_{n - 1}
+\end{pmatrix}, \:
+q =
+\begin{pmatrix}
+\sum_{i = 1}^{m - 1} N^{k}_{1}(t_{i})q_{i} \\
+\vdots \\
+\sum_{i = 1}^{m - 1} N^{k}_{n - 1}(t_{i})q_{i}
+\end{pmatrix}
+$$
+
+and
+
+$$ q_{i} = p_{i} - N^{k}_{0}(t_{i})p_{0} - N^{k}_{n}(t_{i})p_{m} $$
+
+for $i = 1, \ldots, m - 1$. If there are no constraints for end point interpolation, then \ref{eq:cpointsequation} reduces to
+
+\begin{equation}
+(N^{\textit{T}}N)c = N^{\textit{T}}p
+\end{equation}
+
+The control points $c_{j}$ can be computed using \ref{eq:cpointsequation} if
+
+\begin{equation}
+\sum_{l = 1}^{m - 1} N^{k}_{i}(t_{i})N^{k}_{j}(t_{i}) \neq 0
+\end{equation}

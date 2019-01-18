@@ -23,82 +23,91 @@ I was expecting a `,' or a `}'---line 25 of file biblio.bib
  :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 125 of file biblio.bib
+"{" immediately follows a field part---line 132 of file biblio.bib
  :   howpublished = \url
  :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 132 of file biblio.bib
+I was expecting a `,' or a `}'---line 139 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 171 of file biblio.bib
+I was expecting a `,' or a `}'---line 178 of file biblio.bib
  :   
  :   volume = 22,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
---line 193 of file biblio.bib
-I was expecting a `,' or a `}'---line 228 of file biblio.bib
+--line 200 of file biblio.bib
+I was expecting a `,' or a `}'---line 235 of file biblio.bib
  :   month = "
  :            November",
 I'm skipping whatever remains of this entry
-Repeated entry---line 249 of file biblio.bib
+Repeated entry---line 256 of file biblio.bib
  : @inproceedings{sisrbenchmark
  :                             ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 293 of file biblio.bib
+ :   
+ :   url       = "http://arxiv.org/abs/1807.08304"
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in rastervsvector
 Warning--to sort, need author or key in rastervsvectorgraphics
 Warning--to sort, need author or key in photoshopinterpolationmethods
 Warning--to sort, need author or key in gimpinterpolationmethods
 Warning--to sort, need author or key in titanxppage
+Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
+while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in inkscapepotrace
 Warning--to sort, need author or key in gpuacceleratedcomputing
 Warning--empty year in somexperimentsvectorization
+Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
+while executing---line 1090 of file plain.bst
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
 Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 28 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            643 strings with 8708 characters,
-and the built_in function-call counts, 8279 in all, are:
-= -- 788
-> -- 411
+            651 strings with 8928 characters,
+and the built_in function-call counts, 8789 in all, are:
+= -- 834
+> -- 442
 < -- 2
-+ -- 168
-- -- 138
-* -- 559
-:= -- 1341
-add.period$ -- 77
-call.type$ -- 28
-change.case$ -- 152
++ -- 180
+- -- 148
+* -- 589
+:= -- 1431
+add.period$ -- 82
+call.type$ -- 30
+change.case$ -- 163
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 283
-empty$ -- 680
-format.name$ -- 138
-if$ -- 1736
+cite$ -- 44
+duplicate$ -- 300
+empty$ -- 719
+format.name$ -- 148
+if$ -- 1840
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 17
-newline$ -- 135
-num.names$ -- 42
-pop$ -- 201
+int.to.str$ -- 30
+missing$ -- 18
+newline$ -- 144
+num.names$ -- 46
+pop$ -- 215
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 134
 quote$ -- 0
-skip$ -- 228
+skip$ -- 245
 stack$ -- 0
-substring$ -- 422
-swap$ -- 46
+substring$ -- 432
+swap$ -- 48
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
+type$ -- 120
 warning$ -- 14
-while$ -- 62
-width$ -- 30
-write$ -- 271
-(There were 6 error messages)
+while$ -- 66
+width$ -- 32
+write$ -- 290
+(There were 9 error messages)

@@ -90,12 +90,21 @@ J.~Kopf and D.~Lischinski.
 \newblock {\em ACM Transactions on Graphics (Proceedings of SIGGRAPH 2011)},
   30(4):99:1 -- 99:8, 2011.
 
+\bibitem{deeplearningparametrization}
+P.~Laube, M.~Franz, and G.~Umlauf.
+\newblock Deep learning parametrization for b-spline curve approximation.
+\newblock {\em CoRR}, abs/1807.08304, July 2018.
+
 \bibitem{sisrgan}
 C.~Ledig, L.~Theis, F.~Huszar, J.~Caballero, A.~Aitken, A.~Tejani, J.~Totz,
   Z.~Wang, and W.~Shi.
 \newblock Photo-realistic single image super-resolution using a generative
   adversarial network.
 \newblock {\em CoRR}, abs/1609.04802, 2016.
+
+\bibitem{bsplines}
+Mathematics of~Computer~Graphics and Virtual Environments.
+\newblock B-splines, 2015.
 
 \bibitem{interpolationtechniquessurvey}
 P.~Parsania and P.~Virparia.

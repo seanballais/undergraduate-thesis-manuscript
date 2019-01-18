@@ -6,21 +6,43 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}The Problems of Raster Graphics}{3}
 \contentsline {section}{\numberline {1.2}Vectorization To The Rescue}{5}
-\contentsline {chapter}{\numberline {2}Review of Related Literature}{9}
-\contentsline {section}{\numberline {2.1}Image Upscaling}{9}
-\contentsline {subsection}{Non-Adaptive Techniques}{10}
-\contentsline {subsubsection}{Nearest Neighbour}{11}
-\contentsline {subsubsection}{(Bi)linear and (Bi)cubic interpolation}{12}
-\contentsline {subsection}{Adaptive Techniques}{12}
-\contentsline {subsection}{Super Resolution Methods}{13}
-\contentsline {section}{\numberline {2.2}Vectorization of Images}{14}
-\contentsline {subsection}{Natural Images Vectorization}{15}
-\contentsline {subsection}{Vectorization of Semi-Structured Images and Artworks}{20}
-\contentsline {chapter}{\numberline {3}Statement of the Problem}{30}
-\contentsline {chapter}{\numberline {4}Objectives}{32}
-\contentsline {chapter}{\numberline {5}Proposed Methodology}{33}
-\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{35}
-\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{36}
-\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{37}
-\contentsline {chapter}{\numberline {A}What should be in the Appendix}{38}
-\contentsline {chapter}{Bibliography}{39}
+\contentsline {section}{\numberline {1.3}B-Splines}{8}
+\contentsline {subsection}{B-Spline Approximation}{10}
+\contentsline {chapter}{\numberline {2}Review of Related Literature}{12}
+\contentsline {section}{\numberline {2.1}Image Upscaling}{12}
+\contentsline {subsection}{Non-Adaptive Techniques}{13}
+\contentsline {subsubsection}{Nearest Neighbour}{14}
+\contentsline {subsubsection}{(Bi)linear and (Bi)cubic interpolation}{15}
+\contentsline {subsection}{Adaptive Techniques}{15}
+\contentsline {subsection}{Super Resolution Methods}{16}
+\contentsline {section}{\numberline {2.2}Vectorization of Images}{17}
+\contentsline {subsection}{Natural Images Vectorization}{18}
+\contentsline {subsection}{Vectorization of Semi-Structured Images and Artworks}{23}
+\contentsline {chapter}{\numberline {3}Statement of the Problem}{33}
+\contentsline {chapter}{\numberline {4}Objectives}{34}
+\contentsline {chapter}{\numberline {5}Proposed Methodology}{35}
+\contentsline {section}{\numberline {5.1}Image Preprocessing}{35}
+\contentsline {subsection}{Corner Detection}{35}
+\contentsline {subsection}{Region Segmentation}{36}
+\contentsline {section}{\numberline {5.2}Curve Approximation}{37}
+\contentsline {subsection}{Point Sequence Generation}{37}
+\contentsline {subsection}{Point Sequence Curve Approximation}{38}
+\contentsline {subsubsection}{Sequence Segmentation}{39}
+\contentsline {subsubsection}{Sub/Supersampling and Normalization}{39}
+\contentsline {subsubsection}{Parametrization of Point Segments}{40}
+\contentsline {paragraph}{The PPN Architecture}{41}
+\contentsline {subparagraph}{PP1. Accumulation and Rescaling}{41}
+\contentsline {subparagraph}{PP2. Approximation}{42}
+\contentsline {subparagraph}{PP3. Euclidean Loss}{42}
+\contentsline {subsubsection}{Parametrization Refinement}{42}
+\contentsline {paragraph}{The KSN Architecture}{43}
+\contentsline {subparagraph}{KS1. Threshold Layer}{44}
+\contentsline {subparagraph}{KS2. Approximation}{44}
+\contentsline {subparagraph}{KS3. Euclidean Loss}{44}
+\contentsline {subsubsection}{Network Training}{44}
+\contentsline {section}{\numberline {5.3}Region Colouring and Merging}{45}
+\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{47}
+\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{48}
+\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{49}
+\contentsline {chapter}{\numberline {A}What should be in the Appendix}{50}
+\contentsline {chapter}{Bibliography}{51}

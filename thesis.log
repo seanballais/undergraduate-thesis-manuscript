@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.26)  10 DEC 2018 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.26)  18 JAN 2019 09:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,23 +331,29 @@ Ignore all them. If uncorrectable errors occur, notify staff.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-\OT1/cmr/bx/n/12 VIA A MA-CHINE LEARNING-BASED AND
+[]\OT1/cmr/m/n/12 This spe-cial prob-lem, en-ti-tled ``\OT1/cmr/bx/n/12 A DEEP 
+LEARNING-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-\OT1/cmr/bx/n/12 CURVE OP-TI-MIZA-TION AP-PROACH\OT1/cmr/m/n/12 '', pre-pared
+\OT1/cmr/bx/n/12 BASED PERCEPTION-DRIVEN VEC-TOR-IZA-TION
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-\OT1/cmr/m/n/12 and sub-mit-ted by [], in
+\OT1/cmr/bx/n/12 AP-PROACH FOR SEMI-STRUCTURED IM-AGERY\OT1/cmr/m/n/12 '',
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-\OT1/cmr/m/n/12 par-tial ful-fill-ment of the re-quire-ments for the de-gree of
+\OT1/cmr/m/n/12 pre-pared and sub-mit-ted by [],
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--123
+\OT1/cmr/m/n/12 in par-tial ful-fill-ment of the re-quire-ments for the de-gree
+ of
  []
 
 
@@ -488,14 +494,15 @@ n input line 31.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6 <./images/chap01-introduction/raster-vs-vector.png>] [7]) [8]
+[5] [6 <./images/chap01-introduction/raster-vs-vector.png>] [7] [8] [9]
+[10]) [11]
 :<-
 :<+ chapter2_rrl.tex
 \openout2 = `chapter2_rrl.aux'.
 
 (./chapter2_rrl.tex
 Chapter 2.
-[9
+[12
 
 
 
@@ -506,16 +513,16 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
- [10] [11] [12]
-<images/chap02-rrl/aigigapixel-result.jpg, id=84, 803.0pt x 542.025pt>
+ [13] [14]
+[15] <images/chap02-rrl/aigigapixel-result.jpg, id=97, 803.0pt x 542.025pt>
 File: images/chap02-rrl/aigigapixel-result.jpg Graphic file (type jpg)
 
 <use images/chap02-rrl/aigigapixel-result.jpg>
 Package pdftex.def Info: images/chap02-rrl/aigigapixel-result.jpg used on input
  line 42.
 (pdftex.def)             Requested size: 401.49902pt x 271.01183pt.
- [13 <./images/chap02-rrl/aigigapixel-result.jpg>] [14] [15]
-<images/chap02-rrl/diffusion-curves.png, id=94, 452.69125pt x 334.24875pt>
+ [16 <./images/chap02-rrl/aigigapixel-result.jpg>] [17] [18]
+<images/chap02-rrl/diffusion-curves.png, id=108, 452.69125pt x 334.24875pt>
 File: images/chap02-rrl/diffusion-curves.png Graphic file (type png)
 
 <use images/chap02-rrl/diffusion-curves.png>
@@ -527,8 +534,8 @@ Overfull \hbox (19.07014pt too wide) in paragraph at lines 65--66
  [][] 
  []
 
-[16 <./images/chap02-rrl/diffusion-curves.png>]
-<images/chap02-rrl/birdal-output.png, id=99, 679.53876pt x 225.84375pt>
+[19 <./images/chap02-rrl/diffusion-curves.png>]
+<images/chap02-rrl/birdal-output.png, id=112, 679.53876pt x 225.84375pt>
 File: images/chap02-rrl/birdal-output.png Graphic file (type png)
 
 <use images/chap02-rrl/birdal-output.png>
@@ -540,23 +547,23 @@ Overfull \hbox (8.07497pt too wide) in paragraph at lines 74--75
  [][] 
  []
 
-[17 <./images/chap02-rrl/birdal-output.png>] [18] [19]
-<images/chap02-rrl/optimization.png, id=109, 381.425pt x 382.42876pt>
+[20 <./images/chap02-rrl/birdal-output.png>] [21] [22]
+<images/chap02-rrl/optimization.png, id=123, 381.425pt x 382.42876pt>
 File: images/chap02-rrl/optimization.png Graphic file (type png)
 
 <use images/chap02-rrl/optimization.png>
 Package pdftex.def Info: images/chap02-rrl/optimization.png used on input line 
 98.
 (pdftex.def)             Requested size: 286.06804pt x 286.82085pt.
- [20 <./images/chap02-rrl/optimization.png>] [21] <images/chap02-rrl/kopf.png, 
-id=116, 779.91376pt x 181.67876pt>
+ [23 <./images/chap02-rrl/optimization.png>] [24] <images/chap02-rrl/kopf.png, 
+id=130, 779.91376pt x 181.67876pt>
 File: images/chap02-rrl/kopf.png Graphic file (type png)
 
 <use images/chap02-rrl/kopf.png>
 Package pdftex.def Info: images/chap02-rrl/kopf.png used on input line 115.
 (pdftex.def)             Requested size: 389.95593pt x 90.83914pt.
- [22] [23 <./images/chap02-rrl/kopf.png>]
-[24] [25] <images/chap02-rrl/hoshyari.png, id=131, 530.98375pt x 441.65pt>
+ [25] [26 <./images/chap02-rrl/kopf.png>]
+[27] [28] <images/chap02-rrl/hoshyari.png, id=144, 530.98375pt x 441.65pt>
 File: images/chap02-rrl/hoshyari.png Graphic file (type png)
 
 <use images/chap02-rrl/hoshyari.png>
@@ -567,25 +574,31 @@ Package pdftex.def Info: images/chap02-rrl/hoshyari.png used on input line 162.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26] [27 <./images/chap02-rrl/hoshyari.png>]) [28] [29]
+[29] [30 <./images/chap02-rrl/hoshyari.png>]) [31] [32]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
 
 (./chapter3_sotp.tex
 Chapter 3.
-) [30
+
+Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
+[]\OT1/cmr/m/n/12 There have been nu-mer-ous works that tack-les im-age vec-tor
+-iza-tion for semi-structured
+ []
+
+) [33
 
 
 
-] [31]
+]
 :<-
 :<+ chapter4_obj.tex
 \openout2 = `chapter4_obj.aux'.
 
 (./chapter4_obj.tex
 Chapter 4.
-) [32
+) [34
 
 
 
@@ -596,18 +609,38 @@ Chapter 4.
 
 (./chapter5_methods.tex
 Chapter 5.
-) [33
+[35
 
 
 
-] [34]
+] [36] [37] [38] [39]
+<images/chap05-methodology/ppn.png, id=180, 312.16624pt x 201.75375pt>
+File: images/chap05-methodology/ppn.png Graphic file (type png)
+
+<use images/chap05-methodology/ppn.png>
+Package pdftex.def Info: images/chap05-methodology/ppn.png used on input line 7
+1.
+(pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
+ [40 <./images/chap05-methodology/ppn.png>] [41] <images/chap05-methodology/ksn
+.png, id=189, 301.125pt x 197.73875pt>
+File: images/chap05-methodology/ksn.png Graphic file (type png)
+
+<use images/chap05-methodology/ksn.png>
+Package pdftex.def Info: images/chap05-methodology/ksn.png used on input line 1
+26.
+(pdftex.def)             Requested size: 225.84319pt x 148.3037pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42] [43 <./images/chap05-methodology/ksn.png>] [44] [45]) [46]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
 
 (./chapter6_sim.exp.tex
 Chapter 6.
-) [35
+) [47
 
 
 
@@ -618,7 +651,7 @@ Chapter 6.
 
 (./chapter7_rd.tex
 Chapter 7.
-) [36
+) [48
 
 
 
@@ -629,7 +662,7 @@ Chapter 7.
 
 (./chapter8_sum.con.tex
 Chapter 8.
-) [37
+) [49
 
 
 
@@ -640,7 +673,7 @@ Chapter 8.
 
 (./appendix.tex
 Appendix A.
-) [38
+) [50
 
 
 
@@ -650,7 +683,7 @@ Appendix A.
 (./thesis.bbl
 Missing character: There is no Â in font cmr12!
 Missing character: There is no   in font cmr12!
- [39
+ [51
 
 
 ]
@@ -671,40 +704,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--74
 / / www . apsl . net / blog / 2017 / 11 / 20 /
  []
 
-[40]
+[52]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-)
+ [53])
 :<-
-[41] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+[54] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
 (./chapter8_sum.con.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 4616 strings out of 494910
- 63321 string characters out of 6179835
- 129539 words of memory out of 5000000
- 7720 multiletter control sequences out of 15000+600000
- 12896 words of font info for 51 fonts, out of 8000000 for 9000
+ 4638 strings out of 494910
+ 63804 string characters out of 6179835
+ 129593 words of memory out of 5000000
+ 7737 multiletter control sequences out of 15000+600000
+ 13597 words of font info for 53 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  39i,11n,47p,3339b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (50 pages, 2801914 bytes).
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (63 pages, 2894002 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
