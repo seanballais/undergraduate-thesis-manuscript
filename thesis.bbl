@@ -9,18 +9,9 @@ Photoshop image size and resolution.
 \newblock
   \url{https://helpx.adobe.com/photoshop/using/image-size-resolution.html{\\#}resampling}.
 
-\bibitem{inkscapepotrace}
-Potrace - inkscape wiki.
-\newblock \url{http://wiki.inkscape.org/wiki/index.php/Potrace}.
-
 \bibitem{titanxppage}
 Titan xp graphics card with pascal architecture | nvidia geforce.
 \newblock \url{https://www.nvidia.com/en-us/titan/titan-xp/}.
-
-\bibitem{gpuacceleratedcomputing}
-What is gpu-accelerated computing? - definition from techopedia.
-\newblock
-  \url{https://www.techopedia.com/definition/32876/gpu-accelerated-computing}.
 
 \bibitem{rastervsvector}
 Raster vs vector.
@@ -32,11 +23,6 @@ Raster vs. vector graphics: What's the difference?
 \newblock
   \url{https://pixellogo.com/blogs/pixellogo-blog/raster-vs-vector-graphics},
   n.d.
-
-\bibitem{sketchingclothoidsplines}
-Ilya Baran, Jaakko Lehtinen, and Jovan Popovic.
-\newblock Sketching clothoid splines using shortest paths.
-\newblock {\em Comput. Graph. Forum}, 29:655--664, 2010.
 
 \bibitem{barendrecht2018locally}
 P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
@@ -54,16 +40,21 @@ T.~Birdal and E.~Bala.
 \newblock A novel method for vectorization.
 \newblock {\em CoRR}, abs/1403.0728, 2014.
 
+\bibitem{gd-burke}
+Edmund Burke, Yuri Bykov, James Newall, and Sanja Petrovic.
+\newblock A time-predefined approach to course timetabling.
+\newblock {\em Yugosl. j. oper. res.}, 13:139--151, 01 2003.
+
 \bibitem{resizingimages}
 Computerphile.
 \newblock Resizing images.
 \newblock \url{https://www.youtube.com/watch?v=AqscP7rc8{\\_}M}, 2016.
 
-\bibitem{efficientgraphbasedimagesegmentation}
-P.~Felzenszwalb and Daniel~P. Huttenlocher.
-\newblock Efficient graph-based image segmentation.
-\newblock {\em International Journal of Computer Vision}, 59(2):167--181,
-  September 2004.
+\bibitem{intro-gd-dueck}
+Gunter Dueck.
+\newblock New optimization heuristics: The great deluge algorith and the
+  record-to-record travel.
+\newblock 104:86--92, 01 1993.
 
 \bibitem{useofcnnimageclassification}
 Juan~Carlos Gonzales.
@@ -78,29 +69,28 @@ S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
 \newblock Perception-driven semi-structured boundary vectorization.
 \newblock {\em ACM Transactions on Graphics}, 37(4):1--14, 2018.
 
-\bibitem{somexperimentsvectorization}
-J.~Jimenez and J.~Navalon.
-\newblock Some experiments in image vectorization.
-\newblock {\em IBM Journal of Research \& Development, volume = 26 no = 6 month
-  =}.
-
 \bibitem{depixelizingpixelart}
 J.~Kopf and D.~Lischinski.
 \newblock Depixelizing pixel art.
 \newblock {\em ACM Transactions on Graphics (Proceedings of SIGGRAPH 2011)},
   30(4):99:1 -- 99:8, 2011.
 
+\bibitem{nlgd-landa-silva}
+Dario Landa-Silva and Joe~Henry Obit.
+\newblock Great deluge with non-linear decay rate for solving course
+  timetabling problems.
+\newblock 01 2008.
+
 \bibitem{deeplearningparametrization}
 P.~Laube, M.~Franz, and G.~Umlauf.
 \newblock Deep learning parametrization for b-spline curve approximation.
 \newblock {\em CoRR}, abs/1807.08304, July 2018.
 
-\bibitem{sisrgan}
-C.~Ledig, L.~Theis, F.~Huszar, J.~Caballero, A.~Aitken, A.~Tejani, J.~Totz,
-  Z.~Wang, and W.~Shi.
-\newblock Photo-realistic single image super-resolution using a generative
-  adversarial network.
-\newblock {\em CoRR}, abs/1609.04802, 2016.
+\bibitem{nlgdrl-obit}
+Joe~Henry Obit, Dario Landa-SIlva, Marc Sevaux, and Djamila Ouelhadj.
+\newblock Non-linear great deluge with reinforcement learning for university
+  course timetabling.
+\newblock 01 2011.
 
 \bibitem{bsplines}
 Mathematics of~Computer~Graphics and Virtual Environments.

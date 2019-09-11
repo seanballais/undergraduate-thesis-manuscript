@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: acknowl.aux
 A level-1 auxiliary file: abstract.aux
@@ -15,38 +15,38 @@ A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
---line 2 of file biblio.bib
+--line 52 of file biblio.bib
 Warning--entry type for "rastervsvector" isn't style-file defined
---line 8 of file biblio.bib
-I was expecting a `,' or a `}'---line 25 of file biblio.bib
+--line 58 of file biblio.bib
+I was expecting a `,' or a `}'---line 75 of file biblio.bib
  :  
  :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 132 of file biblio.bib
+"{" immediately follows a field part---line 182 of file biblio.bib
  :   howpublished = \url
  :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 139 of file biblio.bib
+I was expecting a `,' or a `}'---line 189 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 178 of file biblio.bib
+I was expecting a `,' or a `}'---line 228 of file biblio.bib
  :   
  :   volume = 22,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
---line 200 of file biblio.bib
-I was expecting a `,' or a `}'---line 235 of file biblio.bib
+--line 250 of file biblio.bib
+I was expecting a `,' or a `}'---line 285 of file biblio.bib
  :   month = "
  :            November",
 I'm skipping whatever remains of this entry
-Repeated entry---line 256 of file biblio.bib
+Repeated entry---line 306 of file biblio.bib
  : @inproceedings{sisrbenchmark
  :                             ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 293 of file biblio.bib
+I was expecting a `,' or a `}'---line 343 of file biblio.bib
  :   
  :   url       = "http://arxiv.org/abs/1807.08304"
 (Error may have been on previous line)
@@ -58,56 +58,56 @@ Warning--to sort, need author or key in gimpinterpolationmethods
 Warning--to sort, need author or key in titanxppage
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
 while executing---line 1049 of file plain.bst
-Warning--to sort, need author or key in inkscapepotrace
-Warning--to sort, need author or key in gpuacceleratedcomputing
-Warning--empty year in somexperimentsvectorization
+Warning--empty journal in intro-gd-dueck
+Warning--empty journal in nlgd-landa-silva
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
 while executing---line 1090 of file plain.bst
+Warning--empty journal in nlgdrl-obit
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
 Warning--empty year in interpolationtechniquessurvey
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 30 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            651 strings with 8928 characters,
-and the built_in function-call counts, 8789 in all, are:
-= -- 834
-> -- 442
+            645 strings with 8588 characters,
+and the built_in function-call counts, 8278 in all, are:
+= -- 785
+> -- 414
 < -- 2
-+ -- 180
-- -- 148
-* -- 589
-:= -- 1431
-add.period$ -- 82
-call.type$ -- 30
-change.case$ -- 163
++ -- 169
+- -- 138
+* -- 556
+:= -- 1361
+add.period$ -- 78
+call.type$ -- 28
+change.case$ -- 152
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 300
-empty$ -- 719
-format.name$ -- 148
-if$ -- 1840
+cite$ -- 42
+duplicate$ -- 286
+empty$ -- 670
+format.name$ -- 138
+if$ -- 1725
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 28
 missing$ -- 18
-newline$ -- 144
+newline$ -- 136
 num.names$ -- 46
-pop$ -- 215
+pop$ -- 200
 preamble$ -- 1
-purify$ -- 134
+purify$ -- 125
 quote$ -- 0
-skip$ -- 245
+skip$ -- 228
 stack$ -- 0
-substring$ -- 432
-swap$ -- 48
+substring$ -- 413
+swap$ -- 43
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 112
 warning$ -- 14
-while$ -- 66
-width$ -- 32
-write$ -- 290
+while$ -- 65
+width$ -- 30
+write$ -- 273
 (There were 9 error messages)
