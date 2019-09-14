@@ -4,6 +4,10 @@
 6.22. scale image.
 \newblock \url{https://docs.gimp.org/en/gimp-image-scale.html}.
 
+\bibitem{maximum-bipartite-matching}
+Maximum bipartite matching - geeksforgeeks.
+\newblock {\em GeeksforGeeks}.
+
 \bibitem{photoshopinterpolationmethods}
 Photoshop image size and resolution.
 \newblock
@@ -40,10 +44,20 @@ T.~Birdal and E.~Bala.
 \newblock A novel method for vectorization.
 \newblock {\em CoRR}, abs/1403.0728, 2014.
 
+\bibitem{brownlee-tabu-search}
+Jason Brownlee.
+\newblock Tabu search - clever algorithms: Nature-inspired programming recipes.
+\newblock {\em cleveralgorithms.com}.
+
 \bibitem{gd-burke}
 Edmund Burke, Yuri Bykov, James Newall, and Sanja Petrovic.
 \newblock A time-predefined approach to course timetabling.
 \newblock {\em Yugosl. j. oper. res.}, 13:139--151, 01 2003.
+
+\bibitem{chiarandini-effective-hybrid}
+Marco Chiarandini, Mauro Birattari, Krzysztof Socha, and Olivia Rossi-Doria.
+\newblock An effective hybrid algorithm for university course timetabling.
+\newblock {\em J Sched}, 9:403--432, 01 2006.
 
 \bibitem{resizingimages}
 Computerphile.
@@ -87,7 +101,7 @@ P.~Laube, M.~Franz, and G.~Umlauf.
 \newblock {\em CoRR}, abs/1807.08304, July 2018.
 
 \bibitem{nlgdrl-obit}
-Joe~Henry Obit, Dario Landa-SIlva, Marc Sevaux, and Djamila Ouelhadj.
+Joe~Henry Obit, Dario Landa-Silva, Marc Sevaux, and Djamila Ouelhadj.
 \newblock Non-linear great deluge with reinforcement learning for university
   course timetabling.
 \newblock 01 2011.
@@ -106,6 +120,11 @@ E.~Simo-Serra, S.~Iizuka, K.~Sasaki, and H.~Ishikawa.
 \newblock Learning to simplify: Fully convolutional networks for rough sketch
   cleanup.
 \newblock {\em ACM Trans. Graph.}, 35(4):121:1--121:11, July 2016.
+
+\bibitem{socha-maxmin-ant-system}
+Krzysztof Socha, Joshua Knowles, and Michael Sampels.
+\newblock A max-min ant system for the university course timetabling problem.
+\newblock pages 1--13, 01 2002.
 
 \bibitem{optimizedgradientmeshes}
 J.~Sun, L.~Liang, F.~Wen, and H.~Shum.

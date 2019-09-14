@@ -15,38 +15,38 @@ A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
---line 52 of file biblio.bib
+--line 94 of file biblio.bib
 Warning--entry type for "rastervsvector" isn't style-file defined
---line 58 of file biblio.bib
-I was expecting a `,' or a `}'---line 75 of file biblio.bib
+--line 100 of file biblio.bib
+I was expecting a `,' or a `}'---line 117 of file biblio.bib
  :  
  :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 182 of file biblio.bib
+"{" immediately follows a field part---line 224 of file biblio.bib
  :   howpublished = \url
  :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 189 of file biblio.bib
+I was expecting a `,' or a `}'---line 231 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 228 of file biblio.bib
+I was expecting a `,' or a `}'---line 270 of file biblio.bib
  :   
  :   volume = 22,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
---line 250 of file biblio.bib
-I was expecting a `,' or a `}'---line 285 of file biblio.bib
+--line 292 of file biblio.bib
+I was expecting a `,' or a `}'---line 327 of file biblio.bib
  :   month = "
  :            November",
 I'm skipping whatever remains of this entry
-Repeated entry---line 306 of file biblio.bib
+Repeated entry---line 348 of file biblio.bib
  : @inproceedings{sisrbenchmark
  :                             ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 343 of file biblio.bib
+I was expecting a `,' or a `}'---line 385 of file biblio.bib
  :   
  :   url       = "http://arxiv.org/abs/1807.08304"
 (Error may have been on previous line)
@@ -58,6 +58,10 @@ Warning--to sort, need author or key in gimpinterpolationmethods
 Warning--to sort, need author or key in titanxppage
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in maximum-bipartite-matching
+Warning--empty author in maximum-bipartite-matching
+Warning--empty year in maximum-bipartite-matching
+Warning--empty year in brownlee-tabu-search
 Warning--empty journal in intro-gd-dueck
 Warning--empty journal in nlgd-landa-silva
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
@@ -66,48 +70,49 @@ Warning--empty journal in nlgdrl-obit
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
 Warning--empty year in interpolationtechniquessurvey
+Warning--empty journal in socha-maxmin-ant-system
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 28 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            645 strings with 8588 characters,
-and the built_in function-call counts, 8278 in all, are:
-= -- 785
-> -- 414
-< -- 2
-+ -- 169
-- -- 138
-* -- 556
-:= -- 1361
-add.period$ -- 78
-call.type$ -- 28
-change.case$ -- 152
+            664 strings with 9140 characters,
+and the built_in function-call counts, 9413 in all, are:
+= -- 891
+> -- 463
+< -- 3
++ -- 191
+- -- 154
+* -- 638
+:= -- 1546
+add.period$ -- 89
+call.type$ -- 32
+change.case$ -- 172
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 286
-empty$ -- 670
-format.name$ -- 138
-if$ -- 1725
+cite$ -- 51
+duplicate$ -- 333
+empty$ -- 758
+format.name$ -- 154
+if$ -- 1960
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 18
-newline$ -- 136
-num.names$ -- 46
-pop$ -- 200
+int.to.str$ -- 32
+missing$ -- 22
+newline$ -- 155
+num.names$ -- 52
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 141
 quote$ -- 0
-skip$ -- 228
+skip$ -- 260
 stack$ -- 0
-substring$ -- 413
-swap$ -- 43
-text.length$ -- 2
+substring$ -- 471
+swap$ -- 51
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 14
-while$ -- 65
-width$ -- 30
-write$ -- 273
+type$ -- 128
+warning$ -- 19
+while$ -- 74
+width$ -- 34
+write$ -- 310
 (There were 9 error messages)
