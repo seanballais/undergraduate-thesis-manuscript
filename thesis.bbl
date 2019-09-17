@@ -17,6 +17,9 @@ Photoshop image size and resolution.
 Titan xp graphics card with pascal architecture | nvidia geforce.
 \newblock \url{https://www.nvidia.com/en-us/titan/titan-xp/}.
 
+\bibitem{what-is-ga}
+What is the genetic algorithm?- matlab \& simulink.
+
 \bibitem{rastervsvector}
 Raster vs vector.
 \newblock
@@ -27,6 +30,12 @@ Raster vs. vector graphics: What's the difference?
 \newblock
   \url{https://pixellogo.com/blogs/pixellogo-blog/raster-vs-vector-graphics},
   n.d.
+
+\bibitem{alves-novel-recursive}
+Shara S.~A. Alves, Saulo A.~F. Oliveira, and Ajalmar R.~Rocha Neto.
+\newblock A novel educational timetabling solution through recursive genetic
+  algorithms.
+\newblock 01 2015.
 
 \bibitem{barendrecht2018locally}
 P.~J. Barendrecht, M.~Luinstra, J.~Hogervorst, and J.~Kosinka.
@@ -59,6 +68,12 @@ Marco Chiarandini, Mauro Birattari, Krzysztof Socha, and Olivia Rossi-Doria.
 \newblock An effective hybrid algorithm for university course timetabling.
 \newblock {\em J Sched}, 9:403--432, 01 2006.
 
+\bibitem{wutthipong-performance-study-genetic-operators}
+Wutthipong Chinnasri, Soradech Krootjohn, and Nidapan Sureerattanan.
+\newblock Performance study of genetic operators on university course
+  timetabling problem.
+\newblock {\em IJACT}, 4:61--71, 01 2012.
+
 \bibitem{resizingimages}
 Computerphile.
 \newblock Resizing images.
@@ -82,6 +97,26 @@ S.~Hoshyari, E.~A. Dominici, A.~Sheffer, N.~Carr, Z.~Wang, D.~Ceylan, and
   I.~Shen.
 \newblock Perception-driven semi-structured boundary vectorization.
 \newblock {\em ACM Transactions on Graphics}, 37(4):1--14, 2018.
+
+\bibitem{supachate-noval-approach-ga-thai}
+Supachate Innet.
+\newblock A noval approach of genetic algorithm for solving examination
+  timetabling problems: A case study of thai universities.
+\newblock 01 2013.
+
+\bibitem{johan-ga-sa-comparison}
+Johan Jonasson and Eric Norgren.
+\newblock Investigating a genetic algorithm- simulated annealing hybrid applied
+  to university course timetabling problem: A comparative study between
+  simulated annealing initialized with genetic algorithm, genetic algorithm and
+  simulated annealing.
+\newblock 01 2016.
+
+\bibitem{yik-ga-timetabling}
+Kuan~Yik Junn, Joe~Henry Obit, and Rayner Alfred.
+\newblock The study of genetic algorithm approach for educational timetabling
+  problems.
+\newblock 02 2018.
 
 \bibitem{depixelizingpixelart}
 J.~Kopf and D.~Lischinski.
@@ -114,6 +149,18 @@ Mathematics of~Computer~Graphics and Virtual Environments.
 P.~Parsania and P.~Virparia.
 \newblock {\em International Journal of Innovative Research in Computer and
   Communication Engineering}, (12):7409.
+
+\bibitem{sanjay-an-application-of-ga}
+Sanjay R. and Rajan S.
+\newblock An application of genetic algorithm for university course timetabling
+  problem.
+\newblock {\em IJAIS}, 11:26--30.
+
+\bibitem{raghavjee-ga-south-africa}
+R~Raghavjee and N~Pillay.
+\newblock Using genetic algorithms to solve the south african school
+  timetabling problem.
+\newblock 01 2010.
 
 \bibitem{simplifyingsketchesviacnn}
 E.~Simo-Serra, S.~Iizuka, K.~Sasaki, and H.~Ishikawa.

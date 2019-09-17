@@ -11,31 +11,32 @@
 \contentsline {chapter}{\numberline {2}Review of Related Literature}{12}
 \contentsline {section}{\numberline {2.1}Great Deluge-Based Works}{12}
 \contentsline {section}{\numberline {2.2}Machine Learning-Based Works}{17}
-\contentsline {chapter}{\numberline {3}Statement of the Problem}{21}
-\contentsline {chapter}{\numberline {4}Objectives}{22}
-\contentsline {chapter}{\numberline {5}Proposed Methodology}{23}
-\contentsline {section}{\numberline {5.1}Image Preprocessing}{23}
-\contentsline {subsection}{Corner Detection}{23}
-\contentsline {subsection}{Region Segmentation}{24}
-\contentsline {section}{\numberline {5.2}Curve Approximation}{25}
-\contentsline {subsection}{Point Sequence Generation}{25}
-\contentsline {subsection}{Point Sequence Curve Approximation}{26}
-\contentsline {subsubsection}{Sequence Segmentation}{27}
-\contentsline {subsubsection}{Sub/Supersampling and Normalization}{27}
-\contentsline {subsubsection}{Parametrization of Point Segments}{28}
-\contentsline {paragraph}{The PPN Architecture}{29}
-\contentsline {subparagraph}{PP1. Accumulation and Rescaling}{29}
-\contentsline {subparagraph}{PP2. Approximation}{30}
-\contentsline {subparagraph}{PP3. Euclidean Loss}{30}
-\contentsline {subsubsection}{Parametrization Refinement}{30}
-\contentsline {paragraph}{The KSN Architecture}{31}
-\contentsline {subparagraph}{KS1. Threshold Layer}{32}
-\contentsline {subparagraph}{KS2. Approximation}{32}
-\contentsline {subparagraph}{KS3. Euclidean Loss}{32}
-\contentsline {subsubsection}{Network Training}{32}
-\contentsline {section}{\numberline {5.3}Region Colouring and Merging}{33}
-\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{35}
-\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{36}
-\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{37}
-\contentsline {chapter}{\numberline {A}What should be in the Appendix}{38}
-\contentsline {chapter}{Bibliography}{39}
+\contentsline {section}{\numberline {2.3}Genetic Algorithm-Based Works}{20}
+\contentsline {chapter}{\numberline {3}Statement of the Problem}{23}
+\contentsline {chapter}{\numberline {4}Objectives}{24}
+\contentsline {chapter}{\numberline {5}Proposed Methodology}{25}
+\contentsline {section}{\numberline {5.1}Image Preprocessing}{25}
+\contentsline {subsection}{Corner Detection}{25}
+\contentsline {subsection}{Region Segmentation}{26}
+\contentsline {section}{\numberline {5.2}Curve Approximation}{27}
+\contentsline {subsection}{Point Sequence Generation}{27}
+\contentsline {subsection}{Point Sequence Curve Approximation}{28}
+\contentsline {subsubsection}{Sequence Segmentation}{29}
+\contentsline {subsubsection}{Sub/Supersampling and Normalization}{29}
+\contentsline {subsubsection}{Parametrization of Point Segments}{30}
+\contentsline {paragraph}{The PPN Architecture}{31}
+\contentsline {subparagraph}{PP1. Accumulation and Rescaling}{31}
+\contentsline {subparagraph}{PP2. Approximation}{32}
+\contentsline {subparagraph}{PP3. Euclidean Loss}{32}
+\contentsline {subsubsection}{Parametrization Refinement}{32}
+\contentsline {paragraph}{The KSN Architecture}{33}
+\contentsline {subparagraph}{KS1. Threshold Layer}{34}
+\contentsline {subparagraph}{KS2. Approximation}{34}
+\contentsline {subparagraph}{KS3. Euclidean Loss}{34}
+\contentsline {subsubsection}{Network Training}{34}
+\contentsline {section}{\numberline {5.3}Region Colouring and Merging}{35}
+\contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{37}
+\contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{38}
+\contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{39}
+\contentsline {chapter}{\numberline {A}What should be in the Appendix}{40}
+\contentsline {chapter}{Bibliography}{41}

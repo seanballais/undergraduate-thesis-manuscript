@@ -15,38 +15,38 @@ A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
---line 94 of file biblio.bib
+--line 184 of file biblio.bib
 Warning--entry type for "rastervsvector" isn't style-file defined
---line 100 of file biblio.bib
-I was expecting a `,' or a `}'---line 117 of file biblio.bib
+--line 190 of file biblio.bib
+I was expecting a `,' or a `}'---line 207 of file biblio.bib
  :  
  :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 224 of file biblio.bib
+"{" immediately follows a field part---line 314 of file biblio.bib
  :   howpublished = \url
  :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 231 of file biblio.bib
+I was expecting a `,' or a `}'---line 321 of file biblio.bib
  :   pages = 7409
  :               --7414,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 270 of file biblio.bib
+I was expecting a `,' or a `}'---line 360 of file biblio.bib
  :   
  :   volume = 22,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "nov." is undefined
---line 292 of file biblio.bib
-I was expecting a `,' or a `}'---line 327 of file biblio.bib
+--line 382 of file biblio.bib
+I was expecting a `,' or a `}'---line 417 of file biblio.bib
  :   month = "
  :            November",
 I'm skipping whatever remains of this entry
-Repeated entry---line 348 of file biblio.bib
+Repeated entry---line 438 of file biblio.bib
  : @inproceedings{sisrbenchmark
  :                             ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 385 of file biblio.bib
+I was expecting a `,' or a `}'---line 475 of file biblio.bib
  :   
  :   url       = "http://arxiv.org/abs/1807.08304"
 (Error may have been on previous line)
@@ -59,10 +59,18 @@ Warning--to sort, need author or key in titanxppage
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
 while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in maximum-bipartite-matching
+Warning--to sort, need author or key in what-is-ga
 Warning--empty author in maximum-bipartite-matching
 Warning--empty year in maximum-bipartite-matching
+Warning--empty author in what-is-ga
+Warning--empty journal in what-is-ga
+Warning--empty year in what-is-ga
+Warning--empty journal in alves-novel-recursive
 Warning--empty year in brownlee-tabu-search
 Warning--empty journal in intro-gd-dueck
+Warning--empty journal in supachate-noval-approach-ga-thai
+Warning--empty journal in johan-ga-sa-comparison
+Warning--empty journal in yik-ga-timetabling
 Warning--empty journal in nlgd-landa-silva
 Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
 while executing---line 1090 of file plain.bst
@@ -70,49 +78,51 @@ Warning--empty journal in nlgdrl-obit
 Warning--empty title in interpolationtechniquessurvey
 Warning--there's a number but no volume in interpolationtechniquessurvey
 Warning--empty year in interpolationtechniquessurvey
+Warning--empty year in sanjay-an-application-of-ga
+Warning--empty journal in raghavjee-ga-south-africa
 Warning--empty journal in socha-maxmin-ant-system
 Warning--empty booktitle in optimizedgradientmeshes
 Warning--empty booktitle in progressivesisr
 Warning--empty booktitle in sisrbenchmark
-You've used 32 entries,
+You've used 40 entries,
             2118 wiz_defined-function locations,
-            664 strings with 9140 characters,
-and the built_in function-call counts, 9413 in all, are:
-= -- 891
-> -- 463
+            698 strings with 10579 characters,
+and the built_in function-call counts, 11445 in all, are:
+= -- 1076
+> -- 564
 < -- 3
-+ -- 191
-- -- 154
-* -- 638
-:= -- 1546
-add.period$ -- 89
-call.type$ -- 32
-change.case$ -- 172
++ -- 235
+- -- 186
+* -- 777
+:= -- 1900
+add.period$ -- 111
+call.type$ -- 40
+change.case$ -- 212
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 333
-empty$ -- 758
-format.name$ -- 154
-if$ -- 1960
+cite$ -- 69
+duplicate$ -- 415
+empty$ -- 909
+format.name$ -- 186
+if$ -- 2361
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 22
-newline$ -- 155
-num.names$ -- 52
-pop$ -- 225
+int.to.str$ -- 40
+missing$ -- 30
+newline$ -- 193
+num.names$ -- 66
+pop$ -- 278
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 173
 quote$ -- 0
-skip$ -- 260
+skip$ -- 317
 stack$ -- 0
-substring$ -- 471
-swap$ -- 51
+substring$ -- 545
+swap$ -- 53
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 128
-warning$ -- 19
-while$ -- 74
-width$ -- 34
-write$ -- 310
+type$ -- 160
+warning$ -- 29
+while$ -- 90
+width$ -- 42
+write$ -- 381
 (There were 9 error messages)
