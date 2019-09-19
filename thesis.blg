@@ -14,50 +14,30 @@ A level-1 auxiliary file: chapter8_sum.con.aux
 A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-Warning--entry type for "rastervsvectorgraphics" isn't style-file defined
---line 184 of file biblio.bib
-Warning--entry type for "rastervsvector" isn't style-file defined
---line 190 of file biblio.bib
-I was expecting a `,' or a `}'---line 207 of file biblio.bib
- :  
- :  howpublished = "\url{http://news.mit.edu/2018/automated-vectorization-algorithm-animation-0911}"
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-"{" immediately follows a field part---line 314 of file biblio.bib
- :   howpublished = \url
- :                      {https://www.microsoft.com/en-us/research/publication/image-vectorization-using-optimized-gradient-meshes/},
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 321 of file biblio.bib
- :   pages = 7409
- :               --7414,
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 360 of file biblio.bib
- :   
- :   volume = 22,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--string name "nov." is undefined
---line 382 of file biblio.bib
-I was expecting a `,' or a `}'---line 417 of file biblio.bib
- :   month = "
- :            November",
-I'm skipping whatever remains of this entry
-Repeated entry---line 438 of file biblio.bib
- : @inproceedings{sisrbenchmark
- :                             ,
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 475 of file biblio.bib
- :   
- :   url       = "http://arxiv.org/abs/1807.08304"
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--to sort, need author or key in rastervsvector
-Warning--to sort, need author or key in rastervsvectorgraphics
-Warning--to sort, need author or key in photoshopinterpolationmethods
-Warning--to sort, need author or key in gimpinterpolationmethods
-Warning--to sort, need author or key in titanxppage
-Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
-while executing---line 1049 of file plain.bst
+Warning--I didn't find a database entry for "hoshyari2018perceptiondriven"
+Warning--I didn't find a database entry for "realtimevectorizationgpu"
+Warning--I didn't find a database entry for "rastervsvector"
+Warning--I didn't find a database entry for "optimizedgradientmeshes"
+Warning--I didn't find a database entry for "rastervsvectorgraphics"
+Warning--I didn't find a database entry for "barendrecht2018locally"
+Warning--I didn't find a database entry for "howdovectorgraphicswork"
+Warning--I didn't find a database entry for "sisrbenchmark"
+Warning--I didn't find a database entry for "resizingimages"
+Warning--I didn't find a database entry for "photoshopinterpolationmethods"
+Warning--I didn't find a database entry for "gimpinterpolationmethods"
+Warning--I didn't find a database entry for "depixelizingpixelart"
+Warning--I didn't find a database entry for "interpolationtechniquessurvey"
+Warning--I didn't find a database entry for "titanxppage"
+Warning--I didn't find a database entry for "aigigapixelstory"
+Warning--I didn't find a database entry for "progressivesisr"
+Warning--I didn't find a database entry for "effectiveclipartimagevectorization"
+Warning--I didn't find a database entry for "vectorizationoflinedrawingspolyvector"
+Warning--I didn't find a database entry for "anovelmethodforvectorization"
+Warning--I didn't find a database entry for "hierarchicaldiffusioncurves"
+Warning--I didn't find a database entry for "useofcnnimageclassification"
+Warning--I didn't find a database entry for "simplifyingsketchesviacnn"
+Warning--I didn't find a database entry for "bsplines"
+Warning--I didn't find a database entry for "deeplearningparametrization"
 Warning--to sort, need author or key in maximum-bipartite-matching
 Warning--to sort, need author or key in what-is-ga
 Warning--empty author in maximum-bipartite-matching
@@ -72,57 +52,50 @@ Warning--empty journal in supachate-noval-approach-ga-thai
 Warning--empty journal in johan-ga-sa-comparison
 Warning--empty journal in yik-ga-timetabling
 Warning--empty journal in nlgd-landa-silva
-Name 2 in "Laube, P. and Franz, M., and Umlauf, G." has a comma at the end for entry deeplearningparametrization
-while executing---line 1090 of file plain.bst
 Warning--empty journal in nlgdrl-obit
-Warning--empty title in interpolationtechniquessurvey
-Warning--there's a number but no volume in interpolationtechniquessurvey
-Warning--empty year in interpolationtechniquessurvey
 Warning--empty year in sanjay-an-application-of-ga
 Warning--empty journal in raghavjee-ga-south-africa
 Warning--empty journal in socha-maxmin-ant-system
-Warning--empty booktitle in optimizedgradientmeshes
-Warning--empty booktitle in progressivesisr
-Warning--empty booktitle in sisrbenchmark
-You've used 40 entries,
+Warning--empty journal in yousef-gpu-ga
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            698 strings with 10579 characters,
-and the built_in function-call counts, 11445 in all, are:
-= -- 1076
-> -- 564
-< -- 3
-+ -- 235
-- -- 186
-* -- 777
-:= -- 1900
-add.period$ -- 111
-call.type$ -- 40
-change.case$ -- 212
+            614 strings with 7536 characters,
+and the built_in function-call counts, 4749 in all, are:
+= -- 431
+> -- 249
+< -- 1
++ -- 107
+- -- 82
+* -- 342
+:= -- 829
+add.period$ -- 48
+call.type$ -- 17
+change.case$ -- 92
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 415
-empty$ -- 909
-format.name$ -- 186
-if$ -- 2361
+cite$ -- 36
+duplicate$ -- 181
+empty$ -- 341
+format.name$ -- 82
+if$ -- 940
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 30
-newline$ -- 193
-num.names$ -- 66
-pop$ -- 278
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 85
+num.names$ -- 30
+pop$ -- 114
 preamble$ -- 1
-purify$ -- 173
+purify$ -- 75
 quote$ -- 0
-skip$ -- 317
+skip$ -- 124
 stack$ -- 0
-substring$ -- 545
-swap$ -- 53
-text.length$ -- 3
+substring$ -- 195
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
-warning$ -- 29
-while$ -- 90
-width$ -- 42
-write$ -- 381
-(There were 9 error messages)
+type$ -- 68
+warning$ -- 19
+while$ -- 37
+width$ -- 19
+write$ -- 158
+(There were 43 warnings)

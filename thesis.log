@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.10)  17 SEP 2019 16:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.10)  19 SEP 2019 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,6 +475,10 @@ UP CS thesis preface pages completed.
 
 (./chapter1_intro.tex
 Chapter 1.
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 1 undefined on i
+nput line 3.
+
 <images/chap01-introduction/raster-images-upclose.png, id=32, 385.44pt x 216.81
 pt>
 File: images/chap01-introduction/raster-images-upclose.png Graphic file (type p
@@ -485,6 +489,40 @@ used on input line 7.
 (pdftex.def)             Requested size: 385.43906pt x 216.80946pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 1 undefined on input
+ line 12.
+
+
+LaTeX Warning: Citation `rastervsvector' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 1 undefined on i
+nput line 12.
+
+
+LaTeX Warning: Citation `optimizedgradientmeshes' on page 1 undefined on input 
+line 12.
+
+
+LaTeX Warning: Citation `rastervsvector' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation `rastervsvectorgraphics' on page 1 undefined on input l
+ine 12.
+
+
+LaTeX Warning: Citation `barendrecht2018locally' on page 1 undefined on input l
+ine 12.
+
+
+LaTeX Warning: Citation `optimizedgradientmeshes' on page 1 undefined on input 
+line 12.
+
+
+LaTeX Warning: Citation `howdovectorgraphicswork' on page 1 undefined on input 
+line 12.
 
 [1
 
@@ -498,7 +536,79 @@ g)
 Package pdftex.def Info: images/chap01-introduction/raster-images-scaled.png  u
 sed on input line 19.
 (pdftex.def)             Requested size: 385.43906pt x 216.80946pt.
- [3 <./images/chap01-introduction/raster-images-scaled.png>] [4]
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 3 undefined on i
+nput line 24.
+
+
+LaTeX Warning: Citation `sisrbenchmark' on page 3 undefined on input line 24.
+
+
+LaTeX Warning: Citation `resizingimages' on page 3 undefined on input line 24.
+
+
+LaTeX Warning: Citation `photoshopinterpolationmethods' on page 3 undefined on 
+input line 24.
+
+
+LaTeX Warning: Citation `gimpinterpolationmethods' on page 3 undefined on input
+ line 24.
+
+
+LaTeX Warning: Citation `depixelizingpixelart' on page 3 undefined on input lin
+e 24.
+
+
+LaTeX Warning: Citation `interpolationtechniquessurvey' on page 3 undefined on 
+input line 24.
+
+
+LaTeX Warning: Citation `interpolationtechniquessurvey' on page 3 undefined on 
+input line 24.
+
+
+LaTeX Warning: Citation `titanxppage' on page 3 undefined on input line 24.
+
+
+LaTeX Warning: Citation `aigigapixelstory' on page 3 undefined on input line 24
+.
+
+
+LaTeX Warning: Citation `progressivesisr' on page 3 undefined on input line 24.
+
+
+[3 <./images/chap01-introduction/raster-images-scaled.png>] [4]
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 5 undefine
+d on input line 27.
+
+
+LaTeX Warning: Citation `rastervsvector' on page 5 undefined on input line 27.
+
+
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 5 undefined on input
+ line 27.
+
+
+LaTeX Warning: Citation `barendrecht2018locally' on page 5 undefined on input l
+ine 27.
+
+
+LaTeX Warning: Citation `rastervsvector' on page 5 undefined on input line 27.
+
+
+LaTeX Warning: Citation `rastervsvectorgraphics' on page 5 undefined on input l
+ine 27.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 5 undefined on i
+nput line 27.
+
+
+LaTeX Warning: Citation `optimizedgradientmeshes' on page 5 undefined on input 
+line 27.
+
 <images/chap01-introduction/raster-vs-vector.png, id=50, 385.44pt x 216.81pt>
 File: images/chap01-introduction/raster-vs-vector.png Graphic file (type png)
 <use images/chap01-introduction/raster-vs-vector.png>
@@ -506,11 +616,123 @@ Package pdftex.def Info: images/chap01-introduction/raster-vs-vector.png  used
 on input line 31.
 (pdftex.def)             Requested size: 385.43906pt x 216.80946pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6 <./images/chap01-introduction/raster-vs-vector.png>] [7] [8] [9]
-[10]) [11]
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 5 undefined on i
+nput line 36.
+
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 5 undefine
+d on input line 36.
+
+[5]
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 6 undefined on i
+nput line 38.
+
+
+LaTeX Warning: Citation `depixelizingpixelart' on page 6 undefined on input lin
+e 38.
+
+
+LaTeX Warning: Citation `vectorizationoflinedrawingspolyvector' on page 6 undef
+ined on input line 38.
+
+
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 6 undefined on input
+ line 38.
+
+[6 <./images/chap01-introduction/raster-vs-vector.png>]
+
+LaTeX Warning: Citation `anovelmethodforvectorization' on page 7 undefined on i
+nput line 40.
+
+
+LaTeX Warning: Citation `optimizedgradientmeshes' on page 7 undefined on input 
+line 40.
+
+
+LaTeX Warning: Citation `barendrecht2018locally' on page 7 undefined on input l
+ine 40.
+
+
+LaTeX Warning: Citation `hierarchicaldiffusioncurves' on page 7 undefined on in
+put line 40.
+
+
+LaTeX Warning: Citation `hierarchicaldiffusioncurves' on page 7 undefined on in
+put line 40.
+
+
+LaTeX Warning: Citation `optimizedgradientmeshes' on page 7 undefined on input 
+line 40.
+
+
+LaTeX Warning: Citation `barendrecht2018locally' on page 7 undefined on input l
+ine 40.
+
+
+LaTeX Warning: Citation `anovelmethodforvectorization' on page 7 undefined on i
+nput line 40.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 7 undefined on i
+nput line 42.
+
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 7 undefine
+d on input line 42.
+
+
+LaTeX Warning: Citation `depixelizingpixelart' on page 7 undefined on input lin
+e 42.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 7 undefined on i
+nput line 42.
+
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 7 undefine
+d on input line 42.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 7 undefined on i
+nput line 42.
+
+[7]
+
+LaTeX Warning: Citation `useofcnnimageclassification' on page 8 undefined on in
+put line 44.
+
+
+LaTeX Warning: Citation `simplifyingsketchesviacnn' on page 8 undefined on inpu
+t line 44.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 8 undefined on i
+nput line 47.
+
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 8 undefine
+d on input line 47.
+
+
+LaTeX Warning: Citation `depixelizingpixelart' on page 8 undefined on input lin
+e 47.
+
+[8]
+
+LaTeX Warning: Citation `bsplines' on page 9 undefined on input line 53.
+
+
+LaTeX Warning: Citation `bsplines' on page 9 undefined on input line 59.
+
+
+LaTeX Warning: Citation `deeplearningparametrization' on page 9 undefined on in
+put line 65.
+
+[9] [10]) [11]
 :<-
 :<+ chapter2_rrl.tex
 \openout2 = `chapter2_rrl.aux'.
@@ -529,7 +751,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
 
-[15] [16] [17] [18] [19] [20] [21]) [22]
+[15] [16] [17] [18] [19] [20] [21] [22]) [23]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
@@ -537,12 +759,16 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (./chapter3_sotp.tex
 Chapter 3.
 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 24 undefined on 
+input line 6.
+
+
 Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 []\OT1/cmr/m/n/12 There have been nu-mer-ous works that tack-les im-age vec-tor
 -iza-tion for semi-structured
  []
 
-) [23
+) [24
 
 
 
@@ -553,7 +779,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 
 (./chapter4_obj.tex
 Chapter 4.
-) [24
+) [25
 
 
 
@@ -564,19 +790,48 @@ Chapter 4.
 
 (./chapter5_methods.tex
 Chapter 5.
-[25
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 26 undefined on 
+input line 3.
+
+
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 26 undefin
+ed on input line 3.
+
+
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 26 undefined on inpu
+t line 3.
+
+
+LaTeX Warning: Citation `deeplearningparametrization' on page 26 undefined on i
+nput line 3.
+
+
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 26 undefined on 
+input line 11.
+
+[26
 
 
 
-] [26] [27] [28] [29]
-<images/chap05-methodology/ppn.png, id=141, 312.16624pt x 201.75375pt>
+] [27]
+
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 28 undefined on inpu
+t line 26.
+
+
+LaTeX Warning: Citation `deeplearningparametrization' on page 28 undefined on i
+nput line 31.
+
+[28] [29] [30]
+<images/chap05-methodology/ppn.png, id=144, 312.16624pt x 201.75375pt>
 File: images/chap05-methodology/ppn.png Graphic file (type png)
 <use images/chap05-methodology/ppn.png>
 Package pdftex.def Info: images/chap05-methodology/ppn.png  used on input line 
 71.
 (pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
- [30 <./images/chap05-methodology/ppn.png>] [31]
-<images/chap05-methodology/ksn.png, id=148, 301.125pt x 197.73875pt>
+ [31 <./images/chap05-methodology/ppn.png>] [32]
+<images/chap05-methodology/ksn.png, id=151, 301.125pt x 197.73875pt>
 File: images/chap05-methodology/ksn.png Graphic file (type png)
 <use images/chap05-methodology/ksn.png>
 Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line 
@@ -586,14 +841,19 @@ Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32] [33 <./images/chap05-methodology/ksn.png>] [34] [35]) [36]
+[33] [34 <./images/chap05-methodology/ksn.png>]
+
+LaTeX Warning: Citation `deeplearningparametrization' on page 35 undefined on i
+nput line 158.
+
+[35] [36]) [37]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
 
 (./chapter6_sim.exp.tex
 Chapter 6.
-) [37
+) [38
 
 
 
@@ -604,7 +864,7 @@ Chapter 6.
 
 (./chapter7_rd.tex
 Chapter 7.
-) [38
+) [39
 
 
 
@@ -615,7 +875,7 @@ Chapter 7.
 
 (./chapter8_sum.con.tex
 Chapter 8.
-) [39
+) [40
 
 
 
@@ -626,76 +886,51 @@ Chapter 8.
 
 (./appendix.tex
 Appendix A.
-) [40
+) [41
 
 
 
 ]
 :<-
 :<+ thesis.bbl
-(./thesis.bbl
-Missing character: There is no Â in font cmr12!
-Missing character: There is no   in font cmr12!
- [41
+(./thesis.bbl [42
 
 
-]
-Underfull \hbox (badness 5217) in paragraph at lines 78--81
-[]\OT1/cmr/m/n/12 Computerphile.  Re-siz-ing im-ages.  []$\OT1/cmtt/m/n/10.95 h
-ttps : / / www . youtube . com / watch ? v =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--94
-[]\OT1/cmr/m/n/12 Juan[] Car-los Gon-za-les.  Use of con-vo-lu-tional neu-ral n
-et-works
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--94
-\OT1/cmr/m/n/12 for im-age clas-si-fi-ca-tion.  []$\OT1/cmtt/m/n/10.95 https : 
-/ / www . apsl . net / blog / 2017 / 11 / 20 /
- []
-
-[42] [43]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-)
+])
 :<-
-[44] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+[43] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
-(./chapter8_sum.con.aux) (./appendix.aux)) ) 
+(./chapter8_sum.con.aux) (./appendix.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5596 strings out of 494923
- 81529 string characters out of 6180742
- 147716 words of memory out of 5000000
- 8722 multiletter control sequences out of 15000+600000
+ 5597 strings out of 494923
+ 81544 string characters out of 6180742
+ 147624 words of memory out of 5000000
+ 8723 multiletter control sequences out of 15000+600000
  13597 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,11n,47p,3339b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (52 pages, 2335297 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (51 pages, 2329965 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
