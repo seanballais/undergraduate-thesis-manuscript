@@ -1,13 +1,10 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces When zoomed in enough, each individual pixel of a raster image is visible. Meme image obtained from \url {http://thesismemes.tumblr.com/post/73483120281}.\relax }}{2}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Different interpolation algorithms will produce different results. As seen in the image, the quality will also differ, from an image looking blocky to an image looking blurry. Cat meme image obtained from \url {https://www.hercampus.com/school/uwindsor/school-thoughts-told-grumpy-cat-memes}.\relax }}{3}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Zooming in closely at the same image, but one being in raster format (top right) and the other in vector (though hand-drawn; bottom left), quickly reveals the quality differences of both image formats. Raster images will show you individual pixels when close enough, but vectors will remain smooth.\relax }}{6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The network architecture of the Point Parametrization Network (PPN)\relax }}{32}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The network architecture of the Knot Selection Network (PPN)\relax }}{35}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The network architecture of the Point Parametrization Network (PPN)\relax }}{25}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The network architecture of the Knot Selection Network (PPN)\relax }}{28}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

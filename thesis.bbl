@@ -13,6 +13,12 @@ Shara S.~A. Alves, Saulo A.~F. Oliveira, and Ajalmar R.~Rocha Neto.
   algorithms.
 \newblock 01 2015.
 
+\bibitem{bedoya-non-standard-ga}
+Cristina~Fernandez Bedoya and Matilde Santos.
+\newblock A non-standard genetic algorithm approach to solve constrained school
+  timetabling problems.
+\newblock pages 26--37, 01 2003.
+
 \bibitem{brownlee-tabu-search}
 Jason Brownlee.
 \newblock Tabu search - clever algorithms: Nature-inspired programming recipes.
