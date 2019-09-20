@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.10)  20 SEP 2019 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  20 SEP 2019 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,15 +483,20 @@ Chapter 2.
 
 
 
-] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
+] [3] [4] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
- [5]
-[6] [7] [8] [9] [10] [11] [12] [13] [14] [15]) [16] [17]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+
+LaTeX Warning: Citation `feng-integer-prog-ga' on page 17 undefined on input li
+ne 99.
+
+) [17] [18]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
@@ -499,7 +504,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (./chapter3_sotp.tex
 Chapter 3.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 18 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 19 undefined on 
 input line 6.
 
 
@@ -508,7 +513,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 -iza-tion for semi-structured
  []
 
-) [18
+) [19
 
 
 
@@ -519,7 +524,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 
 (./chapter4_obj.tex
 Chapter 4.
-) [19
+) [20
 
 
 
@@ -531,47 +536,47 @@ Chapter 4.
 (./chapter5_methods.tex
 Chapter 5.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 20 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
 input line 3.
 
 
-LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 20 undefin
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 21 undefin
 ed on input line 3.
 
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 20 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 21 undefined on inpu
 t line 3.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 20 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 21 undefined on i
 nput line 3.
 
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 20 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
 input line 11.
 
-[20
+[21
 
 
 
-] [21]
+] [22]
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 22 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 23 undefined on inpu
 t line 26.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 22 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 23 undefined on i
 nput line 31.
 
-[22] [23] [24]
-<images/chap05-methodology/ppn.png, id=116, 312.16624pt x 201.75375pt>
+[23] [24] [25]
+<images/chap05-methodology/ppn.png, id=119, 312.16624pt x 201.75375pt>
 File: images/chap05-methodology/ppn.png Graphic file (type png)
 <use images/chap05-methodology/ppn.png>
 Package pdftex.def Info: images/chap05-methodology/ppn.png  used on input line 
 71.
 (pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
- [25 <./images/chap05-methodology/ppn.png>] [26]
-<images/chap05-methodology/ksn.png, id=123, 301.125pt x 197.73875pt>
+ [26 <./images/chap05-methodology/ppn.png>] [27]
+<images/chap05-methodology/ksn.png, id=126, 301.125pt x 197.73875pt>
 File: images/chap05-methodology/ksn.png Graphic file (type png)
 <use images/chap05-methodology/ksn.png>
 Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line 
@@ -581,19 +586,19 @@ Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27] [28 <./images/chap05-methodology/ksn.png>]
+[28] [29 <./images/chap05-methodology/ksn.png>]
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 29 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 30 undefined on i
 nput line 158.
 
-[29] [30]) [31]
+[30] [31]) [32]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
 
 (./chapter6_sim.exp.tex
 Chapter 6.
-) [32
+) [33
 
 
 
@@ -604,7 +609,7 @@ Chapter 6.
 
 (./chapter7_rd.tex
 Chapter 7.
-) [33
+) [34
 
 
 
@@ -615,7 +620,7 @@ Chapter 7.
 
 (./chapter8_sum.con.tex
 Chapter 8.
-) [34
+) [35
 
 
 
@@ -626,19 +631,30 @@ Chapter 8.
 
 (./appendix.tex
 Appendix A.
-) [35
+) [36
 
 
 
 ]
 :<-
 :<+ thesis.bbl
-(./thesis.bbl [36
+(./thesis.bbl
+! Misplaced alignment tab character &.
+l.27 \newblock {\em Computers &
+                                Operations Research}, 35:1265--1280, 01 2008.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[37
 
 
-])
+] [38])
 :<-
-[37] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+[39] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
 (./chapter8_sum.con.aux) (./appendix.aux))
@@ -647,13 +663,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5545 strings out of 494923
- 80083 string characters out of 6180742
- 146583 words of memory out of 5000000
- 8678 multiletter control sequences out of 15000+600000
+ 5547 strings out of 494923
+ 80143 string characters out of 6180742
+ 147587 words of memory out of 5000000
+ 8680 multiletter control sequences out of 15000+600000
  11374 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,11n,44p,3519b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,44p,3585b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -666,10 +682,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on thesis.pdf (45 pages, 234976 bytes).
+Output written on thesis.pdf (47 pages, 237698 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 207 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

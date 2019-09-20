@@ -19,6 +19,13 @@ Cristina~Fernandez Bedoya and Matilde Santos.
   timetabling problems.
 \newblock pages 26--37, 01 2003.
 
+\bibitem{beligiannis-evolutionary-computation}
+Grigorios~N. Beligiannis, Charalampos~N. Moschopoulos, Georgios~P. Kaperonis,
+  and Spiridon~D. Likothanassis.
+\newblock Applying evolutionary computation to the school timetabling problem:
+  The greek case.
+\newblock {\em Computers & Operations Research}, 35:1265--1280, 01 2008.
+
 \bibitem{brownlee-tabu-search}
 Jason Brownlee.
 \newblock Tabu search - clever algorithms: Nature-inspired programming recipes.

@@ -15,28 +15,8 @@ A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 Warning--I didn't find a database entry for "hoshyari2018perceptiondriven"
-Warning--I didn't find a database entry for "realtimevectorizationgpu"
-Warning--I didn't find a database entry for "rastervsvector"
-Warning--I didn't find a database entry for "optimizedgradientmeshes"
-Warning--I didn't find a database entry for "rastervsvectorgraphics"
-Warning--I didn't find a database entry for "barendrecht2018locally"
-Warning--I didn't find a database entry for "howdovectorgraphicswork"
-Warning--I didn't find a database entry for "sisrbenchmark"
-Warning--I didn't find a database entry for "resizingimages"
-Warning--I didn't find a database entry for "photoshopinterpolationmethods"
-Warning--I didn't find a database entry for "gimpinterpolationmethods"
-Warning--I didn't find a database entry for "depixelizingpixelart"
-Warning--I didn't find a database entry for "interpolationtechniquessurvey"
-Warning--I didn't find a database entry for "titanxppage"
-Warning--I didn't find a database entry for "aigigapixelstory"
-Warning--I didn't find a database entry for "progressivesisr"
 Warning--I didn't find a database entry for "effectiveclipartimagevectorization"
-Warning--I didn't find a database entry for "vectorizationoflinedrawingspolyvector"
-Warning--I didn't find a database entry for "anovelmethodforvectorization"
-Warning--I didn't find a database entry for "hierarchicaldiffusioncurves"
-Warning--I didn't find a database entry for "useofcnnimageclassification"
-Warning--I didn't find a database entry for "simplifyingsketchesviacnn"
-Warning--I didn't find a database entry for "bsplines"
+Warning--I didn't find a database entry for "realtimevectorizationgpu"
 Warning--I didn't find a database entry for "deeplearningparametrization"
 Warning--to sort, need author or key in maximum-bipartite-matching
 Warning--to sort, need author or key in what-is-ga
@@ -58,45 +38,45 @@ Warning--empty year in sanjay-an-application-of-ga
 Warning--empty journal in raghavjee-ga-south-africa
 Warning--empty journal in socha-maxmin-ant-system
 Warning--empty journal in yousef-gpu-ga
-You've used 18 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            618 strings with 7699 characters,
-and the built_in function-call counts, 5128 in all, are:
-= -- 469
-> -- 262
+            604 strings with 7549 characters,
+and the built_in function-call counts, 5528 in all, are:
+= -- 507
+> -- 285
 < -- 2
-+ -- 113
-- -- 86
-* -- 364
-:= -- 885
-add.period$ -- 51
-call.type$ -- 18
-change.case$ -- 97
++ -- 122
+- -- 94
+* -- 399
+:= -- 953
+add.period$ -- 54
+call.type$ -- 19
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 199
-empty$ -- 370
-format.name$ -- 86
-if$ -- 1026
+cite$ -- 39
+duplicate$ -- 210
+empty$ -- 398
+format.name$ -- 94
+if$ -- 1107
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 18
-newline$ -- 90
-num.names$ -- 32
-pop$ -- 121
+int.to.str$ -- 19
+missing$ -- 19
+newline$ -- 95
+num.names$ -- 34
+pop$ -- 126
 preamble$ -- 1
-purify$ -- 79
+purify$ -- 85
 quote$ -- 0
-skip$ -- 141
+skip$ -- 148
 stack$ -- 0
-substring$ -- 221
-swap$ -- 18
+substring$ -- 253
+swap$ -- 19
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 76
 warning$ -- 20
-while$ -- 41
-width$ -- 20
-write$ -- 168
-(There were 44 warnings)
+while$ -- 44
+width$ -- 21
+write$ -- 179
+(There were 24 warnings)
