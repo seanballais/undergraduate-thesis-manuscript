@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  20 SEP 2019 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  23 SEP 2019 00:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,16 +430,16 @@ Abstract
 \c@ztocpageB=\count131
 \@defbaselineskip=\skip67
 (./thesis.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 8.
+LaTeX Font Info:    Try loading font information for U+msa on input line 7.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 8.
+LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 8.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -469,21 +469,24 @@ UP CS thesis preface pages completed.
 
 (./chapter1_intro.tex
 Chapter 1.
-) [1
+
+LaTeX Warning: Citation `gd-burked' on page 1 undefined on input line 3.
+
+[1
 
 
-]
+] [2]) [3]
 :<-
 :<+ chapter2_rrl.tex
 \openout2 = `chapter2_rrl.aux'.
 
 (./chapter2_rrl.tex
 Chapter 2.
-[2
+[4
 
 
 
-] [3] [4] [5]
+] [5] [6] [7]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -491,12 +494,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
 
-[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
-
-LaTeX Warning: Citation `feng-integer-prog-ga' on page 17 undefined on input li
-ne 99.
-
-) [17] [18]
+[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]) [19] [20]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
@@ -504,7 +502,7 @@ ne 99.
 (./chapter3_sotp.tex
 Chapter 3.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 19 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
 input line 6.
 
 
@@ -513,7 +511,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 -iza-tion for semi-structured
  []
 
-) [19
+) [21
 
 
 
@@ -524,7 +522,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 
 (./chapter4_obj.tex
 Chapter 4.
-) [20
+) [22
 
 
 
@@ -536,47 +534,47 @@ Chapter 4.
 (./chapter5_methods.tex
 Chapter 5.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 23 undefined on 
 input line 3.
 
 
-LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 21 undefin
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 23 undefin
 ed on input line 3.
 
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 21 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 23 undefined on inpu
 t line 3.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 21 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 23 undefined on i
 nput line 3.
 
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 23 undefined on 
 input line 11.
 
-[21
+[23
 
 
 
-] [22]
+] [24]
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 23 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 25 undefined on inpu
 t line 26.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 23 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 25 undefined on i
 nput line 31.
 
-[23] [24] [25]
-<images/chap05-methodology/ppn.png, id=119, 312.16624pt x 201.75375pt>
+[25] [26] [27]
+<images/chap05-methodology/ppn.png, id=125, 312.16624pt x 201.75375pt>
 File: images/chap05-methodology/ppn.png Graphic file (type png)
 <use images/chap05-methodology/ppn.png>
 Package pdftex.def Info: images/chap05-methodology/ppn.png  used on input line 
 71.
 (pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
- [26 <./images/chap05-methodology/ppn.png>] [27]
-<images/chap05-methodology/ksn.png, id=126, 301.125pt x 197.73875pt>
+ [28 <./images/chap05-methodology/ppn.png>] [29]
+<images/chap05-methodology/ksn.png, id=133, 301.125pt x 197.73875pt>
 File: images/chap05-methodology/ksn.png Graphic file (type png)
 <use images/chap05-methodology/ksn.png>
 Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line 
@@ -586,19 +584,19 @@ Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] [29 <./images/chap05-methodology/ksn.png>]
+[30] [31 <./images/chap05-methodology/ksn.png>]
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 30 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 32 undefined on i
 nput line 158.
 
-[30] [31]) [32]
+[32] [33]) [34]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
 
 (./chapter6_sim.exp.tex
 Chapter 6.
-) [33
+) [35
 
 
 
@@ -609,7 +607,7 @@ Chapter 6.
 
 (./chapter7_rd.tex
 Chapter 7.
-) [34
+) [36
 
 
 
@@ -620,7 +618,7 @@ Chapter 7.
 
 (./chapter8_sum.con.tex
 Chapter 8.
-) [35
+) [37
 
 
 
@@ -631,30 +629,19 @@ Chapter 8.
 
 (./appendix.tex
 Appendix A.
-) [36
+) [38
 
 
 
 ]
 :<-
 :<+ thesis.bbl
-(./thesis.bbl
-! Misplaced alignment tab character &.
-l.27 \newblock {\em Computers &
-                                Operations Research}, 35:1265--1280, 01 2008.
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[37
+(./thesis.bbl [39
 
 
-] [38])
+] [40])
 :<-
-[39] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+[41] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
 (./chapter8_sum.con.aux) (./appendix.aux))
@@ -663,13 +650,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5547 strings out of 494923
- 80143 string characters out of 6180742
- 147587 words of memory out of 5000000
- 8680 multiletter control sequences out of 15000+600000
+ 5549 strings out of 494923
+ 80191 string characters out of 6180742
+ 147595 words of memory out of 5000000
+ 8682 multiletter control sequences out of 15000+600000
  11374 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,11n,44p,3585b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,53p,3585b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -682,10 +669,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on thesis.pdf (47 pages, 237698 bytes).
+Output written on thesis.pdf (49 pages, 242632 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
+ 214 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

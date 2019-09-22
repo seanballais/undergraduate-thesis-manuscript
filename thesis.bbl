@@ -24,7 +24,7 @@ Grigorios~N. Beligiannis, Charalampos~N. Moschopoulos, Georgios~P. Kaperonis,
   and Spiridon~D. Likothanassis.
 \newblock Applying evolutionary computation to the school timetabling problem:
   The greek case.
-\newblock {\em Computers & Operations Research}, 35:1265--1280, 01 2008.
+\newblock {\em Computers \& Operations Research}, 35:1265--1280, 01 2008.
 
 \bibitem{brownlee-tabu-search}
 Jason Brownlee.
@@ -47,11 +47,22 @@ Wutthipong Chinnasri, Soradech Krootjohn, and Nidapan Sureerattanan.
   timetabling problem.
 \newblock {\em IJACT}, 4:61--71, 01 2012.
 
+\bibitem{cooper-timetable-problem-complexity}
+Tim~B. Cooper and Jeffrey~H. Kingston.
+\newblock The complexity of timetable construction problems.
+\newblock pages 281--295, 01 1996.
+
 \bibitem{intro-gd-dueck}
 Gunter Dueck.
 \newblock New optimization heuristics: The great deluge algorith and the
   record-to-record travel.
 \newblock 104:86--92, 01 1993.
+
+\bibitem{feng-integer-prog-ga}
+Xuehao Feng, Yuna Lee, and Ilkyeong Moon.
+\newblock An integer program and a hybrid genetic algorithm for the university
+  timetabling problem.
+\newblock {\em Optimization Methods and Software}, 32:625--649, 01 2017.
 
 \bibitem{supachate-noval-approach-ga-thai}
 Supachate Innet.

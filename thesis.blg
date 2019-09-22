@@ -14,6 +14,7 @@ A level-1 auxiliary file: chapter8_sum.con.aux
 A level-1 auxiliary file: appendix.aux
 The style file: plain.bst
 Database file #1: biblio.bib
+Warning--I didn't find a database entry for "gd-burked"
 Warning--I didn't find a database entry for "hoshyari2018perceptiondriven"
 Warning--I didn't find a database entry for "effectiveclipartimagevectorization"
 Warning--I didn't find a database entry for "realtimevectorizationgpu"
@@ -28,6 +29,7 @@ Warning--empty year in what-is-ga
 Warning--empty journal in alves-novel-recursive
 Warning--empty journal in bedoya-non-standard-ga
 Warning--empty year in brownlee-tabu-search
+Warning--empty journal in cooper-timetable-problem-complexity
 Warning--empty journal in intro-gd-dueck
 Warning--empty journal in supachate-noval-approach-ga-thai
 Warning--empty journal in johan-ga-sa-comparison
@@ -38,45 +40,45 @@ Warning--empty year in sanjay-an-application-of-ga
 Warning--empty journal in raghavjee-ga-south-africa
 Warning--empty journal in socha-maxmin-ant-system
 Warning--empty journal in yousef-gpu-ga
-You've used 19 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            604 strings with 7549 characters,
-and the built_in function-call counts, 5528 in all, are:
-= -- 507
-> -- 285
-< -- 2
-+ -- 122
-- -- 94
-* -- 399
-:= -- 953
-add.period$ -- 54
-call.type$ -- 19
-change.case$ -- 104
+            617 strings with 7892 characters,
+and the built_in function-call counts, 6298 in all, are:
+= -- 584
+> -- 316
+< -- 3
++ -- 136
+- -- 104
+* -- 452
+:= -- 1072
+add.period$ -- 60
+call.type$ -- 21
+change.case$ -- 115
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 210
-empty$ -- 398
-format.name$ -- 94
-if$ -- 1107
+cite$ -- 42
+duplicate$ -- 241
+empty$ -- 456
+format.name$ -- 104
+if$ -- 1275
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 19
-newline$ -- 95
-num.names$ -- 34
-pop$ -- 126
+int.to.str$ -- 21
+missing$ -- 21
+newline$ -- 105
+num.names$ -- 38
+pop$ -- 137
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 94
 quote$ -- 0
-skip$ -- 148
+skip$ -- 175
 stack$ -- 0
-substring$ -- 253
-swap$ -- 19
-text.length$ -- 2
+substring$ -- 314
+swap$ -- 29
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 20
-while$ -- 44
-width$ -- 21
-write$ -- 179
-(There were 24 warnings)
+type$ -- 84
+warning$ -- 21
+while$ -- 51
+width$ -- 23
+write$ -- 200
+(There were 26 warnings)
