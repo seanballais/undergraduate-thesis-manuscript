@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.10)  23 SEP 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  23 SEP 2019 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,15 +486,15 @@ Chapter 2.
 
 
 
-] [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
+] [8] [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
- [9] [10]
-[11] [12] [13] [14] [15] [16] [17] [18] [19]) [20]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+ [10]
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20]) [21]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
@@ -502,7 +502,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (./chapter3_sotp.tex
 Chapter 3.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 21 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 22 undefined on 
 input line 6.
 
 
@@ -511,7 +511,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 -iza-tion for semi-structured
  []
 
-) [21
+) [22
 
 
 
@@ -522,7 +522,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 
 (./chapter4_obj.tex
 Chapter 4.
-) [22
+) [23
 
 
 
@@ -534,47 +534,47 @@ Chapter 4.
 (./chapter5_methods.tex
 Chapter 5.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 23 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 24 undefined on 
 input line 3.
 
 
-LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 23 undefin
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 24 undefin
 ed on input line 3.
 
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 23 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 24 undefined on inpu
 t line 3.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 23 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 24 undefined on i
 nput line 3.
 
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 23 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 24 undefined on 
 input line 11.
 
-[23
+[24
 
 
 
-] [24]
+] [25]
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 25 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 26 undefined on inpu
 t line 26.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 25 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 26 undefined on i
 nput line 31.
 
-[25] [26] [27]
-<images/chap05-methodology/ppn.png, id=125, 312.16624pt x 201.75375pt>
+[26] [27] [28]
+<images/chap05-methodology/ppn.png, id=128, 312.16624pt x 201.75375pt>
 File: images/chap05-methodology/ppn.png Graphic file (type png)
 <use images/chap05-methodology/ppn.png>
 Package pdftex.def Info: images/chap05-methodology/ppn.png  used on input line 
 71.
 (pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
- [28 <./images/chap05-methodology/ppn.png>] [29]
-<images/chap05-methodology/ksn.png, id=133, 301.125pt x 197.73875pt>
+ [29 <./images/chap05-methodology/ppn.png>] [30]
+<images/chap05-methodology/ksn.png, id=136, 301.125pt x 197.73875pt>
 File: images/chap05-methodology/ksn.png Graphic file (type png)
 <use images/chap05-methodology/ksn.png>
 Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line 
@@ -584,19 +584,19 @@ Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30] [31 <./images/chap05-methodology/ksn.png>]
+[31] [32 <./images/chap05-methodology/ksn.png>]
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 32 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 33 undefined on i
 nput line 158.
 
-[32] [33]) [34]
+[33] [34]) [35]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
 
 (./chapter6_sim.exp.tex
 Chapter 6.
-) [35
+) [36
 
 
 
@@ -607,7 +607,7 @@ Chapter 6.
 
 (./chapter7_rd.tex
 Chapter 7.
-) [36
+) [37
 
 
 
@@ -618,7 +618,7 @@ Chapter 7.
 
 (./chapter8_sum.con.tex
 Chapter 8.
-) [37
+) [38
 
 
 
@@ -629,19 +629,19 @@ Chapter 8.
 
 (./appendix.tex
 Appendix A.
-) [38
+) [39
 
 
 
 ]
 :<-
 :<+ thesis.bbl
-(./thesis.bbl [39
+(./thesis.bbl [40
 
 
-] [40])
+] [41])
 :<-
-[41] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+[42] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
 (./chapter8_sum.con.aux) (./appendix.aux))
@@ -650,10 +650,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5549 strings out of 494923
- 80191 string characters out of 6180742
- 147595 words of memory out of 5000000
- 8682 multiletter control sequences out of 15000+600000
+ 5550 strings out of 494923
+ 80218 string characters out of 6180742
+ 147599 words of memory out of 5000000
+ 8683 multiletter control sequences out of 15000+600000
  11374 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,11n,53p,3585b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -669,10 +669,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on thesis.pdf (49 pages, 243348 bytes).
+Output written on thesis.pdf (50 pages, 244860 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
+ 217 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

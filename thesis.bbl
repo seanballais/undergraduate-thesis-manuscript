@@ -13,6 +13,12 @@ Shara S.~A. Alves, Saulo A.~F. Oliveira, and Ajalmar R.~Rocha Neto.
   algorithms.
 \newblock 01 2015.
 
+\bibitem{bakir-integer-programming}
+M~Akif Bakir and Cihan Aksop.
+\newblock A 0-1 integer programming approach to a university timetabling
+  problem.
+\newblock 37, 01 2008.
+
 \bibitem{bedoya-non-standard-ga}
 Cristina~Fernandez Bedoya and Matilde Santos.
 \newblock A non-standard genetic algorithm approach to solve constrained school
