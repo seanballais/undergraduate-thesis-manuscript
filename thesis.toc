@@ -15,31 +15,31 @@
 \contentsline {section}{\numberline {2.2}Great Deluge-Based Works}{8}
 \contentsline {section}{\numberline {2.3}Machine Learning-Based Works}{12}
 \contentsline {section}{\numberline {2.4}Genetic Algorithm-Based Works}{15}
-\contentsline {chapter}{\numberline {3}Statement of the Problem}{22}
-\contentsline {chapter}{\numberline {4}Objectives}{23}
-\contentsline {chapter}{\numberline {5}Proposed Methodology}{24}
-\contentsline {section}{\numberline {5.1}Image Preprocessing}{24}
-\contentsline {subsection}{Corner Detection}{24}
-\contentsline {subsection}{Region Segmentation}{25}
-\contentsline {section}{\numberline {5.2}Curve Approximation}{26}
-\contentsline {subsection}{Point Sequence Generation}{26}
-\contentsline {subsection}{Point Sequence Curve Approximation}{27}
-\contentsline {subsubsection}{Sequence Segmentation}{28}
-\contentsline {subsubsection}{Sub/Supersampling and Normalization}{28}
-\contentsline {subsubsection}{Parametrization of Point Segments}{29}
-\contentsline {paragraph}{The PPN Architecture}{30}
-\contentsline {subparagraph}{PP1. Accumulation and Rescaling}{30}
-\contentsline {subparagraph}{PP2. Approximation}{31}
-\contentsline {subparagraph}{PP3. Euclidean Loss}{31}
-\contentsline {subsubsection}{Parametrization Refinement}{31}
-\contentsline {paragraph}{The KSN Architecture}{32}
+\contentsline {section}{\numberline {2.5}Other Metaheuristics-Based Approaches}{21}
+\contentsline {chapter}{\numberline {3}Statement of the Problem}{23}
+\contentsline {chapter}{\numberline {4}Objectives}{24}
+\contentsline {chapter}{\numberline {5}Proposed Methodology}{25}
+\contentsline {section}{\numberline {5.1}Image Preprocessing}{25}
+\contentsline {subsection}{Corner Detection}{25}
+\contentsline {subsection}{Region Segmentation}{26}
+\contentsline {section}{\numberline {5.2}Curve Approximation}{27}
+\contentsline {subsection}{Point Sequence Generation}{27}
+\contentsline {subsection}{Point Sequence Curve Approximation}{28}
+\contentsline {subsubsection}{Sequence Segmentation}{29}
+\contentsline {subsubsection}{Sub/Supersampling and Normalization}{29}
+\contentsline {subsubsection}{Parametrization of Point Segments}{30}
+\contentsline {paragraph}{The PPN Architecture}{31}
+\contentsline {subparagraph}{PP1. Accumulation and Rescaling}{31}
+\contentsline {subparagraph}{PP2. Approximation}{32}
+\contentsline {subparagraph}{PP3. Euclidean Loss}{32}
+\contentsline {subsubsection}{Parametrization Refinement}{32}
+\contentsline {paragraph}{The KSN Architecture}{33}
 \contentsline {subparagraph}{KS1. Threshold Layer}{33}
-\contentsline {subparagraph}{KS2. Approximation}{33}
-\contentsline {subparagraph}{KS3. Euclidean Loss}{33}
-\contentsline {subsubsection}{Network Training}{33}
-\contentsline {section}{\numberline {5.3}Region Colouring and Merging}{34}
+\contentsline {subparagraph}{KS2. Approximation}{34}
+\contentsline {subparagraph}{KS3. Euclidean Loss}{34}
+\contentsline {subsubsection}{Network Training}{34}
+\contentsline {section}{\numberline {5.3}Region Colouring and Merging}{35}
 \contentsline {chapter}{\numberline {6}Describing How You Validated Your Approach.}{36}
 \contentsline {chapter}{\numberline {7}Stating Your Results and Drawing Insights From Them.}{37}
 \contentsline {chapter}{\numberline {8}Summarizing Your Thesis and Drawing Your Conclusions.}{38}
 \contentsline {chapter}{\numberline {A}What should be in the Appendix}{39}
-\contentsline {chapter}{Bibliography}{40}

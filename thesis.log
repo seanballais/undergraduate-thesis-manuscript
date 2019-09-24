@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.19)  23 SEP 2019 21:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.9.19)  24 SEP 2019 18:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**thesis.tex
+**thesis
 (./thesis.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
@@ -133,10 +133,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: dvips.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
@@ -265,89 +265,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen130
-\scratchbox=\box32
-\nofMPsegments=\count124
-\nofMParguments=\count125
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen131
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks31
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count129
+\c@lstlisting=\count123
 
 :?0000
 Most over/underfulls in first few pages are the fault of upcsthesis.
 Ignore all them. If uncorrectable errors occur, notify staff.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 124--124
 []\OT1/cmr/m/n/12 This spe-cial prob-lem, en-ti-tled ``\OT1/cmr/bx/n/12 A DEEP 
 LEARNING-
@@ -426,8 +356,8 @@ Abstract
 
 ]
 :<-
-\c@ztocpageA=\count130
-\c@ztocpageB=\count131
+\c@ztocpageA=\count124
+\c@ztocpageB=\count125
 \@defbaselineskip=\skip67
 (./thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 7.
@@ -470,31 +400,305 @@ UP CS thesis preface pages completed.
 (./chapter1_intro.tex
 Chapter 1.
 
+LaTeX Warning: Citation `alves-novel-recursive' on page 1 undefined on input li
+ne 3.
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `yousef-gpu-ga' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `socha-maxmin-ant-system' on page 1 undefined on input 
+line 3.
+
+
 LaTeX Warning: Citation `gd-burked' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 1 undefined on input line 3.
+
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `bedoya-non-standard-ga' on page 1 undefined on input l
+ine 3.
+
+
+LaTeX Warning: Citation `raghavjee-ga-south-africa' on page 1 undefined on inpu
+t line 3.
+
+
+LaTeX Warning: Citation `yik-ga-timetabling' on page 1 undefined on input line 
+3.
 
 [1
 
 
-] [2] [3] [4] [5]) [6]
+]
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 2 undefined on input line 6.
+
+
+
+LaTeX Warning: Citation `cooper-timetable-problem-complexity' on page 2 undefin
+ed on input line 6.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 2 undefined on input line 8.
+
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 2 undefined on input line 8.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 2 undefined 
+on input line 8.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 2 undefined on input line 8.
+
+
+
+LaTeX Warning: Citation `bedoya-non-standard-ga' on page 2 undefined on input l
+ine 8.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 2 undefined on input line 10
+.
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 2 undefined on input line 10.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 2 undefined 
+on input line 10.
+
+
+LaTeX Warning: Citation `sanjay-an-application-of-ga' on page 2 undefined on in
+put line 10.
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 2 undefined on input line 10.
+
+
+LaTeX Warning: Citation `bedoya-non-standard-ga' on page 2 undefined on input l
+ine 10.
+
+[2]
+
+LaTeX Warning: Citation `gd-burke' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation `intro-gd-dueck' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation `gd-burke' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 3 undefined on input line 14
+.
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 3 undefined on input line 14.
+
+[3]
+
+LaTeX Warning: Citation `intro-gd-dueck' on page 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation `gd-burke' on page 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 4 undefined on input line 20
+.
+
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation `alves-novel-recursive' on page 4 undefined on input li
+ne 20.
+
+
+LaTeX Warning: Citation `raghavjee-ga-south-africa' on page 4 undefined on inpu
+t line 20.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 4 undefined 
+on input line 20.
+
+
+LaTeX Warning: Citation `alves-novel-recursive' on page 4 undefined on input li
+ne 20.
+
+
+LaTeX Warning: Citation `raghavjee-ga-south-africa' on page 4 undefined on inpu
+t line 20.
+
+
+LaTeX Warning: Citation `johan-ga-sa-comparison' on page 4 undefined on input l
+ine 20.
+
+
+LaTeX Warning: Citation `yik-ga-timetabling' on page 4 undefined on input line 
+20.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 4 undefined 
+on input line 20.
+
+
+LaTeX Warning: Citation `wutthipong-performance-study-genetic-operators' on pag
+e 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation `sanjay-an-application-of-ga' on page 4 undefined on in
+put line 20.
+
+
+LaTeX Warning: Citation `what-is-ga' on page 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation `johan-ga-sa-comparison' on page 4 undefined on input l
+ine 20.
+
+
+LaTeX Warning: Citation `yousef-gpu-ga' on page 4 undefined on input line 20.
+
+[4] [5]) [6]
 :<-
 :<+ chapter2_rrl.tex
 \openout2 = `chapter2_rrl.aux'.
 
 (./chapter2_rrl.tex
 Chapter 2.
+
+LaTeX Warning: Citation `bakir-integer-programming' on page 7 undefined on inpu
+t line 5.
+
+
+LaTeX Warning: Citation `bakir-integer-programming' on page 7 undefined on inpu
+t line 5.
+
 [7
 
 
 
-] [8] [9]
+]
+
+LaTeX Warning: Citation `gd-burke' on page 8 undefined on input line 8.
+
+
+LaTeX Warning: Citation `gd-burke' on page 8 undefined on input line 14.
+
+[8]
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 9 undefined on input line 16
+.
+
+[9]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
- [10]
-[11] [12] [13] [14] [15] [16] [17] [18] [19] [20]) [21]
+
+
+LaTeX Warning: Citation `chiarandini-effective-hybrid' on page 10 undefined on 
+input line 30.
+
+[10]
+
+LaTeX Warning: Citation `maximum-bipartite-matching' on page 11 undefined on in
+put line 33.
+
+
+LaTeX Warning: Citation `brownlee-tabu-search' on page 11 undefined on input li
+ne 35.
+
+
+LaTeX Warning: Citation `socha-maxmin-ant-system' on page 11 undefined on input
+ line 38.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 11 undefined on input line 3
+8.
+
+[11]
+
+LaTeX Warning: Citation `nlgdrl-obit' on page 12 undefined on input line 43.
+
+
+LaTeX Warning: Citation `nlgd-landa-silva' on page 12 undefined on input line 4
+3.
+
+[12] [13] [14]
+
+LaTeX Warning: Citation `alves-novel-recursive' on page 15 undefined on input l
+ine 78.
+
+[15]
+
+LaTeX Warning: Citation `wutthipong-performance-study-genetic-operators' on pag
+e 16 undefined on input line 84.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 16 undefined
+ on input line 86.
+
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 16 undefined
+ on input line 88.
+
+[16]
+
+LaTeX Warning: Citation `bedoya-non-standard-ga' on page 17 undefined on input 
+line 90.
+
+[17]
+
+LaTeX Warning: Citation `supachate-noval-approach-ga-thai' on page 18 undefined
+ on input line 96.
+
+
+LaTeX Warning: Citation `bedoya-non-standard-ga' on page 18 undefined on input 
+line 96.
+
+[18]
+
+LaTeX Warning: Citation `raghavjee-ga-south-africa' on page 19 undefined on inp
+ut line 98.
+
+
+LaTeX Warning: Citation `beligiannis-evolutionary-computation' on page 19 undef
+ined on input line 98.
+
+
+LaTeX Warning: Citation `raghavjee-ga-south-africa' on page 19 undefined on inp
+ut line 98.
+
+[19] [20]
+
+LaTeX Warning: Citation `feng-integer-prog-ga' on page 21 undefined on input li
+ne 100.
+
+
+LaTeX Warning: Citation `webster-gels' on page 21 undefined on input line 105.
+
+
+LaTeX Warning: Citation `abuhamdah-mpca-arda' on page 21 undefined on input lin
+e 105.
+
+
+LaTeX Warning: Citation `socha-maxmin-ant-system' on page 21 undefined on input
+ line 105.
+
+[21]) [22]
 :<-
 :<+ chapter3_sotp.tex
 \openout2 = `chapter3_sotp.aux'.
@@ -502,7 +706,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (./chapter3_sotp.tex
 Chapter 3.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 22 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 23 undefined on 
 input line 6.
 
 
@@ -511,7 +715,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 -iza-tion for semi-structured
  []
 
-) [22
+) [23
 
 
 
@@ -522,7 +726,7 @@ Overfull \hbox (11.89621pt too wide) in paragraph at lines 6--7
 
 (./chapter4_obj.tex
 Chapter 4.
-) [23
+) [24
 
 
 
@@ -534,62 +738,70 @@ Chapter 4.
 (./chapter5_methods.tex
 Chapter 5.
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 24 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 25 undefined on 
 input line 3.
 
 
-LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 24 undefin
+LaTeX Warning: Citation `effectiveclipartimagevectorization' on page 25 undefin
 ed on input line 3.
 
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 24 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 25 undefined on inpu
 t line 3.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 24 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 25 undefined on i
 nput line 3.
 
 
-LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 24 undefined on 
+LaTeX Warning: Citation `hoshyari2018perceptiondriven' on page 25 undefined on 
 input line 11.
 
-[24
+[25
 
 
 
-] [25]
+] [26]
 
-LaTeX Warning: Citation `realtimevectorizationgpu' on page 26 undefined on inpu
+LaTeX Warning: Citation `realtimevectorizationgpu' on page 27 undefined on inpu
 t line 26.
 
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 26 undefined on i
+LaTeX Warning: Citation `deeplearningparametrization' on page 27 undefined on i
 nput line 31.
 
-[26] [27] [28]
-<images/chap05-methodology/ppn.png, id=128, 312.16624pt x 201.75375pt>
-File: images/chap05-methodology/ppn.png Graphic file (type png)
-<use images/chap05-methodology/ppn.png>
-Package pdftex.def Info: images/chap05-methodology/ppn.png  used on input line 
-71.
-(pdftex.def)             Requested size: 234.1241pt x 151.31493pt.
- [29 <./images/chap05-methodology/ppn.png>] [30]
-<images/chap05-methodology/ksn.png, id=136, 301.125pt x 197.73875pt>
-File: images/chap05-methodology/ksn.png Graphic file (type png)
-<use images/chap05-methodology/ksn.png>
-Package pdftex.def Info: images/chap05-methodology/ksn.png  used on input line 
-126.
-(pdftex.def)             Requested size: 225.84319pt x 148.3037pt.
+[27] [28] [29]
 
+! LaTeX Error: Cannot determine size of graphic in images/chap05-methodology/pp
+n.png (no BoundingBox).
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 ...e=0.75]{images/chap05-methodology/ppn.png}
+                                                  
+? 
+File: images/chap05-methodology/ppn.png Graphic file (type eps)
+<images/chap05-methodology/ppn.png> [30] [31]
 
-[31] [32 <./images/chap05-methodology/ksn.png>]
+! LaTeX Error: Cannot determine size of graphic in images/chap05-methodology/ks
+n.png (no BoundingBox).
 
-LaTeX Warning: Citation `deeplearningparametrization' on page 33 undefined on i
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 ...=0.75]{images/chap05-methodology/ksn.png}
+                                                  
+? 
+File: images/chap05-methodology/ksn.png Graphic file (type eps)
+<images/chap05-methodology/ksn.png> [32] [33]
+
+LaTeX Warning: Citation `deeplearningparametrization' on page 34 undefined on i
 nput line 158.
 
-[33] [34]) [35]
+[34]) [35]
 :<-
 :<+ chapter6_sim.exp.tex
 \openout2 = `chapter6_sim.exp.aux'.
@@ -636,12 +848,9 @@ Appendix A.
 ]
 :<-
 :<+ thesis.bbl
-(./thesis.bbl [40
-
-
-] [41])
+No file thesis.bbl.
 :<-
-[42] (./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
+(./thesis.aux (./acknowl.aux) (./abstract.aux) (./chapter1_intro.aux)
 (./chapter2_rrl.aux) (./chapter3_sotp.aux) (./chapter4_obj.aux)
 (./chapter5_methods.aux) (./chapter6_sim.exp.aux) (./chapter7_rd.aux)
 (./chapter8_sum.con.aux) (./appendix.aux))
@@ -650,29 +859,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5550 strings out of 494923
- 80218 string characters out of 6180742
- 147599 words of memory out of 5000000
- 8683 multiletter control sequences out of 15000+600000
+ 4694 strings out of 494924
+ 66665 string characters out of 6180768
+ 130650 words of memory out of 5000000
+ 7874 multiletter control sequences out of 15000+600000
  11374 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,11n,53p,3585b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
->
-Output written on thesis.pdf (50 pages, 244860 bytes).
-PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 44i,11n,53p,3581b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on thesis.dvi (47 pages, 96688 bytes).
