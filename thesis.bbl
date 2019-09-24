@@ -7,6 +7,11 @@ Maximum bipartite matching - geeksforgeeks.
 \bibitem{what-is-ga}
 What is the genetic algorithm?- matlab \& simulink.
 
+\bibitem{abuhamdah-mpca-arda}
+Anmar Abuhamdah and Masri Ayob.
+\newblock Mpca-arda for solving course timetabling problems.
+\newblock 01 2011.
+
 \bibitem{alves-novel-recursive}
 Shara S.~A. Alves, Saulo A.~F. Oliveira, and Ajalmar R.~Rocha Neto.
 \newblock A novel educational timetabling solution through recursive genetic
@@ -112,6 +117,12 @@ R~Raghavjee and N~Pillay.
 Krzysztof Socha, Joshua Knowles, and Michael Sampels.
 \newblock A max-min ant system for the university course timetabling problem.
 \newblock pages 1--13, 01 2002.
+
+\bibitem{webster-gels}
+Barry~Lynn Webster.
+\newblock {\em Solving Combinatorial Optimization Problems Using a New
+  Algorithm Based on Gravitational Attraction}.
+\newblock PhD thesis, Melbourne, Florida, 01 2004.
 
 \bibitem{yousef-gpu-ga}
 Ahmed~H. Yousef, Cherif Salama, Mohammad~Y. Jad, Tarek El-Gafy, Mona Matar, and

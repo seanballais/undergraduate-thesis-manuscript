@@ -26,6 +26,7 @@ Warning--empty year in maximum-bipartite-matching
 Warning--empty author in what-is-ga
 Warning--empty journal in what-is-ga
 Warning--empty year in what-is-ga
+Warning--empty journal in abuhamdah-mpca-arda
 Warning--empty journal in alves-novel-recursive
 Warning--empty journal in bedoya-non-standard-ga
 Warning--empty year in brownlee-tabu-search
@@ -39,46 +40,47 @@ Warning--empty journal in nlgdrl-obit
 Warning--empty year in sanjay-an-application-of-ga
 Warning--empty journal in raghavjee-ga-south-africa
 Warning--empty journal in socha-maxmin-ant-system
+Warning--empty school in webster-gels
 Warning--empty journal in yousef-gpu-ga
-You've used 21 entries,
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            617 strings with 7892 characters,
-and the built_in function-call counts, 6298 in all, are:
-= -- 584
-> -- 316
+            626 strings with 8175 characters,
+and the built_in function-call counts, 6743 in all, are:
+= -- 627
+> -- 336
 < -- 3
-+ -- 136
-- -- 104
-* -- 452
-:= -- 1072
-add.period$ -- 60
-call.type$ -- 21
-change.case$ -- 115
++ -- 144
+- -- 110
+* -- 480
+:= -- 1156
+add.period$ -- 66
+call.type$ -- 23
+change.case$ -- 123
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 241
-empty$ -- 456
-format.name$ -- 104
-if$ -- 1275
+cite$ -- 46
+duplicate$ -- 260
+empty$ -- 487
+format.name$ -- 110
+if$ -- 1360
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 21
-newline$ -- 105
-num.names$ -- 38
-pop$ -- 137
+int.to.str$ -- 23
+missing$ -- 22
+newline$ -- 115
+num.names$ -- 42
+pop$ -- 147
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 101
 quote$ -- 0
-skip$ -- 175
+skip$ -- 189
 stack$ -- 0
-substring$ -- 314
-swap$ -- 29
+substring$ -- 324
+swap$ -- 30
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
-warning$ -- 21
-while$ -- 51
-width$ -- 23
-write$ -- 200
-(There were 26 warnings)
+type$ -- 92
+warning$ -- 23
+while$ -- 55
+width$ -- 25
+write$ -- 220
+(There were 28 warnings)
