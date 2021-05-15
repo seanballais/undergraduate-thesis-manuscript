@@ -4,6 +4,8 @@
 % ------------------------------------------------------------------------
 \documentclass[letterpaper,12pt]{report}
 \usepackage[centertags]{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -55,6 +57,9 @@
 \newcommand{\doublespacing}{\setlength{\baselineskip}%
                            {2.0 \defbaselineskip}}
 \newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+% Algorithm Commands
+\newcommand{\WRP}{\par\quad\(\hookrightarrow\)\enspace}
+
 % MATH -------------------------------------------------------------------
 \newcommand{\A}{{\cal A}}
 \newcommand{\h}{{\cal H}}
@@ -104,7 +109,7 @@
 
 % ------------------------------------------------------------------------
 
-\title{Optimized Building Placement in a Polygonal Bounding Area Considering Natural Hazards}
+\title{Solving the Classical Unequal Area Static Facility Layout Problem Using A Modified Grey Wolf Optimization Algorithm}
 
 \bs
 \author{Sean Francis N. Ballais}

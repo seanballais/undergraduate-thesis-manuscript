@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="932.03149"
+   height="2000"
+   viewBox="-3.406 5.56 24.66 52.916668"
+   version="1.1"
+   id="svg1079"
+   sodipodi:docname="Algorithm Flowchart.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/seanballais/Documents/Academics/UPVTC/Subjects/Thesis/Paper/images/chap05-methodology/flowchart.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <metadata
+     id="metadata1085">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1083">
+    <linearGradient
+       id="linearGradient1298"
+       inkscape:collect="always">
+      <stop
+         id="stop1294"
+         offset="0"
+         style="stop-color:#b97c50;stop-opacity:1" />
+      <stop
+         id="stop1296"
+         offset="1"
+         style="stop-color:#782140;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1198"
+       inkscape:collect="always">
+      <stop
+         id="stop1194"
+         offset="0"
+         style="stop-color:#e29a1a;stop-opacity:1" />
+      <stop
+         id="stop1196"
+         offset="1"
+         style="stop-color:#f8225e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1172">
+      <stop
+         style="stop-color:#ff9800;stop-opacity:1"
+         offset="0"
+         id="stop1168" />
+      <stop
+         style="stop-color:#ff5c50;stop-opacity:1"
+         offset="1"
+         id="stop1170" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1298"
+       id="linearGradient1154"
+       x1="5.6646647"
+       y1="6.9864182"
+       x2="10.818121"
+       y2="4.9611831"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1.5975612e-4)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1174"
+       x1="1.4633312"
+       y1="10.438797"
+       x2="13.616289"
+       y2="8.1646204"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1.5975612e-4)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1298"
+       id="linearGradient1182"
+       x1="17.908417"
+       y1="18.355459"
+       x2="21.441124"
+       y2="17.164833"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1.5975612e-4)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1192"
+       x1="1.4450257"
+       y1="13.721875"
+       x2="13.987183"
+       y2="11.57875"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1.5975612e-4)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1198"
+       id="linearGradient1208"
+       x1="0.84799999"
+       y1="17.694"
+       x2="14.4"
+       y2="17.694"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1224"
+       x1="1.4854624"
+       y1="24.632254"
+       x2="13.706412"
+       y2="21.900759"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,7.3555808)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1234"
+       x1="-1.3044842"
+       y1="29.626774"
+       x2="17.112751"
+       y2="25.305025"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,7.3555808)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1262"
+       x1="1.0163925"
+       y1="32.784294"
+       x2="13.689052"
+       y2="30.108925"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,7.3555808)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1270"
+       x1="1.1783881"
+       y1="36.294838"
+       x2="14.667295"
+       y2="33.41367"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,11.588919)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1278"
+       x1="-0.36608946"
+       y1="39.972"
+       x2="15.613072"
+       y2="39.972"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1286"
+       x1="2.0445826"
+       y1="46.982494"
+       x2="13.33338"
+       y2="44.625175"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,7.3555808)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1278-3"
+       x1="-0.36608946"
+       y1="39.972"
+       x2="15.613072"
+       y2="39.972"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1172"
+       id="linearGradient1270-3"
+       x1="1.1783881"
+       y1="36.294838"
+       x2="14.667295"
+       y2="33.41367"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7805198,0,0,1,-5.9502921,7.3258542)" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview1081"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.5"
+     inkscape:cx="204.08596"
+     inkscape:cy="487.20921"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1079"
+     units="px"
+     inkscape:showpageshadow="false">
+    <sodipodi:guide
+       position="11.030046,19.754225"
+       orientation="1,0"
+       id="guide943"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="11.194918,7.7852275"
+       orientation="0,1"
+       id="guide1024"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <!-- Layer: Background -->
+  <path
+     style="fill:url(#linearGradient1154);fill-opacity:1;stroke:none;stroke-width:0.1"
+     inkscape:connector-curvature="0"
+     id="path970"
+     d="M 6.647,5.6601567 H 8.6 c 0.27,0 0.489,0.2459997 0.489,0.5499997 0,0.3029997 -0.219,0.5499997 -0.489,0.5499997 H 6.647 c -0.27,0 -0.488,-0.247 -0.488,-0.5499997 0,-0.304 0.218,-0.5499997 0.488,-0.5499997 z" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text972"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="6.4630733"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1156">Start</tspan>
+  </text>
+  <rect
+     style="fill:url(#linearGradient1174);fill-opacity:1;stroke:none;stroke-width:0.11073802;stroke-opacity:1"
+     id="rect974"
+     rx="0.000"
+     height="1.9"
+     width="10.450451"
+     y="8.3331528"
+     x="2.3987746" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff;fill-opacity:1"
+     id="text976"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="9.4631529"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff;fill-opacity:1"
+       id="tspan1158">Generate initial population</tspan>
+  </text>
+  <line
+     style="stroke:#000000;stroke-width:0.11446876"
+     id="line1030"
+     y2="14.519143"
+     x2="7.6240001"
+     y1="13.432898"
+     x1="7.6240001" />
+  <rect
+     style="fill:url(#linearGradient1192);fill-opacity:1;stroke:none;stroke-width:0.11238664"
+     id="rect978"
+     rx="0.000"
+     height="1.9"
+     width="10.451948"
+     y="11.740147"
+     x="2.3975258" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text980"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="12.92306"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1200">Sort population by fitness</tspan>
+  </text>
+  <line
+     style="stroke:#000000;stroke-width:0.10418852"
+     id="line1034"
+     y2="17.694139"
+     x2="17.736"
+     y1="17.694139"
+     x1="14.11469" />
+  <line
+     style="stroke:#000000;stroke-width:0.10501245"
+     id="line1038"
+     y2="28.960678"
+     x2="7.6240001"
+     y1="27.612"
+     x1="7.6240001" />
+  <g
+     id="g978"
+     transform="translate(0.93614568,0.26458335)">
+    <line
+       x1="6.6878543"
+       y1="20.019358"
+       x2="6.6878543"
+       y2="21.368036"
+       id="line1038-9"
+       style="stroke:#000000;stroke-width:0.10501245" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="polygon1024-5-1"
+       d="m 6.702712,21.259966 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+       style="fill:#000000;stroke:#000000;stroke-width:0.1" />
+  </g>
+  <polygon
+     style="fill:url(#linearGradient1208);fill-opacity:1;stroke:none;stroke-width:0.1"
+     id="polygon982"
+     points="14.4,17.694 7.624,20.382 0.848,17.694 7.624,15.006 "
+     transform="translate(0,1.5975612e-4)" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text984"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="17.47414"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1210">Did we reach maximum</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text986"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="18.274139"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1212">number of iterations?</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.09525;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 15.306654,24.915924 h 2.765125 l 0,9.801159 H 16.02654"
+     id="path985"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" />
+  <rect
+     style="fill:url(#linearGradient1224);fill-opacity:1;stroke:none;stroke-width:0.11381614"
+     id="rect988"
+     rx="0.000"
+     height="1.9"
+     width="10.443607"
+     y="29.447678"
+     x="2.4021969" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text990"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="30.577679"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1226">Apply swapping method.</tspan>
+  </text>
+  <rect
+     style="fill:url(#linearGradient1234);fill-opacity:1;stroke:none;stroke-width:0.11207335"
+     id="rect992"
+     rx="0.000"
+     height="3.5"
+     width="16.284603"
+     y="32.968678"
+     x="-0.51880175" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text994"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="34.097679"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1238">For each wolf W, randomly select a wolf B</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text996"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="34.898678"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1236">from the best three wolves and crossover</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text998"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="35.698677"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1240">W with B.</tspan>
+  </text>
+  <rect
+     style="fill:url(#linearGradient1262);fill-opacity:1;stroke:none;stroke-width:0.10915557"
+     id="rect1000"
+     rx="0.000"
+     height="1.9"
+     width="10.449401"
+     y="37.730679"
+     x="2.3992999" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text1002"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="38.860676"
+     x="7.6240001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff"
+       id="tspan1246">Perform adaptive mutation.</tspan>
+  </text>
+  <g
+     id="g1008"
+     transform="translate(0,-0.86446392)">
+    <rect
+       x="2.3980935"
+       y="45.381054"
+       width="10.450812"
+       height="1.9"
+       rx="0.000"
+       id="rect1004"
+       style="fill:url(#linearGradient1270);fill-opacity:1;stroke:none;stroke-width:0.11951117" />
+    <text
+       x="7.6240001"
+       y="46.511055"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1006"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff">
+      <tspan
+         id="tspan1248"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff">Apply Local Search 1.</tspan>
+    </text>
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.09525;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 0.60106725,50.69144 -2.75111925,0 -0.00468,-33.012473 h 2.36471324"
+     id="path911"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" />
+  <path
+     style="stroke:#000000;stroke-width:0.1"
+     d="m 7.6240001,53.091496 0,2.238467"
+     id="line1058"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g937"
+     transform="translate(0,3.3643321)">
+    <polygon
+       transform="translate(0,7.3555808)"
+       points="-0.216,39.972 7.624,37.202 15.463,39.972 7.624,42.742 "
+       id="polygon1008"
+       style="fill:url(#linearGradient1278);fill-opacity:1;stroke:none;stroke-width:0.1" />
+    <text
+       x="7.6240001"
+       y="47.107677"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1010"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff">
+      <tspan
+         id="tspan1250"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff">Is current iteration</tspan>
+    </text>
+    <text
+       x="7.6240001"
+       y="47.907677"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1012"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff">
+      <tspan
+         id="tspan1252"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff">part of the last 50 iterations?</tspan>
+    </text>
+  </g>
+  <path
+     style="fill:url(#linearGradient1182);fill-opacity:1;stroke:none;stroke-width:0.1"
+     inkscape:connector-curvature="0"
+     id="path1018"
+     d="m 18.711,17.144154 h 1.954 c 0.27,0 0.488,0.246 0.488,0.55 0,0.304 -0.218,0.55 -0.488,0.55 h -1.954 c -0.269,0 -0.488,-0.246 -0.488,-0.55 0,-0.304 0.219,-0.55 0.488,-0.55 z" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff"
+     id="text1020"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="17.947056"
+     x="19.688">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1184">End</tspan>
+  </text>
+  <line
+     style="stroke:#000000;stroke-width:0.1"
+     id="line1022"
+     y2="7.8461537"
+     x2="7.6240001"
+     y1="6.7601562"
+     x1="7.6240001" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="M 7.6388585,7.7212405 7.874,7.7211555 7.624,8.2211552 7.374,7.7211555 Z"
+     id="polygon1024"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <line
+     style="stroke:#000000;stroke-width:0.10275812"
+     id="line1026"
+     y2="11.20315"
+     x2="7.6240001"
+     y1="10.231699"
+     x1="7.6240001" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 17.60913,17.709355 0.0019,-0.265201 0.5,0.25 -0.5,0.25 z"
+     id="polygon1036"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <line
+     style="stroke:#000000;stroke-width:0.1"
+     id="line1042"
+     y2="32.481678"
+     x2="7.6240001"
+     y1="31.347679"
+     x1="7.6240001" />
+  <line
+     style="stroke:#000000;stroke-width:0.1"
+     id="line1046"
+     y2="37.243679"
+     x2="7.6240001"
+     y1="36.468678"
+     x1="7.6240001" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000"
+     id="text1070"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="17.383139"
+     x="15.365658">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1214">Yes</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000"
+     id="text1072"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="21.166142"
+     x="7.9920001">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1216">No</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.09525;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 2.5439462,56.775066 -5.8788395,0 0.019844,-39.0849 h 3.68344873"
+     id="path949"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000"
+     id="text1074"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="51.532158"
+     x="-1.6354051">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1242">No</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000"
+     id="text1076"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="54.482292"
+     x="7.8850002">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light'"
+       id="tspan1244">Yes</tspan>
+  </text>
+  <g
+     id="g930"
+     transform="translate(0,3.6905644)">
+    <rect
+       x="2.4000511"
+       y="52.134678"
+       width="10.446898"
+       height="1.9"
+       rx="0.000"
+       id="rect1014"
+       style="fill:url(#linearGradient1286);fill-opacity:1;stroke:none;stroke-width:0.1194888" />
+    <text
+       x="7.6240001"
+       y="53.264679"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1016"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff">
+      <tspan
+         id="tspan1254"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff">Apply Local Search 2.</tspan>
+    </text>
+  </g>
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 7.6388578,11.126477 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+     id="polygon1024-4"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.10071044"
+     d="m 7.6388578,14.384839 0.2351415,-8.7e-5 -0.25,0.507129 -0.25,-0.507129 z"
+     id="polygon1024-8"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 7.6388578,28.852608 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+     id="polygon1024-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 7.6388578,32.369875 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+     id="polygon1024-82"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 7.6388577,37.104412 0.2351415,-8.6e-5 -0.25,0.5 -0.25,-0.5 z"
+     id="polygon1024-0"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <rect
+     style="fill:url(#linearGradient1270-3);fill-opacity:1;stroke:none;stroke-width:0.15947106"
+     id="rect1004-5"
+     rx="0.000"
+     height="1.9"
+     width="18.607878"
+     y="41.117966"
+     x="-1.6804396" />
+  <g
+     id="g971">
+    <line
+       x1="7.6240001"
+       y1="39.63068"
+       x2="7.6240001"
+       y2="40.660679"
+       id="line1050"
+       style="stroke:#000000;stroke-width:0.1" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="polygon1024-6"
+       d="m 7.6388577,40.517587 0.2351415,-8.6e-5 -0.25,0.5 -0.25,-0.5 z"
+       style="fill:#000000;stroke:#000000;stroke-width:0.1" />
+  </g>
+  <g
+     id="g1014"
+     transform="translate(0,-0.86446547)">
+    <line
+       x1="7.6240001"
+       y1="47.281055"
+       x2="7.6240001"
+       y2="48.304054"
+       id="line1054"
+       style="stroke:#000000;stroke-width:0.1" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="polygon1024-64"
+       d="m 7.6388578,48.17466 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+       style="fill:#000000;stroke:#000000;stroke-width:0.1" />
+  </g>
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 7.6388578,55.213524 0.2351415,-8.5e-5 -0.25,0.5 -0.25,-0.5 z"
+     id="polygon1024-62"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 0.34705989,17.706352 0.00187,-0.265201 0.5,0.25 -0.5,0.25 z"
+     id="polygon1036-8"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <g
+     id="g956"
+     transform="translate(-0.04564937,0.26458335)">
+    <polygon
+       transform="translate(0.04614937,-15.320964)"
+       points="-0.216,39.972 7.624,37.202 15.463,39.972 7.624,42.742 "
+       id="polygon1008-5"
+       style="fill:url(#linearGradient1278-3);fill-opacity:1;stroke:none;stroke-width:0.1" />
+    <text
+       x="7.6701498"
+       y="24.431015"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1010-3"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff;stroke-width:1">
+      <tspan
+         id="tspan1250-5"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff;stroke-width:1">Is current iteration</tspan>
+    </text>
+    <text
+       x="7.6701498"
+       y="25.231014"
+       font-size="0.80"
+       font-style="normal"
+       font-weight="400"
+       id="text1012-6"
+       style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff;stroke-width:1">
+      <tspan
+         id="tspan1252-2"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff;stroke-width:1">part of the first 100 iterations?</tspan>
+    </text>
+  </g>
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:0.1"
+     d="m 16.379979,34.732284 -0.0019,-0.265201 -0.5,0.25 0.5,0.25 z"
+     id="polygon1036-2"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000;stroke-width:1"
+     id="text1072-7"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="24.716284"
+     x="16.231421">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';stroke-width:1"
+       id="tspan1216-0">No</tspan>
+  </text>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:start;fill:#000000;stroke-width:1"
+     id="text1070-9"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="28.474905"
+     x="7.9405622">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';stroke-width:1"
+       id="tspan1214-3">Yes</tspan>
+  </text>
+  <g
+     transform="translate(0,3.3872856)"
+     id="g971-1">
+    <line
+       x1="7.6240001"
+       y1="39.63068"
+       x2="7.6240001"
+       y2="40.660679"
+       id="line1050-2"
+       style="stroke:#000000;stroke-width:0.1" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="polygon1024-6-7"
+       d="m 7.6388577,40.517587 0.2351415,-8.6e-5 -0.25,0.5 -0.25,-0.5 z"
+       style="fill:#000000;stroke:#000000;stroke-width:0.1" />
+  </g>
+  <text
+     style="font-style:normal;font-weight:400;font-size:0.80000001px;font-family:sans;text-anchor:middle;fill:#ffffff;stroke-width:1"
+     id="text1002-6"
+     font-weight="400"
+     font-style="normal"
+     font-size="0.80"
+     y="42.288567"
+     x="7.6102495">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Light';fill:#ffffff;stroke-width:1"
+       id="tspan1246-0">Keep best three solutions from previous iteration.</tspan>
+  </text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:1.05833316px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02645833"
+     x="9.9422274"
+     y="41.993122"
+     id="text1060"><tspan
+       sodipodi:role="line"
+       id="tspan1058"
+       x="9.9422274"
+       y="41.993122"
+       style="stroke-width:0.02645833"> </tspan></text>
+</svg>

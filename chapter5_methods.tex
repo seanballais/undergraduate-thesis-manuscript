@@ -1,173 +1,315 @@
-\chapter{Proposed Methodology}
+\chapter{Methodology}
+The methodology used in this research is based on the frameworks proposed by Asl et al. (2015) \cite{Asl2015}, Asl, A. and Wong, K. (2015) \cite{Asl2015a}, and Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. It is a mixture of the works of the aforementioned authors. In this chapter, we will first discuss about the mathematical model of the problem being solved. Later, we will be delving into the inner workings of the solution representation and then the algorithm.
 
-The proposed methodology will be based on the frameworks proposed by Hoshyari, S., et. al. \cite{hoshyari2018perceptiondriven}, Yang, M., et. al. \cite{effectiveclipartimagevectorization}, Xiong, X., et. al. \cite{realtimevectorizationgpu}, and Laube, P., et. al. \cite{deeplearningparametrization}. Additionally, human perception will also be taken account. Thus, the Gestalt psychology principles of accuracy, simplicity, continuity, and closure, as taken from Hoshyari, S., et. al., will be taken into account as well.
+\section{Mathematical Model}
+The goal of any metaheuristic, like what is being proposed in this paper, is to optimize a certain objective function. As mentioned in the first chapter, in facility layout problems, we minimize the following function:
 
-\section{Image Preprocessing}
-Before a raster input image can be fitted with curves, it must preprocessed to simplify the vectorization procedure and align it with .
+$$
+\text{min} F = \sum_{i=1}^{n}\sum_{j=1}^{n}c_{ij}f_{ij}d_{ij}
+$$
 
-\subsection{Corner Detection}
-The first step in the approach is detecting the corners in the input image. This is an important step as it will allow us to enforce the simplicity principle in Gestalt psychology and make sure the resulting vectorization be C$^{0}$ continuous should the raster input be as such.
+For the problem we are solving in this paper, we are optimizing the following equation that is not only a slight modifications of the basic mathematical model for FLPs, but also adds penalties to solutions that are infeasible, no matter the degree of infeasiblity.
 
-This stage will be based from the corner detection classifier of the work by Hoshyari, S., et. al. \cite{hoshyari2018perceptiondriven}. A random forest classifier is used in the said work. Supervised learning is used as corners are manually annotated. Annotated corners will not be specific pixels. Rather, corners will be between at least two pixels. Training data is available publicly provided by the researchers. However, such data is limited only to quantized data (i.e. aliased data). The target raster input is expected to be anti-aliased data. As such, the training data will have to be built from scratch to support anti-aliased data.
+\begin{align*}
+	\text{min }F &= \sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |}c_{ij}d_{ij} \\
+	& + \sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |} \left ( P_{B}\frac{A_{0}(i, j)}{\text{min}(w_{i}h_{i}, w_{j}h_{j})} + P_{B} \right ) \cdot \alpha_{0}(i, j) \\
+	& + \sum_{i=1}^{\left | B \right |}\left( P_{R}\frac{w_{i}h_{i} - A_{1}(i)}{w_{i}h_{i}} + P_{R} \right) \cdot \alpha_{1}(i)
+\end{align*}
 
-\subsection{Region Segmentation}
-In line again with the simplicity principle, the input image must be divided into regions. This will result in simpler curves being used in the final vectorization output. The additional benefit of segmenting the input into multiple distinct regions is the possibility for parallelism to be used in the vectorization approach. Since each region is distinct and independent from one another, multiple regions can be vectorized at the same time. Thus, speeding up the vectorization process.
+where:
 
-Due to the nature of semi-structured imagery where each region will only contain a single colour, a scanline-based approach can be used in this stage. The scanline algorithm will be based off of the scanline algorithm used for boundary pixel detection in the work of Xiong, X., et. al..
+\begin{center}
+	\begin{tabular}{| l | p{10cm} |}
+	\hline
+	$x_{i}$  & top-left $x$ coordinate of building $i$ \\
+	\hline
+	$y_{i}$  & top-left $y$ coordinate of building $i$ \\
+	\hline
+	$w_{i}$  & width of building $i$ \\
+	\hline
+	$h_{i}$  & height of building $i$ \\
+	\hline
+	$R_{x}$  & top-left $x$ coordinate of the bounding region \\
+	\hline
+	$R_{y}$  & top-left $y$ coordinate of the bounding region \\
+	\hline
+	$R_{w}$  & width of the bounding region \\
+	\hline
+	$R_{h}$  & height of the bounding region \\
+	\hline
+	$c_{ij}$ & flow rate from building $i$ to building $j$ \\
+	\hline
+	$d_{ij}$ & distance from the center of building $i$ to the
+	           center of building $j$ \\
+	\hline
+	$P_{B}$  & penalty value for building intersection \\
+	\hline
+	$P_{T}$  & penalty value for any building going out of
+	           bounds, even with a portion of a building \\
+	\hline
+	\end{tabular}
+\end{center}
 
-For each line $l_{i}$, where $0 \leq i < h \mid h$ is the height of input image, in the raster input, each pixel $p_{i}$ will be assigned to a pixel set $r_{ij}$, where $j$ is the index to a set in $l_{i}$. Each pixel set will contain horizontally adjacent pixels that have the same or near-same colours. We include pixels whose colours are within a certain threshold $k$ from the colour of the pixels that is most prominent in the set. This threshold is necessary due to the fact that certain parts of a regions may contain an anti-aliased pixel. Each $l_{i}$ will have a pixel set vector $r_{i}$ containing all pixel sets of $l_{i}$:
+We elected to remove the flow rate from the basic formulation of the model that was discussed earlier in Equation \ref{mm-equation-mhc}. 
 
-$$ r_{i} = (r_{i0}, r_{i1}, \ldots, r_{i(j - 1)}, r_{ij}) $$
-
-Consequently, a region vector $r$ will contain all pixel set vectors.
-
-$$ r = (r_{0}, \ldots, r_{i}) $$
-
-Note that there is an opportunity to utilize parallelism, as shown in the work of Xiong, X., et. al. \cite{realtimevectorizationgpu}, during this step due to the independent nature of every line in the raster input.
-
-Once we obtain all the pixel sets for each line, we iterate through $r$, ($h - 2$) times. For each iteration, we process $r_{i}$ and $r_{i + 1}$. If there are any $r_{ij_{\alpha}}$ whose pixels are vertically adjacent and have the same colour (or within $k$) to another pixel set $r_{(i + 1)j_{\beta}}$, then those two pixel sets are merged into one. By the end of the iterations, we have obtained a set of regions that we can individually vectorize.
-
-\section{Curve Approximation}
-The core step of the proposed approach is curve approximation. This stage fits curves to the region boundaries of the raster input. This stage is based on the work by Laube, P., et. al. on curve approximation on point sequences using deep learning \cite{deeplearningparametrization}.
-
-\subsection{Point Sequence Generation}
-The work of Laube, P., et. al. takes a point sequence as input. As such, for this proposed approach, we must generate point sequences from the region we will be vectorizing. For every region we ought to vectorize, we treat the center of boundary pixels and the detected corners of each region as a point sequence. However, we must also take into account the fact that certain portions of a region may be a corner where the curves in such segment would have C$_{0}$ continuity. As such, the point sequence we generate must take into account corners. This would implore us to take note of the following cases during point sequence generation:
-
-\begin{enumerate}
-	\item For regions with no corners, a random pixel will be selected as both start and end point of the point sequence. The expectation is that there will be no difference in the resulting curve from choosing a different start and end point.
-	
-	\item For regions with a single corner, the corner point will be selected as the start and end point of the point sequence. This is to ensure that the resulting vector output will have a corner at that point.
-	
-	\item For regions with two or more corners and assuming $n$ is the number of corners, the point sequence will be divided at those corners into separate point sequences. This will result in $(n + 1)$ new point sequences. Each new point sequence will have their start and end points be the corner points they are adjacent to.
-\end{enumerate}
-
-Each point sequence will then be passed to the next stage to be parametrized and have a curve approximated for.
-
-\subsection{Point Sequence Curve Approximation}
-The point sequences obtained from the previous step are now to be fitted with curves, specifically B-splines. As provided by the framework by Laube, P., et. al., two neural networks will be used in this stage and some preprocessing will be performed on the point sequences. The two neural networks are a point parametrization network (PPN), which approximates parametic values to point sequences, and a knot selection network (KSN), which predicts new knot values for knot vector refinement.
-
-\subsubsection{Sequence Segmentation}
-The input point sequence must first be split. This is to ensure that real data and training data match in terms of complexity. Let us define a function $\hat{k}(p)$ that measures the complexity of a point sequence $p$, where $k_{i}$ is the curvature at point $p_{i}$, given its total curvature:
-
-$$ \hat{k}(p) = \sum_{i=0}^{m-1}\frac{(|k_{i}| + |k_{i + 1}|) \lvert\rvert  p_{i + 1} - p_{i} \lvert\rvert _{2}}{2} $$
-
-A point sequence $p$ is split into point sequence segments $p^{s}, s = 1, \ldots, r$ at the median, if $\hat{k(p)} > \hat{k_{t}}$ for a threshold $\hat{k_{t}}$. This $\hat{k_{t}}$ will be set, as per the original authors have done, to the 98th percentile of $\hat{k}(\cdot)$ of the training set. This process is performed $r - 1$ times, until each $p^{s}$ satisfies $\hat{k(p)} > \hat{k_{t}}$.
-
-\subsubsection{Sub/Supersampling and Normalization}
-To be able to approximate parametric and knot values using the PPN and KSN, the number of points per segment $p^{s}$ must equal the input size $l$ of the aforementioned networks. As such, all segments $p^{s}$ are either subsampled or supersampled.
-
-If a segment $p^{s}$ has a number of points greater than $l$, then $p^{s}$ is subsampled. This process involves drawing points in $p^{s}$ such that the drawn indices $i$ are equally distributed and include the first and last point. If, on the other hand, the number of points in $p^{s}$ is less than $l$, then \textit{temporary} points are linearly interpolated between consecutive points $p^{s}_{i}$ and $p^{s}_{i + 1}$. This interpolation is performed until the number of points equal $l$.
-
-The sampled segments are then normalized to $\bar{p}^{s}$, which consists of the points
-
-$$ \bar{p}^{s}_{i} = \frac{p^{s}_{i} - min(p^{s})}{max(p^{s}) - min(p^{s})} $$
-
-where $min(p^{s})$ and $max(p^{s})$ are the minimum and maximum coordinates of $p^{s}$ respectively.
-
-\subsubsection{Parametrization of Point Segments}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.75]{images/chap05-methodology/ppn.png}
-	\caption{The network architecture of the Point Parametrization Network (PPN)}.
-	\label{fig:ppn}
-\end{figure}
-
-The PPN will be responsible for parametrization of point segments. For every $\bar{p}^{s}$, the PPN generates a parametrization $\bar{t}^{s} \subset [0, 1]$, which will be rescaled to $[u_{s - 1}, u_{s}]$ and adapted to sampling of $\bar{p}^{s}$.
-
-In supersampled segments, the parameters $t^{s}_{i}$ of temporary points are simply removed from $\bar{t}^{s}$. In a subsampled $p^{s}$, for every point $p_{i}$ that was removed from the segment, a parameter $\bar{t}_{i}$ is inserted to $\bar{t}^{s}$.
-
-$$ t_{i} = t^{s}_{\alpha} + (t^{s}_{\beta})\frac{chordlen(p^{s}_{\alpha}, p_{i})}{chordlen(p^{s}_{\alpha}, p^{s}_{\beta})} $$
-
-$chordlen$ is the length of the polygon defined by a point sequence. In the subsampled segment, with parameters $t^{s}_{\alpha}$ and $t^{s}_{\beta}$, $p^{s}_{\alpha}$ and $p^{s}_{\beta}$ are the closest neighbours of $p_{i}$.
-
-The initialization of the parametric step requires an initial knot vector. We first define $u_{0} = 0$ and $u_{n} = 1$. For each segment (except the last one), one knot $u_{i}$ is added.
-
-$$ u_{i} = u_{i - 1)} + \frac{chordlen(p^{s})}{chordlen(p)}, i = 1, \ldots, r -1 $$
-	
-This yields a start and end knot for every point sequence segment.
-
-\paragraph{The PPN Architecture}
-The PPN, as stated earlier, takes in an input of segments $p$, which can be written as $p = (x_{0}, \ldots, x_{l - 1}, y_{0}, \ldots, y_{l - 1})$. The parameter domain is defined as $u_{0} = t_{0} = 0 and u_{n} = t_{l - 1} = 1$. For a sequence of points $p$, a parameter vector $t = (t_{i})_{i}$, is defined as $t_{i} = t_{i - 1} + \Delta_{i - 1}$. The task of the PPN is to predict missing values $\Delta = (\Delta_{0}, \ldots, \Delta_{l - 2})$ with
-
-$$ \Delta_sub{i} > 0, i = 0, \ldots, l - 2 $$
-
-such that $t_{0} < t_{1}$ and $t_{l - 2} < t_{l - 1}$. We apply a multilayer perceptron (MLP) to the input data $p$, yielding as output a distribution for parametrization $\Delta^{mlp} = (\Delta^{mlp}_{0}, \ldots, \Delta^{mlp}_{l - 2})$ of size $l - 1$.
-
-The PPN further contains additional layers PP1, PP2, and PP3, which will be discussed next.
-
-\subparagraph{PP1. Accumulation and Rescaling}
-The output $\Delta^{mlp}$ is used to compute a parameter vector $t^{mlp}$ with $t^{mlp}_{0} = 0$ and
-
-$$ t^{mlp}_{i} = \sum_{j = 0}^{i - 1}\Delta^{mlp}_{j}, i = 1, \ldots, l - 1 $$
-
-Since $t^{mlp}_{l - 1}$ is usually not 1, rescaling $t^{mlp}$ yields the final parameter vector $t$ with
-
-$$ t_{i} = \frac{t^{mlp}_{i}}{max(t^{mlp})} $$
-
-The MLP layer in the PPN uses a softplus activation function defined to be:
-
-$$ f(x) = ln(1 + e^{x}) $$
-
-\subparagraph{PP2. Approximation}
-B-spline curve approximation is included directly into the PPN as a network layer. The input points $p$ and their parameters $t$ are used for an approximation with knot vector $u = (0, 0, 0, 0, 1, 1, 1, 1)$ for $k = 3$. The approximation layer's output $p^{app} = (p^{app}_{0}, \ldots, p^{app}_{l - 1})$ is the approximating B-spline curve evaluated at $t$.
-
-\subparagraph{PP3. Euclidean Loss}
-A loss function, which is a Euclidean loss function, is to be used in the PPN. The Euclidean Loss function is defined as
-
-\begin{equation}
-\frac{1}{l}\sum_{i= 0}^{l - 1}\lvert\rvert p_{i} - p^{app}_{i} \lvert\rvert_{2} \label{eq:euclideanloss}
+\begin{equation}\label{mm-equation-mhc}
+	\sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |}c_{ij}d_{ij}
 \end{equation}
 
-\subsubsection{Parametrization Refinement}
+This is because we can consider flow rate as simply part of cost. In the original formulation, we were considering it from a material handling cost perspective, which requires having both a cost and flow rate variable. However, in a general problem, we can consider cost to also include the frequency of movement from one facility to another, which is essentially the flow rate. As such, we can merge cost and flow rate into one variable.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.75]{images/chap05-methodology/ksn.png}
-	\caption{The network architecture of the Knot Selection Network (PPN)}.
-	\label{fig:ksn}
+The mathematical model allows for infeasible solutions to allow for better solutions in the long run. To follow this specification, the model includes expressions that penalizes solutions that meet any of the following conditions: (1) at least one building is intersecting with another building, and (2) a building, either in whole or in part, is outside the bounding area.
+
+\begin{equation}\label{mm-equation-intersection}
+	\sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |} \left ( P_{B}\frac{A_{0}(i, j)}{\text{min}(w_{i}h_{i}, w_{j}h_{j})} + P_{B} \right ) \cdot \alpha_{0}(i, j)
+\end{equation}
+
+Equation \ref{mm-equation-intersection} is the expression that applies a penalty to solutions that meet the first condition. Notice that it has the functions $A_{0}(i, j)$ and $\alpha_{0}(i, j)$. They are defined by the following:
+
+\begin{align}
+	A_{0}(i, j) &= I_{L}(x_{i}, x_{j}, w_{i}, w_{j})
+	               \cdot I_{L}(y_{i}, y_{j}, h_{i}, h_{j}) \\
+	I_{L}(x_{1}, x_{2}, l_{1}, l_{2}) &= \text{max}(0, \text{min}(x_{1} + l_{1}, x_{2} + l_{2}) - \text{max}(x_{1}, x_{2})) \\
+    \alpha_{0}(i, j) &=
+    \left\{\begin{matrix}
+    	1 & \text{if } A_{0}(i, j) > 0 \\ 
+    	0 & \text{otherwise}
+    \end{matrix}\right.
+\end{align}
+
+$A_{0}(i, j)$ simply gets the area of intersection of buildings $i$ and $j$. This is achieved by the use of $I_{L}(x_{1}, x_{2}, l_{1}, l_{2})$, which computes the length or width of an intersection of buildings.
+
+In the equation, for every pair of buildings that intersect, we apply a penalty that is the percentage of the area of the smallest building by area that is intersecting with the other building multiplied by the penalty value for building intersection. This will allow for rewarding the algorithm for moving the buildings towards non-intersection. The same penalty value is also added to ensure that the algorithm prioritizes removing intersections over reducing the distance between the centers of the buildings. $\alpha_{0}(i, j)$ ensures that the penalty is only applied to pairs of buildings that intersect with one another.
+
+\begin{equation}\label{mm-equation-oob}
+	\sum_{i=1}^{\left | B \right |}\left( P_{R}\frac{w_{i}h_{i} - A_{1}(i)}{w_{i}h_{i}} + P_{R} \right) \cdot \alpha_{1}(i)
+\end{equation}
+
+The other part of the mathematical model, Equation \ref{mm-equation-oob}, works in a similar principle as Equation \ref{mm-equation-intersection}. This equation applies a penalty value when the second condition of infeasibility is met. Like in \ref{mm-equation-intersection}, it has specific functions to help compute the penalty. They are defined as:
+
+\begin{align}
+	A_{1}(i) &= I_{L}(x_{i}, R_{x}, w_{i}, R_{w})
+	\cdot I_{L}(y_{i}, R_{y}, h_{i}, R_{h}) \\
+	\alpha_{1}(i) &=
+	\left\{
+	\begin{matrix}
+		0 & \text{if} &
+		\begin{aligned}
+			R_{x} &\leq x_{i} &\leq R_{x} + R_{w} \\
+			R_{x} &\leq x_{i} + w_{i} &\leq R_{x} + R_{w} \\
+			R_{y} &\leq y_{i} &\leq R_{y} + R_{h} \\
+			R_{y} &\leq y_{i} + h_{i} &\leq R_{y} + R_{h} \\
+		\end{aligned} \\		
+		1 & \text{otherwise}
+	\end{matrix}\right.
+\end{align}
+
+$A_{1}(i)$ simply computes the area of intersection of the building and the bounding area. Now, since this only computes the intersection, we must subtract the intersection with the area of the building to get the area of the building that is outside of the bounding area. This is expressed by the numerator of the fractional expression in Equation \ref{mm-equation-oob}. Similar to Equation \ref{mm-equation-intersection}, the equation applies a penalty value that is the percentage of the area of the total building area that is outside the bounding region multiplied and then added by the penalty value. The addition is also to ensure that the algorithm gives more priority to removing out-of-bounds buildings. $\alpha_{1}(i)$ ensures that the penalty is only applied to buildings that are, in part or in whole, out of bounds.
+
+\section{Solution Representation}
+The solution is represented using a one-dimensional array of floating numbers. In the array, every group of three consecutive elements are considered to be the x and y positions, and angle, respectively, of one building. While the x and y positions are allowed to be of any value, the angle value is restricted to only $0^{\circ}$ and $90^{\circ}$. A visualization of the solution representation is shown by Figure \ref{solution-repr-viz}.
+
+\begin{figure}
+	\begin{center}
+		\begin{tabular}{| c | c | c | c | c | c | c |}
+			\hline
+			$x_{0}$ & $y_{0}$ & $\angle_{0}$ & $\ddots$ & $x_{n - 1}$ & $y_{n - 1}$ & $\angle_{n - 1}$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Visualization of the solution representation.}
+	\label{solution-repr-viz}
 \end{figure}
 
-In some cases, the approximated parametrization of a $p^{s}$ may have errors. The approximation error of a $p^{s}$ is computed by using the Hausdorff distance to the input data $p$.
+\section{The Algorithm}
+\begin{figure}[c]
+	\centering
+	\includegraphics{./images/chap05-methodology/flowchart.png}
+	\caption{Flowchart detailing the algorithm.}
+	\label{algo-flowchart}
+\end{figure}
 
-The segments $p^{s}$ that have a large approximation error are computed a new knot using the KSN. For $\bar{p}^{s}$ and $\bar{t}^{s}$, the KSN generates a new estimated knot $\bar{u}_{s} \in [0, 1]$. The new knot $\bar{u}_{s}$ is mapped to the actual knot value range $[u_{s - 1}, u_{s}]$ by
+The proposed algorithm contains multiple phases to solve the unequal area static facility layout problem. The basic framework of the algorithm is inspired from the works of Asl et al. (2015) \cite{Asl2015} and Asl, A. and Wong, K. (2015) \cite{Asl2015}. The Grey Wolf Optimization aspect of the algorithm is inspired from Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. Figure \ref{algo-flowchart} shows a flowchart of the algorithm. We will be further discussing the algorithm in detail in this section.
 
-$$ \tilde{u}_{s} = u_{s - 1} + \bar{u}_{s}(u_{s} - u_{s - 1}) $$
+The advantage of this algorithm... // Continue this later.
 
-Instead of $\tilde{u}_{s}$, the parameter value $t_{i}$ closest to $\tilde{u}_{s}$ is inserted into $u$. $u$ can be further refined until the desired curve approximation error threshold is satisfied.
+\subsection{Population Generation}
+In generating the initial population, the order in which facilities are placed in the bounding region is shuffled. Once it is shuffled, each building $i$ is then given a random x position between the inclusive range $\left [ R_{x} + \frac{w_{i}}{2}, (R_{x} + R_{w}) - \frac{w_{i}}{2} \right ]$, a random y position between the inclusive range $\left [ R_{y} + \frac{h_{i}}{2}, (R_{y} + R_{h})  - \frac{h_{i}}{2} \right ]$, and angle that is either $0^{\circ}$ or $90^{\circ}$ (chosen in a uniformly random fashion). This will generate a solution where the buildings are spread out throughout the bounding region. There will be building intersections (though this is dependent on the number of buildings and size of the bounding region), but no building will be out-of-bounds. This process is repeated until we generate a specified number of solutions. This number is determined by the population size.
 
-\paragraph{The KSN Architecture}
-This stage utilizes a KSN, as mentioned earlier. The KSN predicts a new knot $u$ to the interval $(0, 1)$ for a given segment $p$ and parameters $t$, of which were previously approximated by the PPN. This network uses an MLP, which transforms the input to a single output value $u^{mlp}$. The RELU function is used as the activation function for the MLP, except for the output layer where the Sigmoid function is used instead.
+\subsection{Swapping Method}
+The swapping method is used to find a possible configuration for a solution that is better than the current configuration. This method is applied to all solutions in the population, but only in the first 100 iterations. Pseudocode for the swapping method is provided in Algorithm \ref{pseudocode-swapping}.
 
-Similar to that of the PPN, the KSN has three additional layers: KS1, KS2, and KS3.
+\begin{algorithm}
+\caption{Pseudocode for the swapping method.}
+\label{pseudocode-swapping}
+\begin{algorithmic}[1]
+\State Let $S$ be the collection of generated solutions.
+\State Set $S_{curr}$ be the current solution.
+\State Add $S_{curr}$ to $S$.
+\State Set $N_{B}$ be the maximum number of buildings.
+\For{i = 0 until $N_{B} - 2$}
+	\For{j = i + 1 until $N_{B} - 1$}
+		\State Building $i$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
+		\State Building $j$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
+		\State Building $i$'s and $j$'s orientations in $S_{curr}$ are changed to the other\WRP orientation, and the resulting new solution is added to $S$
+		\State Building $i$'s and $j$'s positions are exchanged in $S_{curr}$, and the resulting new\WRP solutiA movement and a orientation changeon is added to $S$.
+		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $i$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $j$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+		\State Building $i$'s and $j$'s positions are exchanged in and the orientations of\WRP buildings $i$ and $j$ are changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+	\EndFor
+\EndFor \\
+\Return the best solution in $S$.
+\end{algorithmic}
+\end{algorithm}
 
-\subparagraph{KS1. Threshold Layer}
-The new knot $u$ computed has to satisfy the following conditions: $u \in (0, 1)$, $t \cap [0, u] \neq \theta$, and $t \cap [u, 1] \neq \theta$. Satisfying these conditions will will require us to use a threshold layer which maps $u^{mlp}$ to
+\subsection{Crossover, Mutation, and Elitism}
+Experimentations with directly applying the formulas of Grey Wolf Optimization in solving our instance of the facility layout problem have not generated satisfying results. However, results generated by an algorithm inspired from the paper of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018} showed promise. As such the GWO portion of our proposed approach has been taken from their work. Their work takes certain elements from genetic algorithms, particularly the crossover and mutation operators, but kept the general principle of Grey Wolf optimization intact. We will be discussing each operator in detail in this section. Elitism is also implemented in our proposed approach to ensure that the best solutions found so far do not get lost throughout iterations. It will also be discussed in this section.
 
-$$ u = \begin{cases} \epsilon&\text{, if}\:u^{mlp} \le 0 \\ 1 - \epsilon&\text{, if}\:u^{mlp} \ge 1 \\ u^{mlp}&\text{, otherwise} \end{cases} $$
+\subsubsection{Crossover}
+Grey wolf optimization algorithms breed with the other solutions with the top three solutions in the population. That is modelled by the mathematical definition of the optimization algorithm. However, directly the definition does not yield good results. Due to that, we are using a crossover operator from the work of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018}.
 
-Introducing a small $\epsilon = 1e - 5$ makes sure that the knot multiplicity at the end knots stays equal to $k$.
+The crossover operator used here can be mathematical defined as:
 
-\subparagraph{KS2. Approximation}
-Approximation in the KSN is generally similar to that of PPN. The only different is that of the knot vector. The knot vector in the KSN is defined to be $u = (0, 0, 0, 0, u, 1, 1, 1, 1)$. For backpropagation, the derivative of the B-Spline basis functions with respect to $u$ is required.
+$$
+X(t + 1) =
+\begin{cases}
+	f(X(t), X_{alpha}(t)) & \text{if }
+	\text{rnd} \leq \frac{1}{3} \\ 
+	f(X(t), X_{beta}(t)) & \text{if }
+	\frac{1}{3} < \text{rnd} \leq \frac{2}{3} \\
+	f(X(t), X_{delta}(t)) & \text{if }
+	\text{rnd} \geq \frac{2}{3}
+\end{cases} 
+$$
 
-\subparagraph{KS3. Euclidean Loss}
-The loss function for the KSN is the same as that of the PPN. See \ref{eq:euclideanloss}.
+where $f$ is the crossover function, and $\text{rnd} \sim U(0, 1)$. This means that a solution will be crossed over by one of the best three solutions, selected randomly. In our approach, we have used the uniform crossover. Note that this crossover is applied to every solution in a population in accordance with the principle of GWO. In our approach, only one offspring is generated from the crossover.
 
-\subsubsection{Network Training}
-The training of the PPN and KSN will be based from the work of Laube, P., et. al. \cite{deeplearningparametrization}. The input size of the network will be $l = 100$.
+\subsubsection{Mutation}
+Over time, as more and more iterations are performed, the diversity of the population will eventually be lost. This is due to the fact that the wolves are only updated based on the best three solutions. This will also result in premature convergence \cite{Jiang2018}. To combat this, a mutation operator is performed to reintroduce diversity. The mutation operator used is an operator that we dub the "Buddy-Buddy Mutation".
 
-The data set generated by the original authors consists of 150,000 curves. This data was synthesized from B-spline curves. Random control points $c_{i}$ were generated using a normal distribution $\mu$ and variance $\delta$ to define cubic ($k = 3$) B-spline curves with ($k + 1)$-fold end knots and no interior knots. The $y$-coordinates are given the configuration: $\delta = 2$ and $\mu = 10$. For the $x$-coordinates, $\delta = 1$ and $\mu = 10$ are used for the first control point. All consecutive points have $\mu$ increased by $\Delta\mu = 1$. Curves with self-intersections are discarded, because the sequential order of their sampled points is not unique, and point sequences are usually split into subsets at the self-intersections. Smaller $\delta$ for the x-coordinates of control points reduces the number of curves with self-intersections. To closely match the target input as much as possible, we also include curves that have been manually fitted to raster images. These curves can be obtained from vector images available online.
+The \textbf{Buddy-Buddy Mutation} is a mutation operator that simply selects two pairs of buildings $D$ and $S$, and move one of them to the side of the other building. Building $D$ is referred to as the dynamic buddy, while building $S$ is referred to as the static buddy. Building $D$ will be the building that will be moved towards the other building, which is building $S$ in our case. When moving building $D$, a side $E$ of building $S$ will first be randomly chosen. Afterwards, an orientation for building $D$ will be randomly chosen, whether it will be parallel or perpendicular to $E$. Once a side and orientation has been selected, building $D$ will be moved adjacent towards building $S$ at side $E$ with the chosen orientation. The implementation of this mutation operator in our proposed approach gives buildings that intersect with another building more chances of being selected as the dynamic buddy. Pseudocode and a visualization of the operator is provided by Algorithm \ref{pseudocode-buddybuddy-mutation} and Figure \ref{buddy-buddy-mutation-viz}, respectively.
 
-For each curve, $l$ points $p = (p_{0}, \ldots, p_{l - 1})$ are sampled. These curves then to have increasing x-coordinates from left to right. As such, index-flipped versions of the point sequences of the dataset are added, resulting in 300,000 point sequences. 20\% of the sequences are used as test data in the training process.
+\begin{algorithm}
+	\caption{Pseudocode for the Buddy-Buddy Mutation.}
+	\label{pseudocode-buddybuddy-mutation}
+	\begin{algorithmic}[1]
+		\State Randomly select two buildings $D$ and $S$, with more weight given to buildings that are intersecting with another.
+		\State Set $E$ to be a randomly selected side of building $S$.
+		\State Set $O$ to either be a parallel or perpendicular orientation, randomly selected.
+		\State Move building $D$ adjacent to side $E$ of building $S$ with the orientation $O$.
+	\end{algorithmic}
+\end{algorithm}
 
-The PPN is trained first since the KSN requires point parametrizations $t$, which is obtained from the PPN. After training, the PP2 and PP3 layers are discarded and PP1 becomes the output layer of the PPN. The parametric values $t$ are computed for the training dataset by applying the PPN and train the KSN on the combined input. After training, KS2 and KS3 are discarded, with KS1 becoming the network output layer. The MLPs of the PPN and KSN will consist of three hidden layers with sizes (1000, 1000, 1000) and (500, 500, 500) respectively. Dropout is applied to the MLP layers. The network is trained using the Adam optimizer.
+The rate at which a solution is mutated is highly dependent on the fitness of the solution. The worse the fitness of a solution is, the more likely it is to be mutated. This encourages the proposed algorithm to improve solutions that are generally bad. This rate scheme makes this an adaptive mutation operator \cite{Jiang2018}. The mutation rate is mathematically modelled as:
 
-\section{Region Colouring and Merging}
-Once the curves have been approximated, the vectorization of the region will be filled with the colour prominent in the raster version of the region. The regions will be plotted unto their locations in the original raster input. Once all the regions have been plotted, they will be grouped into a single vectorization. This will now be the vectorization output of the raster image.
- 
-%The input image will first be segmented into separate regions. At this point, the appropriate segmentation algorithm will be determined through experimentation. Notably, the separation of the regions will open up the possibility of using parallelism to speed up the execution of the algorithm.
+\begin{equation}
+	m(X, t) = 1 - \frac{fit_{max}(t) - fit(X(t))}{fit_{max}(t) - fit_{min}(t)}
+\end{equation}
 
-%Once segmentation has been complete, each region will be applied corner detection. Corner detection will be performed using neural networks via supervised learning. The training data set will consist of anti-aliased input since the vectorization target will be anti-aliased input. A pre-vectorization of the curves, by connecting straight Bezier curves will connect the detected corners to one another.
+where $m_{k}$ refers to the mutation rate of a solution $X$ at iteration $t$, $fit$ is a function that gets the fitness of a solution, and $fit_{min}$ and $fit_{max}$ gets the minimum and maximum fitnesses of the population, respectively.
 
-%The final step will involve the optimization of the initial vectorization done during the pre-vectorization. The optimization framework will be based on the work by Yang, M.. The framework will be modified to include additional priors and weights To take into account Gestalt psychology.
+\subsubsection{Elitism}
+One variant of genetic algorithms includes elitism. This elitism allows a genetic algorithm to keep a number of best solutions in the next generation, ensuring that the best solutions do not get discarded over time. Note that this elitism strategy is not only limited to genetic algorithms. Other evolutionary algorithms may also utilize this strategy \cite{Du2018}. We are also taking this principle into our proposed approach. In our proposed approach, we are keeping the best three solutions in the previous iteration to the next iteration. We chose three due to the fact that the best three solutions in a population have significance in GWO.
+
+\subsection{Local Searches}
+Remember that our implementation is based on aforementioned previous works that used local search algorithms in conjunction to genetic algorithms. They combined GAs with local search algorithms because GAs find it hard to explore within the convergence area. Hybridizing it with a local search algorithm improves performance \cite{Ripon2013}. In our proposed approach, we are keeping this aspect of the previous works. This will also ensure that we are able to search within the convergence area more intensely and find better solutions. In the previous works and in ours, there are two local search algorithms, dubbed "Local Search 1" and "Local Search 2". They vary in terms of searching intensity, but both attempts to obtain better solutions. We will be discussing details of both in this section.
+
+\subsubsection{Local Search 1}
+The first local search algorithm, "Local Search 1", performs a local search by creating a number of solutions by moving each building in different directions by a certain random amount and changing its orientations after movement and obtaining the best solution from these activities. In our approach, the certain amount of movement is a random number between 1 and 5. This search algorithm is only applied to the best solution of the current iteration, and the best solution found in this search becomes the new best solution and replaces the previously best solution. The movements of each building is defined by a set of "activities". This set of activities is shown by Table \cite{local-search-1-activities}. Additionally, a pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-1}.
+
+\begin{figure}
+	\begin{center}
+		\begin{tabular}{| c | p{110mm} |}
+			\hline
+			Activity Number & Description \\
+			\hline
+			0 & A building is moved to the right along the x-axis by a random number between 1 and 5. \\
+			1 & A building is moved to the left along the x-axis by a random number between 1 and 5. \\
+			2 & A building is moved to the upwards along the y-axis by a random number between 1 and 5. \\
+			3 & A building is moved to the downwards along the y-axis by a random number between 1 and 5. \\
+			4 & Generate two random numbers from 1 and 5 and a building is moved to the right and then upward, respectively, by those numbers. \\
+			5 & Generate two random numbers from 1 and 5 and a building is moved to the right and then downward, respectively, by those numbers. \\
+			6 & Generate two random numbers from 1 and 5 and a building is moved to the left and then upward, respectively, by those numbers. \\
+			7 & Generate two random numbers from 1 and 5 and a building is moved to the left and then downward, respectively, by those numbers. \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Activities for moving a building in Local Search 1}
+	\label{local-search-1-activities}
+\end{figure}
+
+\begin{algorithm}
+\caption{Pseudocode for Local Search 1.}
+\label{pseudocode-local-search-1}
+\begin{algorithmic}[1]
+\State Set $S$ to be a collection of solutions.
+\State Set $S_{curr}$ to be the solution being optimized.
+\State Add $S_{curr}$ to $S$.
+\State Set $N_{B}$ be the maximum number of buildings.
+\State Set $N_{A}$ be the maximum number of activities.
+\For{i = 0 until $N_{B} - 1$}
+	\For{a = 0 until $N_{B} - 1$}
+		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
+		\State Perform activity $a$ with building $i$, and change the orientation of the building to the other orientation in $S_{curr}$ and save the new solution in $S$.
+	\EndFor
+\EndFor \\
+\Return the best solution in $S$.
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Local Search 2}
+Local Search 2 is a more intense version of Local Search 1, in order to find the best solution so far. Unlike the latter that only moves one building at a time, Local Search 2 moves two buildings instead. The two buildings will also have their orientations changed after each activity. This local search is only applied to the best solution found in the last 50 iterations. The set of activities for this local search is shown by Table \cite{local-search-2-activities}, and a pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-2}.
+
+\begin{figure}
+	\begin{center}
+		\begin{tabular}{| c | p{110mm} |}
+			\hline
+			Activity Number & Description \\
+			\hline
+			0  & Building $i$ and $i + 1$ are moved to the right along the x-axis by a random number between 1 and 5. \\
+			1  & Building $i$ and $i + 1$ are moved to the left along the x-axis by a random number between 1 and 5. \\
+			2  & Building $i$ and $i + 1$ are moved upwards along the x-axis by a random number between 1 and 5. \\
+			3  & Building $i$ and $i + 1$ are moved downwards along the x-axis by a random number between 1 and 5. \\
+			4  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then upward, respectively, by those numbers. \\
+			5  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then downward, respectively, by those numbers. \\
+			6  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then upward, respectively, by those numbers. \\
+			7  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then downward, respectively, by those numbers. \\
+			8  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the right by $b$. \\
+			9  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved downward by $b$. \\
+			10 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the left by $b$. \\
+			11 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved downward by $b$. \\
+			12 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved upward by $b$. \\
+			13 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved to the left by $b$. \\
+			14 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to downward by $b$. \\
+			15 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to the right by $b$. \\
+			16 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved upward by $b$. \\
+			17 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the right by $b$. \\
+			18 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the left by $b$. \\
+			19 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved upward by $b$. \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Activities for moving a building in Local Search 2}
+	\label{local-search-2-activities}
+\end{figure}
+
+\begin{algorithm}
+	\caption{Pseudocode for Local Search 2.}
+	\label{pseudocode-local-search-2}
+	\begin{algorithmic}[1]
+		\State Set $S$ to be a collection of solutions.
+		\State Set $S_{curr}$ to be the solution being optimized.
+		\State Add $S_{curr}$ to $S$.
+		\State Set $N_{B}$ be the maximum number of buildings.
+		\State Set $N_{A}$ be the maximum number of activities.
+		\For{i = 0 until $N_{B} - 2$}
+		\For{a = 0 until $N_{B} - 1$}
+		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
+		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
+		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i + 1$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
+		\State Perform activity $a$ with building $i$, and change the orientations of \WRP buildings $i$ and $i + 1$ to the other orientations in $S_{curr}$ and save the new \WRP solution in $S$.
+		\EndFor
+		\EndFor \\
+		\Return the best solution in $S$.
+	\end{algorithmic}
+\end{algorithm}
