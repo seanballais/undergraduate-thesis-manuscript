@@ -1,6 +1,7 @@
 \chapter{Methodology}
-The methodology used in this research is based on the frameworks proposed by Asl et al. (2015) \cite{Asl2015}, Asl, A. and Wong, K. (2015) \cite{Asl2015a}, and Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. It is a mixture of the works of the aforementioned authors 
-In this chapter, we will first discuss about the mathematical model of the problem being solved. Later, we will be delving into the inner workings of the solution representation, the algorithm, and then the technologies that were used in implementing the approach.
+The methodology used in this research uses a modification of the classical Grey Wolf Optimization algorithm first introduced by Mirjalili, S., Mirjalili, S., and Lewis, A. in 2014 \cite{Mirjalili2014}. As we will be discussing in this chapter, we have determined that using classical GWO as is does not result in usable solutions for the instance of facility layout problem we are solving. Hence, the necessity for the modification.
+
+In this chapter, we will first discuss about the mathematical model of the problem being solved. Later, we will be delving into the inner workings of the solution representation, the algorithm (including the justification for the modification), and then the technologies that were used in implementing the approach.
 
 \section{Mathematical Model}
 The goal of any metaheuristic, like what is being proposed in this paper, is to optimize a certain objective function. As mentioned in the first chapter, in facility layout problems, we minimize the following function:
@@ -9,7 +10,7 @@ $$
 \text{min} F = \sum_{i=1}^{n}\sum_{j=1}^{n}c_{ij}f_{ij}d_{ij}
 $$
 
-For the problem we are solving in this paper, we are optimizing the following equation that is not only a slight modifications of the basic mathematical model for FLPs, but also adds penalties to solutions that are infeasible, no matter the degree of infeasiblity.
+For the problem we are solving in this paper, we are optimizing the following equation that is not only a slight modification of the basic mathematical model for FLPs, but also adds penalties to solutions that are infeasible, no matter the degree of infeasiblity.
 
 \begin{align*}
 	\text{min }F &= \sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |}c_{ij}d_{ij} \\
@@ -58,7 +59,7 @@ We elected to remove the flow rate from the basic formulation of the model that 
 	\sum_{i=1}^{\left | B \right |}\sum_{j=i + 1}^{\left | B \right |}c_{ij}d_{ij}
 \end{equation}
 
-This is because we can consider flow rate as simply part of cost. In the original formulation, we were considering it from a material handling cost perspective, which requires having both a cost and flow rate variable. However, in a general problem, we can consider cost to also include the frequency of movement from one facility to another, which is essentially the flow rate. As such, we can merge cost and flow rate into one variable.
+This is because we can consider flow rate as simply part of the cost. In the original formulation, we were considering it from a material handling cost perspective, which requires having both a cost and flow rate variable. However, in a general problem, we can consider cost to also include the frequency of movement from one facility to another, which is essentially the flow rate. As such, we can merge cost and flow rate into one variable.
 
 The mathematical model allows for infeasible solutions to allow for better solutions in the long run. To follow this specification, the model includes expressions that penalizes solutions that meet any of the following conditions: (1) at least one building is intersecting with another building, and (2) a building, either in whole or in part, is outside the bounding area.
 
@@ -124,190 +125,233 @@ The solution is represented using a one-dimensional array of floating numbers. I
 \end{figure}
 
 \section{The Algorithm}
-The proposed algorithm contains multiple phases to solve the unequal area static facility layout problem. The basic framework of the algorithm is inspired from the works of Asl et al. (2015) \cite{Asl2015} and Asl, A. and Wong, K. (2015) \cite{Asl2015}. The Grey Wolf Optimization aspect of the algorithm is inspired from Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. Figure \ref{algo-flowchart} shows a flowchart of the algorithm. We will be further discussing the algorithm in detail in this section.
+In this paper, we are adapting the Grey Wolf Optimization algorithm into solving our instance of the facility layout problem. There have been no publicly available research that have previously used the metaheuristic in solving FLP, basing from our survey. This increases the significance of this paper. As mentioned earlier, the proposed algorithm requires modifications in order to produce feasible solutions. We will first be discussing the reasons why we require them, before proceeding to detailing the algorithm we are using for this research.
+
+\subsection{The Problem with Classical GWO}
+In classical GWO, the following equations are used:
+
+\begin{align}
+	\vec{X_{1}^{'}} &= \vec{X_{\alpha}}(t) - \vec{A_{\alpha}} \cdot \vec{D_{\alpha}} \\
+	\vec{X_{2}^{'}} &= \vec{X_{\beta}}(t) - \vec{A_{\beta}} \cdot \vec{D_{\beta}} \\
+	\vec{X_{3}^{'}} &= \vec{X_{\delta}}(t) - \vec{A_{\delta}} \cdot \vec{D_{\delta}} \\
+	\vec{X}(t + 1)  &= \frac{\vec{X_{1}^{'}} + \vec{X_{2}^{'}} + \vec{X_{3}^{'}}}{3}
+\end{align}
+
+where $\vec{X_{\alpha}}$, $\vec{X_{\beta}}$, and $\vec{X_{\delta}}$ represent the $\alpha$, $\beta$, and $\delta$ solutions \cite{Gupta2018}. $\vec{D}$ and $\vec{A}$ are defined as:
+
+\begin{align*}
+	\vec{D}        &= \left | \vec{C} \cdot \vec{X_{l}}(t)
+	- \vec{X}(t) \right | \\
+	\vec{C}        &= 2 \cdot \vec{r_{2}} \\
+	\vec{A}        &= 2 \cdot \vec{a} \cdot \vec{r_{1}}
+					  - \vec{a}                \\
+\end{align*}
+
+The aforementioned equations may be usable as is for other problems. However, as we have discovered through our experiments, using these equations results in solutions that are infeasible and where the buildings tend to move to the axes of an origin and the origin itself. One example solution with these characteristics is shown in Figure \ref{bad-solution-unmodified-gwo}, where we have set the origin of the buildings to the center of the bounding region.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics{./images/chap05-methodology/flowchart.png}
+	\includegraphics{./images/chap05-methodology/bad-solution-unmodified-gwo.png}
 	\caption{Flowchart detailing the algorithm.}
-	\label{algo-flowchart}
+	\label{bad-solution-unmodified-gwo}
 \end{figure}
 
-\subsection{Population Generation}
-In generating the initial population, the order in which facilities are placed in the bounding region is shuffled. Once it is shuffled, each building $i$ is then given a random x position between the inclusive range $\left [ R_{x} + \frac{w_{i}}{2}, (R_{x} + R_{w}) - \frac{w_{i}}{2} \right ]$, a random y position between the inclusive range $\left [ R_{y} + \frac{h_{i}}{2}, (R_{y} + R_{h})  - \frac{h_{i}}{2} \right ]$, and angle that is either $0^{\circ}$ or $90^{\circ}$ (chosen in a uniformly random fashion). This will generate a solution where the buildings are spread out throughout the bounding region. There will be building intersections (though this is dependent on the number of buildings and size of the bounding region), but no building will be out-of-bounds. This process is repeated until we generate a specified number of solutions. This number is determined by the population size.
+As one may infer, using the equations above will require setting an origin point for the buildings. Not considering the affinity of building towards the axes, having the origin point at the center or in a certain location in the bounding region restricts the possible locations where the buildings can cluster around. This restriction prevents us from exploring the solution subspace where solutions are feasible but where the cluster point is not the origin. This lead us to solutions that are less ideal. Aside from requiring setting the origin point, buildings moving towards the axes also presents another problem. Basing from our experiments, it prevents us from producing feasible solutions.
 
-\subsection{Swapping Method}
-The swapping method is used to find a possible configuration for a solution that is better than the current configuration. This method is applied to all solutions in the population, but only in the first 100 iterations. Pseudocode for the swapping method is provided in Algorithm \ref{pseudocode-swapping}.
+This behaviour can be attributed to the formulas, $\vec{D} = \left | \vec{C} \cdot \vec{X_{p}}(t) - \vec{X}(t) \right |$ and $\vec{A} \cdot \vec{D}$. Remember that the latter is from $\vec{X_{l}^{'}} = \vec{X_{l}}(t) - \vec{A_{l}} \cdot \vec{D_{l}}$, where $l$ represents the alpha, beta, or delta solution. To understand why the aforementioned formulas contribute to the behaviour we have discussed earlier, we should understand what any of the aforementioned formulas mean.
 
-\begin{algorithm}
-\caption{Pseudocode for the swapping method.}
-\label{pseudocode-swapping}
-\begin{algorithmic}[1]
-\State Let $S$ be the collection of generated solutions.
-\State Set $S_{curr}$ be the current solution.
-\State Add $S_{curr}$ to $S$.
-\State Set $N_{B}$ be the maximum number of buildings.
-\For{i = 0 until $N_{B} - 2$}
-	\For{j = i + 1 until $N_{B} - 1$}
-		\State Building $i$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
-		\State Building $j$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
-		\State Building $i$'s and $j$'s orientations in $S_{curr}$ are changed to the other\WRP orientation, and the resulting new solution is added to $S$
-		\State Building $i$'s and $j$'s positions are exchanged in $S_{curr}$, and the resulting new\WRP solutiA movement and a orientation changeon is added to $S$.
-		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $i$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
-		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $j$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
-		\State Building $i$'s and $j$'s positions are exchanged in and the orientations of\WRP buildings $i$ and $j$ are changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
-	\EndFor
-\EndFor \\
-\Return the best solution in $S$.
-\end{algorithmic}
-\end{algorithm}
+Let us start with $\vec{C} \cdot \vec{X_{l}}(t)$ from $\vec{D} = \left | \vec{C} \cdot \vec{X_{l}}(t) - \vec{X}(t) \right |$. To simplify our explanation, let $K = \vec{C} \cdot \vec{X_{l}}(t)$. The range of each $i$th element in $K$ will be $[0, 2 \cdot \vec{C}_{l,i}]$. Note that the operation is dot product, but pairwise multiplication. This means that $K$ simply scales the x and y positions, and angle of the buildings. Figure x shows a visualization of this effect.
 
-\subsection{Crossover, Mutation, and Elitism}
-Experimentations with directly applying the formulas of Grey Wolf Optimization in solving our instance of the facility layout problem have not generated satisfying results. However, results generated by an algorithm inspired from the paper of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018} showed promise. As such the GWO portion of our proposed approach has been taken from their work. Their work takes certain elements from genetic algorithms, particularly the crossover and mutation operators, but kept the general principle of Grey Wolf optimization intact. We will be discussing each operator in detail in this section. Elitism is also implemented in our proposed approach to ensure that the best solutions found so far do not get lost throughout iterations. It will also be discussed in this section.
 
-\subsubsection{Crossover}
-Grey wolf optimization algorithms breed with the other solutions with the top three solutions in the population. That is modelled by the mathematical definition of the optimization algorithm. However, directly the definition does not yield good results. Due to that, we are using a crossover operator from the work of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018}.
+we should take note that $\vec{A} = 2 \cdot \vec{a} \cdot \vec{r_{1}} - \vec{a}$.
 
-The crossover operator used here can be mathematical defined as:
+\subsection{Modified GWO}
 
-$$
-X(t + 1) =
-\begin{cases}
-	f(X(t), X_{alpha}(t)) & \text{if }
-	\text{rnd} \leq \frac{1}{3} \\ 
-	f(X(t), X_{beta}(t)) & \text{if }
-	\frac{1}{3} < \text{rnd} \leq \frac{2}{3} \\
-	f(X(t), X_{delta}(t)) & \text{if }
-	\text{rnd} \geq \frac{2}{3}
-\end{cases} 
-$$
-
-where $f$ is the crossover function, and $\text{rnd} \sim U(0, 1)$. This means that a solution will be crossed over by one of the best three solutions, selected randomly. In our approach, we have used the uniform crossover. Note that this crossover is applied to every solution in a population in accordance with the principle of GWO. In our approach, only one offspring is generated from the crossover.
-
-\subsubsection{Mutation}
-Over time, as more and more iterations are performed, the diversity of the population will eventually be lost. This is due to the fact that the wolves are only updated based on the best three solutions. This will also result in premature convergence \cite{Jiang2018}. To combat this, a mutation operator is performed to reintroduce diversity. The mutation operator used is an operator that we dub the "Buddy-Buddy Mutation".
-
-The \textbf{Buddy-Buddy Mutation} is a mutation operator that simply selects two pairs of buildings $D$ and $S$, and move one of them to the side of the other building. Building $D$ is referred to as the dynamic buddy, while building $S$ is referred to as the static buddy. Building $D$ will be the building that will be moved towards the other building, which is building $S$ in our case. When moving building $D$, a side $E$ of building $S$ will first be randomly chosen. Afterwards, an orientation for building $D$ will be randomly chosen, whether it will be parallel or perpendicular to $E$. Once a side and orientation has been selected, building $D$ will be moved adjacent towards building $S$ at side $E$ with the chosen orientation. The implementation of this mutation operator in our proposed approach gives buildings that intersect with another building more chances of being selected as the dynamic buddy. Pseudocode and a visualization of the operator is provided by Algorithm \ref{pseudocode-buddybuddy-mutation} and Figure \ref{buddy-buddy-mutation-viz}, respectively.
-
-\begin{algorithm}
-	\caption{Pseudocode for the Buddy-Buddy Mutation.}
-	\label{pseudocode-buddybuddy-mutation}
-	\begin{algorithmic}[1]
-		\State Randomly select two buildings $D$ and $S$, with more weight given to buildings that are intersecting with another.
-		\State Set $E$ to be a randomly selected side of building $S$.
-		\State Set $O$ to either be a parallel or perpendicular orientation, randomly selected.
-		\State Move building $D$ adjacent to side $E$ of building $S$ with the orientation $O$.
-	\end{algorithmic}
-\end{algorithm}
-
-The rate at which a solution is mutated is highly dependent on the fitness of the solution. The worse the fitness of a solution is, the more likely it is to be mutated. This encourages the proposed algorithm to improve solutions that are generally bad. This rate scheme makes this an adaptive mutation operator \cite{Jiang2018}. The mutation rate is mathematically modelled as:
-
-\begin{equation}
-	m(X, t) = 1 - \frac{fit_{max}(t) - fit(X(t))}{fit_{max}(t) - fit_{min}(t)}
-\end{equation}
-
-where $m_{k}$ refers to the mutation rate of a solution $X$ at iteration $t$, $fit$ is a function that gets the fitness of a solution, and $fit_{min}$ and $fit_{max}$ gets the minimum and maximum fitnesses of the population, respectively.
-
-\subsubsection{Elitism}
-One variant of genetic algorithms includes elitism. This elitism allows a genetic algorithm to keep a number of best solutions in the next generation, ensuring that the best solutions do not get discarded over time. Note that this elitism strategy is not only limited to genetic algorithms. Other evolutionary algorithms may also utilize this strategy \cite{Du2018}. We are also taking this principle into our proposed approach. In our proposed approach, we are keeping the best three solutions in the previous iteration to the next iteration. We chose three due to the fact that the best three solutions in a population have significance in GWO.
-
-\subsection{Local Searches}
-Remember that our implementation is based on aforementioned previous works that used local search algorithms in conjunction to genetic algorithms. They combined GAs with local search algorithms because GAs find it hard to explore within the convergence area. Hybridizing it with a local search algorithm improves performance \cite{Ripon2013}. In our proposed approach, we are keeping this aspect of the previous works. This will also ensure that we are able to search within the convergence area more intensely and find better solutions. In the previous works and in ours, there are two local search algorithms, dubbed "Local Search 1" and "Local Search 2". They vary in terms of searching intensity, but both attempts to obtain better solutions. We will be discussing details of both in this section.
-
-\subsubsection{Local Search 1}
-The first local search algorithm, "Local Search 1", performs a local search by creating a number of solutions by moving each building in different directions by a certain random amount and changing its orientations after movement and obtaining the best solution from these activities. In our approach, the certain amount of movement is a random number between 1 and 5. This search algorithm is only applied to the best solution of the current iteration, and the best solution found in this search becomes the new best solution and replaces the previously best solution. The movements of each building is defined by a set of "activities". This set of activities is shown by Table \ref{local-search-1-activities}. Additionally, pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-1}.
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{| c | p{110mm} |}
-		\hline
-		Activity Number & Description \\
-		\hline
-		0 & A building is moved to the right along the x-axis by a random number between 1 and 5. \\
-		1 & A building is moved to the left along the x-axis by a random number between 1 and 5. \\
-		2 & A building is moved to the upwards along the y-axis by a random number between 1 and 5. \\
-		3 & A building is moved to the downwards along the y-axis by a random number between 1 and 5. \\
-		4 & Generate two random numbers from 1 and 5 and a building is moved to the right and then upward, respectively, by those numbers. \\
-		5 & Generate two random numbers from 1 and 5 and a building is moved to the right and then downward, respectively, by those numbers. \\
-		6 & Generate two random numbers from 1 and 5 and a building is moved to the left and then upward, respectively, by those numbers. \\
-		7 & Generate two random numbers from 1 and 5 and a building is moved to the left and then downward, respectively, by those numbers. \\
-		\hline
-	\end{tabular}
-	\caption{Activities for moving a building in Local Search 1}
-	\label{local-search-1-activities}
-\end{table}
-
-\begin{algorithm}[h!]
-\caption{Pseudocode for Local Search 1.}
-\label{pseudocode-local-search-1}
-\begin{algorithmic}[1]
-\State Set $S$ to be a collection of solutions.
-\State Set $S_{curr}$ to be the solution being optimized.
-\State Add $S_{curr}$ to $S$.
-\State Set $N_{B}$ be the maximum number of buildings.
-\State Set $N_{A}$ be the maximum number of activities.
-\For{i = 0 until $N_{B} - 1$}
-	\For{a = 0 until $N_{B} - 1$}
-		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
-		\State Perform activity $a$ with building $i$, and change the orientation of the building to the other orientation in $S_{curr}$ and save the new solution in $S$.
-	\EndFor
-\EndFor \\
-\Return the best solution in $S$.
-\end{algorithmic}
-\end{algorithm}
-
-\subsubsection{Local Search 2}
-Local Search 2 is a more intense version of Local Search 1, in order to find the best solution so far. Unlike the latter that only moves one building at a time, Local Search 2 moves two buildings instead. The two buildings will also have their orientations changed after each activity. This local search is only applied to the best solution found in the last 50 iterations. The set of activities for this local search is shown by Table \ref{local-search-2-activities}, and a pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-2}.
-
-\begin{algorithm}[h!]
-	\caption{Pseudocode for Local Search 2.}
-	\label{pseudocode-local-search-2}
-	\begin{algorithmic}[1]
-		\State Set $S$ to be a collection of solutions.
-		\State Set $S_{curr}$ to be the solution being optimized.
-		\State Add $S_{curr}$ to $S$.
-		\State Set $N_{B}$ be the maximum number of buildings.
-		\State Set $N_{A}$ be the maximum number of activities.
-		\For{i = 0 until $N_{B} - 2$}
-		\For{a = 0 until $N_{B} - 1$}
-		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
-		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
-		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i + 1$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
-		\State Perform activity $a$ with building $i$, and change the orientations of \WRP buildings $i$ and $i + 1$ to the other orientations in $S_{curr}$ and save the new \WRP solution in $S$.
-		\EndFor
-		\EndFor \\
-		\Return the best solution in $S$.
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{longtable}{| c | p{120mm} |}
-	\hline
-	Activity Number & Description \\
-	\hline
-	0  & Building $i$ and $i + 1$ are moved to the right along the x-axis by a random number between 1 and 5. \\
-	1  & Building $i$ and $i + 1$ are moved to the left along the x-axis by a random number between 1 and 5. \\
-	2  & Building $i$ and $i + 1$ are moved upwards along the x-axis by a random number between 1 and 5. \\
-	3  & Building $i$ and $i + 1$ are moved downwards along the x-axis by a random number between 1 and 5. \\
-	4  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then upward, respectively, by those numbers. \\
-	5  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then downward, respectively, by those numbers. \\
-	6  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then upward, respectively, by those numbers. \\
-	7  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then downward, respectively, by those numbers. \\
-	8  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the right by $b$. \\
-	9  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved downward by $b$. \\
-	10 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the left by $b$. \\
-	11 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved downward by $b$. \\
-	12 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved upward by $b$. \\
-	13 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved to the left by $b$. \\
-	14 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to downward by $b$. \\
-	15 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to the right by $b$. \\
-	16 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved upward by $b$. \\
-	17 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the right by $b$. \\
-	18 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the left by $b$. \\
-	19 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved upward by $b$. \\
-	\hline
-	\caption{Activities for moving a building in Local Search 2}
-	\label{local-search-2-activities}
-\end{longtable}
+%\section{The Algorithm}
+%The proposed algorithm contains multiple phases to solve the unequal area static facility layout problem. The basic framework of the algorithm is inspired from the works of Asl et al. (2015) \cite{Asl2015} and Asl, A. and Wong, K. (2015) \cite{Asl2015}. The Grey Wolf Optimization aspect of the algorithm is inspired from Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. Figure \ref{algo-flowchart} shows a flowchart of the algorithm. We will be further discussing the algorithm in detail in this section.
+%
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics{./images/chap05-methodology/flowchart.png}
+%	\caption{Flowchart detailing the algorithm.}
+%	\label{algo-flowchart}
+%\end{figure}
+%
+%\subsection{Population Generation}
+%In generating the initial population, the order in which facilities are placed in the bounding region is shuffled. Once it is shuffled, each building $i$ is then given a random x position between the inclusive range $\left [ R_{x} + \frac{w_{i}}{2}, (R_{x} + R_{w}) - \frac{w_{i}}{2} \right ]$, a random y position between the inclusive range $\left [ R_{y} + \frac{h_{i}}{2}, (R_{y} + R_{h})  - \frac{h_{i}}{2} \right ]$, and angle that is either $0^{\circ}$ or $90^{\circ}$ (chosen in a uniformly random fashion). This will generate a solution where the buildings are spread out throughout the bounding region. There will be building intersections (though this is dependent on the number of buildings and size of the bounding region), but no building will be out-of-bounds. This process is repeated until we generate a specified number of solutions. This number is determined by the population size.
+%
+%\subsection{Swapping Method}
+%The swapping method is used to find a possible configuration for a solution that is better than the current configuration. This method is applied to all solutions in the population, but only in the first 100 iterations. Pseudocode for the swapping method is provided in Algorithm \ref{pseudocode-swapping}.
+%
+%\begin{algorithm}
+%\caption{Pseudocode for the swapping method.}
+%\label{pseudocode-swapping}
+%\begin{algorithmic}[1]
+%\State Let $S$ be the collection of generated solutions.
+%\State Set $S_{curr}$ be the current solution.
+%\State Add $S_{curr}$ to $S$.
+%\State Set $N_{B}$ be the maximum number of buildings.
+%\For{i = 0 until $N_{B} - 2$}
+%	\For{j = i + 1 until $N_{B} - 1$}
+%		\State Building $i$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
+%		\State Building $j$'s orientation in $S_{curr}$ is changed to the other orientation,\WRP and the resulting new solution is added to $S$
+%		\State Building $i$'s and $j$'s orientations in $S_{curr}$ are changed to the other\WRP orientation, and the resulting new solution is added to $S$
+%		\State Building $i$'s and $j$'s positions are exchanged in $S_{curr}$, and the resulting new\WRP solutiA movement and a orientation changeon is added to $S$.
+%		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $i$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+%		\State Building $i$'s and $j$'s positions are exchanged in and the orientation of\WRP building $j$ is changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+%		\State Building $i$'s and $j$'s positions are exchanged in and the orientations of\WRP buildings $i$ and $j$ are changed in $S_{curr}$, and the resulting new solution\WRP is added to $S$.
+%	\EndFor
+%\EndFor \\
+%\Return the best solution in $S$.
+%\end{algorithmic}
+%\end{algorithm}
+%
+%\subsection{Crossover, Mutation, and Elitism}
+%Experimentations with directly applying the formulas of Grey Wolf Optimization in solving our instance of the facility layout problem have not generated satisfying results. However, results generated by an algorithm inspired from the paper of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018} showed promise. As such the GWO portion of our proposed approach has been taken from their work. Their work takes certain elements from genetic algorithms, particularly the crossover and mutation operators, but kept the general principle of Grey Wolf optimization intact. We will be discussing each operator in detail in this section. Elitism is also implemented in our proposed approach to ensure that the best solutions found so far do not get lost throughout iterations. It will also be discussed in this section.
+%
+%\subsubsection{Crossover}
+%Grey wolf optimization algorithms breed with the other solutions with the top three solutions in the population. That is modelled by the mathematical definition of the optimization algorithm. However, directly the definition does not yield good results. Due to that, we are using a crossover operator from the work of Jiang, T., and Zhang, C. (2018) \cite{Jiang2018}.
+%
+%The crossover operator used here can be mathematical defined as:
+%
+%$$
+%X(t + 1) =
+%\begin{cases}
+%	f(X(t), X_{alpha}(t)) & \text{if }
+%	\text{rnd} \leq \frac{1}{3} \\ 
+%	f(X(t), X_{beta}(t)) & \text{if }
+%	\frac{1}{3} < \text{rnd} \leq \frac{2}{3} \\
+%	f(X(t), X_{delta}(t)) & \text{if }
+%	\text{rnd} \geq \frac{2}{3}
+%\end{cases} 
+%$$
+%
+%where $f$ is the crossover function, and $\text{rnd} \sim U(0, 1)$. This means that a solution will be crossed over by one of the best three solutions, selected randomly. In our approach, we have used the uniform crossover. Note that this crossover is applied to every solution in a population in accordance with the principle of GWO. In our approach, only one offspring is generated from the crossover.
+%
+%\subsubsection{Mutation}
+%Over time, as more and more iterations are performed, the diversity of the population will eventually be lost. This is due to the fact that the wolves are only updated based on the best three solutions. This will also result in premature convergence \cite{Jiang2018}. To combat this, a mutation operator is performed to reintroduce diversity. The mutation operator used is an operator that we dub the "Buddy-Buddy Mutation".
+%
+%The \textbf{Buddy-Buddy Mutation} is a mutation operator that simply selects two pairs of buildings $D$ and $S$, and move one of them to the side of the other building. Building $D$ is referred to as the dynamic buddy, while building $S$ is referred to as the static buddy. Building $D$ will be the building that will be moved towards the other building, which is building $S$ in our case. When moving building $D$, a side $E$ of building $S$ will first be randomly chosen. Afterwards, an orientation for building $D$ will be randomly chosen, whether it will be parallel or perpendicular to $E$. Once a side and orientation has been selected, building $D$ will be moved adjacent towards building $S$ at side $E$ with the chosen orientation. The implementation of this mutation operator in our proposed approach gives buildings that intersect with another building more chances of being selected as the dynamic buddy. Pseudocode and a visualization of the operator is provided by Algorithm \ref{pseudocode-buddybuddy-mutation} and Figure \ref{buddy-buddy-mutation-viz}, respectively.
+%
+%\begin{algorithm}
+%	\caption{Pseudocode for the Buddy-Buddy Mutation.}
+%	\label{pseudocode-buddybuddy-mutation}
+%	\begin{algorithmic}[1]
+%		\State Randomly select two buildings $D$ and $S$, with more weight given to buildings that are intersecting with another.
+%		\State Set $E$ to be a randomly selected side of building $S$.
+%		\State Set $O$ to either be a parallel or perpendicular orientation, randomly selected.
+%		\State Move building $D$ adjacent to side $E$ of building $S$ with the orientation $O$.
+%	\end{algorithmic}
+%\end{algorithm}
+%
+%The rate at which a solution is mutated is highly dependent on the fitness of the solution. The worse the fitness of a solution is, the more likely it is to be mutated. This encourages the proposed algorithm to improve solutions that are generally bad. This rate scheme makes this an adaptive mutation operator \cite{Jiang2018}. The mutation rate is mathematically modelled as:
+%
+%\begin{equation}
+%	m(X, t) = 1 - \frac{fit_{max}(t) - fit(X(t))}{fit_{max}(t) - fit_{min}(t)}
+%\end{equation}
+%
+%where $m_{k}$ refers to the mutation rate of a solution $X$ at iteration $t$, $fit$ is a function that gets the fitness of a solution, and $fit_{min}$ and $fit_{max}$ gets the minimum and maximum fitnesses of the population, respectively.
+%
+%\subsubsection{Elitism}
+%One variant of genetic algorithms includes elitism. This elitism allows a genetic algorithm to keep a number of best solutions in the next generation, ensuring that the best solutions do not get discarded over time. Note that this elitism strategy is not only limited to genetic algorithms. Other evolutionary algorithms may also utilize this strategy \cite{Du2018}. We are also taking this principle into our proposed approach. In our proposed approach, we are keeping the best three solutions in the previous iteration to the next iteration. We chose three due to the fact that the best three solutions in a population have significance in GWO.
+%
+%\subsection{Local Searches}
+%Remember that our implementation is based on aforementioned previous works that used local search algorithms in conjunction to genetic algorithms. They combined GAs with local search algorithms because GAs find it hard to explore within the convergence area. Hybridizing it with a local search algorithm improves performance \cite{Ripon2013}. In our proposed approach, we are keeping this aspect of the previous works. This will also ensure that we are able to search within the convergence area more intensely and find better solutions. In the previous works and in ours, there are two local search algorithms, dubbed "Local Search 1" and "Local Search 2". They vary in terms of searching intensity, but both attempts to obtain better solutions. We will be discussing details of both in this section.
+%
+%\subsubsection{Local Search 1}
+%The first local search algorithm, "Local Search 1", performs a local search by creating a number of solutions by moving each building in different directions by a certain random amount and changing its orientations after movement and obtaining the best solution from these activities. In our approach, the certain amount of movement is a random number between 1 and 5. This search algorithm is only applied to the best solution of the current iteration, and the best solution found in this search becomes the new best solution and replaces the previously best solution. The movements of each building is defined by a set of "activities". This set of activities is shown by Table \ref{local-search-1-activities}. Additionally, pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-1}.
+%
+%\begin{table}[h!]
+%	\centering
+%	\begin{tabular}{| c | p{110mm} |}
+%		\hline
+%		Activity Number & Description \\
+%		\hline
+%		0 & A building is moved to the right along the x-axis by a random number between 1 and 5. \\
+%		1 & A building is moved to the left along the x-axis by a random number between 1 and 5. \\
+%		2 & A building is moved to the upwards along the y-axis by a random number between 1 and 5. \\
+%		3 & A building is moved to the downwards along the y-axis by a random number between 1 and 5. \\
+%		4 & Generate two random numbers from 1 and 5 and a building is moved to the right and then upward, respectively, by those numbers. \\
+%		5 & Generate two random numbers from 1 and 5 and a building is moved to the right and then downward, respectively, by those numbers. \\
+%		6 & Generate two random numbers from 1 and 5 and a building is moved to the left and then upward, respectively, by those numbers. \\
+%		7 & Generate two random numbers from 1 and 5 and a building is moved to the left and then downward, respectively, by those numbers. \\
+%		\hline
+%	\end{tabular}
+%	\caption{Activities for moving a building in Local Search 1}
+%	\label{local-search-1-activities}
+%\end{table}
+%
+%\begin{algorithm}[h!]
+%\caption{Pseudocode for Local Search 1.}
+%\label{pseudocode-local-search-1}
+%\begin{algorithmic}[1]
+%\State Set $S$ to be a collection of solutions.
+%\State Set $S_{curr}$ to be the solution being optimized.
+%\State Add $S_{curr}$ to $S$.
+%\State Set $N_{B}$ be the maximum number of buildings.
+%\State Set $N_{A}$ be the maximum number of activities.
+%\For{i = 0 until $N_{B} - 1$}
+%	\For{a = 0 until $N_{B} - 1$}
+%		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
+%		\State Perform activity $a$ with building $i$, and change the orientation of the building to the other orientation in $S_{curr}$ and save the new solution in $S$.
+%	\EndFor
+%\EndFor \\
+%\Return the best solution in $S$.
+%\end{algorithmic}
+%\end{algorithm}
+%
+%\subsubsection{Local Search 2}
+%Local Search 2 is a more intense version of Local Search 1, in order to find the best solution so far. Unlike the latter that only moves one building at a time, Local Search 2 moves two buildings instead. The two buildings will also have their orientations changed after each activity. This local search is only applied to the best solution found in the last 50 iterations. The set of activities for this local search is shown by Table \ref{local-search-2-activities}, and a pseudocode of the search algorithm is shown in Algorithm \ref{pseudocode-local-search-2}.
+%
+%\begin{algorithm}[h!]
+%	\caption{Pseudocode for Local Search 2.}
+%	\label{pseudocode-local-search-2}
+%	\begin{algorithmic}[1]
+%		\State Set $S$ to be a collection of solutions.
+%		\State Set $S_{curr}$ to be the solution being optimized.
+%		\State Add $S_{curr}$ to $S$.
+%		\State Set $N_{B}$ be the maximum number of buildings.
+%		\State Set $N_{A}$ be the maximum number of activities.
+%		\For{i = 0 until $N_{B} - 2$}
+%		\For{a = 0 until $N_{B} - 1$}
+%		\State Perform activity $a$ with building $i$ in $S_{curr}$ and save the new solution in $S$.
+%		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
+%		\State Perform activity $a$ with building $i$, and change the orientation of \WRP building $i + 1$ to the other orientation in $S_{curr}$ and save the new \WRP solution in $S$.
+%		\State Perform activity $a$ with building $i$, and change the orientations of \WRP buildings $i$ and $i + 1$ to the other orientations in $S_{curr}$ and save the new \WRP solution in $S$.
+%		\EndFor
+%		\EndFor \\
+%		\Return the best solution in $S$.
+%	\end{algorithmic}
+%\end{algorithm}
+%
+%\begin{longtable}{| c | p{120mm} |}
+%	\hline
+%	Activity Number & Description \\
+%	\hline
+%	0  & Building $i$ and $i + 1$ are moved to the right along the x-axis by a random number between 1 and 5. \\
+%	1  & Building $i$ and $i + 1$ are moved to the left along the x-axis by a random number between 1 and 5. \\
+%	2  & Building $i$ and $i + 1$ are moved upwards along the x-axis by a random number between 1 and 5. \\
+%	3  & Building $i$ and $i + 1$ are moved downwards along the x-axis by a random number between 1 and 5. \\
+%	4  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then upward, respectively, by those numbers. \\
+%	5  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the right and then downward, respectively, by those numbers. \\
+%	6  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then upward, respectively, by those numbers. \\
+%	7  & Generate two random numbers from 1 and 5 and buildings $i$ and $i + 1$ are moved to the left and then downward, respectively, by those numbers. \\
+%	8  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the right by $b$. \\
+%	9  & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved downward by $b$. \\
+%	10 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved upward by $a$ and building $i + 1$ is moved to the left by $b$. \\
+%	11 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved downward by $b$. \\
+%	12 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved upward by $b$. \\
+%	13 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the right by $a$ and building $i + 1$ is moved to the left by $b$. \\
+%	14 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to downward by $b$. \\
+%	15 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved to the right by $b$. \\
+%	16 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved to the left by $a$ and building $i + 1$ is moved upward by $b$. \\
+%	17 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the right by $b$. \\
+%	18 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved to the left by $b$. \\
+%	19 & Generate two random numbers $a$ and $b$ that are from 1 to 5, and building $i$ is moved downward by $a$ and building $i + 1$ is moved upward by $b$. \\
+%	\hline
+%	\caption{Activities for moving a building in Local Search 2}
+%	\label{local-search-2-activities}
+%\end{longtable}
 
 \section{Implementation Technologies}
 Our proposed approach was developed using C++17 compiled using the Clang 11 compiler in an elementaryOS Hera environment. Building was handled by CMake, and package management was handled by Conan. Our implementation is built on top of CoreX, which is a custom 2D game engine. Using a game engine allowed us to visualize the results and configure experiments in a graphical manner. The libraries EASTL, ImGUI, SDL 2, SDL 2 TTF. sdl-gpu, nlohmann JSON, and EnTT were used in developing the engine, with EnTT and ImGUI directly used by our implementation itself.
