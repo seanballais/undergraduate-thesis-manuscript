@@ -5,6 +5,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="800"
@@ -13,15 +14,72 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (1.0.2+r75+1)"
-   sodipodi:docname="GWO Visualization of the Effect of C on the Buildings in a Solution.svg">
+   sodipodi:docname="GWO Visualization of the Effect of C on the Buildings in a Solution.svg"
+   inkscape:export-filename="/home/seanballais/Documents/Academics/UPVTC/Subjects/Thesis/Paper/images/chap05-methodology/gwo-c-effect.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient902">
+      <stop
+         style="stop-color:#006680;stop-opacity:1;"
+         offset="0"
+         id="stop898" />
+      <stop
+         style="stop-color:#00aad4;stop-opacity:1"
+         offset="1"
+         id="stop900" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient894">
+      <stop
+         style="stop-color:#00d4aa;stop-opacity:1;"
+         offset="0"
+         id="stop890" />
+      <stop
+         style="stop-color:#00aad4;stop-opacity:1"
+         offset="1"
+         id="stop892" />
+    </linearGradient>
     <rect
        x="33.67685"
        y="58.77592"
        width="9.7618973"
        height="13.95191"
        id="rect911" />
+    <rect
+       x="33.676849"
+       y="58.775921"
+       width="9.1355624"
+       height="12.46223"
+       id="rect911-3" />
+    <rect
+       x="33.676849"
+       y="58.775921"
+       width="9.7618971"
+       height="13.95191"
+       id="rect860" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient894"
+       id="linearGradient896"
+       x1="86.482666"
+       y1="50.187855"
+       x2="86.482666"
+       y2="163.46875"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient902"
+       id="linearGradient904"
+       x1="85.697365"
+       y1="108.11874"
+       x2="85.697365"
+       y2="102.24493"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -30,9 +88,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="288.7984"
-     inkscape:cy="455.26219"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="394.70298"
+     inkscape:cy="396.80876"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -55,7 +113,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,14 +122,21 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;fill:#00d4aa;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;stroke-width:0.799999"
+       id="rect888"
+       width="215.34514"
+       height="214.31219"
+       x="-0.075756818"
+       y="-0.41922361" />
+    <rect
+       style="opacity:1;fill:url(#linearGradient896);fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect905"
        width="117.67883"
        height="111.80889"
        x="26.904289"
        y="49.224358" />
     <circle
-       style="opacity:1;fill:#006680;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:url(#linearGradient904);fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path907"
        cx="85.661652"
        cy="105.11655"
@@ -104,9 +169,16 @@
        xml:space="preserve"
        id="text909"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect911);fill:#000000;fill-opacity:1;stroke:none;"
-       transform="translate(100.17044,-7.1714027)"><tspan
+       transform="translate(100.69961,-7.1714027)"><tspan
          x="33.677734"
          y="68.308345"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans'">S</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text909-6"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect911-3);fill:#000000;fill-opacity:1;stroke:none;"
+       transform="matrix(0.60532017,0,0,0.60532017,67.91727,60.521424)"><tspan
+         x="33.677734"
+         y="68.308345"><tspan>B</tspan></tspan></text>
   </g>
 </svg>
