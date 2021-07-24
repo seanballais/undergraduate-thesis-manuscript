@@ -131,10 +131,10 @@ In this paper, we are adapting the Grey Wolf Optimization algorithm into solving
 In classical GWO, the following equations are used:
 
 \begin{align}
-	\vec{X_{1}^{'}} &= \vec{X_{\alpha}}(t) - \vec{A_{\alpha}} \cdot \vec{D_{\alpha}} \\
+	\vec{X_{1}^{'}} &= \vec{X_{\alpha}}(t) - \vec{A_{\alpha}} \cdot \vec{D_{\alpha}} \label{gwo-x1-eqn} \\
 	\vec{X_{2}^{'}} &= \vec{X_{\beta}}(t) - \vec{A_{\beta}} \cdot \vec{D_{\beta}} \\
 	\vec{X_{3}^{'}} &= \vec{X_{\delta}}(t) - \vec{A_{\delta}} \cdot \vec{D_{\delta}} \\
-	\vec{X}(t + 1)  &= \frac{\vec{X_{1}^{'}} + \vec{X_{2}^{'}} + \vec{X_{3}^{'}}}{3}
+	\vec{X}(t + 1)  &= \frac{\vec{X_{1}^{'}} + \vec{X_{2}^{'}} + \vec{X_{3}^{'}}}{3} \label{gwo-xt1-eqn}
 \end{align}
 
 where $\vec{X_{\alpha}}$, $\vec{X_{\beta}}$, and $\vec{X_{\delta}}$ represent the $\alpha$, $\beta$, and $\delta$ solutions \cite{Gupta2018}. $\vec{D}$ and $\vec{A}$ are defined as:
@@ -172,7 +172,7 @@ Let us start with $\vec{C} \cdot \vec{X_{l}}(t)$ from $\vec{D} = \left | \vec{C}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.45]{./images/chap05-methodology/gwo-d-effect.png}
-	\caption{A visualization of how D is computed and its inherent meaning.}
+	\caption{A visualization of how $D$ is computed and its inherent meaning.}
 	\label{gwo-d-effect}
 \end{figure}
 
@@ -182,6 +182,65 @@ The two aforementioned formulas make classical GWO inadequate for our problem in
 
 \subsection{Modified GWO}
 % Draft Note: We should maybe give a name to the modified GWO. Maybe call it "Ballais-Romero GWO variant". HAHAHA.
+
+Mirjalili, S., Mirjalili, S., and Lewis, A. \cite{Mirjalili2014} included a figure similar to Figure \ref{gwo-positioning-update}. It visualizes how a wolf $\omega$ will update its position based on the information provided by the leading wolves.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.3]{./images/chap05-methodology/gwo-position-updating.png}
+	\caption{Visualization of how wolves in GWO update their positions. An $\omega$ wolf will move towards a random point inside the circle of the estimated prey position.}
+	\label{gwo-positioning-update}
+\end{figure}
+
+Basing from the visualization, notice that the $\vec{C}$ of the leading wolves specify the radius of the circle in which a $\vec{C} \cdot \vec{X_{l}}$ will be located it. The circle does \textbf{not} include an origin point. We have discussed before that performing a pairwise multiplication between $\vec{C}$ and $\vec{X_{l}}$ simply scales the elements $i$ in the vector $\vec{X_{l}}$. This is different from the visualization. To achieve the same effect as the visualization, instead of performing pairwise multiplication, we must utilize vector addition between $\vec{C}$ and $\vec{X_{l}}$. See Figure \ref{vector-addition-visualization} for a visualization of vector addition. This is the first modification we are introducing to classical GWO.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{./images/chap05-methodology/vector-addition-visualization.png}
+	\caption{Vector addition pushes the point represented by $\vec{A}$ towards the direction of $\vec{B}$ by the magnitude of the same vector.}
+	\label{vector-addition-visualization}
+\end{figure}
+
+In our modified GWO, $D$ is now defined as:
+
+\begin{align}
+	D &= \left | (\vec{C} + \vec{X_{l}}) - \vec{X}(t) \right | \label{modified-gwo-d}
+\end{align}
+
+However, this alone is not enough to comply with the aforementioned visualization. Using this will only move the buildings to the right and/or top. In order for us to move the buildings, we must also modify $\vec{C}$ as shown below:
+
+\begin{align}
+	C &= c \cdot \vec{r_{3}} \label{modified-gwo-c}
+\end{align}
+
+In this equation, $c$ is a real-valued variable, and $r_{3}$ is a random vector in $[-1, 1]$. This modification will now allow us to move a building from any direction and at any magnitude. The magnitude in which the building will be moved is controlled by $c$.
+
+These modifications remove the necessity to specify an origin point in the bounding region, and the behaviour of buildings to move towards the origin or axes. Unfortunately, this alone is not enough to produce feasible results. We have to add two more modifications before we are able to produce good results.
+
+The first additional modification is the building clamping. Each building is restricted to the boundary. If a building is moved towards outside the boundary, it will be pulled back to within the boundary. Building clamping can be mathematically defined as the following. Given a building $B$ in a solution $X(t)$ at iteration $t$ after being updated by Equations \ref{gwo-x1-eqn} to \ref{gwo-xt1-eqn}, \ref{modified-gwo-d}, and \ref{modified-gwo-c}, clamping can be mathematically modeled as:
+
+\begin{align}
+	B_{x} &= \text{max}\left (R_{x} + \frac{B_{w}}{2}, \text{min}\left(B_{x}, R_{x} + \left(R_{w} - \frac{B_{w}}{2}\right)\right)\right ) \\
+	B_{y} &= \text{max}\left (R_{y} + \frac{B_{h}}{2}, \text{min}\left(B_{y}, R_{y} + \left(R_{h} - \frac{B_{h}}{2}\right)\right)\right )
+\end{align}
+
+where $B_{x}$ and $B_{y}$ are the $x$ and $y$ positions of the centroid of a building $B$, $B_{w}$ and $B_{h}$ are the width and height from the top left corner of a building $B$, $R_{x}$ and $R_{y}$ are the $x$ and $y$ positions of the top-left corner of the bounding region $R$, and $R_{w}$ and $R_{h}$ are the width and height of the bounding region $R$. Based on our prior experiments, without this clamping, buildings will freely move to points outside the boundary, and, at the end of the run, will produce a bad solution. 
+
+This clamping should \textit{almost} solve the positioning of the buildings and allow us to produce results that are feasible. Since GWO is a continuous metaheuristic, building attributes that must only be one of two values will eventually be a value that is between the two aforementioned values. In our problem, this attribute that is affected is the building orientation. The building orientation may only be $0^{\circ}$ or $90^{\circ}$. It must never be a value between two. To solve this problem, we simply use the orientation of a building $B$ from the $\alpha$, $\beta$, or $\delta$ solutions, which are randomly selected. This idea is based off from the nature of GWO, where the best three solutions lead the search for the local optima. The building orientation of a building $B$ is, therefore, obtained using:
+
+\begin{align}
+	B_{o} = \left\{\begin{matrix}
+		\alpha_{B_{o}} & \text{if } 0 \leq r < \frac{1}{3} \\ 
+		\beta_{B_{o}}  & \text{if } \frac{1}{3} \leq r < \frac{2}{3}  \\ 
+		\delta_{B_{o}} & \text{otherwise}
+	\end{matrix}\right.
+\end{align}
+
+where $B_{o}$ is the current orientation of a building $B$, $\alpha_{B_{o}}$, $\beta_{B_{o}}$, and $\delta_{B_{o}}$ are the orientations of building $B$ in the $\alpha$, $\beta$, and $\delta$ solutions, respectively, and $r$ is a random variable in $[0, 1]$. In our approach, assigning the building orientations is performed before clamping the buildings.
+
+All these modifications for the classical GWO have allowed us to successfully adapt GWO to the facility layout problem. Notice that these modifications are relatively simple, and do not significantly change the characteristics of classical GWO. The simplicity of GWO is still preserved. The next chapters will discuss how our modified version of GWO performs against configurations of unequal-area facility layout ptoblems.
+
+(\textbf{COMMENT}: Sir, can we give this modified GWO a name? mGWO is already taken so maybe The Ballais-Romero GWO Variant? Still haven't came up with an alternative name. HAHAHAHAHAHAHA. \textbf{REMOVE THIS IN THE FINAL DRAFT, SEAN.})
 
 %\section{The Algorithm}
 %The proposed algorithm contains multiple phases to solve the unequal area static facility layout problem. The basic framework of the algorithm is inspired from the works of Asl et al. (2015) \cite{Asl2015} and Asl, A. and Wong, K. (2015) \cite{Asl2015}. The Grey Wolf Optimization aspect of the algorithm is inspired from Jiang, T. and Zhang, C. (2018) \cite{Jiang2018}. Figure \ref{algo-flowchart} shows a flowchart of the algorithm. We will be further discussing the algorithm in detail in this section.
@@ -370,4 +429,4 @@ The two aforementioned formulas make classical GWO inadequate for our problem in
 %\end{longtable}
 
 \section{Implementation Technologies}
-Our proposed approach was developed using C++17 compiled using the Clang 11 compiler in an elementaryOS Hera environment. Building was handled by CMake, and package management was handled by Conan. Our implementation is built on top of CoreX, which is a custom 2D game engine. Using a game engine allowed us to visualize the results and configure experiments in a graphical manner. The libraries EASTL, ImGUI, SDL 2, SDL 2 TTF. sdl-gpu, nlohmann JSON, and EnTT were used in developing the engine, with EnTT and ImGUI directly used by our implementation itself.
+Our proposed approach was developed using C++17 compiled using the Clang 11 compiler in an elementaryOS Hera environment. Building was handled by CMake, and package management was handled by Conan. Our implementation is built on top of CoreX, a custom-developed 2D game engine. Using a game engine allowed us to visualize the results and configure experiments in a graphical manner. Using a custom engine over an over-the-shelf engine ensures that the implementation remains light and does not carry unnecessary features that are typically used in commercial game engines. The libraries EASTL, ImGUI, SDL 2, SDL 2 TTF. sdl-gpu, nlohmann JSON, and EnTT were used in developing the engine, with EnTT and ImGUI directly used by our implementation itself.
