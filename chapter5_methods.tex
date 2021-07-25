@@ -220,8 +220,8 @@ These modifications remove the necessity to specify an origin point in the bound
 The first additional modification is the building clamping. Each building is restricted to the boundary. If a building is moved towards outside the boundary, it will be pulled back to within the boundary. Building clamping can be mathematically defined as the following. Given a building $B$ in a solution $X(t)$ at iteration $t$ after being updated by Equations \ref{gwo-x1-eqn} to \ref{gwo-xt1-eqn}, \ref{modified-gwo-d}, and \ref{modified-gwo-c}, clamping can be mathematically modeled as:
 
 \begin{align}
-	B_{x} &= \text{max}\left (R_{x} + \frac{B_{w}}{2}, \text{min}\left(B_{x}, R_{x} + \left(R_{w} - \frac{B_{w}}{2}\right)\right)\right ) \\
-	B_{y} &= \text{max}\left (R_{y} + \frac{B_{h}}{2}, \text{min}\left(B_{y}, R_{y} + \left(R_{h} - \frac{B_{h}}{2}\right)\right)\right )
+	B_{x} &= \text{max}\left (R_{x} + \frac{B_{w}}{2}, \text{min}\left(B_{x}, R_{x} + \left(R_{w} - \frac{B_{w}}{2}\right)\right)\right ) \label{bx-clamp-equation} \\
+	B_{y} &= \text{max}\left (R_{y} + \frac{B_{h}}{2}, \text{min}\left(B_{y}, R_{y} + \left(R_{h} - \frac{B_{h}}{2}\right)\right)\right ) \label{by-clamp-equation}
 \end{align}
 
 where $B_{x}$ and $B_{y}$ are the $x$ and $y$ positions of the centroid of a building $B$, $B_{w}$ and $B_{h}$ are the width and height from the top left corner of a building $B$, $R_{x}$ and $R_{y}$ are the $x$ and $y$ positions of the top-left corner of the bounding region $R$, and $R_{w}$ and $R_{h}$ are the width and height of the bounding region $R$. Based on our prior experiments, without this clamping, buildings will freely move to points outside the boundary, and, at the end of the run, will produce a bad solution. 
@@ -234,11 +234,74 @@ This clamping should \textit{almost} solve the positioning of the buildings and 
 		\beta_{B_{o}}  & \text{if } \frac{1}{3} \leq r < \frac{2}{3}  \\ 
 		\delta_{B_{o}} & \text{otherwise}
 	\end{matrix}\right.
+	\label{modified-gwo-bo}
 \end{align}
 
 where $B_{o}$ is the current orientation of a building $B$, $\alpha_{B_{o}}$, $\beta_{B_{o}}$, and $\delta_{B_{o}}$ are the orientations of building $B$ in the $\alpha$, $\beta$, and $\delta$ solutions, respectively, and $r$ is a random variable in $[0, 1]$. In our approach, assigning the building orientations is performed before clamping the buildings.
 
-All these modifications for the classical GWO have allowed us to successfully adapt GWO to the facility layout problem. Notice that these modifications are relatively simple, and do not significantly change the characteristics of classical GWO. The simplicity of GWO is still preserved. The next chapters will discuss how our modified version of GWO performs against configurations of unequal-area facility layout ptoblems.
+With all these modifications already discussed, we now need to briefly discuss how population initialization performed. The population is initialized by providing each building $B$ a random x and y position values, and random orientation. The orientation is either $0$ or $90$. The x and y positions are clamped as well to ensure that the buildings are inside the bounding region. The positions are clamped using Equations \ref{bx-clamp-equation} and \ref{by-clamp-equation}, respectively. Algorithm \ref{modified-gwo-algorithm-pop-initialization} shows the pseudocode for the population initialization.
+
+\begin{algorithm}[h!]
+\caption{Pseudocode for the population initialization.}
+\label{modified-gwo-algorithm-pop-initialization}
+\begin{algorithmic}[1]
+\State Set $\vec{X}$ to be the solution.
+\State Set $R_{x}$ to be the x position of the top-left corner of the bounding region $R$.
+\State Set $R_{y}$ to be the y position of the top-left corner of bounding region $R$.
+\State Set $R_{w}$ to be the width of the bounding region $R$.
+\State Set $R_{h}$ to be the height of the bounding region $R$.
+\State Set $N$ to be the number of buildings in a population.
+\For{i = 0 until $N$}
+	\State $\vec{X}_{(i * 3)}$ = $U(R_{x}, R_{x} + R_{w})$
+	\State $\vec{X}_{(i * 3) + 1}$ = $U(R_{y}, R_{y} + R_{h})$
+	\State $\vec{X}_{(i * 3) + 2}$ = $U({0, 90})$
+	
+	\State Apply Equation \ref{bx-clamp-equation} to $\vec{X}_{(i * 3)}$.
+	\State Apply Equation \ref{by-clamp-equation} to $\vec{X}_{(i * 3) + 1}$.
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+All these modifications for the classical GWO have allowed us to successfully adapt GWO to the facility layout problem. Equations \ref{summary-modified-gwo-a} to \ref{summary-modified-gwo-xt1}, and Algorithm \ref{modified-gwo-algorithm} summarises the entire modified GWO. Notice that these modifications are relatively simple, and do not significantly change the characteristics of classical GWO. The simplicity of GWO is still preserved. The next chapters will discuss how our modified version of GWO performs against configurations of unequal-area facility layout ptoblems.
+
+\begin{align}
+	\vec{A} &= 2\vec{a} \cdot \vec{r_{1}} - \vec{a} \label{summary-modified-gwo-a} \\
+	\vec{C} &= c \cdot \vec{r_{2}} \\
+	\vec{D}_{\alpha} &= \left | \left ( \vec{C}_{1} + \vec{X}_{\alpha} \right ) - \vec{X} \right | \label{summary-modified-gwo-DAlpha} \\
+	\vec{D}_{\beta} &= \left | \left ( \vec{C}_{2} + \vec{X}_{beta} \right ) - \vec{X} \right | \\
+	\vec{D}_{\delta} &= \left | \left ( \vec{C}_{3} + \vec{X}_{\delta} \right ) - \vec{X} \right | \\
+	\vec{X}_{1} &= \vec{X}_{\alpha} - \vec{A}_{1} \cdot \vec{D}_{\alpha} \\
+	\vec{X}_{2} &= \vec{X}_{\beta} - \vec{A}_{2} \cdot \vec{D}_{\beta} \\
+	\vec{X}_{3} &= \vec{X}_{\delta} - \vec{A}_{3} \cdot \vec{D}_{\delta} \\
+	\vec{X}(t + 1) &= \frac{\vec{X}_{1} + \vec{X}_{2} + \vec{X}_{3}}{3} \label{summary-modified-gwo-xt1}
+\end{align}
+
+\begin{algorithm}[h!]
+\caption{Pseudocode for the proposed modified GWO.}
+\label{modified-gwo-algorithm}
+\begin{algorithmic}[1]
+\State Set $T$ to be the maximum number of iterations.
+\State Initialize the grey wolf population $\vec{X}_{i} (i = 1, 2, \ldots, n)$
+\State Initialize $c$, and $a = 2$.
+\State Calculate the fitness of each wolf.
+\State Set $\vec{X}_{\alpha}$ to be the fittest wolf.
+\State Set $\vec{X}_{\beta}$ to be the second fittest wolf.
+\State Set $\vec{X}_{\delta}$ to be the third fittest wolf.
+\While{t $<$ T}
+	\For{each wolf $\vec{X}_{i}$}
+		\State Initialize $\vec{A}_{1}$, $\vec{A}_{2}$, $\vec{A}_{3}$, $\vec{C}_{1}$, $\vec{C}_{2}$, and $\vec{2C}_{3}$.
+		\State Update the position of the current wolf $\vec{X}_{i}$ using Equations \ref{summary-modified-gwo-DAlpha} to \ref{summary-modified-gwo-xt1}.
+		\State Set the orientation of each building using Equation \ref{modified-gwo-bo}.
+		\State Clamp the buildings in $\vec{X}_{i}$ using Equations \ref{bx-clamp-equation} and \ref{by-clamp-equation}.
+	\EndFor
+	\State Calculate the fitness of each wolf.
+	\State Update $\vec{X}_{\alpha}$, $\vec{X}_{\beta}$, and $\vec{X}_{\delta}$.
+	\State $a = 2 - \frac{2t}{T}$
+	\State $t = t + 1$
+\EndWhile \\
+\Return $\vec{X}_{\alpha}$
+\end{algorithmic}
+\end{algorithm}
 
 (\textbf{COMMENT}: Sir, can we give this modified GWO a name? mGWO is already taken so maybe The Ballais-Romero GWO Variant? Still haven't came up with an alternative name. HAHAHAHAHAHAHA. \textbf{REMOVE THIS IN THE FINAL DRAFT, SEAN.})
 
