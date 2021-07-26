@@ -113,7 +113,7 @@ The selection operator used in the competing approach is tournament selection. T
 		\State $X_{(2)} = P_{p}$
 	\EndIf
 \EndFor \\
-\Return $X_{(1)}$, and $X_{(2)}$.
+\Return $X^{(1)}$, and $X^{(2)}$.
 \end{algorithmic}
 \end{algorithm}
 
@@ -273,3 +273,34 @@ Local Search 2 is a more intense version of Local Search 1, in order to find the
 \end{longtable}
 
 \subsubsection{Competing Algorithm Summarized}
+The entire competing GA algorithm is summarized in pseudocode with Algorithm \ref{pseudocode-ga-approach}. Note that our implementation of the competing GA algorithm produces two children during the crossover phase. If there is no space for the second child in the current geenration, the worst offspring will be replaced by the second child.
+
+\begin{algorithm}
+\caption{Pseudocode for the competing GA approach.}
+\label{pseudocode-ga-approach}
+\begin{algorithmic}[1]
+\State Initialize population $P$.
+\State Calculate the fitness of each solution in $P$.
+\State Set $T$ to be the number of generations.
+\State Set $X^{(best)}$ to be the best solution found.
+\State Set $E_{N}$ to be the number of elite solutions that will be kept in the next generation.
+\State Sort $P$ from lowest to highest fitness value.
+\For{$t = 1, 2, \ldots T$}
+	\If{$t \leq 100$}
+		\State Apply swapping method.
+	\EndIf
+	\For{$i = E_{N} + 1, \ldots, |P|$}
+		\State Select parents $X^{(1)}$ and $X^{(2)}$ using tournament selection.
+		\State Crossover parents and produce offspring $X^{(o)}$.
+		\State Mutate $X^{(o)}$ if mutation probability allows.
+		\State $P_{i} = X^{(o)}$.
+	\EndFor
+	\State Sort $P$ from lowest to highest fitness value.
+	\State Apply Local Search 1 to the best solution in $P$.
+	\If{$t \geq T - 50$}
+		\State Apply Local Search 2 to the best solution in $P$.
+	\EndIf
+\EndFor \\
+\Return best solution in $P$.
+\end{algorithmic}
+\end{algorithm}
