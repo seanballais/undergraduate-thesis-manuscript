@@ -10,6 +10,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{array}
+\usepackage{changepage}
 \usepackage{newlfont}
 \usepackage{epsfig}
 \usepackage{longtable}
@@ -22,6 +24,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{url}
+\usepackage{tabularx}
 
 \usepackage{fancyhdr}
 
@@ -96,6 +99,7 @@
 \numberwithin{equation}{section}
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \setlength{\tclineskip}{1.05\baselineskip}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \begin{document}
 
