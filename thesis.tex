@@ -15,6 +15,7 @@
 \usepackage{newlfont}
 \usepackage{epsfig}
 \usepackage{longtable}
+\usepackage{multirow}
 \usepackage{UPCSTHESIS} %This loads the UP Computer Science Thesis Package
 \usepackage{UPCSINC1}
 \usepackage[active]{LTX}
@@ -25,7 +26,7 @@
 \usepackage{float}
 \usepackage{url}
 \usepackage{tabularx}
-
+\usepackage{titlesec}
 \usepackage{fancyhdr}
 
 \fancyhf{} % clear all header and footer fields
@@ -101,6 +102,13 @@
 \setlength{\tclineskip}{1.05\baselineskip}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \begin{document}
 
 %\nobib  			%toggles bibliography control
@@ -171,7 +179,7 @@
 \include{chapter6_sim.exp}
 \include{chapter7_rd}
 \include{chapter8_sum.con}
-\include{appendix}
+%\include{appendix}
 
 % ------------------------------------------------------------------------
 \INPUT{biblio.bib} 
