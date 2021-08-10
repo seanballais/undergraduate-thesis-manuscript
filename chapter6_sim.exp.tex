@@ -348,7 +348,7 @@ Local Search 2 is a more intense version of Local Search 1, in order to find the
 	\label{local-search-2-activities}
 \end{longtable}
 
-\subsubsection{Competing Algorithm Summarized}
+\subsubsection{GA Summarized}
 The entire competing GA algorithm is summarized in pseudocode with Algorithm \ref{pseudocode-ga-approach}. Note that our implementation of the competing GA algorithm produces two children during the crossover phase. If there is no space for the second child in the current geenration, the worst offspring will be replaced by the second child.
 
 \begin{algorithm}
@@ -382,3 +382,55 @@ The entire competing GA algorithm is summarized in pseudocode with Algorithm \re
 \end{algorithm}
 
 \subsubsection{Particle Swarm Optimization}
+Particle swarm optimization (PSO) is a metaheuristic inspired by the social behaviour of animals. It was proposed by Kennedy, J. and Eberhart, R. \cite{Kennedy1995}. A population of solutions is called a swarm, and each solution is called a particle $P$. Each particle has position and velocity vectors. The position vector $X_{i}^{t}$ is the solution itself, while the velocity vector $V_{i}^{t}$ which influences how each particle changes its position. During each iteration of a run, the particle's position is updated to a different position based on the swarm's best found position $\text{gbest}$ so far, the particle's personal best found position $\text{pbest}$ so far, and the current velocity vector $V_{ij}^{t}$. This behaviour is mathematically defined using the following equations.
+
+\begin{align}
+	\vec{V}_{i}^{t+1} &= w\vec{V}_{i}^{t} + c_{1}\vec{r}_{1}^{t} \left( \vec{pbest}_{i} - \vec{X}_{i}^{t} \right) + c_{2}\vec{r_{2}}^{t} \left( \vec{gbest}_{i} - \vec{X}_{i}^{t} \right) \label{vt1-pso-equation} \\
+	\vec{X}_{i}^{t+1} &= \vec{X}_{i}^{t} + \vec{V}_{i}^{t+1} \label{xt1-pso-equation}
+\end{align}
+
+In Equation \ref{vt1-pso-equation}, $w$ is the inertial weight constant, and is important for balancing between exploration and exploitation. It also determines how much the previous velocity will influence the current velocity. The second term in the equation is called the individual cognition term. This calculates the difference between the particle's own best position and current position. It is multiplied by the individual-cognition parameter, $c_{1}$, which influences how important the particle's previous experiences are. $\vec{r}_{1}$ is a random vector that has a range of $[0, 1]$. This helps the algorithm avoid premature convergences. The last term is the social learning term. This allows the swarm to share information to each other about the best global position found so far. Similar to the individual cognition term, this term computes the distance between the particle's current position, and the swarm's best known position. This term also attracts particles towards the $\text{gbest}$. $c_{2}$ is the social learning parameter, and it determines how influential the global learning of the swarm is. $\vec{r}_{2}$ does the same task as $\vec{r}_{1}$. Equation \ref{xt1-pso-equation} finally updates the current position of a particle.
+
+In our approach, little was changed from the classical particle swarm optimization algorithm. Population/Swarm generation is the same as in our approach. The initial velocity was for all particles is set to $0$, as per recommendation by Engelbrecht, A. \cite{Engelbrecht2012}. We also clamped the building to within the bounding region. Our prior experiments showed that without this clamping, many buildings would be positioned outside of the boundary. Clamping is done the same way as in our approach. Since PSO is a continuous metaheuristic, we would not be able to obtain a building orientation that is either $0$ or $90$ immediately after using equations \ref{vt1-pso-equation} and \ref{xt1-pso-equation}. A building's orientation $B_{o}$ may be any real value. As such, the current building orientation is also computed using the following equation, applied after using the PSO equations:
+
+\begin{align}
+B_{o} = \left\{\begin{matrix}
+0  & \text{if } B_{o}\text{ mod }360 < 180 \\ 
+90 & \text{otherwise}
+\end{matrix}\right. \label{building-orientation-pso}
+\end{align}
+
+In Equation \ref{building-orientation-pso}, the $B_{o}$ is modulo-ed by 360 to ensure that the range of values are within the range of $[0, 360)$. This range was selected since all angles larger than $359.\bar{999}$ are symmetries with the values in the aforementioned range.
+
+The entire PSO approach is summarized in pseudocode in Algorithm \ref{pseudocode-pso-approach}.
+
+\begin{algorithm}
+\caption{Pseudocode for the competing PSO approach.}
+\label{pseudocode-pso-approach}
+\begin{algorithmic}[1]
+\State Set $T$ to be the maximum number of iterations.
+\State Initialize $w$, $c_{1}$, and $c_{2}$.
+\State Initialize the swarm $\vec{X}_{i} (i = 1, 2, \ldots, n)$
+\State Set the velocity $\vec{V}_{i}^{t}$ of each particle $i$ to $0$.
+\State Calculate the fitness of each particle.
+\State Set the current solution of each particle $i$ as their personal best $\text{pbest}_{i}$.
+\State Set the $\text{gbest}$ to be the best solution in the swarm.
+\While{t $<$ T}
+	\For{each particle $\vec{X}_{i}$}
+		\State Initialize $\vec{r}_{1}$ and $\vec{r}_{1}$.
+		\State Update the position of the current particle $\vec{X}_{i}$ using Equations \ref{vt1-pso-equation} and \ref{xt1-pso-equation}.
+		\State Set the orientation of each building in $\vec{X}_{i}$ using Equation \ref{building-orientation-pso}.
+		\State Clamp the buildings in particle $i$ using Equations \ref{bx-clamp-equation} and \ref{by-clamp-equation}.
+		\State Calculate the fitness of $\vec{X}_{i}$.
+		\If{$f(\vec{X}_{i}) < f(\text{pbest}_{i})$)}
+			\State $\text{pbest}_{i} = \vec{X}_{i}$
+		\EndIf
+		\If{$f(\vec{X}_{i}) < f(\text{gbest})$)}
+			\State $\text{gbest} = \vec{X}_{i}$
+		\EndIf
+	\EndFor
+	\State $t = t + 1$
+\EndWhile \\
+\Return $\text{gbest}$
+\end{algorithmic}
+\end{algorithm}
