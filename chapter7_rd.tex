@@ -38,16 +38,18 @@ Each approach has their own parameters, and the values we have set for those par
 	\label{approach-parameters}
 \end{table}
 
-The results obtained for each approach is shown in Tables \ref{approach-ga-results}, \ref{approach-gwo-results}, and \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach and the PSO approach, with a fitness averages of $273.537430766667$, $50422.3174052667$, and $88087.9226730667$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages of $290.3857809$, $52702.9314929$, $101874.328208933$. Fortunately for our approach, the PSO approach obtained the fitness averages of $324.356679733333$, $64181.9165261333$, and $118785.277772567$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $221.042599$ and $324.874681$ for the GA, respectively, compared to our approach's $234.250481$ and $339.099181$. The PSO approach obtained $268.59568$ and $380.688077$s. In this data set, our approach was capable of producing the best solution. For mSFLP-III, the best and worst solutions have a fitness of $46802.666237$ and $53474.353325$ for the GA, respectively, compared to our approach's $48951.787331$ and $53474.353325$ and the PSO approach's $60037.826591$ and $68194.108383$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76651.01432$ and $98512.468674$, respectively, with our approach obtaining $90455.74585$ and $118315.534424$. PSO produces the poorest best and worst solutions with fitnesses of $106178.045845$ and $130915.770554$. From the results, the competing GA approach is the most stable among the three, basing from the lower standard deviation in all data sets, with $25.3555205871573$, $1630.42444301206$, and $5077.72744984237$ for SFLP-II, mSFLP-III, and mKra30a, respectively. This is compared to our approach's $32.4373567833344$, $2224.64491886288$, and $7190.18569614101$, and the PSO approach's $38.4539160542525$, $1956.45733138936$, and $6138.39410532314$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
+The results obtained for each approach is shown in Tables \ref{approach-ga-results} to \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach and the PSO approach, with a fitness averages of $273.537430766667$, $50422.3174052667$, and $88087.9226730667$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages of $290.3857809$, $52702.9314929$, $101874.328208933$. Fortunately for our approach, the PSO approach obtained the fitness averages of $321.292520833333$, $64289.8051163$, and $121057.4221481$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $221.042599$ and $324.874681$ for the GA, respectively, compared to our approach's $234.250481$ and $339.099181$. The PSO approach obtained $273.754488$ and $382.774055$. For mSFLP-III, the best and worst solutions have a fitness of $46802.666237$ and $53474.353325$ for the GA, respectively, compared to our approach's $48951.787331$ and $53474.353325$ and the PSO approach's $59673.997963$ and $68433.641548$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76651.01432$ and $98512.468674$, respectively, for the GA, with our approach obtaining $90455.74585$ and $118315.534424$. PSO produces the poorest best and worst solutions with fitnesses of $107996.773666$ and $131275.843658$. From the results, the competing GA approach is the most stable among the three, basing from the lower standard deviation in all data sets, with $25.3555205871573$, $1630.42444301206$, and $5077.72744984237$ for SFLP-II, mSFLP-III, and mKra30a, respectively. This is compared to our approach's $32.4373567833344$, $2224.64491886288$, and $7190.18569614101$, and the PSO approach's $32.8103600821748$, $2356.26248290771$, and $5981.21601161922$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This behaviour also explains the observation we have with PSO during our experiemnts where the approach struggles to produce good results for the mKra30a data set. It requires multiple runs just to produce a single feasible solution. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.65]{./images/chap07-rd/approaches-average-runtime-over-no-of-buildings.png}
+\begin{adjustwidth}{-0.45in}{}
+\includegraphics[scale=0.5]{./images/chap07-rd/approaches-average-runtime-over-no-of-buildings.png}
+\end{adjustwidth}
 \caption{The average runtime (s) of each of the approaches as the number of buildings in a data set increase.}
 \label{graph-approaches-runtime-no-buildings}
 \end{figure}
 
-The genetic algorithm approach is also faster when SFLP-II is being used with an average run time of $27$s, compared to our approach's $89.5666666666667$s and the PSO approach's $89.5666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $145.766666666667$s, while our approach and the PSO approach takes $197.733333333333$s and $341.266666666667$s, respectively. GA is still faster than GWO in this data set, but it is already slower than the PSO approach. Moving towards mKra30a, we can see that GA now takes $435.033333333333$s. This is longer than our approach's $341.266666666667$s, and the PSO approach's $114.366666666667$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
+The genetic algorithm approach is also the fastest when SFLP-II is being used with an average run time of $27$s, compared to our approach's $89.5666666666667$s and the PSO approach's $29.0666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $145.766666666667$s, while our approach and the PSO approach takes $197.733333333333$s and $77.0333333333333$s, respectively. GA is still faster than GWO in this data set, but it is already significantly slower than the PSO approach, unlike with the previous data set. Moving towards mKra30a, we can see that GA now takes $435.033333333333$s. This is longer than our approach's $341.266666666667$s, and the PSO approach's $117.4$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
 
 \begin{table}[h!]
 \begin{adjustwidth}{-1.15in}{}
@@ -95,45 +97,317 @@ The genetic algorithm approach is also faster when SFLP-II is being used with an
 	\hline
 	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{PSO}} \\ \cline{2-6} 
 	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}} \\ \hline
-	SFLP-II                                                 & 268.59568                                  & 380.688077                                   &
-	324.356679733333							&
-	38.4539160542525							&
-	31.3666666666667							\\ \hline
-	mSFLP-III                                               & 60037.826591                                & 68194.108383                                 &
-	64181.9165261333					          &
-	1956.45733138936						&
-	66.9666666666667						\\ \hline
-	mKra30a                                               & 106178.045845                                & 130915.770554                                 &
-	118785.277772567							&
-	6138.39410532314							&
-	114.366666666667						\\ \hline
+	SFLP-II                                                 & 273.754488                                  & 382.774055                                   &
+	321.292520833333							&
+	32.8103600821748							&
+	29.0666666666667							\\ \hline
+	mSFLP-III                                               & 59673.997963                                & 68433.641548                                 &
+	64289.8051163					          &
+	2356.26248290771						&
+	77.0333333333333						\\ \hline
+	mKra30a                                               & 107996.773666                                & 131275.843658                                 &
+	121057.4221481							&
+	5981.21601161922							&
+	117.4						\\ \hline
 \end{tabular}
 \end{adjustwidth}
 \caption{Results obtained from our proposed PSO approach.}
 \label{approach-pso-results}
 \end{table}
 
-%Figures \ref{graph-ga-vs-gwo-sflp2} and \ref{graph-ga-vs-gwo-msflp3} show the fitness graphs of the best solutions using the SFLP-II and mSFLP-III data sets. The non-linearity of the graph of our GWO approach that is obvious in Figure \ref{graph-ga-vs-gwo-sflp2} is due to the nature of our approach. All solutions in a population are replaced. Hence, the best solutions may be replaced by poorer solutions. This characteristic is not as obvious in Figure \ref{graph-ga-vs-gwo-msflp3}. In Figure \ref{graph-ga-vs-gwo-sflp2} with the SFLP-II data set, the GA approach converges was than the GWO approach. This is due to how our approach replaces all solutions in the population for the next iteration. The size of the bounding region in SFLP-II may also be reason as it does not have a huge space for our approach to move buildings in various directions and prevent intersections as much as possible. This is the different from the mSFLP-III where the bounding region is larger, allowing buildings to less likely intersect with one another. Figure \ref{graph-ga-vs-gwo-msflp3} showcases the behaviour of our GWO approach with a larger bounding region.
-%
-%\begin{figure}[h!]
-%\centering
-%\begin{adjustwidth}{-0.9in}{}
-%\includegraphics[scale=0.75]{./images/chap07-rd/gwo-sflp2-graph.png}
-%\end{adjustwidth}
-%\caption{Fitness graph of the best solutions of the competing GA approach, and our GWO approach using the SFLP-II data set.}
-%\label{graph-ga-vs-gwo-sflp2}
-%\end{figure}
-%
-%\begin{figure}[h!]
-%\centering
-%\begin{adjustwidth}{-0.1in}{}
-%\includegraphics[scale=0.65]{./images/chap07-rd/gwo-msflp3-graph.png}
-%\end{adjustwidth}
-%\caption{Fitness graph of the best solutions of the competing GA approach, and our GWO approach using the mSFLP-III data set.}
-%\label{graph-ga-vs-gwo-msflp3}
-%\end{figure}
+We can further obtain insights from our results, by looking at the best solutions generated by each approach. Figures \ref{graph-approaches-best-solutions-sflp-ii} to \ref{graph-approaches-best-solutions-mkra30a} show the fitness graphs of the best solutions using the SFLP-II, mSFLP-III, and mKra30a data sets. The non-linearity of the graph of our GWO approach that is observable in the figures is due to the nature of our approach. All solutions in a population in our approach are replaced after an iteration. Hence, the best solutions may be replaced by poorer solutions. This is unlike with the GA and PSO approaches where  the fitness continuously lower over time. In the case of the GA approach, this is due to the fact that there is elitism. The best $EN$ solutions are kept in the next generation, taking the place of the worst generated solutions produced in the current generation. The PSO approach has a similar characteristic that enables it to produce a continuously lowering fitness graph. In the PSO approach, as discussed before, each particle keeps track of the best position it has found. After an iteration, if a particle finds a position that is better than its personal best, then that position will replace the particle's personal. And if a particle's personal best is better than the swarm's global best, then that position/solution becomes the swarm's global best. It is this global best that is tracked in the graph. The selection procedure of the global best explains the graph of the PSO approach.
 
-% TODO: Add figure of best generated solutions.\\
+\begin{figure}[h!]
+\centering
+\begin{adjustwidth}{-0.45in}{}
+\includegraphics[scale=0.5]{./images/chap07-rd/best-fitness-over-time-sflp2.png}
+\end{adjustwidth}
+\caption{Fitness over time of the best solutions for the SFLP-II produced by the GA, GWO, and PSO approaches.}
+\label{graph-approaches-best-solutions-sflp-ii}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{adjustwidth}{-0.45in}{}
+\includegraphics[scale=0.5]{./images/chap07-rd/best-fitness-over-time-msflp3.png}
+\end{adjustwidth}
+\caption{Fitness over time of the best solutions for the mSFLP-III produced by the GA, GWO, and PSO approaches.}
+\label{graph-approaches-best-solutions-msflp-iii}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{adjustwidth}{-0.45in}{}
+\includegraphics[scale=0.5]{./images/chap07-rd/best-fitness-over-time-mKra30a.png}
+\end{adjustwidth}
+\caption{Fitness over time of the best solutions for the mKra30a produced by the GA, GWO, and PSO approaches.}
+\label{graph-approaches-best-solutions-mkra30a}
+\end{figure}
+
+Another avenue we can use to gather insights is through the visualization of the results produced by the approaches mentioned in this study. Figures \ref{best-results-ga} to \ref{best-results-pso} show a visualization of the best results. Notice that with the hybrid GA approach and our GWO approach, the buildings tend to clump together, which is what we want to happen, based on our objective function. For our hybrid GA approach, we can attribute the result to the local search method as well as the mutation operators as they were key to ensure that the buildings are close to each other. The crossover operator is also instrumental in achieving this result by finding combinations that will lead to the result. Our GWO approach also makes buildings clump together but not to the same degree as the GA approach, as can be observed from one building being far from the rest of the buildings in mKra30a data set in Figure \ref{best-results-gwo}. The clumping ability of our approach is attributable to how solutions are allowed to perturb their buildings to positions relatively far from the buildings positions in the best three solution initially. Eventually, our approach will decrease the distance of the buildings in a solution from the leading solutions. Remember that the leading solutions eventually become similar to each other, which help drive the reduction of the degree of building shifting. This gradually decreasing shifting of the buildings will lead to intersections from being resolved and reducing the distance of buildings from each other. The intersections are resolved by reducing the chances of buildings being to moved to a relatively further position where they would still intersect with another building, and gradually pushing intersecting buildings away from each other towards non-intersection. Note that the objective function has a lower penalty for solutions with buildings that do not significantly intersect. The decreasing shifting also encourages buildings to move towards each other due to the fact that smaller shifts have lower probability of causing buildings to intersect with one another too deeply or at all, which allows buildings to move to positions that are closer to the other buildings but without any intersections. Finally, as one can notice in Figure \ref{best-results-pso}, the PSO approach struggles to produce a solution where the buildings are clumped together. This deficiency is not necessarily clear with a small number of buildings, but it does as the number increases. We can attribute this difficulty of the PSO approach to the fact that the buildings are continuously being influenced on the same degree throughout all of the iterations by a particle's personal best and the swarm's global best. This encourages more exploitation and fewer exploitation. As a result, this reduces the chances in which buildings would be able to shift their positions by a small amount, making it more difficult for the approach to find better solutions and have buildings clump together.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/ga-best-solutions.png}
+\caption{Visualization of the best solutions produced by the hybrid GA approach for the three data sets used in this study.}
+\label{best-results-ga}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/gwo-best-solutions.png}
+\caption{Visualization of the best solutions produced by our GWO approach for the three data sets used in this study.}
+\label{best-results-gwo}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/pso-best-solutions.png}
+\caption{Visualization of the best solutions produced by the PSO approach for the three data sets used in this study.}
+\label{best-results-pso}
+\end{figure}
+
+For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the detailed numbers we have obtained in our experiments for each approach and data set. Table \ref{full-data-ga} shows the entire experiment data for our hybrid GA approach, table \ref{full-data-gwo} shows the data for our GWO approach, and lastly, table \ref{full-data-pso} shows the data for the PSO approach.
+
+\begin{table}
+\centering
+\begin{adjustwidth}{}{}
+\resizebox{\textwidth}{!}{\rotatebox{90}{
+\begin{tabular}{|r|r|r|r|r|r|r|} 
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GA Experimental Results}                                                                                                                                                                                  \\ 
+	\cline{2-7}
+	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a}         & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+	\hline
+	1                                          & 275.948675                   & 24                                    & 50748.138969                   & 171                                   & 87159.574028                         & 463                                    \\ 
+	\hline
+	2                                          & 297.339749                   & 24                                    & 51053.892792                   & 162                                   & 88882.154846                         & 432                                    \\ 
+	\hline
+	3                                          & 317.039815                   & 27                                    & 49965.015633                   & 191                                   & 91353.629505                         & 452                                    \\ 
+	\hline
+	4                                          & 251.646269                   & 29                                    & 47872.666199                   & 166                                   & 79546.124115                         & 449                                    \\ 
+	\hline
+	5                                          & 264.148994                   & 30                                    & 48865.995796                   & 194                                   & 90506.340759                         & 430                                    \\ 
+	\hline
+	6                                          & 294.548517                   & 25                                    & 50312.237175                   & 195                                   & 89587.260277                         & 436                                    \\ 
+	\hline
+	7                                          & 297.853384                   & 26                                    & 51358.37851                    & 170                                   & 84969.218292                         & 405                                    \\ 
+	\hline
+	8                                          & 221.042599                   & 28                                    & 49241.947334                   & 165                                   & 84344.258163                         & 393                                    \\ 
+	\hline
+	9                                          & 270.649348                   & 32                                    & 51026.886612                   & 161                                   & 90504.117516                         & 428                                    \\ 
+	\hline
+	10                                         & 272.458134                   & 32                                    & 50022.571861                   & 159                                   & 79532.178864                         & 367                                    \\ 
+	\hline
+	11                                         & 278.011299                   & 28                                    & 53399.870956                   & 135                                   & 86111.81329                          & 420                                    \\ 
+	\hline
+	12                                         & 297.773947                   & 28                                    & 49878.243431                   & 129                                   & 89152.534203                         & 421                                    \\ 
+	\hline
+	13                                         & 302.634355                   & 25                                    & 51595.78511                    & 136                                   & 90725.02243                          & 443                                    \\ 
+	\hline
+	14                                         & 271.508033                   & 25                                    & 46802.666237                   & 134                                   & 84640.960541                         & 485                                    \\ 
+	\hline
+	15                                         & 250.991146                   & 27                                    & 53474.353325                   & 137                                   & 76651.01432                          & 409                                    \\ 
+	\hline
+	16                                         & 273.2547                     & 27                                    & 50329.404644                   & 127                                   & 94093.080711                         & 471                                    \\ 
+	\hline
+	17                                         & 227.915547                   & 25                                    & 51295.009323                   & 130                                   & 89470.642914                         & 479                                    \\ 
+	\hline
+	18                                         & 313.396021                   & 26                                    & 51553.780182                   & 134                                   & 98512.468674                         & 442                                    \\ 
+	\hline
+	19                                         & 271.145806                   & 30                                    & 47840.936066                   & 134                                   & 95689.616554                         & 459                                    \\ 
+	\hline
+	20                                         & 244.631016                   & 26                                    & 51936.38221                    & 130                                   & 85996.664162                         & 405                                    \\ 
+	\hline
+	21                                         & 276.977884                   & 25                                    & 52408.912086                   & 131                                   & 80764.674995                         & 510                                    \\ 
+	\hline
+	22                                         & 268.041764                   & 28                                    & 50476.936264                   & 129                                   & 91329.049988                         & 472                                    \\ 
+	\hline
+	23                                         & 264.247469                   & 31                                    & 50213.974663                   & 131                                   & 90695.920197                         & 447                                    \\ 
+	\hline
+	24                                         & 287.717402                   & 30                                    & 51018.496685                   & 135                                   & 91644.64167                          & 480                                    \\ 
+	\hline
+	25                                         & 244.385945                   & 24                                    & 51528.772743                   & 137                                   & 83799.874481                         & 414                                    \\ 
+	\hline
+	26                                         & 324.874681                   & 25                                    & 49196.90604                    & 134                                   & 88570.538506                         & 431                                    \\ 
+	\hline
+	27                                         & 259.133507                   & 26                                    & 47886.516884                   & 132                                   & 92496.548035                         & 414                                    \\ 
+	\hline
+	28                                         & 239.296721                   & 25                                    & 52177.261909                   & 128                                   & 82084.809708                         & 390                                    \\ 
+	\hline
+	29                                         & 282.162088                   & 27                                    & 48426.101257                   & 126                                   & 91099.436806                         & 416                                    \\ 
+	\hline
+	30                                         & 265.348108                   & 25                                    & 50761.481262                   & 130                                   & 92723.511642                         & 388                                    \\ 
+	\hline
+	\multicolumn{1}{|l|}{Average}              & 273.537430766667             & 27                                    & 50422.3174052667               & 145.766666666667                      & 88087.9226730667                     & 435.033333333333                       \\ 
+	\hline
+	\multicolumn{1}{|l|}{Std. Dev}             & 25.3555205871573             & 2.37806064131954                      & 1630.42444301206               & \multicolumn{1}{r}{21.5737441530581}  & \multicolumn{1}{r}{5077.72744984237} & 33.0699189631587                       \\
+	\hline
+\end{tabular}}}
+\end{adjustwidth}
+\caption{The entire experiment data we have collected using our hybrid GA approach.}
+\label{full-data-ga}
+\end{table}
+
+\begin{table}
+\centering
+\begin{adjustwidth}{}{}
+\resizebox{\textwidth}{!}{\rotatebox{90}{
+\begin{tabular}{|r|r|r|r|r|r|r|} 
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GWO Experimental Results}                                                                                                                                                                         \\ 
+	\cline{2-7}
+	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+	\hline
+	1                                          & 275.126797                   & 82                                    & 53391.674858                   & 201                                   & 100675.951927                & 320                                    \\ 
+	\hline
+	2                                          & 270.277557                   & 94                                    & 52111.274811                   & 201                                   & 94790.263313                 & 327                                    \\ 
+	\hline
+	3                                          & 311.553522                   & 93                                    & 51217.10434                    & 206                                   & 96816.714188                 & 328                                    \\ 
+	\hline
+	4                                          & 289.71907                    & 87                                    & 50992.266731                   & 199                                   & 96956.150177                 & 323                                    \\ 
+	\hline
+	5                                          & 322.548939                   & 90                                    & 52848.999931                   & 198                                   & 95383.92725                  & 325                                    \\ 
+	\hline
+	6                                          & 339.099181                   & 95                                    & 51582.298691                   & 194                                   & 96748.276108                 & 337                                    \\ 
+	\hline
+	7                                          & 279.077007                   & 85                                    & 53134.153091                   & 192                                   & 95329.658241                 & 328                                    \\ 
+	\hline
+	8                                          & 330.784132                   & 86                                    & 53992.728588                   & 201                                   & 105586.395409                & 328                                    \\ 
+	\hline
+	9                                          & 352.402293                   & 90                                    & 49342.056274                   & 191                                   & 116382.970493                & 348                                    \\ 
+	\hline
+	10                                         & 256.565374                   & 87                                    & 52911.153297                   & 196                                   & 118315.534424                & 328                                    \\ 
+	\hline
+	11                                         & 321.191419                   & 80                                    & 57351.327911                   & 188                                   & 97739.810043                 & 329                                    \\ 
+	\hline
+	12                                         & 310.073399                   & 90                                    & 52431.976662                   & 201                                   & 111831.023941                & 333                                    \\ 
+	\hline
+	13                                         & 298.046818                   & 97                                    & 52139.427982                   & 197                                   & 105482.076057                & 346                                    \\ 
+	\hline
+	14                                         & 346.84795                    & 90                                    & 49822.551331                   & 190                                   & 99072.145027                 & 340                                    \\ 
+	\hline
+	15                                         & 254.222754                   & 84                                    & 53041.705833                   & 202                                   & 102023.374428                & 321                                    \\ 
+	\hline
+	16                                         & 234.250481                   & 90                                    & 49494.891212                   & 201                                   & 100861.929649                & 340                                    \\ 
+	\hline
+	17                                         & 282.118842                   & 89                                    & 52915.014503                   & 193                                   & 100803.146908                & 313                                    \\ 
+	\hline
+	18                                         & 234.731582                   & 88                                    & 48951.787331                   & 197                                   & 97406.181103                 & 355                                    \\ 
+	\hline
+	19                                         & 282.571366                   & 93                                    & 52613.386963                   & 195                                   & 96323.229179                 & 352                                    \\ 
+	\hline
+	20                                         & 313.502345                   & 89                                    & 54307.119423                   & 199                                   & 90455.74585                  & 347                                    \\ 
+	\hline
+	21                                         & 304.783979                   & 89                                    & 52156.748398                   & 201                                   & 100495.939575                & 347                                    \\ 
+	\hline
+	22                                         & 318.07704                    & 92                                    & 56968.613716                   & 200                                   & 105257.568298                & 381                                    \\ 
+	\hline
+	23                                         & 282.090776                   & 88                                    & 53701.365768                   & 195                                   & 93697.168671                 & 364                                    \\ 
+	\hline
+	24                                         & 287.537627                   & 82                                    & 54732.80043                    & 200                                   & 101223.11499                 & 356                                    \\ 
+	\hline
+	25                                         & 272.68459                    & 96                                    & 52384.56517                    & 196                                   & 99940.160042                 & 371                                    \\ 
+	\hline
+	26                                         & 236.243274                   & 80                                    & 48956.354271                   & 199                                   & 110173.657715                & 377                                    \\ 
+	\hline
+	27                                         & 269.206943                   & 92                                    & 52833.019569                   & 197                                   & 117245.464081                & 326                                    \\ 
+	\hline
+	28                                         & 284.015296                   & 96                                    & 57804.257366                   & 199                                   & 95948.088799                 & 350                                    \\ 
+	\hline
+	29                                         & 301.355962                   & 90                                    & 52884.67968                    & 202                                   & 107546.377953                & 357                                    \\ 
+	\hline
+	30                                         & 250.867112                   & 103                                   & 54072.640656                   & 201                                   & 105717.802429                & 341                                    \\ 
+	\hline
+	\multicolumn{1}{|l|}{Average}              & 290.3857809                  & 89.5666666666667                      & 52702.9314929                  & 197.733333333333                      & 101874.328208933             & 341.266666666667                       \\ 
+	\hline
+	\multicolumn{1}{|l|}{Std. Dev}             & 32.4373567833344             & 5.20399934621463                      & 2224.64491886288               & 4.10158365826508                      & 7190.18569614101             & 17.4946954193576                       \\
+	\hline
+\end{tabular}}}
+\end{adjustwidth}
+\caption{The entire experiment data we have collected using our hybrid GWO approach.}
+\label{full-data-gwo}
+\end{table}
+
+\begin{table}
+\centering
+\begin{adjustwidth}{}{}
+\resizebox{\textwidth}{!}{\rotatebox{90}{
+\begin{tabular}{|r|r|r|r|r|r|r|} 
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO Experimental Results}                                                                                                                                                                         \\ 
+	\cline{2-7}
+	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+	\hline
+	1                                          & 318.852793                   & 30                                    & 64984.15004                    & 76                                    & 126400.957298                & 130                                    \\ 
+	\hline
+	2                                          & 322.977083                   & 28                                    & 65613.267347                   & 81                                    & 121843.241837                & 115                                    \\ 
+	\hline
+	3                                          & 319.688772                   & 27                                    & 66182.148331                   & 77                                    & 131064.62114                 & 117                                    \\ 
+	\hline
+	4                                          & 382.774055                   & 29                                    & 65321.947243                   & 74                                    & 123193.080185                & 109                                    \\ 
+	\hline
+	5                                          & 328.181972                   & 26                                    & 68316.333054                   & 90                                    & 113509.606079                & 116                                    \\ 
+	\hline
+	6                                          & 273.754488                   & 27                                    & 63051.351074                   & 80                                    & 126382.984985                & 104                                    \\ 
+	\hline
+	7                                          & 277.929458                   & 35                                    & 64844.383484                   & 80                                    & 118793.658676                & 113                                    \\ 
+	\hline
+	8                                          & 333.791855                   & 29                                    & 62119.790359                   & 78                                    & 116690.745407                & 115                                    \\ 
+	\hline
+	9                                          & 331.588456                   & 25                                    & 62520.697372                   & 81                                    & 112328.409836                & 114                                    \\ 
+	\hline
+	10                                         & 312.062043                   & 28                                    & 60370.992424                   & 70                                    & 125547.949913                & 117                                    \\ 
+	\hline
+	11                                         & 347.300041                   & 26                                    & 63191.887421                   & 74                                    & 128467.742325                & 111                                    \\ 
+	\hline
+	12                                         & 276.72711                    & 29                                    & 66079.518539                   & 75                                    & 115259.262817                & 123                                    \\ 
+	\hline
+	13                                         & 346.501261                   & 38                                    & 68433.641548                   & 72                                    & 120682.394836                & 123                                    \\ 
+	\hline
+	14                                         & 324.057936                   & 29                                    & 59673.997963                   & 73                                    & 115606.839714                & 136                                    \\ 
+	\hline
+	15                                         & 294.477526                   & 33                                    & 65232.604935                   & 77                                    & 107996.773666                & 135                                    \\ 
+	\hline
+	16                                         & 354.944439                   & 28                                    & 62623.302681                   & 77                                    & 117466.287628                & 119                                    \\ 
+	\hline
+	17                                         & 278.580433                   & 25                                    & 63571.512451                   & 78                                    & 119787.763885                & 111                                    \\ 
+	\hline
+	18                                         & 373.62812                    & 25                                    & 65604.954414                   & 73                                    & 121933.62674                 & 111                                    \\ 
+	\hline
+	19                                         & 277.326199                   & 27                                    & 60121.135582                   & 71                                    & 120619.96003                 & 128                                    \\ 
+	\hline
+	20                                         & 312.888415                   & 26                                    & 65799.8442                     & 77                                    & 114528.809418                & 112                                    \\ 
+	\hline
+	21                                         & 349.500618                   & 28                                    & 62835.800159                   & 86                                    & 123371.321442                & 113                                    \\ 
+	\hline
+	22                                         & 324.432381                   & 30                                    & 67968.856182                   & 80                                    & 125755.185791                & 107                                    \\ 
+	\hline
+	23                                         & 259.640869                   & 29                                    & 61263.364929                   & 77                                    & 114837.336021                & 109                                    \\ 
+	\hline
+	24                                         & 324.809072                   & 28                                    & 64277.566399                   & 78                                    & 119911.446892                & 114                                    \\ 
+	\hline
+	25                                         & 315.892269                   & 30                                    & 63997.453415                   & 72                                    & 130395.024284                & 101                                    \\ 
+	\hline
+	26                                         & 367.985685                   & 31                                    & 62791.55909                    & 73                                    & 126777.9534                  & 109                                    \\ 
+	\hline
+	27                                         & 306.720735                   & 37                                    & 66069.317642                   & 77                                    & 116590.569717                & 132                                    \\ 
+	\hline
+	28                                         & 373.704857                   & 29                                    & 65694.84201                    & 77                                    & 131275.843658                & 145                                    \\ 
+	\hline
+	29                                         & 288.776388                   & 30                                    & 67406.459572                   & 76                                    & 118132.533211                & 120                                    \\ 
+	\hline
+	30                                         & 339.280296                   & 30                                    & 62731.473629                   & 81                                    & 126570.733612                & 113                                    \\ 
+	\hline
+	\multicolumn{1}{|l|}{Average}              & 321.292520833333             & 29.0666666666667                      & 64289.8051163                  & 77.0333333333333                      & 121057.4221481               & 117.4                                  \\ 
+	\hline
+	\multicolumn{1}{|l|}{Std. Dev}             & 32.8103600821748             & 3.20488133443597                      & 2356.26248290771               & 4.29501180868943                      & 5981.21601161922             & 10.1526283330459                       \\
+	\hline
+\end{tabular}}}
+\end{adjustwidth}
+\caption{The entire experiment data we have collected using our hybrid PSO approach.}
+\label{full-data-pso}
+\end{table}
 
 The performance of the GA approach in this study is definitely noteworthy. It produces the best solutions on average among the three approaches. However, based on the results, the GA approach does not scale well as the number of buildings increase, compared to our approach and the PSO approach. PSO definitely shows the best average runtimes. However, it produces the worst average fitness. For faster speed, we traded performance. This is where our approach shines. Our approach is the second best when it comes to solution quality as the problem scales higher. It is also the second best in terms of speed. This shows to us that our GWO approach provides a balance between speed and performance. Our approach also requires only a few parameters. We argue that this will simplify and speed up experimental setups and configuration in later studies and applications. Importantly, the results also indicate that there is promise in further exploring the applicability of the grey wolf optimization algorithm in solving the facility layout problem.
 
