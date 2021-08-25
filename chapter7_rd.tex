@@ -38,7 +38,7 @@ Each approach has their own parameters, and the values we have set for those par
 	\label{approach-parameters}
 \end{table}
 
-The results obtained for each approach is shown in Tables \ref{approach-ga-results} to \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach and the PSO approach, with a fitness averages of $273.537430766667$, $50422.3174052667$, and $88087.9226730667$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages of $290.3857809$, $52702.9314929$, $101874.328208933$. Fortunately for our approach, the PSO approach obtained the fitness averages of $321.292520833333$, $64289.8051163$, and $121057.4221481$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $221.042599$ and $324.874681$ for the GA, respectively, compared to our approach's $234.250481$ and $339.099181$. The PSO approach obtained $273.754488$ and $382.774055$. For mSFLP-III, the best and worst solutions have a fitness of $46802.666237$ and $53474.353325$ for the GA, respectively, compared to our approach's $48951.787331$ and $53474.353325$ and the PSO approach's $59673.997963$ and $68433.641548$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76651.01432$ and $98512.468674$, respectively, for the GA, with our approach obtaining $90455.74585$ and $118315.534424$. PSO produces the poorest best and worst solutions with fitnesses of $107996.773666$ and $131275.843658$. From the results, the competing GA approach is the most stable among the three, basing from the lower standard deviation in all data sets, with $25.3555205871573$, $1630.42444301206$, and $5077.72744984237$ for SFLP-II, mSFLP-III, and mKra30a, respectively. This is compared to our approach's $32.4373567833344$, $2224.64491886288$, and $7190.18569614101$, and the PSO approach's $32.8103600821748$, $2356.26248290771$, and $5981.21601161922$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This behaviour also explains the observation we have with PSO during our experiemnts where the approach struggles to produce good results for the mKra30a data set. It requires multiple runs just to produce a single feasible solution. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
+The results obtained for each approach is shown in Tables \ref{approach-ga-results} to \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach and the PSO approach, with a fitness averages of $274.120352366667$, $50676.8183791$, and $87715.8254635$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages of $291.886319866667$, $53477.0850155333$, and $101299.9193804$. Fortunately for our approach, the PSO approach obtained the fitness averages of $321.292520833333$, $64289.8051163$, and $121057.4221481$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $232.839593$ and $353.006875$ for the GA, respectively, compared to our approach's $228.686203$ and $344.260855$. The PSO approach obtained $273.754488$ and $382.774055$. For mSFLP-III, the best and worst solutions have a fitness of $47177.914444$ and $53668.451469$ for the GA, respectively, compared to our approach's $50054.34227$ and $57215.849915$ and the PSO approach's $59673.997963$ and $68433.641548$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76454.204788$ and $96215.108131$, respectively, for the GA, with our approach obtaining $92722.82975$ and $117413.196259$. PSO produces the poorest best and worst solutions with fitnesses of $107996.773666$ and $131275.843658$. From the results, the competing GA approach is the most stable among the three, basing from the lower standard deviation in all data sets, except for the SFLP-II data set where our approach is the most stable among the three approaches. The GA approach has $31.3302957404409$, $1325.4427345102$, and $4281.86238995314$ for SFLP-II, mSFLP-III, and mKra30a, respectively. This is compared to our approach's $28.710036955555$, $2500.45309541788$, and $7045.97218764861$, and the PSO approach's $32.8103600821748$, $2356.26248290771$, and $5981.21601161922$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This behaviour also explains the observation we have with PSO during our experiemnts where the approach struggles to produce good results for the mKra30a data set. It requires multiple runs just to produce a single feasible solution. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
 
 \begin{figure}[h!]
 \centering
@@ -49,7 +49,7 @@ The results obtained for each approach is shown in Tables \ref{approach-ga-resul
 \label{graph-approaches-runtime-no-buildings}
 \end{figure}
 
-The genetic algorithm approach is also the fastest when SFLP-II is being used with an average run time of $27$s, compared to our approach's $89.5666666666667$s and the PSO approach's $29.0666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $145.766666666667$s, while our approach and the PSO approach takes $197.733333333333$s and $77.0333333333333$s, respectively. GA is still faster than GWO in this data set, but it is already significantly slower than the PSO approach, unlike with the previous data set. Moving towards mKra30a, we can see that GA now takes $435.033333333333$s. This is longer than our approach's $341.266666666667$s, and the PSO approach's $117.4$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
+The genetic algorithm approach is also the fastest when SFLP-II is being used with an average run time of $27.3666666666667$s, compared to our approach's $92.2$s and the PSO approach's $29.0666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $166.866666666667$s, while our approach and the PSO approach takes $223.566666666667$s and $77.0333333333333$s, respectively. GA is still faster than GWO in this data set, but it is already significantly slower than the PSO approach, unlike with the previous data set. Moving towards mKra30a, we can see that GA now takes $455.5$s. This is longer than our approach's $341.733333333333$s, and the PSO approach's $117.4$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
 
 \begin{table}[h!]
 \begin{adjustwidth}{-1.15in}{}
@@ -58,13 +58,13 @@ The genetic algorithm approach is also the fastest when SFLP-II is being used wi
 	\hline
 	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{Genetic Algorithm}}                                                                                                                                                                                            \\ \cline{2-6} 
 	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}} \\ \hline
-	SFLP-II                                                 & 221.042599                                  & 324.874681                                   & 273.537430766667                      &
-	25.3555205871573						& 27                                   \\ \hline
-	mSFLP-III                                               & 46802.666237                                & 53474.353325                                 & 50422.3174052667	                      & 1630.42444301206                                  & 145.766666666667                           \\ \hline
-	mKra30a                                               & 76651.01432                                & 98512.468674                                 &
-	88087.9226730667							&
-	5077.72744984237	                        &
-	435.033333333333								\\ \hline
+	SFLP-II                                                 & 232.839593                                  & 353.006875                                   & 274.120352366667                      &
+	31.3302957404409						& 27.3666666666667                                   \\ \hline
+	mSFLP-III                                               & 47177.914444                               & 53668.451469                                 & 50676.8183791                      & 1325.4427345102                                  & 166.866666666667                           \\ \hline
+	mKra30a                                               & 76454.204788                                & 96215.108131                                 &
+	87715.8254635							&
+	4281.86238995314	                        &
+	455.5								\\ \hline
 \end{tabular}
 \end{adjustwidth}
 \caption{Results obtained from using the competing GA approach.}
@@ -78,12 +78,12 @@ The genetic algorithm approach is also the fastest when SFLP-II is being used wi
 	\hline
 	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{GWO}} \\ \cline{2-6} 
 	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}} \\ \hline
-	SFLP-II                                                 & 234.250481                                  & 339.099181                                   & 290.3857809                      & 32.4373567833344                                 & 89.5666666666667                                  \\ \hline
-	mSFLP-III                                               & 48951.787331                                & 57804.257366                                 & 52702.9314929						         & 2224.64491886288                              & 197.733333333333                               \\ \hline
-	mKra30a                                               & 90455.74585                                & 118315.534424                                 &
-	101874.328208933							&
-	7190.18569614101							&
-	341.266666666667						\\ \hline
+	SFLP-II                                                 & 228.686203                                  & 344.260855                                   & 291.886319866667                      & 28.7100369555559                                 & 92.2                                  \\ \hline
+	mSFLP-III                                               & 50054.34227                                & 57215.849915                                 & 53477.0850155333						         & 2500.45309541788                              & 223.566666666667                               \\ \hline
+	mKra30a                                               & 92722.82975                                & 117413.196259                                 &
+	101299.9193804							&
+	7045.97218764861							&
+	341.733333333333						\\ \hline
 \end{tabular}
 \end{adjustwidth}
 \caption{Results obtained from our proposed GWO approach.}
@@ -174,75 +174,75 @@ For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \begin{adjustwidth}{}{}
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
-	\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GA Experimental Results}                                                                                                                                                                                  \\ 
-	\cline{2-7}
-	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a}         & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-	\hline
-	1                                          & 275.948675                   & 24                                    & 50748.138969                   & 171                                   & 87159.574028                         & 463                                    \\ 
-	\hline
-	2                                          & 297.339749                   & 24                                    & 51053.892792                   & 162                                   & 88882.154846                         & 432                                    \\ 
-	\hline
-	3                                          & 317.039815                   & 27                                    & 49965.015633                   & 191                                   & 91353.629505                         & 452                                    \\ 
-	\hline
-	4                                          & 251.646269                   & 29                                    & 47872.666199                   & 166                                   & 79546.124115                         & 449                                    \\ 
-	\hline
-	5                                          & 264.148994                   & 30                                    & 48865.995796                   & 194                                   & 90506.340759                         & 430                                    \\ 
-	\hline
-	6                                          & 294.548517                   & 25                                    & 50312.237175                   & 195                                   & 89587.260277                         & 436                                    \\ 
-	\hline
-	7                                          & 297.853384                   & 26                                    & 51358.37851                    & 170                                   & 84969.218292                         & 405                                    \\ 
-	\hline
-	8                                          & 221.042599                   & 28                                    & 49241.947334                   & 165                                   & 84344.258163                         & 393                                    \\ 
-	\hline
-	9                                          & 270.649348                   & 32                                    & 51026.886612                   & 161                                   & 90504.117516                         & 428                                    \\ 
-	\hline
-	10                                         & 272.458134                   & 32                                    & 50022.571861                   & 159                                   & 79532.178864                         & 367                                    \\ 
-	\hline
-	11                                         & 278.011299                   & 28                                    & 53399.870956                   & 135                                   & 86111.81329                          & 420                                    \\ 
-	\hline
-	12                                         & 297.773947                   & 28                                    & 49878.243431                   & 129                                   & 89152.534203                         & 421                                    \\ 
-	\hline
-	13                                         & 302.634355                   & 25                                    & 51595.78511                    & 136                                   & 90725.02243                          & 443                                    \\ 
-	\hline
-	14                                         & 271.508033                   & 25                                    & 46802.666237                   & 134                                   & 84640.960541                         & 485                                    \\ 
-	\hline
-	15                                         & 250.991146                   & 27                                    & 53474.353325                   & 137                                   & 76651.01432                          & 409                                    \\ 
-	\hline
-	16                                         & 273.2547                     & 27                                    & 50329.404644                   & 127                                   & 94093.080711                         & 471                                    \\ 
-	\hline
-	17                                         & 227.915547                   & 25                                    & 51295.009323                   & 130                                   & 89470.642914                         & 479                                    \\ 
-	\hline
-	18                                         & 313.396021                   & 26                                    & 51553.780182                   & 134                                   & 98512.468674                         & 442                                    \\ 
-	\hline
-	19                                         & 271.145806                   & 30                                    & 47840.936066                   & 134                                   & 95689.616554                         & 459                                    \\ 
-	\hline
-	20                                         & 244.631016                   & 26                                    & 51936.38221                    & 130                                   & 85996.664162                         & 405                                    \\ 
-	\hline
-	21                                         & 276.977884                   & 25                                    & 52408.912086                   & 131                                   & 80764.674995                         & 510                                    \\ 
-	\hline
-	22                                         & 268.041764                   & 28                                    & 50476.936264                   & 129                                   & 91329.049988                         & 472                                    \\ 
-	\hline
-	23                                         & 264.247469                   & 31                                    & 50213.974663                   & 131                                   & 90695.920197                         & 447                                    \\ 
-	\hline
-	24                                         & 287.717402                   & 30                                    & 51018.496685                   & 135                                   & 91644.64167                          & 480                                    \\ 
-	\hline
-	25                                         & 244.385945                   & 24                                    & 51528.772743                   & 137                                   & 83799.874481                         & 414                                    \\ 
-	\hline
-	26                                         & 324.874681                   & 25                                    & 49196.90604                    & 134                                   & 88570.538506                         & 431                                    \\ 
-	\hline
-	27                                         & 259.133507                   & 26                                    & 47886.516884                   & 132                                   & 92496.548035                         & 414                                    \\ 
-	\hline
-	28                                         & 239.296721                   & 25                                    & 52177.261909                   & 128                                   & 82084.809708                         & 390                                    \\ 
-	\hline
-	29                                         & 282.162088                   & 27                                    & 48426.101257                   & 126                                   & 91099.436806                         & 416                                    \\ 
-	\hline
-	30                                         & 265.348108                   & 25                                    & 50761.481262                   & 130                                   & 92723.511642                         & 388                                    \\ 
-	\hline
-	\multicolumn{1}{|l|}{Average}              & 273.537430766667             & 27                                    & 50422.3174052667               & 145.766666666667                      & 88087.9226730667                     & 435.033333333333                       \\ 
-	\hline
-	\multicolumn{1}{|l|}{Std. Dev}             & 25.3555205871573             & 2.37806064131954                      & 1630.42444301206               & \multicolumn{1}{r}{21.5737441530581}  & \multicolumn{1}{r}{5077.72744984237} & 33.0699189631587                       \\
-	\hline
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GA Experimental Results}                                                                                                                                                                          \\ 
+\cline{2-7}
+\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+\hline
+1                                          & 241.353251                   & 31                                    & 51469.406654                   & 155                                   & 76454.204788                 & 417                                    \\ 
+\hline
+2                                          & 260.666385                   & 27                                    & 50203.262684                   & 166                                   & 90215.278652                 & 454                                    \\ 
+\hline
+3                                          & 317.934947                   & 34                                    & 49903.403969                   & 159                                   & 80078.077255                 & 442                                    \\ 
+\hline
+4                                          & 257.12075                    & 26                                    & 51214.094765                   & 149                                   & 85424.753021                 & 453                                    \\ 
+\hline
+5                                          & 252.747648                   & 26                                    & 49754.550606                   & 152                                   & 85276.805458                 & 416                                    \\ 
+\hline
+6                                          & 291.574655                   & 27                                    & 49526.201752                   & 160                                   & 88156.523018                 & 472                                    \\ 
+\hline
+7                                          & 292.021864                   & 27                                    & 49669.613991                   & 157                                   & 83149.07745                  & 423                                    \\ 
+\hline
+8                                          & 281.474234                   & 27                                    & 51731.675354                   & 176                                   & 88411.142647                 & 413                                    \\ 
+\hline
+9                                          & 269.290927                   & 26                                    & 51245.732857                   & 172                                   & 90734.373741                 & 478                                    \\ 
+\hline
+10                                         & 269.423721                   & 27                                    & 48920.435341                   & 175                                   & 87220.602196                 & 488                                    \\ 
+\hline
+11                                         & 240.832309                   & 26                                    & 52856.025909                   & 212                                   & 81419.135918                 & 446                                    \\ 
+\hline
+12                                         & 259.251911                   & 24                                    & 49490.654926                   & 144                                   & 89084.201248                 & 498                                    \\ 
+\hline
+13                                         & 257.123175                   & 27                                    & 51225.387764                   & 164                                   & 82219.564217                 & 449                                    \\ 
+\hline
+14                                         & 232.839593                   & 26                                    & 49141.684452                   & 197                                   & 91560.704735                 & 440                                    \\ 
+\hline
+15                                         & 305.979567                   & 27                                    & 52062.448891                   & 161                                   & 85431.277306                 & 446                                    \\ 
+\hline
+16                                         & 263.951872                   & 26                                    & 51269.011093                   & 175                                   & 93689.351776                 & 451                                    \\ 
+\hline
+17                                         & 271.432117                   & 25                                    & 52881.041428                   & 176                                   & 85395.590744                 & 431                                    \\ 
+\hline
+18                                         & 278.044098                   & 33                                    & 51087.689514                   & 180                                   & 87894.849144                 & 421                                    \\ 
+\hline
+19                                         & 266.951438                   & 28                                    & 51001.627296                   & 171                                   & 91152.267059                 & 445                                    \\ 
+\hline
+20                                         & 246.816533                   & 27                                    & 50198.549866                   & 178                                   & 88895.677979                 & 471                                    \\ 
+\hline
+21                                         & 275.481676                   & 27                                    & 50003.058311                   & 162                                   & 87140.735931                 & 468                                    \\ 
+\hline
+22                                         & 353.006875                   & 26                                    & 51480.186226                   & 162                                   & 88911.361496                 & 533                                    \\ 
+\hline
+23                                         & 336.045243                   & 26                                    & 51068.014679                   & 182                                   & 88503.003464                 & 499                                    \\ 
+\hline
+24                                         & 267.427919                   & 28                                    & 53668.451469                   & 177                                   & 90751.106781                 & 487                                    \\ 
+\hline
+25                                         & 318.71513                    & 28                                    & 49688.022858                   & 167                                   & 87554.161316                 & 480                                    \\ 
+\hline
+26                                         & 239.385818                   & 31                                    & 50890.728996                   & 161                                   & 89753.353699                 & 516                                    \\ 
+\hline
+27                                         & 235.181557                   & 27                                    & 51466.78817                    & 160                                   & 92770.250797                 & 431                                    \\ 
+\hline
+28                                         & 256.815948                   & 27                                    & 47177.914444                   & 159                                   & 93206.425659                 & 443                                    \\ 
+\hline
+29                                         & 329.646141                   & 27                                    & 50171.089684                   & 146                                   & 84805.798279                 & 473                                    \\ 
+\hline
+30                                         & 255.073269                   & 27                                    & 49837.797424                   & 151                                   & 96215.108131                 & 381                                    \\ 
+\hline
+\multicolumn{1}{|l|}{Average}              & 274.120352366667             & 27.3666666666667                      & 50676.8183791                  & 166.866666666667                      & 87715.8254635                & 455.5                                  \\ 
+\hline
+\multicolumn{1}{|l|}{Std. Dev}             & 31.3302957404409             & 2.17324377503931                      & 1325.4427345102                & 14.6775299372024                      & 4281.86238995314             & 33.3639801644497                       \\
+\hline
 \end{tabular}}}
 \end{adjustwidth}
 \caption{The entire experiment data we have collected using our hybrid GA approach.}
@@ -254,75 +254,75 @@ For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \begin{adjustwidth}{}{}
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
-	\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GWO Experimental Results}                                                                                                                                                                         \\ 
-	\cline{2-7}
-	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-	\hline
-	1                                          & 275.126797                   & 82                                    & 53391.674858                   & 201                                   & 100675.951927                & 320                                    \\ 
-	\hline
-	2                                          & 270.277557                   & 94                                    & 52111.274811                   & 201                                   & 94790.263313                 & 327                                    \\ 
-	\hline
-	3                                          & 311.553522                   & 93                                    & 51217.10434                    & 206                                   & 96816.714188                 & 328                                    \\ 
-	\hline
-	4                                          & 289.71907                    & 87                                    & 50992.266731                   & 199                                   & 96956.150177                 & 323                                    \\ 
-	\hline
-	5                                          & 322.548939                   & 90                                    & 52848.999931                   & 198                                   & 95383.92725                  & 325                                    \\ 
-	\hline
-	6                                          & 339.099181                   & 95                                    & 51582.298691                   & 194                                   & 96748.276108                 & 337                                    \\ 
-	\hline
-	7                                          & 279.077007                   & 85                                    & 53134.153091                   & 192                                   & 95329.658241                 & 328                                    \\ 
-	\hline
-	8                                          & 330.784132                   & 86                                    & 53992.728588                   & 201                                   & 105586.395409                & 328                                    \\ 
-	\hline
-	9                                          & 352.402293                   & 90                                    & 49342.056274                   & 191                                   & 116382.970493                & 348                                    \\ 
-	\hline
-	10                                         & 256.565374                   & 87                                    & 52911.153297                   & 196                                   & 118315.534424                & 328                                    \\ 
-	\hline
-	11                                         & 321.191419                   & 80                                    & 57351.327911                   & 188                                   & 97739.810043                 & 329                                    \\ 
-	\hline
-	12                                         & 310.073399                   & 90                                    & 52431.976662                   & 201                                   & 111831.023941                & 333                                    \\ 
-	\hline
-	13                                         & 298.046818                   & 97                                    & 52139.427982                   & 197                                   & 105482.076057                & 346                                    \\ 
-	\hline
-	14                                         & 346.84795                    & 90                                    & 49822.551331                   & 190                                   & 99072.145027                 & 340                                    \\ 
-	\hline
-	15                                         & 254.222754                   & 84                                    & 53041.705833                   & 202                                   & 102023.374428                & 321                                    \\ 
-	\hline
-	16                                         & 234.250481                   & 90                                    & 49494.891212                   & 201                                   & 100861.929649                & 340                                    \\ 
-	\hline
-	17                                         & 282.118842                   & 89                                    & 52915.014503                   & 193                                   & 100803.146908                & 313                                    \\ 
-	\hline
-	18                                         & 234.731582                   & 88                                    & 48951.787331                   & 197                                   & 97406.181103                 & 355                                    \\ 
-	\hline
-	19                                         & 282.571366                   & 93                                    & 52613.386963                   & 195                                   & 96323.229179                 & 352                                    \\ 
-	\hline
-	20                                         & 313.502345                   & 89                                    & 54307.119423                   & 199                                   & 90455.74585                  & 347                                    \\ 
-	\hline
-	21                                         & 304.783979                   & 89                                    & 52156.748398                   & 201                                   & 100495.939575                & 347                                    \\ 
-	\hline
-	22                                         & 318.07704                    & 92                                    & 56968.613716                   & 200                                   & 105257.568298                & 381                                    \\ 
-	\hline
-	23                                         & 282.090776                   & 88                                    & 53701.365768                   & 195                                   & 93697.168671                 & 364                                    \\ 
-	\hline
-	24                                         & 287.537627                   & 82                                    & 54732.80043                    & 200                                   & 101223.11499                 & 356                                    \\ 
-	\hline
-	25                                         & 272.68459                    & 96                                    & 52384.56517                    & 196                                   & 99940.160042                 & 371                                    \\ 
-	\hline
-	26                                         & 236.243274                   & 80                                    & 48956.354271                   & 199                                   & 110173.657715                & 377                                    \\ 
-	\hline
-	27                                         & 269.206943                   & 92                                    & 52833.019569                   & 197                                   & 117245.464081                & 326                                    \\ 
-	\hline
-	28                                         & 284.015296                   & 96                                    & 57804.257366                   & 199                                   & 95948.088799                 & 350                                    \\ 
-	\hline
-	29                                         & 301.355962                   & 90                                    & 52884.67968                    & 202                                   & 107546.377953                & 357                                    \\ 
-	\hline
-	30                                         & 250.867112                   & 103                                   & 54072.640656                   & 201                                   & 105717.802429                & 341                                    \\ 
-	\hline
-	\multicolumn{1}{|l|}{Average}              & 290.3857809                  & 89.5666666666667                      & 52702.9314929                  & 197.733333333333                      & 101874.328208933             & 341.266666666667                       \\ 
-	\hline
-	\multicolumn{1}{|l|}{Std. Dev}             & 32.4373567833344             & 5.20399934621463                      & 2224.64491886288               & 4.10158365826508                      & 7190.18569614101             & 17.4946954193576                       \\
-	\hline
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GWO Experimental Results}                                                                                                                                                                         \\ 
+\cline{2-7}
+\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+\hline
+1                                          & 325.506968                   & 94                                    & 52732.247017                   & 230                                   & 102461.169735                & 302                                    \\ 
+\hline
+2                                          & 313.507465                   & 85                                    & 55216.604614                   & 227                                   & 92722.82975                  & 312                                    \\ 
+\hline
+3                                          & 260.716585                   & 83                                    & 51035.938828                   & 222                                   & 109756.191196                & 329                                    \\ 
+\hline
+4                                          & 228.686203                   & 85                                    & 51252.923912                   & 235                                   & 94817.31855                  & 319                                    \\ 
+\hline
+5                                          & 327.630423                   & 84                                    & 50263.415146                   & 231                                   & 98489.470734                 & 357                                    \\ 
+\hline
+6                                          & 268.685181                   & 91                                    & 51086.920792                   & 234                                   & 94909.669075                 & 320                                    \\ 
+\hline
+7                                          & 294.791484                   & 93                                    & 52750.471413                   & 224                                   & 95285.917183                 & 313                                    \\ 
+\hline
+8                                          & 289.043079                   & 86                                    & 55943.949432                   & 201                                   & 95744.025253                 & 345                                    \\ 
+\hline
+9                                          & 312.831076                   & 110                                   & 52983.088982                   & 216                                   & 96928.298553                 & 344                                    \\ 
+\hline
+10                                         & 289.53074                    & 109                                   & 57117.076225                   & 219                                   & 104127.696587                & 361                                    \\ 
+\hline
+11                                         & 306.729307                   & 88                                    & 58398.903725                   & 202                                   & 100803.360954                & 316                                    \\ 
+\hline
+12                                         & 250.079633                   & 90                                    & 57215.849915                   & 200                                   & 107138.759598                & 334                                    \\ 
+\hline
+13                                         & 265.35407                    & 91                                    & 52676.416985                   & 224                                   & 99177.543182                 & 360                                    \\ 
+\hline
+14                                         & 286.189762                   & 102                                   & 54687.376709                   & 218                                   & 116187.673534                & 359                                    \\ 
+\hline
+15                                         & 344.260855                   & 91                                    & 51621.196281                   & 197                                   & 98794.914215                 & 348                                    \\ 
+\hline
+16                                         & 312.026299                   & 96                                    & 50204.516571                   & 221                                   & 97385.057663                 & 347                                    \\ 
+\hline
+17                                         & 308.682295                   & 84                                    & 50423.092026                   & 227                                   & 96082.164837                 & 317                                    \\ 
+\hline
+18                                         & 276.643616                   & 94                                    & 54081.611893                   & 219                                   & 97633.722404                 & 350                                    \\ 
+\hline
+19                                         & 313.150303                   & 99                                    & 53775.680328                   & 236                                   & 96896.538696                 & 351                                    \\ 
+\hline
+20                                         & 269.652821                   & 97                                    & 56298.768982                   & 232                                   & 112493.366562                & 383                                    \\ 
+\hline
+21                                         & 281.83043                    & 91                                    & 51932.713989                   & 233                                   & 98050.607231                 & 345                                    \\ 
+\hline
+22                                         & 327.765231                   & 86                                    & 54186.072151                   & 234                                   & 112647.361168                & 367                                    \\ 
+\hline
+23                                         & 301.150174                   & 96                                    & 56001.447327                   & 228                                   & 106157.126183                & 320                                    \\ 
+\hline
+24                                         & 236.491096                   & 92                                    & 50493.347454                   & 224                                   & 117413.196259                & 342                                    \\ 
+\hline
+25                                         & 319.217441                   & 88                                    & 56106.388706                   & 235                                   & 93008.848526                 & 357                                    \\ 
+\hline
+26                                         & 276.816359                   & 93                                    & 53595.246113                   & 226                                   & 97829.659012                 & 348                                    \\ 
+\hline
+27                                         & 331.744055                   & 85                                    & 50355.81105                    & 210                                   & 96314.070999                 & 362                                    \\ 
+\hline
+28                                         & 280.359543                   & 97                                    & 50054.34227                    & 231                                   & 96187.924377                 & 356                                    \\ 
+\hline
+29                                         & 269.64555                    & 93                                    & 55705.353302                   & 227                                   & 110426.691269                & 357                                    \\ 
+\hline
+30                                         & 287.871552                   & 93                                    & 56115.778328                   & 244                                   & 103126.408127                & 331                                    \\ 
+\hline
+\multicolumn{1}{|l|}{Average}              & 291.886319866667             & 92.2                                  & 53477.0850155333               & 223.566666666667                      & 101299.9193804               & 341.733333333333                       \\ 
+\hline
+\multicolumn{1}{|l|}{Std. Dev}             & 28.7100369555559             & 6.75379842040376                      & 2500.45309541788               & 11.7199603781057                      & 7045.97218764861             & 19.7448087168341                       \\
+\hline
 \end{tabular}}}
 \end{adjustwidth}
 \caption{The entire experiment data we have collected using our hybrid GWO approach.}
@@ -334,75 +334,75 @@ For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \begin{adjustwidth}{}{}
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
-	\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO Experimental Results}                                                                                                                                                                         \\ 
-	\cline{2-7}
-	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-	\hline
-	1                                          & 318.852793                   & 30                                    & 64984.15004                    & 76                                    & 126400.957298                & 130                                    \\ 
-	\hline
-	2                                          & 322.977083                   & 28                                    & 65613.267347                   & 81                                    & 121843.241837                & 115                                    \\ 
-	\hline
-	3                                          & 319.688772                   & 27                                    & 66182.148331                   & 77                                    & 131064.62114                 & 117                                    \\ 
-	\hline
-	4                                          & 382.774055                   & 29                                    & 65321.947243                   & 74                                    & 123193.080185                & 109                                    \\ 
-	\hline
-	5                                          & 328.181972                   & 26                                    & 68316.333054                   & 90                                    & 113509.606079                & 116                                    \\ 
-	\hline
-	6                                          & 273.754488                   & 27                                    & 63051.351074                   & 80                                    & 126382.984985                & 104                                    \\ 
-	\hline
-	7                                          & 277.929458                   & 35                                    & 64844.383484                   & 80                                    & 118793.658676                & 113                                    \\ 
-	\hline
-	8                                          & 333.791855                   & 29                                    & 62119.790359                   & 78                                    & 116690.745407                & 115                                    \\ 
-	\hline
-	9                                          & 331.588456                   & 25                                    & 62520.697372                   & 81                                    & 112328.409836                & 114                                    \\ 
-	\hline
-	10                                         & 312.062043                   & 28                                    & 60370.992424                   & 70                                    & 125547.949913                & 117                                    \\ 
-	\hline
-	11                                         & 347.300041                   & 26                                    & 63191.887421                   & 74                                    & 128467.742325                & 111                                    \\ 
-	\hline
-	12                                         & 276.72711                    & 29                                    & 66079.518539                   & 75                                    & 115259.262817                & 123                                    \\ 
-	\hline
-	13                                         & 346.501261                   & 38                                    & 68433.641548                   & 72                                    & 120682.394836                & 123                                    \\ 
-	\hline
-	14                                         & 324.057936                   & 29                                    & 59673.997963                   & 73                                    & 115606.839714                & 136                                    \\ 
-	\hline
-	15                                         & 294.477526                   & 33                                    & 65232.604935                   & 77                                    & 107996.773666                & 135                                    \\ 
-	\hline
-	16                                         & 354.944439                   & 28                                    & 62623.302681                   & 77                                    & 117466.287628                & 119                                    \\ 
-	\hline
-	17                                         & 278.580433                   & 25                                    & 63571.512451                   & 78                                    & 119787.763885                & 111                                    \\ 
-	\hline
-	18                                         & 373.62812                    & 25                                    & 65604.954414                   & 73                                    & 121933.62674                 & 111                                    \\ 
-	\hline
-	19                                         & 277.326199                   & 27                                    & 60121.135582                   & 71                                    & 120619.96003                 & 128                                    \\ 
-	\hline
-	20                                         & 312.888415                   & 26                                    & 65799.8442                     & 77                                    & 114528.809418                & 112                                    \\ 
-	\hline
-	21                                         & 349.500618                   & 28                                    & 62835.800159                   & 86                                    & 123371.321442                & 113                                    \\ 
-	\hline
-	22                                         & 324.432381                   & 30                                    & 67968.856182                   & 80                                    & 125755.185791                & 107                                    \\ 
-	\hline
-	23                                         & 259.640869                   & 29                                    & 61263.364929                   & 77                                    & 114837.336021                & 109                                    \\ 
-	\hline
-	24                                         & 324.809072                   & 28                                    & 64277.566399                   & 78                                    & 119911.446892                & 114                                    \\ 
-	\hline
-	25                                         & 315.892269                   & 30                                    & 63997.453415                   & 72                                    & 130395.024284                & 101                                    \\ 
-	\hline
-	26                                         & 367.985685                   & 31                                    & 62791.55909                    & 73                                    & 126777.9534                  & 109                                    \\ 
-	\hline
-	27                                         & 306.720735                   & 37                                    & 66069.317642                   & 77                                    & 116590.569717                & 132                                    \\ 
-	\hline
-	28                                         & 373.704857                   & 29                                    & 65694.84201                    & 77                                    & 131275.843658                & 145                                    \\ 
-	\hline
-	29                                         & 288.776388                   & 30                                    & 67406.459572                   & 76                                    & 118132.533211                & 120                                    \\ 
-	\hline
-	30                                         & 339.280296                   & 30                                    & 62731.473629                   & 81                                    & 126570.733612                & 113                                    \\ 
-	\hline
-	\multicolumn{1}{|l|}{Average}              & 321.292520833333             & 29.0666666666667                      & 64289.8051163                  & 77.0333333333333                      & 121057.4221481               & 117.4                                  \\ 
-	\hline
-	\multicolumn{1}{|l|}{Std. Dev}             & 32.8103600821748             & 3.20488133443597                      & 2356.26248290771               & 4.29501180868943                      & 5981.21601161922             & 10.1526283330459                       \\
-	\hline
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO Experimental Results}                                                                                                                                                                         \\ 
+\cline{2-7}
+\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+\hline
+1                                          & 318.852793                   & 30                                    & 64984.15004                    & 76                                    & 126400.957298                & 130                                    \\ 
+\hline
+2                                          & 322.977083                   & 28                                    & 65613.267347                   & 81                                    & 121843.241837                & 115                                    \\ 
+\hline
+3                                          & 319.688772                   & 27                                    & 66182.148331                   & 77                                    & 131064.62114                 & 117                                    \\ 
+\hline
+4                                          & 382.774055                   & 29                                    & 65321.947243                   & 74                                    & 123193.080185                & 109                                    \\ 
+\hline
+5                                          & 328.181972                   & 26                                    & 68316.333054                   & 90                                    & 113509.606079                & 116                                    \\ 
+\hline
+6                                          & 273.754488                   & 27                                    & 63051.351074                   & 80                                    & 126382.984985                & 104                                    \\ 
+\hline
+7                                          & 277.929458                   & 35                                    & 64844.383484                   & 80                                    & 118793.658676                & 113                                    \\ 
+\hline
+8                                          & 333.791855                   & 29                                    & 62119.790359                   & 78                                    & 116690.745407                & 115                                    \\ 
+\hline
+9                                          & 331.588456                   & 25                                    & 62520.697372                   & 81                                    & 112328.409836                & 114                                    \\ 
+\hline
+10                                         & 312.062043                   & 28                                    & 60370.992424                   & 70                                    & 125547.949913                & 117                                    \\ 
+\hline
+11                                         & 347.300041                   & 26                                    & 63191.887421                   & 74                                    & 128467.742325                & 111                                    \\ 
+\hline
+12                                         & 276.72711                    & 29                                    & 66079.518539                   & 75                                    & 115259.262817                & 123                                    \\ 
+\hline
+13                                         & 346.501261                   & 38                                    & 68433.641548                   & 72                                    & 120682.394836                & 123                                    \\ 
+\hline
+14                                         & 324.057936                   & 29                                    & 59673.997963                   & 73                                    & 115606.839714                & 136                                    \\ 
+\hline
+15                                         & 294.477526                   & 33                                    & 65232.604935                   & 77                                    & 107996.773666                & 135                                    \\ 
+\hline
+16                                         & 354.944439                   & 28                                    & 62623.302681                   & 77                                    & 117466.287628                & 119                                    \\ 
+\hline
+17                                         & 278.580433                   & 25                                    & 63571.512451                   & 78                                    & 119787.763885                & 111                                    \\ 
+\hline
+18                                         & 373.62812                    & 25                                    & 65604.954414                   & 73                                    & 121933.62674                 & 111                                    \\ 
+\hline
+19                                         & 277.326199                   & 27                                    & 60121.135582                   & 71                                    & 120619.96003                 & 128                                    \\ 
+\hline
+20                                         & 312.888415                   & 26                                    & 65799.8442                     & 77                                    & 114528.809418                & 112                                    \\ 
+\hline
+21                                         & 349.500618                   & 28                                    & 62835.800159                   & 86                                    & 123371.321442                & 113                                    \\ 
+\hline
+22                                         & 324.432381                   & 30                                    & 67968.856182                   & 80                                    & 125755.185791                & 107                                    \\ 
+\hline
+23                                         & 259.640869                   & 29                                    & 61263.364929                   & 77                                    & 114837.336021                & 109                                    \\ 
+\hline
+24                                         & 324.809072                   & 28                                    & 64277.566399                   & 78                                    & 119911.446892                & 114                                    \\ 
+\hline
+25                                         & 315.892269                   & 30                                    & 63997.453415                   & 72                                    & 130395.024284                & 101                                    \\ 
+\hline
+26                                         & 367.985685                   & 31                                    & 62791.55909                    & 73                                    & 126777.9534                  & 109                                    \\ 
+\hline
+27                                         & 306.720735                   & 37                                    & 66069.317642                   & 77                                    & 116590.569717                & 132                                    \\ 
+\hline
+28                                         & 373.704857                   & 29                                    & 65694.84201                    & 77                                    & 131275.843658                & 145                                    \\ 
+\hline
+29                                         & 288.776388                   & 30                                    & 67406.459572                   & 76                                    & 118132.533211                & 120                                    \\ 
+\hline
+30                                         & 339.280296                   & 30                                    & 62731.473629                   & 81                                    & 126570.733612                & 113                                    \\ 
+\hline
+\multicolumn{1}{|l|}{Average}              & 321.292520833333             & 29.0666666666667                      & 64289.8051163                  & 77.0333333333333                      & 121057.4221481               & 117.4                                  \\ 
+\hline
+\multicolumn{1}{|l|}{Std. Dev}             & 32.8103600821748             & 3.20488133443597                      & 2356.26248290771               & 4.29501180868943                      & 5981.21601161922             & 10.1526283330459                       \\
+\hline
 \end{tabular}}}
 \end{adjustwidth}
 \caption{The entire experiment data we have collected using our hybrid PSO approach.}
