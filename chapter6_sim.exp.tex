@@ -2,7 +2,7 @@
 Our proposed approach is validated by running it through three data sets based off of the data sets used by Hasda, R., Bhattacharjya, R., and Bennis, F. (2017) \cite{Hasda2017}, and Lee, Y., and Lee, M. \cite{Lee2002} that will test its performance and compare it to a genetic algorithm-based approach. Basing from previous studies, the fitness of the solution produced by an approach determines the performance of an algorithm. As such, we will be comparing the average fitness values of our approach and two competing approaches, a modified genetic algorithm approach, and a particle swarm optimization-based approach. 30 feasible solutions are obtained with each approach and data set, and the fitnesses obtained in each run are averaged. Note that, however, only the fitnesses of feasible solutions are included in the average. Due to the non-deterministic nature of metaheuristics, infeasible solutions are bound to be generated.
 
 \section{Data Sets Used}
-Let us call the data sets used as problem configuration. The first two problem configurations are based off of the configurations used by Hasda, R., Bhattacharjya, R., and Bennis, F. (2017) \cite{Hasda2017}. The first configuration used, which we will call SFLP-II, is shown in Table \ref{dataset-sflp-ii}, contains 8 buildings, and the second configuration, which we will call mSFLP-III, is shown in Table \ref{dataset-msflp-iii}, contains 20 buildings. The second configuration is called as such due to the fact that it is a modification of the third problem configuration used by Hasda, R., Bhattacharjya, R., and Bennis, F.. SFLP-II uses a 12x12 bounding region, while mSFLP-III uses a 260x260 bounding region. The third configuration, which we will call mLeeKra30a, is shown in Table \ref{dataset-mleekra30a}, contains 30 buildings. The configuration consists of modified building dimension data from the 30-building data set by Lee, Y., and Lee, M. \cite{Lee2002} and cost data from the Kra30a data set in QAPLIB \cite{QAPLib}. A 250x250 bounding region is used for the data set.
+Let us call the data sets used as problem configuration. The first two problem configurations are based off of the configurations used by Hasda, R., Bhattacharjya, R., and Bennis, F. (2017) \cite{Hasda2017}. The first configuration used, which we will call SFLP-II, is shown in Table \ref{dataset-sflp-ii}, contains 8 buildings, and the second configuration, which we will call mSFLP-III, is shown in Table \ref{dataset-msflp-iii}, contains 20 buildings. The second configuration is called as such due to the fact that it is a modification of the third problem configuration used by Hasda, R., Bhattacharjya, R., and Bennis, F.. SFLP-II uses a 12x12 bounding region, while mSFLP-III uses a 260x260 bounding region. The third configuration, which we will call mKra30a, is shown in Table \ref{dataset-mkra30a}, contains 30 buildings. The configuration consists of modified building dimension data from the 30-building data set by Lee, Y., and Lee, M. \cite{Lee2002} and cost data from the Kra30a data set in QAPLIB \cite{QAPLib}. A 250x250 bounding region is used for the data set.
 
 \begin{table}[h!]
 \centering
@@ -125,7 +125,7 @@ Let us call the data sets used as problem configuration. The first two problem c
 \end{tabular}}}
 \end{adjustwidth}
 \caption{Configuration of mKra30a. W and H mean width and height, respectively.}
-\label{dataset-mleekra30a}
+\label{dataset-mkra30a}
 \end{table}
 
 \section{Competing Approaches}

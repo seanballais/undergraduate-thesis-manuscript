@@ -102,7 +102,7 @@ Our proposed GWO approach only has one parameter, other than the population size
 
 For SFLP-II, $G_{2}$ has the best average compared to the other experiments, with a value of $280.537959566667$. The other experiments have average of $291.886319866667$, $298.4528295$, and $302.537651133333$ for $G_{4}$, $G_{8}$, and $G_{12}$, respectively. This characteristic is also reflected by the results of the best and worst results of each experiment. $G_{2}$ has the best and worst solutions with fitnesses of $217.11013$ and $327.250386$, respectively. These are better than the other experiments: $228.686203$ and $344.260855$ for $G_{4}$, $248.460499$ and $366.977582$ for $G_{8}$, and $260.756126$ and $347.908201$ for $G_{12}$. The situation is different when we are using mSFLP-III. With $G_{2}$, we have an average fitness of $52550.679634$ and best and worst solutions of $50976.368866$ and $60974.152195$. $G_{4}$ has an average fitness of $53477.0850155333$, with best and worst solutions of $50054.34227$ and $57215.849915$. $G_{8}$ has an average fitness of $52961.5490012667$, with best and worst solutions of $48765.748322$ and $58628.685135$. $G_{12}$ has an average fitness of $51949.7463375$, with best and worst solutions of $50026.967411$ and $56354.012672$. As one can observe, $G_{12}$ provides the best average fitness among the three. Lastly, when using mKra30a, $G_{2}$ provides an average fitness of $101984.0014387$, and best and worst solutions of $90189.743515$ and $115772.751106$. $G_{4}$ provides a better average fitness of $101290.9193804$, and a best and worst solutions of $92722.82975$ and $117413.196259$. $G_{8}$ has an average fitness of $101247.5836841$, and best and worst solutions of $90284.307087$ and $115441.795624$. And finally, $G_{12}$ has an average fitness of $103896.1840302$, and best and worst solutions of $92347.010582$ and $121198.027782$. In this data set, $G_{8}$ provided the best average fitness. Tables \ref{full-data-gwo-c2} to \ref{full-data-gwo-c12} show the entire data we have collected for this set of experiments.
 
-Each data set used in the experiments uses differently-sized bounding regions. For SFLP-II, a $12x12$ bounding region is used. mSFLIP uses a $260x260$ bounding region, while mKra30a uses a $250x250$ one. Notice that $c = 2$ provides the best average fitness for SFLP-II. On the other hand, for mKra30a, $c = 8$ provides the best fitness. Lastly, the best average fitness is given for mSFLP-III when $c = 12$. From this, we can observe that the larger the bounding region, the larger the $c$ parameter values must be in order for us to obtain the best average results as much as possible. As such, we say that the performance of our proposed GWO approach is affected the value of the $c$ parameter, in which the ideal value is dependent on the size of the bounding area. We can attribute this to the fact that the parameter determines how much a building can be shifted away in the formulas of $D_{\alpha}$, $D_{\beta}$, and $D_{\delta}$ (see equations \ref{summary-modified-gwo-a} to \ref{summary-modified-gwo-xt1} in Methodology). A smaller $c$ value introduces a smaller shift, while a larger value will shift the buildings further. In smaller sized bounding regions, a smaller shift is important due to the limited space available. Larger shifts in this size will make it harder for buildings to reach feasibility. On the other hand, a larger shift is more appropriate in a larger space since it will allow buildings to move closer to each other fast. Additionally, such a larger amount of available space can be utilized. A larger space will allow buildings to more easily move away from intersections (and, as a consequence, infeasibility). Later research can focus on determining the ideal $c$ value for a certain bounding region size and identifying whether it can be mathematically modelled instead, rather than being a parameter.
+Each data set used in the experiments uses differently-sized bounding regions. For SFLP-II, a $12x12$ bounding region is used. mSFLIP uses a $260x260$ bounding region, while mKra30a uses a $250x250$ one. Notice that $c = 2$ provides the best average fitness for SFLP-II. On the other hand, for mKra30a, $c = 8$ provides the best fitness. Lastly, the best average fitness is given for mSFLP-III when $c = 12$. From this, we can observe that the larger the bounding region, the larger the $c$ parameter values must be in order for us to obtain the best average results as much as possible. As such, we say that the performance of our proposed GWO approach is affected the value of the $c$ parameter, in which the ideal value is dependent on the size of the bounding area. We can attribute this to the fact that the parameter determines how much a building can be shifted away in the formulas of $D_{\alpha}$, $D_{\beta}$, and $D_{\delta}$ (see equations \ref{summary-modified-gwo-a} to \ref{summary-modified-gwo-xt1} in Methodology). A smaller $c$ value introduces a smaller shift, while a larger value will shift the buildings further. In smaller sized bounding regions, a smaller shift is important due to the limited space available. Larger shifts in this size will make it harder for buildings to reach feasibility. On the other hand, a larger shift is more appropriate in a larger space since it will allow buildings to move closer to each other fast. Additionally, such a larger amount of available space can be utilized. A larger space will allow buildings to more easily move away from intersections (and, as a consequence, infeasibility). Later research can focus on determining the ideal $c$ value for a certain bounding region size and identifying whether it can be mathematically modelled instead, rather than being a parameter. The average runtime for each experiment for each data set is also almost equal to each other, except with $G_{2}$ and the SFLP-II data set, where the average runtime deviates more from the other experiments that uses the same data set.
 
 \begin{table}
 \centering
@@ -425,14 +425,13 @@ Each data set used in the experiments uses differently-sized bounding regions. F
 \end{table}
 
 \subsection{Results of Other Approaches}
-Each approach has their own parameters, and the values we have set for those parameters are shown in Table \ref{approach-parameters}. Both approaches use a population size of 50, and a maximum number of iterations of 400. The following parameter values for the PSO approach were taken from the work of Jolai, F., Tavakkoli-Moghaddam, R., and Taghipour, M. \cite{Jolai2012}.
+Each approach has their own parameters, and the values we have set for those parameters are shown in Table \ref{approach-parameters}. Both approaches use a population size of 50, and a maximum number of iterations of 400. The following parameter values for the PSO approach were taken from the work of Jolai, F., Tavakkoli-Moghaddam, R., and Taghipour, M. \cite{Jolai2012}. Our proposed GWO approach is not included in the following results since we have already discussed them in the previous subsection.
 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|l|l|l|}
 		\hline
 		\textbf{Approach}   & \textbf{Parameter} & \textbf{Value} \\ \hline
-		GWO                 & c                  & 4              \\ \hline
 		\multirow{3}{*}{GA} & Mutation Rate      & 0.05           \\ \cline{2-3} 
 		& Tournament Size    & 4              \\ \cline{2-3} 
 		& No. of Elites (EN) & 5              \\ \hline
@@ -444,7 +443,7 @@ Each approach has their own parameters, and the values we have set for those par
 	\label{approach-parameters}
 \end{table}
 
-The results obtained for each approach is shown in Tables \ref{approach-ga-results} to \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach and the PSO approach, with a fitness averages of $274.120352366667$, $50676.8183791$, and $87715.8254635$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages of $291.886319866667$, $53477.0850155333$, and $101299.9193804$. Fortunately for our approach, the PSO approach obtained the fitness averages of $321.292520833333$, $64289.8051163$, and $121057.4221481$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $232.839593$ and $353.006875$ for the GA, respectively, compared to our approach's $228.686203$ and $344.260855$. The PSO approach obtained $273.754488$ and $382.774055$. For mSFLP-III, the best and worst solutions have a fitness of $47177.914444$ and $53668.451469$ for the GA, respectively, compared to our approach's $50054.34227$ and $57215.849915$ and the PSO approach's $59673.997963$ and $68433.641548$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76454.204788$ and $96215.108131$, respectively, for the GA, with our approach obtaining $92722.82975$ and $117413.196259$. PSO produces the poorest best and worst solutions with fitnesses of $107996.773666$ and $131275.843658$. From the results, the competing GA approach is the most stable among the three, basing from the lower standard deviation in all data sets, except for the SFLP-II data set where our approach is the most stable among the three approaches. The GA approach has $31.3302957404409$, $1325.4427345102$, and $4281.86238995314$ for SFLP-II, mSFLP-III, and mKra30a, respectively. This is compared to our approach's $28.710036955555$, $2500.45309541788$, and $7045.97218764861$, and the PSO approach's $32.8103600821748$, $2356.26248290771$, and $5981.21601161922$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This behaviour also explains the observation we have with PSO during our experiemnts where the approach struggles to produce good results for the mKra30a data set. It requires multiple runs just to produce a single feasible solution. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
+The results obtained for each approach is shown in Tables \ref{approach-ga-results} and \ref{approach-pso-results}, respectively. As what the tables show, the competing genetic algorithm approach produces a solution that is better than our proposed GWO approach (with any value of $c$) and the PSO approach, with a fitness averages of $274.120352366667$, $50676.8183791$, and $87715.8254635$ for the SFLP-II, mSFLP-III, and mKra30a problem configurations respectively. This is compared to our proposed approach's fitness averages. Fortunately for our approach, the PSO approach obtained the fitness averages of $321.292520833333$, $64289.8051163$, and $121057.4221481$, proving that our GWO is not the worst approach. For SFLP-II, the best and worst solutions have fitnesses of $232.839593$ and $353.006875$ for the GA, respectively, compared to the PSO approach which obtained $273.754488$ and $382.774055$. For mSFLP-III, the best and worst solutions have a fitness of $47177.914444$ and $53668.451469$ for the GA, respectively, compared to the PSO approach's $59673.997963$ and $68433.641548$. Lastly, for mKra30a, the best and worst solutions have fitnesses of $76454.204788$ and $96215.108131$, respectively, for the GA. PSO produces the poorest best and worst solutions with fitnesses of $107996.773666$ and $131275.843658$. This behaviour of producing the best average solution of the GA approach is attributed to the local search methods, which relatively exhaustively finds a better solution in a small area near the best solution found so far in each iteration. These local search methods intensifies the exploitation phase of the approach. Our GWO approach also exploits the local area, but it is not as intensive as the GA approach and only occurs at a later time in a run, similar to how the PSO approach behaves. Notice as well how PSO produces the worst solutions on average among the three. This can be explained with how particles in the PSO approach are equally influenced by their personal best position and their swarm's global best position. This reduces the chances of particles from exploiting the area around the global best position. This behaviour also explains the observation we have with PSO during our experiemnts where the approach struggles to produce good results for the mKra30a data set. It requires multiple runs just to produce a single feasible solution. This is unlike our GWO approach where all wolves are influenced/led by the best three wolves, enabling them to exploit the space around the best found solution. In future studies, different behaviour may be observed when the PSO parameters are tweaked to different values.
 
 \begin{figure}[h!]
 \centering
@@ -455,7 +454,7 @@ The results obtained for each approach is shown in Tables \ref{approach-ga-resul
 \label{graph-approaches-runtime-no-buildings}
 \end{figure}
 
-The genetic algorithm approach is also the fastest when SFLP-II is being used with an average run time of $27.3666666666667$s, compared to our approach's $92.2$s and the PSO approach's $29.0666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $166.866666666667$s, while our approach and the PSO approach takes $223.566666666667$s and $77.0333333333333$s, respectively. GA is still faster than GWO in this data set, but it is already significantly slower than the PSO approach, unlike with the previous data set. Moving towards mKra30a, we can see that GA now takes $455.5$s. This is longer than our approach's $341.733333333333$s, and the PSO approach's $117.4$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
+The genetic algorithm approach is also the fastest when SFLP-II is being used with an average run time of $27.3666666666667$s, compared to our approach's time and the PSO approach's $29.0666666666667$s. However, as the number of buildings increase, the average runtime of the GA approach becomes worse compared to the two other approaches. With mSFLP-III, GA takes $166.866666666667$s, while the PSO approach takes $223.566666666667$s and $77.0333333333333$s, respectively. GA is still faster than GWO in this data set, but it is already significantly slower than the PSO approach, unlike with the previous data set. Moving to mKra30a, we can see that GA now takes $455.5$s. This is longer than our approach, and the PSO approach's $117.4$s. Figure \ref{graph-approaches-runtime-no-buildings} shows this observation. We can attribute this faster increase in average runtime as the number of buildings increase in the GA approach to what enables it produce better solutions on average\textemdash its local search methods. Since the local search methods perform a relatively exhaustive search in order to find a better solution, the GA will take more time to finish executing. Hence, we observe this phenomenon. This is not the case with GWO and PSO, due to the lack of local search methods. GWO may have taken a longer time due to the amount of operations that are performed in the metaheuristic compared to PSO. Better implementations, especially those that utilize SIMD operations, for both approaches may reduce the gap in terms of average run time between the two. However, basing from the equations in both metaheuristics, it is likely that PSO will remain faster than GWO. Further studies, however, are required to exactly determine how well each approach scales with regards to the number of buildings.
 
 \begin{table}[h!]
 \begin{adjustwidth}{-1.15in}{}
@@ -542,8 +541,29 @@ Another avenue we can use to gather insights is through the visualization of the
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.85]{./images/chap07-rd/gwo-best-solutions.png}
-\caption{Visualization of the best solutions produced by our GWO approach for the three data sets used in this study.}
+\includegraphics[scale=1.85]{./images/chap07-rd/gwo-c2-best-solutions.png}
+\caption{Visualization of the best solutions produced by our GWO approach with $c=2$ for the three data sets used in this study.}
+\label{best-results-gwo-c2}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/gwo-c4-best-solutions.png}
+\caption{Visualization of the best solutions produced by our GWO approach with $c=4$ for the three data sets used in this study.}
+\label{best-results-gwo-c4}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/gwo-c8-best-solutions.png}
+\caption{Visualization of the best solutions produced by our GWO approach with $c=12$ for the three data sets used in this study.}
+\label{best-results-gwo-c8}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.85]{./images/chap07-rd/gwo-c12-best-solutions.png}
+\caption{Visualization of the best solutions produced by our GWO approach with $c=12$ for the three data sets used in this study.}
 \label{best-results-gwo}
 \end{figure}
 
@@ -642,86 +662,6 @@ For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
 \hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GWO Experimental Results}                                                                                                                                                                         \\ 
-\cline{2-7}
-\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-\hline
-1                                          & 325.506968                   & 94                                    & 52732.247017                   & 230                                   & 102461.169735                & 302                                    \\ 
-\hline
-2                                          & 313.507465                   & 85                                    & 55216.604614                   & 227                                   & 92722.82975                  & 312                                    \\ 
-\hline
-3                                          & 260.716585                   & 83                                    & 51035.938828                   & 222                                   & 109756.191196                & 329                                    \\ 
-\hline
-4                                          & 228.686203                   & 85                                    & 51252.923912                   & 235                                   & 94817.31855                  & 319                                    \\ 
-\hline
-5                                          & 327.630423                   & 84                                    & 50263.415146                   & 231                                   & 98489.470734                 & 357                                    \\ 
-\hline
-6                                          & 268.685181                   & 91                                    & 51086.920792                   & 234                                   & 94909.669075                 & 320                                    \\ 
-\hline
-7                                          & 294.791484                   & 93                                    & 52750.471413                   & 224                                   & 95285.917183                 & 313                                    \\ 
-\hline
-8                                          & 289.043079                   & 86                                    & 55943.949432                   & 201                                   & 95744.025253                 & 345                                    \\ 
-\hline
-9                                          & 312.831076                   & 110                                   & 52983.088982                   & 216                                   & 96928.298553                 & 344                                    \\ 
-\hline
-10                                         & 289.53074                    & 109                                   & 57117.076225                   & 219                                   & 104127.696587                & 361                                    \\ 
-\hline
-11                                         & 306.729307                   & 88                                    & 58398.903725                   & 202                                   & 100803.360954                & 316                                    \\ 
-\hline
-12                                         & 250.079633                   & 90                                    & 57215.849915                   & 200                                   & 107138.759598                & 334                                    \\ 
-\hline
-13                                         & 265.35407                    & 91                                    & 52676.416985                   & 224                                   & 99177.543182                 & 360                                    \\ 
-\hline
-14                                         & 286.189762                   & 102                                   & 54687.376709                   & 218                                   & 116187.673534                & 359                                    \\ 
-\hline
-15                                         & 344.260855                   & 91                                    & 51621.196281                   & 197                                   & 98794.914215                 & 348                                    \\ 
-\hline
-16                                         & 312.026299                   & 96                                    & 50204.516571                   & 221                                   & 97385.057663                 & 347                                    \\ 
-\hline
-17                                         & 308.682295                   & 84                                    & 50423.092026                   & 227                                   & 96082.164837                 & 317                                    \\ 
-\hline
-18                                         & 276.643616                   & 94                                    & 54081.611893                   & 219                                   & 97633.722404                 & 350                                    \\ 
-\hline
-19                                         & 313.150303                   & 99                                    & 53775.680328                   & 236                                   & 96896.538696                 & 351                                    \\ 
-\hline
-20                                         & 269.652821                   & 97                                    & 56298.768982                   & 232                                   & 112493.366562                & 383                                    \\ 
-\hline
-21                                         & 281.83043                    & 91                                    & 51932.713989                   & 233                                   & 98050.607231                 & 345                                    \\ 
-\hline
-22                                         & 327.765231                   & 86                                    & 54186.072151                   & 234                                   & 112647.361168                & 367                                    \\ 
-\hline
-23                                         & 301.150174                   & 96                                    & 56001.447327                   & 228                                   & 106157.126183                & 320                                    \\ 
-\hline
-24                                         & 236.491096                   & 92                                    & 50493.347454                   & 224                                   & 117413.196259                & 342                                    \\ 
-\hline
-25                                         & 319.217441                   & 88                                    & 56106.388706                   & 235                                   & 93008.848526                 & 357                                    \\ 
-\hline
-26                                         & 276.816359                   & 93                                    & 53595.246113                   & 226                                   & 97829.659012                 & 348                                    \\ 
-\hline
-27                                         & 331.744055                   & 85                                    & 50355.81105                    & 210                                   & 96314.070999                 & 362                                    \\ 
-\hline
-28                                         & 280.359543                   & 97                                    & 50054.34227                    & 231                                   & 96187.924377                 & 356                                    \\ 
-\hline
-29                                         & 269.64555                    & 93                                    & 55705.353302                   & 227                                   & 110426.691269                & 357                                    \\ 
-\hline
-30                                         & 287.871552                   & 93                                    & 56115.778328                   & 244                                   & 103126.408127                & 331                                    \\ 
-\hline
-\multicolumn{1}{|l|}{Average}              & 291.886319866667             & 92.2                                  & 53477.0850155333               & 223.566666666667                      & 101299.9193804               & 341.733333333333                       \\ 
-\hline
-\multicolumn{1}{|l|}{Std. Dev}             & 28.7100369555559             & 6.75379842040376                      & 2500.45309541788               & 11.7199603781057                      & 7045.97218764861             & 19.7448087168341                       \\
-\hline
-\end{tabular}}}
-\end{adjustwidth}
-\caption{The entire experiment data we have collected using our hybrid GWO approach.}
-\label{full-data-gwo}
-\end{table}
-
-\begin{table}
-\centering
-\begin{adjustwidth}{}{}
-\resizebox{\textwidth}{!}{\rotatebox{90}{
-\begin{tabular}{|r|r|r|r|r|r|r|} 
-\hline
 \multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO Experimental Results}                                                                                                                                                                         \\ 
 \cline{2-7}
 \multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
@@ -792,9 +732,8 @@ For reference, tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \hline
 \end{tabular}}}
 \end{adjustwidth}
-\caption{The entire experiment data we have collected using our hybrid PSO approach.}
+\caption{The entire experiment data we have collected using our PSO approach.}
 \label{full-data-pso}
 \end{table}
 
 The performance of the GA approach in this study is definitely noteworthy. It produces the best solutions on average among the three approaches. However, based on the results, the GA approach does not scale well as the number of buildings increase, compared to our approach and the PSO approach. PSO definitely shows the best average runtimes. However, it produces the worst average fitness. For faster speed, we traded performance. This is where our approach shines. Our approach is the second best when it comes to solution quality as the problem scales higher. It is also the second best in terms of speed. This shows to us that our GWO approach provides a balance between speed and performance. Our approach also requires only a few parameters. We argue that this will simplify and speed up experimental setups and configuration in later studies and applications. Importantly, the results also indicate that there is promise in further exploring the applicability of the grey wolf optimization algorithm in solving the facility layout problem.
-
