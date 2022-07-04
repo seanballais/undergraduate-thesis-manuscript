@@ -1432,6 +1432,9 @@ Later research may also want to focus on determining the ideal $c$ value and pop
 \subsection{Results of Other Approaches}
 Each approach has their own parameters, and the values we have set for those parameters are shown in Table \ref{approach-parameters}. Both approaches use a population size of 50, and a maximum number of iterations of 400. The following parameter values for the PSO approach were taken from the work of Jolai, F., Tavakkoli-Moghaddam, R., and Taghipour, M. \cite{Jolai2012}. Our proposed GWO approach is not included in the following results since we have already discussed them in the previous subsection.
 
+
+% TODO: Update text, and graphs.
+
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|l|l|l|}
@@ -1464,17 +1467,18 @@ The genetic algorithm approach is also the fastest when SFLP-II is being used wi
 \begin{table}[h!]
 \begin{adjustwidth}{-1.15in}{}
 \centering
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|l|r|r|r|r|r|} 
 	\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{Genetic Algorithm}}                                                                                                                                                                                            \\ \cline{2-6} 
-	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}} \\ \hline
-	SFLP-II                                                 & 232.839593                                  & 353.006875                                   & 274.120352366667                      &
-	31.3302957404409						& 27.3666666666667                                   \\ \hline
-	mSFLP-III                                               & 47177.914444                               & 53668.451469                                 & 50676.8183791                      & 1325.4427345102                                  & 166.866666666667                           \\ \hline
-	mKra30a                                               & 76454.204788                                & 96215.108131                                 &
-	87715.8254635							&
-	4281.86238995314	                        &
-	455.5								\\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{Genetic Algorithm}}                                                                                                                                                           \\ 
+	\cline{2-6}
+	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}}  \\ 
+	\hline
+	SFLP-II                                                 & 236.266584                         & 351.084812                          & 277.8299637                        & 28.733389801383                         & 16.3666666666667                                \\ 
+	\hline
+	mSFLP-III                                               & 47803.047028                       & 52113.727844                        & 50309.7310666                      & 1045.05795299065                        & 180.633333333333                                \\ 
+	\hline
+	mKra30a                                                 & 79772.279457                       & 97487.293617                        & 88945.0482127333                   & 5158.91507488963                        & 557.666666666667                                \\
+	\hline
 \end{tabular}
 \end{adjustwidth}
 \caption{Results obtained from using the competing GA approach.}
@@ -1484,22 +1488,18 @@ The genetic algorithm approach is also the fastest when SFLP-II is being used wi
 \begin{table}[h!]
 \begin{adjustwidth}{-1.18in}{}
 \centering
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|l|r|r|r|r|r|} 
 	\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{PSO}} \\ \cline{2-6} 
-	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}} \\ \hline
-	SFLP-II                                                 & 273.754488                                  & 382.774055                                   &
-	321.292520833333							&
-	32.8103600821748							&
-	29.0666666666667							\\ \hline
-	mSFLP-III                                               & 59673.997963                                & 68433.641548                                 &
-	64289.8051163					          &
-	2356.26248290771						&
-	77.0333333333333						\\ \hline
-	mKra30a                                               & 107996.773666                                & 131275.843658                                 &
-	121057.4221481							&
-	5981.21601161922							&
-	117.4						\\ \hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Problem}}} & \multicolumn{5}{c|}{\textbf{Particle Swarm Optimization}}                                                                                                                                                 \\ 
+	\cline{2-6}
+	\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\textbf{Best}} & \multicolumn{1}{c|}{\textbf{Worst}} & \multicolumn{1}{c|}{\textbf{Avg.}} & \multicolumn{1}{c|}{\textbf{Std. Dev.}} & \multicolumn{1}{c|}{\textbf{Avg. Runtime (s)}}  \\ 
+	\hline
+	SFLP-II                                                 & 261.579758                         & 371.217026                          & 322.6801845                        & 32.4426073658366                        & 5.96666666666667                                \\ 
+	\hline
+	mSFLP-III                                               & 60132.200264                       & 68087.431686                        & 64734.7002284667                   & 1890.32624601396                        & 22.7666666666667                                \\ 
+	\hline
+	mKra30a                                                 & 105473.485001                      & 136518.533897                       & 120530.7167285                     & 8523.84757756761                        & 44.7                                            \\
+	\hline
 \end{tabular}
 \end{adjustwidth}
 \caption{Results obtained from our proposed PSO approach.}
