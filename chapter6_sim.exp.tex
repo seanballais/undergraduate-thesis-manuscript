@@ -382,6 +382,7 @@ The entire competing GA algorithm is summarized in pseudocode with Algorithm \re
 \end{algorithm}
 
 \subsubsection{Particle Swarm Optimization}
+\label{methods-section-pso}
 Particle swarm optimization (PSO) is a metaheuristic inspired by the social behaviour of animals. It was proposed by Kennedy, J. and Eberhart, R. \cite{Kennedy1995}. A population of solutions is called a swarm, and each solution is called a particle $P$. Each particle has position and velocity vectors. The position vector $X_{i}^{t}$ is the solution itself, while the velocity vector $V_{i}^{t}$ which influences how each particle changes its position. During each iteration of a run, the particle's position is updated to a different position based on the swarm's best found position $\text{gbest}$ so far, the particle's personal best found position $\text{pbest}$ so far, and the current velocity vector $V_{ij}^{t}$. This behaviour is mathematically defined using the following equations.
 
 \begin{align}

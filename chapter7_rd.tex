@@ -1507,12 +1507,7 @@ We can further obtain insights from our results, by looking at the best solution
 
 Basing from the graphs we have, GA and GWO continuously exploit their abstract search space. We can attribute this behaviour to how each approach is designed. With the GA approach, remember that a local search algorithm (see Algorithm \ref{pseudocode-local-search-1}) is always being applied to the best solution the algorithm has produced (see Algorithm \ref{pseudocode-ga-approach} for details on the GA approach). Another local search algorithm (see Algorithm \ref{pseudocode-local-search-2}) is also being applied to the best solution, but only during the last 50 iterations of the algorithm. This results in the algorithm constantly exploiting the area the best solution occupies in the abstract search space and therefore further improving the best solution. Hence, the behaviour we observe in the graphs. It should be noted that we argue that the local search algorithms is what allows the GA approach to produce the best solutions on average. GWO, on the other hand, does not depend on another algorithm to fuel its exploitation. This is also a reason why it performs faster than GA. In GWO, buildings are constantly shifted around even if the number of iterations is almost near zero. However, the amount of shifting gradually reduces as the number of iterations increase (see Subsection \ref{intro-section-encircling-the-prey}, while also taking Subsection \ref{methods-section-modified-gwo} into account). This still allows buildings to find better position while reducing the risk of intersecting with other buildings. This design of our GWO approach, just with the GA approach, allows our approach to exploit the area around a local optimum and further improve the best solution it has found (along with the other solutions our approach has generated).
 
-PSO, on the contrary, has its fitness becoming and remaining relatively stable as the number of iterations increase. This results in an almost flat line for most of the iterations in the graphs. This suggest to us that it struggles to exploit the region around its local optimum. At the start, however, it is able to explore and find good solutions. This suggests to us that
-
-% TODO: Explain why PSO is acting poorly. 
-
-% TODO: Remove this part.
-The PSO approach has a similar characteristic that enables it to produce a continuously lowering fitness graph. In the PSO approach, as discussed before, each particle keeps track of the best position it has found. After an iteration, if a particle finds a position that is better than its personal best, then that position will replace the particle's personal. And if a particle's personal best is better than the swarm's global best, then that position/solution becomes the swarm's global best. It is this global best that is tracked in the graph. The selection procedure of the global best explains the graph of the PSO approach.
+PSO, on the contrary, has its fitness becoming and remaining relatively stable as the number of iterations increase. This results in an almost flat line for most of the iterations in the graphs. This suggests to us that it struggles to exploit the region around its local optimum. At the start, however, it is able to explore and find good solutions. We can attribute this difficulty of the PSO approach to the fact that the amount of shifting buildings are subjected to is more likely to be large, which can be too much for later iterations during an execution. As described in Subsection \ref{methods-section-pso}, the movement for the search of a better local optimum of each particle/solution in PSO is influenced by the particle's previous velocity, its personal best solution found, and the global best. It is these last two factors that has the most impact in the building shifting in our PSO approach, as they have their $c_{1}$ and $c_{2}$ parameters set to $2.00$, which results in the higher likelihood of the building shifting to be too much. Hence, the behaviour we are observing in the line graph for the PSO approach. Note that the aforementioned parameters affect how much a particle is influenced to move towards the direction of the particle's best solution and the global best. This does suggest that tweaking the parameters values for our PSO approach may yield better results.
 
 \begin{figure}[h!]
 \centering
@@ -1541,105 +1536,105 @@ The PSO approach has a similar characteristic that enables it to produce a conti
 \label{graph-approaches-best-solutions-mkra30a}
 \end{figure}
 
-Another avenue we can use to gather insights is through the visualization of the results produced by the approaches mentioned in this study. Figures \ref{best-results-ga} to \ref{best-results-pso} show a visualization of the best results. Notice that with the hybrid GA approach and our GWO approach, the buildings tend to clump together, which is what we want to happen, based on our objective function. For our hybrid GA approach, we can attribute the result to the local search method as well as the mutation operators as they were key to ensure that the buildings are close to each other. The crossover operator is also instrumental in achieving this result by finding combinations that will lead to the result. Our GWO approach also makes buildings clump together but not to the same degree as the GA approach, as can be observed from one building being far from the rest of the buildings in mKra30a data set in Figure \ref{best-results-gwo}. The clumping ability of our approach is attributable to how solutions are allowed to perturb their buildings to positions relatively far from the buildings positions in the best three solution initially. Eventually, our approach will decrease the distance of the buildings in a solution from the leading solutions. Remember that the leading solutions eventually become similar to each other, which help drive the reduction of the degree of building shifting. This gradually decreasing shifting of the buildings will lead to intersections from being resolved and reducing the distance of buildings from each other. The intersections are resolved by reducing the chances of buildings being to moved to a relatively further position where they would still intersect with another building, and gradually pushing intersecting buildings away from each other towards non-intersection. Note that the objective function has a lower penalty for solutions with buildings that do not significantly intersect. The decreasing shifting also encourages buildings to move towards each other due to the fact that smaller shifts have lower probability of causing buildings to intersect with one another too deeply or at all, which allows buildings to move to positions that are closer to the other buildings but without any intersections. Finally, as one can notice in Figure \ref{best-results-pso}, the PSO approach struggles to produce a solution where the buildings are clumped together. This deficiency is not necessarily clear with a small number of buildings, but it does as the number increases. We can attribute this difficulty of the PSO approach to the fact that the buildings are continuously being influenced on the same degree throughout all of the iterations by a particle's personal best and the swarm's global best. This encourages more exploitation and fewer exploitation. As a result, this reduces the chances in which buildings would be able to shift their positions by a small amount, making it more difficult for the approach to find better solutions and have buildings clump together.
+Another avenue we can use to gather insights is through the visualization of the results produced by the approaches mentioned in this study. Figures \ref{best-results-ga} to \ref{best-results-pso} show a visualization of the best results. Notice that with the hybrid GA approach and our GWO approach, the buildings tend to clump together, which is what we want to happen, based on our objective function. For our hybrid GA approach, we can attribute the result to the local search method as well as the mutation operators as they were key to ensure that the buildings are close to each other. The crossover operator is also instrumental in achieving this result by finding combinations that will lead to the result. Our GWO approach also makes buildings clump together but not to the same degree as the GA approach, as can be observed from one building being far from the rest of the buildings in mKra30a data set in Figure \ref{best-results-gwo}. The clumping ability of our approach is attributable to how solutions are allowed to perturb their buildings to positions relatively far from the buildings positions in the best three solution initially. Eventually, our approach will decrease the distance of the buildings in a solution from the leading solutions. Note that the leading solutions eventually become similar to each other, which help drive the reduction of the degree of building shifting. This gradually decreasing shifting of the buildings will lead to intersections from being resolved and reducing the distance of buildings from each other. The intersections are resolved by reducing the chances of buildings being to moved to a relatively further position where they would still intersect with another building, and gradually pushing intersecting buildings away from each other towards non-intersection. Note that the objective function has a lower penalty for solutions with buildings that do not significantly intersect. The decreasing shifting also encourages buildings to move towards each other due to the fact that smaller shifts have lower probability of causing buildings to intersect with one another too deeply or at all, which allows buildings to move to positions that are closer to the other buildings but without any intersections. Finally, as one can notice in Figure \ref{best-results-pso}, the PSO approach struggles to produce a solution where the buildings are clumped together. This deficiency is not necessarily clear with a small number of buildings, but it does as the number increases. This behaviour is due to how our PSO approach, as discussed earlier in the previous paragraph, makes it easier for building to shift too much and cause building intersections to be more likely.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.85]{./images/chap07-rd/ga-best-solutions.png}
+\includegraphics[scale=1.0]{./images/chap07-rd/ga-best-solutions.png}
 \caption{Visualization of the best solutions produced by the hybrid GA approach for the three data sets used in this study.}
 \label{best-results-ga}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.85]{./images/chap07-rd/gwo-best-solutions.png}
+\includegraphics[scale=1.0]{./images/chap07-rd/gwo-best-solutions.png}
 \caption{Visualization of the best solutions produced by our GWO approach for the three data sets used in this study.}
 \label{best-results-gwo}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.85]{./images/chap07-rd/pso-best-solutions.png}
+\includegraphics[scale=1.0]{./images/chap07-rd/pso-best-solutions.png}
 \caption{Visualization of the best solutions produced by the PSO approach for the three data sets used in this study.}
 \label{best-results-pso}
 \end{figure}
 
-For reference, Tables \ref{full-data-ga} to \ref{full-data-pso} provide the detailed numbers we have obtained in our experiments for each approach and data set. Table \ref{full-data-ga} shows the entire experiment data for our hybrid GA approach, table \ref{full-data-gwo} shows the data for our GWO approach, and lastly, table \ref{full-data-pso} shows the data for the PSO approach.
+For reference, Tables \ref{full-data-ga} and \ref{full-data-pso} provide the detailed numbers we have obtained in our experiments for the GA and PSO approaches, respectively. Results of the GWO approach using a population size of $50$ used as the representative data for our GWO approach for comparison against the GA and PSO approaches are already provided by Tables \ref{full-data-gwo-c2-p50} to \ref{full-data-gwo-c12-p50}.
 
 \begin{table}
 \centering
 \begin{adjustwidth}{}{}
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
-\hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GA Experimental Results}                                                                                                                                                                          \\ 
-\cline{2-7}
-\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-\hline
-1                                          & 241.353251                   & 31                                    & 51469.406654                   & 155                                   & 76454.204788                 & 417                                    \\ 
-\hline
-2                                          & 260.666385                   & 27                                    & 50203.262684                   & 166                                   & 90215.278652                 & 454                                    \\ 
-\hline
-3                                          & 317.934947                   & 34                                    & 49903.403969                   & 159                                   & 80078.077255                 & 442                                    \\ 
-\hline
-4                                          & 257.12075                    & 26                                    & 51214.094765                   & 149                                   & 85424.753021                 & 453                                    \\ 
-\hline
-5                                          & 252.747648                   & 26                                    & 49754.550606                   & 152                                   & 85276.805458                 & 416                                    \\ 
-\hline
-6                                          & 291.574655                   & 27                                    & 49526.201752                   & 160                                   & 88156.523018                 & 472                                    \\ 
-\hline
-7                                          & 292.021864                   & 27                                    & 49669.613991                   & 157                                   & 83149.07745                  & 423                                    \\ 
-\hline
-8                                          & 281.474234                   & 27                                    & 51731.675354                   & 176                                   & 88411.142647                 & 413                                    \\ 
-\hline
-9                                          & 269.290927                   & 26                                    & 51245.732857                   & 172                                   & 90734.373741                 & 478                                    \\ 
-\hline
-10                                         & 269.423721                   & 27                                    & 48920.435341                   & 175                                   & 87220.602196                 & 488                                    \\ 
-\hline
-11                                         & 240.832309                   & 26                                    & 52856.025909                   & 212                                   & 81419.135918                 & 446                                    \\ 
-\hline
-12                                         & 259.251911                   & 24                                    & 49490.654926                   & 144                                   & 89084.201248                 & 498                                    \\ 
-\hline
-13                                         & 257.123175                   & 27                                    & 51225.387764                   & 164                                   & 82219.564217                 & 449                                    \\ 
-\hline
-14                                         & 232.839593                   & 26                                    & 49141.684452                   & 197                                   & 91560.704735                 & 440                                    \\ 
-\hline
-15                                         & 305.979567                   & 27                                    & 52062.448891                   & 161                                   & 85431.277306                 & 446                                    \\ 
-\hline
-16                                         & 263.951872                   & 26                                    & 51269.011093                   & 175                                   & 93689.351776                 & 451                                    \\ 
-\hline
-17                                         & 271.432117                   & 25                                    & 52881.041428                   & 176                                   & 85395.590744                 & 431                                    \\ 
-\hline
-18                                         & 278.044098                   & 33                                    & 51087.689514                   & 180                                   & 87894.849144                 & 421                                    \\ 
-\hline
-19                                         & 266.951438                   & 28                                    & 51001.627296                   & 171                                   & 91152.267059                 & 445                                    \\ 
-\hline
-20                                         & 246.816533                   & 27                                    & 50198.549866                   & 178                                   & 88895.677979                 & 471                                    \\ 
-\hline
-21                                         & 275.481676                   & 27                                    & 50003.058311                   & 162                                   & 87140.735931                 & 468                                    \\ 
-\hline
-22                                         & 353.006875                   & 26                                    & 51480.186226                   & 162                                   & 88911.361496                 & 533                                    \\ 
-\hline
-23                                         & 336.045243                   & 26                                    & 51068.014679                   & 182                                   & 88503.003464                 & 499                                    \\ 
-\hline
-24                                         & 267.427919                   & 28                                    & 53668.451469                   & 177                                   & 90751.106781                 & 487                                    \\ 
-\hline
-25                                         & 318.71513                    & 28                                    & 49688.022858                   & 167                                   & 87554.161316                 & 480                                    \\ 
-\hline
-26                                         & 239.385818                   & 31                                    & 50890.728996                   & 161                                   & 89753.353699                 & 516                                    \\ 
-\hline
-27                                         & 235.181557                   & 27                                    & 51466.78817                    & 160                                   & 92770.250797                 & 431                                    \\ 
-\hline
-28                                         & 256.815948                   & 27                                    & 47177.914444                   & 159                                   & 93206.425659                 & 443                                    \\ 
-\hline
-29                                         & 329.646141                   & 27                                    & 50171.089684                   & 146                                   & 84805.798279                 & 473                                    \\ 
-\hline
-30                                         & 255.073269                   & 27                                    & 49837.797424                   & 151                                   & 96215.108131                 & 381                                    \\ 
-\hline
-\multicolumn{1}{|l|}{Average}              & 274.120352366667             & 27.3666666666667                      & 50676.8183791                  & 166.866666666667                      & 87715.8254635                & 455.5                                  \\ 
-\hline
-\multicolumn{1}{|l|}{Std. Dev}             & 31.3302957404409             & 2.17324377503931                      & 1325.4427345102                & 14.6775299372024                      & 4281.86238995314             & 33.3639801644497                       \\
-\hline
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{GA}                                                                                                                                                                                               \\ 
+	\cline{2-7}
+	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+	\hline
+	1                                          & 266.528195                   & 16                                    & 49947.365097                   & 182                                   & 91150.52594                  & 547                                    \\ 
+	\hline
+	2                                          & 275.47149                    & 16                                    & 51340.576492                   & 178                                   & 86806.55534                  & 551                                    \\ 
+	\hline
+	3                                          & 266.351613                   & 17                                    & 49861.753159                   & 179                                   & 84091.301003                 & 550                                    \\ 
+	\hline
+	4                                          & 308.826011                   & 16                                    & 49252.501534                   & 177                                   & 97487.293617                 & 550                                    \\ 
+	\hline
+	5                                          & 263.646755                   & 16                                    & 50780.747742                   & 181                                   & 94015.955956                 & 556                                    \\ 
+	\hline
+	6                                          & 294.516963                   & 17                                    & 49587.689148                   & 182                                   & 95859.984146                 & 557                                    \\ 
+	\hline
+	7                                          & 272.558493                   & 17                                    & 48958.183441                   & 180                                   & 89946.6082                   & 551                                    \\ 
+	\hline
+	8                                          & 330.859349                   & 16                                    & 48662.193741                   & 180                                   & 88766.381279                 & 555                                    \\ 
+	\hline
+	9                                          & 308.087156                   & 17                                    & 47803.047028                   & 180                                   & 91838.419716                 & 548                                    \\ 
+	\hline
+	10                                         & 250.671959                   & 16                                    & 49296.756157                   & 178                                   & 79772.279457                 & 544                                    \\ 
+	\hline
+	11                                         & 303.593238                   & 17                                    & 51669.300724                   & 179                                   & 85323.813148                 & 538                                    \\ 
+	\hline
+	12                                         & 275.874591                   & 17                                    & 50343.115303                   & 183                                   & 96152.109024                 & 542                                    \\ 
+	\hline
+	13                                         & 285.168494                   & 16                                    & 51452.603043                   & 180                                   & 93274.746521                 & 553                                    \\ 
+	\hline
+	14                                         & 268.42481                    & 17                                    & 50330.552826                   & 183                                   & 87103.569084                 & 551                                    \\ 
+	\hline
+	15                                         & 256.26808                    & 16                                    & 50043.851532                   & 179                                   & 91260.246647                 & 553                                    \\ 
+	\hline
+	16                                         & 248.508814                   & 16                                    & 50312.167366                   & 183                                   & 93187.412254                 & 557                                    \\ 
+	\hline
+	17                                         & 256.90695                    & 17                                    & 49781.92263                    & 185                                   & 86379.197144                 & 571                                    \\ 
+	\hline
+	18                                         & 281.037801                   & 16                                    & 50783.211159                   & 183                                   & 92814.148727                 & 562                                    \\ 
+	\hline
+	19                                         & 253.327052                   & 16                                    & 48951.801483                   & 180                                   & 89999.578728                 & 568                                    \\ 
+	\hline
+	20                                         & 291.173308                   & 16                                    & 50682.090927                   & 180                                   & 90016.975861                 & 552                                    \\ 
+	\hline
+	21                                         & 236.845447                   & 16                                    & 51750.123131                   & 181                                   & 94116.278717                 & 566                                    \\ 
+	\hline
+	22                                         & 255.045933                   & 17                                    & 52113.727844                   & 183                                   & 93903.068489                 & 558                                    \\ 
+	\hline
+	23                                         & 351.084812                   & 16                                    & 51356.503441                   & 182                                   & 91290.029549                 & 564                                    \\ 
+	\hline
+	24                                         & 288.641643                   & 16                                    & 49658.713455                   & 177                                   & 81967.175171                 & 582                                    \\ 
+	\hline
+	25                                         & 265.659544                   & 16                                    & 50867.704594                   & 182                                   & 88435.975075                 & 575                                    \\ 
+	\hline
+	26                                         & 236.266584                   & 16                                    & 50367.296349                   & 179                                   & 81396.486565                 & 569                                    \\ 
+	\hline
+	27                                         & 324.972096                   & 17                                    & 49485.836605                   & 180                                   & 79991.033119                 & 577                                    \\ 
+	\hline
+	28                                         & 311.776283                   & 16                                    & 50957.352654                   & 181                                   & 81334.934044                 & 554                                    \\ 
+	\hline
+	29                                         & 264.748742                   & 17                                    & 51506.650543                   & 180                                   & 89664.76149                  & 563                                    \\ 
+	\hline
+	30                                         & 242.056705                   & 16                                    & 51386.59285                    & 182                                   & 81004.602371                 & 566                                    \\ 
+	\hline
+	\multicolumn{1}{|l|}{Average}              & 277.8299637                  & 16.3666666666667                      & 50309.7310666                  & 180.633333333333                      & 88945.0482127333             & 557.666666666667                       \\ 
+	\hline
+	\multicolumn{1}{|l|}{Std. Dev}             & 28.733389801383              & 0.490132517853561                     & 1045.05795299065               & 1.95612800747016                      & 5158.91507488963             & 10.6393327938762                       \\
+	\hline
 \end{tabular}}}
 \end{adjustwidth}
 \caption{The entire experiment data we have collected using our hybrid GA approach.}
@@ -1651,81 +1646,79 @@ For reference, Tables \ref{full-data-ga} to \ref{full-data-pso} provide the deta
 \begin{adjustwidth}{}{}
 \resizebox{\textwidth}{!}{\rotatebox{90}{
 \begin{tabular}{|r|r|r|r|r|r|r|} 
-\hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO Experimental Results}                                                                                                                                                                         \\ 
-\cline{2-7}
-\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
-\hline
-1                                          & 318.852793                   & 30                                    & 64984.15004                    & 76                                    & 126400.957298                & 130                                    \\ 
-\hline
-2                                          & 322.977083                   & 28                                    & 65613.267347                   & 81                                    & 121843.241837                & 115                                    \\ 
-\hline
-3                                          & 319.688772                   & 27                                    & 66182.148331                   & 77                                    & 131064.62114                 & 117                                    \\ 
-\hline
-4                                          & 382.774055                   & 29                                    & 65321.947243                   & 74                                    & 123193.080185                & 109                                    \\ 
-\hline
-5                                          & 328.181972                   & 26                                    & 68316.333054                   & 90                                    & 113509.606079                & 116                                    \\ 
-\hline
-6                                          & 273.754488                   & 27                                    & 63051.351074                   & 80                                    & 126382.984985                & 104                                    \\ 
-\hline
-7                                          & 277.929458                   & 35                                    & 64844.383484                   & 80                                    & 118793.658676                & 113                                    \\ 
-\hline
-8                                          & 333.791855                   & 29                                    & 62119.790359                   & 78                                    & 116690.745407                & 115                                    \\ 
-\hline
-9                                          & 331.588456                   & 25                                    & 62520.697372                   & 81                                    & 112328.409836                & 114                                    \\ 
-\hline
-10                                         & 312.062043                   & 28                                    & 60370.992424                   & 70                                    & 125547.949913                & 117                                    \\ 
-\hline
-11                                         & 347.300041                   & 26                                    & 63191.887421                   & 74                                    & 128467.742325                & 111                                    \\ 
-\hline
-12                                         & 276.72711                    & 29                                    & 66079.518539                   & 75                                    & 115259.262817                & 123                                    \\ 
-\hline
-13                                         & 346.501261                   & 38                                    & 68433.641548                   & 72                                    & 120682.394836                & 123                                    \\ 
-\hline
-14                                         & 324.057936                   & 29                                    & 59673.997963                   & 73                                    & 115606.839714                & 136                                    \\ 
-\hline
-15                                         & 294.477526                   & 33                                    & 65232.604935                   & 77                                    & 107996.773666                & 135                                    \\ 
-\hline
-16                                         & 354.944439                   & 28                                    & 62623.302681                   & 77                                    & 117466.287628                & 119                                    \\ 
-\hline
-17                                         & 278.580433                   & 25                                    & 63571.512451                   & 78                                    & 119787.763885                & 111                                    \\ 
-\hline
-18                                         & 373.62812                    & 25                                    & 65604.954414                   & 73                                    & 121933.62674                 & 111                                    \\ 
-\hline
-19                                         & 277.326199                   & 27                                    & 60121.135582                   & 71                                    & 120619.96003                 & 128                                    \\ 
-\hline
-20                                         & 312.888415                   & 26                                    & 65799.8442                     & 77                                    & 114528.809418                & 112                                    \\ 
-\hline
-21                                         & 349.500618                   & 28                                    & 62835.800159                   & 86                                    & 123371.321442                & 113                                    \\ 
-\hline
-22                                         & 324.432381                   & 30                                    & 67968.856182                   & 80                                    & 125755.185791                & 107                                    \\ 
-\hline
-23                                         & 259.640869                   & 29                                    & 61263.364929                   & 77                                    & 114837.336021                & 109                                    \\ 
-\hline
-24                                         & 324.809072                   & 28                                    & 64277.566399                   & 78                                    & 119911.446892                & 114                                    \\ 
-\hline
-25                                         & 315.892269                   & 30                                    & 63997.453415                   & 72                                    & 130395.024284                & 101                                    \\ 
-\hline
-26                                         & 367.985685                   & 31                                    & 62791.55909                    & 73                                    & 126777.9534                  & 109                                    \\ 
-\hline
-27                                         & 306.720735                   & 37                                    & 66069.317642                   & 77                                    & 116590.569717                & 132                                    \\ 
-\hline
-28                                         & 373.704857                   & 29                                    & 65694.84201                    & 77                                    & 131275.843658                & 145                                    \\ 
-\hline
-29                                         & 288.776388                   & 30                                    & 67406.459572                   & 76                                    & 118132.533211                & 120                                    \\ 
-\hline
-30                                         & 339.280296                   & 30                                    & 62731.473629                   & 81                                    & 126570.733612                & 113                                    \\ 
-\hline
-\multicolumn{1}{|l|}{Average}              & 321.292520833333             & 29.0666666666667                      & 64289.8051163                  & 77.0333333333333                      & 121057.4221481               & 117.4                                  \\ 
-\hline
-\multicolumn{1}{|l|}{Std. Dev}             & 32.8103600821748             & 3.20488133443597                      & 2356.26248290771               & 4.29501180868943                      & 5981.21601161922             & 10.1526283330459                       \\
-\hline
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{Run}} & \multicolumn{6}{c|}{PSO}                                                                                                                                                                                              \\ 
+	\cline{2-7}
+	\multicolumn{1}{|c|}{}                     & \multicolumn{1}{l|}{SFLP-II} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mSFLP-III} & \multicolumn{1}{l|}{Elapsed Time (s)} & \multicolumn{1}{l|}{mKra30a} & \multicolumn{1}{l|}{Elapsed Time (s)}  \\ 
+	\hline
+	1                                          & 349.921185                   & 5                                     & 64278.204849                   & 21                                    & 115460.666122                & 46                                     \\ 
+	\hline
+	2                                          & 365.357545                   & 5                                     & 63842.174843                   & 22                                    & 105473.485001                & 45                                     \\ 
+	\hline
+	3                                          & 353.241308                   & 6                                     & 67228.944778                   & 22                                    & 117889.501312                & 43                                     \\ 
+	\hline
+	4                                          & 296.976458                   & 6                                     & 67293.847954                   & 25                                    & 123930.586349                & 44                                     \\ 
+	\hline
+	5                                          & 337.563747                   & 7                                     & 64717.147179                   & 24                                    & 117817.663696                & 48                                     \\ 
+	\hline
+	6                                          & 319.264219                   & 6                                     & 63914.649506                   & 21                                    & 129141.190292                & 44                                     \\ 
+	\hline
+	7                                          & 340.752566                   & 5                                     & 63146.369568                   & 24                                    & 131232.40274                 & 41                                     \\ 
+	\hline
+	8                                          & 337                          & 5                                     & 68087.431686                   & 22                                    & 118068.045341                & 44                                     \\ 
+	\hline
+	9                                          & 369.166254                   & 6                                     & 64523.811813                   & 23                                    & 127204.096298                & 47                                     \\ 
+	\hline
+	10                                         & 317.500725                   & 6                                     & 64391.846161                   & 22                                    & 127170.164375                & 44                                     \\ 
+	\hline
+	11                                         & 267.553256                   & 5                                     & 65543.256248                   & 23                                    & 118574.181587                & 43                                     \\ 
+	\hline
+	12                                         & 371.217026                   & 5                                     & 63490.423851                   & 24                                    & 133711.182159                & 45                                     \\ 
+	\hline
+	13                                         & 303.141264                   & 6                                     & 65320.857124                   & 23                                    & 116703.547356                & 44                                     \\ 
+	\hline
+	14                                         & 319.166245                   & 5                                     & 65809.173042                   & 23                                    & 126081.738121                & 43                                     \\ 
+	\hline
+	15                                         & 325.424345                   & 5                                     & 63372.697357                   & 21                                    & 111884.375015                & 45                                     \\ 
+	\hline
+	16                                         & 337.414429                   & 8                                     & 65486.100739                   & 24                                    & 111221.815865                & 41                                     \\ 
+	\hline
+	17                                         & 328.956743                   & 6                                     & 67511.591209                   & 21                                    & 115048.387337                & 49                                     \\ 
+	\hline
+	18                                         & 271.596369                   & 6                                     & 61698.533489                   & 23                                    & 120007.382874                & 46                                     \\ 
+	\hline
+	19                                         & 307.163927                   & 5                                     & 65688.555557                   & 21                                    & 122245.078575                & 42                                     \\ 
+	\hline
+	20                                         & 291.097535                   & 8                                     & 61948.927948                   & 25                                    & 135302.486481                & 46                                     \\ 
+	\hline
+	21                                         & 294.035434                   & 6                                     & 65192.457092                   & 24                                    & 135998.582253                & 44                                     \\ 
+	\hline
+	22                                         & 271.983335                   & 6                                     & 66683.379341                   & 23                                    & 105845.64386                 & 46                                     \\ 
+	\hline
+	23                                         & 369.234533                   & 9                                     & 64707.545151                   & 22                                    & 111971.493881                & 48                                     \\ 
+	\hline
+	24                                         & 358.052214                   & 6                                     & 60132.200264                   & 23                                    & 116962.85556                 & 47                                     \\ 
+	\hline
+	25                                         & 322.684204                   & 7                                     & 64733.312561                   & 24                                    & 116335.920261                & 44                                     \\ 
+	\hline
+	26                                         & 313.111456                   & 5                                     & 63888.932556                   & 25                                    & 117395.851891                & 44                                     \\ 
+	\hline
+	27                                         & 261.579758                   & 7                                     & 68010.421631                   & 20                                    & 136518.533897                & 44                                     \\ 
+	\hline
+	28                                         & 362.433082                   & 5                                     & 62982.527634                   & 22                                    & 121072.119308                & 46                                     \\ 
+	\hline
+	29                                         & 287.482981                   & 7                                     & 62928.84359                    & 23                                    & 118000.14296                 & 44                                     \\ 
+	\hline
+	30                                         & 330.333392                   & 5                                     & 65486.842133                   & 23                                    & 111652.381088                & 44                                     \\ 
+	\hline
+	\multicolumn{1}{|l|}{Average}              & 322.6801845                  & 5.96666666666667                      & 64734.7002284667               & 22.7666666666667                      & 120530.7167285               & 44.7                                   \\ 
+	\hline
+	\multicolumn{1}{|l|}{Std. Dev}             & 32.4426073658366             & 1.06619961038982                      & 1890.32624601396               & 1.33088856325993                      & 8523.84757756761             & 1.93248098531931                       \\
+	\hline
 \end{tabular}}}
 \end{adjustwidth}
 \caption{The entire experiment data we have collected using our PSO approach.}
 \label{full-data-pso}
 \end{table}
 
-The performance of the GA approach in this study is definitely noteworthy. It produces the best solutions on average among the three approaches. However, based on the results, the GA approach does not scale well as the number of buildings increase, compared to our approach and the PSO approach. PSO definitely shows the best average runtimes. However, it produces the worst average fitness. For faster speed, we traded performance. This is where our approach shines. Our approach is the second best when it comes to solution quality as the problem scales higher. It is also the second best in terms of speed. This shows to us that our GWO approach provides a balance between speed and performance. Our approach also requires only a few parameters. We argue that this will simplify and speed up experimental setups and configuration in later studies and applications. Importantly, the results also indicate that there is promise in further exploring the applicability of the grey wolf optimization algorithm in solving the facility layout problem.
-
-% TODO: Mention in the methods chapter that the best solution is always kept in our GWO approach.
+The performance of the GA approach in this study is definitely noteworthy. It produces the best solutions on average among the three approaches. However, based on the results, the GA approach does not scale well as the number of buildings increase, compared to our approach and the PSO approach. PSO definitely shows the best average runtimes. However, it produces the worst average fitness. For faster speed, we traded performance. This is where our approach shines. Our approach is consistently the second best when it comes to solution quality and speed. This shows to us that our GWO approach provides a balance between speed and performance. Our approach also requires only a few parameters. We argue that this will simplify and speed up experimental setups and configuration in later studies and applications. Importantly, the results also indicate that there is promise in further exploring the applicability of the grey wolf optimization algorithm in solving the facility layout problem.
